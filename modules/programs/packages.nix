@@ -180,7 +180,7 @@
     tio
 
     # TMP
-    # rpi-imager
+    rpi-imager
 
   ];
 
