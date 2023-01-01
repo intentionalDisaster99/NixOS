@@ -162,7 +162,7 @@
     obs-studio
 
     # Networking
-    # geteduroam    
+    geteduroam
     tailscale
 
     # Gaming
