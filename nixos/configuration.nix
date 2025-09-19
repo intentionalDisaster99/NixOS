@@ -162,7 +162,7 @@
   # Any aliases
   programs.bash.shellAliases = {
     cd = "z";
-    nrs = "sudo nixos-rebuild switch --flake /etc/nixos#higgs-boson";
+    nrs = "/etc/nixos/scripts/nrs.sh";
     windows = "sudo grub-reboot 1 && reboot";
   };
 
