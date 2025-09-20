@@ -18,7 +18,6 @@
   programs.zoxide.enable = true;
   programs.brave.enable = true;
   services.kdeconnect.enable = true;
-  programs.steam.enable = true;
 
 
   # Linking to my config files

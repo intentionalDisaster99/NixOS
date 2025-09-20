@@ -215,6 +215,9 @@
   # Enable xwayland so I can actually display stuff
   services.xserver.enable = true;
 
+  # Gaming
+  programs.steam.enable = true;
+
   # Nice SDDM so that I can switch between Hyprland and KDE
   services.displayManager.sddm.enable = true;
   # services.xserver.sddm.enable = true;
