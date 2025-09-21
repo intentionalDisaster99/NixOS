@@ -135,6 +135,7 @@
     vim
     kitty
     vscode
+    vscodium
     kdePackages.yakuake 
     arduino-ide
     cargo
