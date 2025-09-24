@@ -180,14 +180,12 @@
   };
 
   # Working on pio
-  services.udev.extraRules = ''
-    # Rule for Raspberry Pi Pico in BOOTSEL mode
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
-
-    # Keep your other PlatformIO rules from before
-    ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="0666", GROUP:="plugdev", TAG+="uaccess"
-    # ... and so on for the rest of your rules
-  '';
+hardware.extraConfig = ''
+  # /etc/udev/rules.d/99-pico.rules
+  # This rule grants access to the Raspberry Pi Pico in BOOTSEL mode.
+  SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+  SUBSYSTEM=="tty", ATTRS{idVendor}=="2e8a", MODE="0666"
+'';
 
 
   # Home manager users block inside the NixOS config
