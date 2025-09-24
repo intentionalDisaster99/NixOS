@@ -172,9 +172,6 @@
   # Showing off my nerdiness
   networking.hostName = "higgs-boson";
 
-  # Allowing plaformio
-  services.udev.packages = [ pkgs.platformio-core ];
-
   users.users = {
     sa9m = {
       isNormalUser = true;
