@@ -324,7 +324,9 @@ services.udev.extraRules = ''
   services.udev.packages = [ 
     pkgs.platformio-core
     pkgs.openocd
+    pkgs.platformio-core.udev
   ];
+  # services.udev.packages = with pkgs; [ platformio-core.udev ];
 
   # For platformio
   programs.nix-ld.enable = true;
