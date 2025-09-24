@@ -179,6 +179,17 @@
     };
   };
 
+  # Working on pio
+  services.udev.extraRules = ''
+    # Rule for Raspberry Pi Pico in BOOTSEL mode
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+
+    # Keep your other PlatformIO rules from before
+    ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="0666", GROUP:="plugdev", TAG+="uaccess"
+    # ... and so on for the rest of your rules
+  '';
+
+
   # Home manager users block inside the NixOS config
   home-manager.users = {
     sa9m = import ../home-manager/home.nix { pkgs = pkgs; };
