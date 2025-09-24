@@ -175,7 +175,7 @@
   users.users = {
     sa9m = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "dialout"];
     };
   };
 
