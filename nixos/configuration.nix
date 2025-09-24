@@ -180,6 +180,21 @@
   };
 
   # Working on pio
+  # Add udev rules for PlatformIO devices
+services.udev.extraRules = ''
+  # Raspberry Pi Pico (RP2040) in BOOTSEL mode
+  SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+
+  # Raspberry Pi Pico 2 (RP2350) and Pico runtime serial port
+  SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000a", MODE="0666"
+  KERNEL=="ttyACM*", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000a", MODE="0666", GROUP="plugdev"
+
+  # Other common PlatformIO device rules
+  SUBSYSTEMS=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="0666"
+  SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", MODE:="0666"
+  SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE:="0666"
+'';
+
 # hardware.extraConfig = ''
 #   # /etc/udev/rules.d/99-pico.rules
 #   # This rule grants access to the Raspberry Pi Pico in BOOTSEL mode.
