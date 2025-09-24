@@ -141,6 +141,7 @@
     cargo
     rustc
     python3
+    platformio
     jdk
 
 
