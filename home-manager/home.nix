@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/sa9m";
 
   systemd.user.startServices = "sd-switch";
-
+  
   
   # Enabling Programs
   # programs.waybar.enable = true;

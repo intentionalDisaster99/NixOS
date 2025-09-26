@@ -114,6 +114,7 @@
     # ulauncher
     ffmpeg_6
     neohtop
+    rclone
 
     # KDE things 
     # kdewalletmanager
@@ -321,6 +322,7 @@ services.udev.extraRules = ''
     ];
   };    
 
+  # Getting platformio to work
   services.udev.packages = [ 
     pkgs.platformio-core
     pkgs.openocd
