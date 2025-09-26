@@ -32,19 +32,36 @@
   #######################
   ### Systemd Services###
   #######################
-# ~/.config/home-manager/home.nix
-  systemd.user.services.rclone-gdrive = {
-    enable = true;
-    description = "Rclone mount for GDrive";
-    wantedBy = [ "default.target" ];
-    after = [ "network-online.target" ];
 
-    serviceConfig = {
-      ExecStart = "${pkgs.rclone}/bin/rclone mount GDrive: /home/sa9m/GDrive --vfs-cache-mode writes";
+  # Rclone google drive
+  systemd.user.services.rclone-gdrive = {
+    # This block defines the service's metadata and dependencies
+    Unit = {
+      Description = "Rclone mount for GDrive";
+      # These are now correctly placed inside the Unit block
+      Wants = [ "network-online.target" ];
+      After = [ "network-online.target" ];
+    };
+
+    # This block defines the commands to run
+    Service = {
+      ExecStart = ''
+        ${pkgs.rclone}/bin/rclone mount GDrive: /home/sa9m/GDrive \
+          --vfs-cache-mode writes \
+          --config=${config.home.homeDirectory}/.config/rclone/rclone.conf
+      '';
       ExecStop = "${pkgs.fusermount}/bin/fusermount -u /home/sa9m/GDrive";
       Restart = "on-failure";
+      RestartSec = 10;
+      Type = "simple";
+    };
+
+    # This block tells systemd when to start the service
+    Install = {
+      WantedBy = [ "default.target" ];
     };
   };
+
 
 
 
