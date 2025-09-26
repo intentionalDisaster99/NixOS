@@ -114,7 +114,6 @@
     # ulauncher
     ffmpeg_6
     neohtop
-    keymapper
 
     # KDE things 
     # kdewalletmanager
