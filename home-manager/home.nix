@@ -6,6 +6,10 @@
 
   systemd.user.startServices = "sd-switch";
 
+  home.packages = [
+    pkgs.rclone
+  ];
+
   
   # Enabling Programs
   # programs.waybar.enable = true;
