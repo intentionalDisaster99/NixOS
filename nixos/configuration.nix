@@ -115,6 +115,7 @@
     ffmpeg_6
     neohtop
     rclone
+    libreoffice-qt6-fresh
 
     # KDE things 
     # kdewalletmanager
