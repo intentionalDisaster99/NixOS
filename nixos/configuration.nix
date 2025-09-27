@@ -116,6 +116,9 @@
     neohtop
     rclone
     libreoffice-qt6-fresh
+    virtualbox
+    wine
+    bottles
 
     # KDE things 
     # kdewalletmanager
