@@ -303,6 +303,17 @@ services.udev.extraRules = ''
   users.groups.libvirtd.members = ["sa9m"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+  libvirtd.qemu = {
+    swtpm.enable = true;
+    ovmf = {
+      enable = true;
+      package = (pkgs.OVMFFull.override {
+        secureBoot = true;
+        tpmSupport = true;
+      });
+    };
+  };
+
 
 
   # This setups a SSH server. Very important if you're setting up a headless system.
