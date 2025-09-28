@@ -120,7 +120,7 @@
     wine
     bottles
     gparted
-    libsForQt5.filelight
+    kdePackages.filelight
 
     # KDE things 
     # kdewalletmanager
