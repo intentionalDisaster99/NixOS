@@ -120,6 +120,7 @@
     wine
     bottles
     gparted
+    filelight
 
     # KDE things 
     # kdewalletmanager
