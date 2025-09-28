@@ -297,6 +297,13 @@ services.udev.extraRules = ''
   };
 
 
+  # Getting virtual machines so I don't have to switch to windows all the time
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["sa9m"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
+
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
