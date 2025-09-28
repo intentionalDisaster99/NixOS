@@ -303,16 +303,16 @@ services.udev.extraRules = ''
   users.groups.libvirtd.members = ["sa9m"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  libvirtd.qemu = {
+  virtualisation.libvirtd.qemu = {
+    package = pkgs.qemu_kvm;
+    runAsRoot = true;
     swtpm.enable = true;
     ovmf = {
       enable = true;
-      package = (pkgs.OVMFFull.override {
-        secureBoot = true;
-        tpmSupport = true;
-      });
+      package = (pkgs.OVMFFull.override { secureBoot = true; tpmSupport = true; });
     };
   };
+
 
 
 
