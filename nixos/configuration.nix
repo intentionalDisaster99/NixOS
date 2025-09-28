@@ -111,7 +111,6 @@
     zoom-us
     eyedropper
     syncthing
-    # ulauncher
     ffmpeg_6
     neohtop
     rclone
@@ -120,6 +119,7 @@
     qemu
     wine
     bottles
+    gparted
 
     # KDE things 
     # kdewalletmanager
