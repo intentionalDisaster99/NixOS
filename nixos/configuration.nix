@@ -121,6 +121,7 @@
     bottles
     gparted
     kdePackages.filelight
+    swtpm
 
     # KDE things 
     # kdewalletmanager
