@@ -116,7 +116,8 @@
     neohtop
     rclone
     libreoffice-qt6-fresh
-    virtualbox
+    virt-manager
+    qemu
     wine
     bottles
 
