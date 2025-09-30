@@ -15,6 +15,9 @@
         ../modules/platformIO/pio.nix
     ];
 
+    nixpkgs.overlays = [ (import ./overlays/kitty-fix.nix) ];
+
+
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     networking.hostName = "higgs-boson";
     
