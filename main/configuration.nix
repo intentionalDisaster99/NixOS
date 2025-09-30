@@ -11,7 +11,7 @@
         ../modules/boot/boot.nix
         ../modules/network/network.nix
         ../modules/syncthing/syncthing.nix
-        ../mdoules/virtualization/virtualMachines.nix
+        ../modules/virtualization/virtualMachines.nix
         ../modules/platformio/pio.nix
     ];
 
