@@ -23,7 +23,7 @@
     i18n.defaultLocale = "en_US.UTF-8";
     time.timeZone = "America/Chicago";
     services.xserver.enable = true;
-    allowUnfree = true; 
+    nixpkgs.config.allowUnfree = true; 
 
     ############
     # Firewall #
