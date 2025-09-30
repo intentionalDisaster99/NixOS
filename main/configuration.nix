@@ -7,12 +7,12 @@
         # ./user.nix
 
         # All of the modules I have
-        ./modules/programs/programs.nix
-        ./modules/boot/boot.nix
-        ./modules/network/network.nix
-        ./modules/syncthing/syncthing.nix
-        ./mdoules/virtualization/virtualMachines.nix
-        ./modules/platformio/pio.nix
+        ../modules/programs/programs.nix
+        ../modules/boot/boot.nix
+        ../modules/network/network.nix
+        ../modules/syncthing/syncthing.nix
+        ../mdoules/virtualization/virtualMachines.nix
+        ../modules/platformio/pio.nix
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
