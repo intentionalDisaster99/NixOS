@@ -12,7 +12,7 @@
         ../modules/network/network.nix
         ../modules/syncthing/syncthing.nix
         ../modules/virtualization/virtualMachines.nix
-        ../modules/platformio/pio.nix
+        ../modules/platformIO/pio.nix
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
