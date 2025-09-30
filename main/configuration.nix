@@ -17,11 +17,13 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     networking.hostName = "higgs-boson";
+    
 
     # Main config stuff that shouldn't really change
     i18n.defaultLocale = "en_US.UTF-8";
     time.timeZone = "America/Chicago";
     services.xserver.enable = true;
+    allowUnfree = true; 
 
     ############
     # Firewall #
