@@ -15,7 +15,7 @@
         ../modules/platformIO/pio.nix
     ];
 
-    nixpkgs.overlays = [ (import ./overlays/kitty-fix.nix) ];
+    nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
 
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
