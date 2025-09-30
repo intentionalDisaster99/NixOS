@@ -1,0 +1,84 @@
+# This module is for enabling system-wide programs and services.
+{ config, pkgs, ... }:
+
+{
+    # List packages you want to install system-wide.
+    environment.systemPackages = with pkgs; [
+      
+        # Core Essentials
+        grub2
+        os-prober
+        networkmanager
+        gtk4
+        
+        # OS Essentials
+        git
+        github-desktop
+        zoxide
+        fastfetch
+        libnotify
+        tesseract4
+        gImageReader
+        zoom-us
+        eyedropper
+        syncthing
+        ffmpeg_6
+        neohtop
+        rclone
+        libreoffice-qt6-fresh
+        virt-manager
+        qemu
+        wine
+        bottles
+        gparted
+        kdePackages.filelight
+        swtpm
+
+        # KDE things 
+        # kdewalletmanager
+        # kdePackages.kwallet
+        upower
+        xdg-desktop-portal
+        xdg-desktop-portal-gtk
+
+        # Hyprland
+        dunst
+        pipewire
+        wireplumber
+        hyprpaper
+        swaylock-fancy
+        waybar
+        brightnessctl
+
+        # Coding
+        vim
+        kitty
+        vscode
+        vscodium
+        kdePackages.yakuake 
+        arduino-ide
+        cargo
+        rustc
+        python3
+        platformio
+        jdk
+
+
+        # General
+        brave 
+        spotify
+        obsidian
+        discord
+        steam
+
+
+        # Networking
+        # geteduroam    
+        tailscale
+
+        # Gaming
+        prismlauncher
+
+    ];
+      
+}
