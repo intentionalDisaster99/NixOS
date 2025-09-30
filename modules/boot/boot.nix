@@ -1,6 +1,6 @@
 # Controls the bootloader that I use (Grub)
 
-{ ... }:
+{ config, pkgs, lib, ... }:
 
 {
     boot.loader.systemd-boot.enable =  false;

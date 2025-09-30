@@ -1,6 +1,6 @@
 # I think this works but I'm not sure (I haven't tested in a while lol)
 
-{ ... }:
+{ config, pkgs, lib, ... }:
 
 {
     services.syncthing = {

@@ -1,5 +1,5 @@
 # This module is for enabling system-wide programs and services.
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     # List packages you want to install system-wide.

@@ -1,5 +1,5 @@
 # /etc/nixos/programs.nix
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     # Import the more specific modules from the programs/ directory

@@ -1,6 +1,6 @@
 # Currently does not work. I'll look into that soon, don't worry
 
-{ ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
