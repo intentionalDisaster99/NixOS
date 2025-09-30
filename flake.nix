@@ -15,19 +15,21 @@
 
     outputs = {self, nixpkgs, home-manager, ...}@inputs: {
 
-        nixosConfigurations.higgs-boson = {
+        nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
 
             system = "x86_64-linux";
 
+            specialArgs = { inherit inputs; };
+
             modules = [
                 # Main config
-                ./configuration.nix
+                ./main/configuration.nix
 
                 # Home manager (we love these useful comments)
                 home-manager.nixosModules.home-manager
             ];
 
-        }
+        };
     };
 
 
