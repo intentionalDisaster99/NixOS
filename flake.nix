@@ -11,9 +11,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Silly sddm teehee
+    minesddm = {
+      url = "github:keyitdev/sddm-theme-minesddm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, minesddm, ... }@inputs: {
 
     nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
 
