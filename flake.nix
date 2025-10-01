@@ -25,7 +25,6 @@
 
       system = "x86_64-linux";
 
-      minesddm.nixosModules.default;
 
       specialArgs = { inherit inputs; };
 
@@ -33,6 +32,8 @@
       modules = [
         # Main config
         ./main/configuration.nix
+
+        minesddm.nixosModules.default
 
         # Home manager (we love these useful comments)
         home-manager.nixosModules.home-manager
