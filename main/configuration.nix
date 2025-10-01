@@ -8,7 +8,7 @@
     # All of the modules I have
     ../modules/programs/programs.nix
     ../modules/boot/boot.nix
-    ../modules/boot/minesddm.nix
+    # ../modules/boot/minesddm.nix
     ../modules/network/network.nix
     ../modules/syncthing/syncthing.nix
     ../modules/virtualization/virtualMachines.nix
