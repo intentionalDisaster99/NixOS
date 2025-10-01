@@ -29,7 +29,9 @@
   boot.loader.grub.useOSProber = false;
 
   # Teehee silly sddm
-  services.displayManager.sddm.theme-minesddm.enable = true;
-
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "minesddm";
+  };
 
 }
