@@ -38,6 +38,7 @@
         "vfs-cache-max-size=2G"
         "uid=sa9m"
         "gid=users"
+        "no-modtime"
       ];
     };
 
