@@ -14,19 +14,19 @@
     ../modules/platformIO/pio.nix
   ];
 
-  # nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
+  nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
   # DEBUG: Define the kitty overlay inline to bypass any pathing issues.
-  nixpkgs.overlays = [
-    (final: prev: {
-      kitty = prev.kitty.overrideAttrs (oldAttrs: {
-        # This is a more aggressive way to skip tests by replacing
-        # the entire phase with a command that does nothing.
-        installCheckPhase = ''
-          echo "Skipping failing kitty tests."
-        '';
-      });
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     kitty = prev.kitty.overrideAttrs (oldAttrs: {
+  #       # This is a more aggressive way to skip tests by replacing
+  #       # the entire phase with a command that does nothing.
+  #       installCheckPhase = ''
+  #         echo "Skipping failing kitty tests."
+  #       '';
+  #     });
+  #   })
+  # ];
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
