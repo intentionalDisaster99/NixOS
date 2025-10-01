@@ -27,17 +27,20 @@
 
   fileSystems = {
     "/home/sa9m/GDrive/My Drive" = {
-      device = "gdrive:/"; # 'gdrive' matches the name in brackets above, ':/' means the root
+      device = "gdrive:/";
       fsType = "rclone";
       options = [
         "allow_other"
-        "nofail" # Prevents boot failure if the remote is unavailable
+        "nofail"
         "config=/etc/rclone.conf"
+        "vfs-cache-mode=writes"
+        "vfs-cache-max-age=24h"
+        "vfs-cache-max-size=2G"
       ];
     };
 
     "/home/sa9m/NAS" = {
-      device = "NAS:/"; # 'smb-share' matches the name in brackets above
+      device = "NAS:/";
       fsType = "rclone";
       options = [
         "allow_other"
