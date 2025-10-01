@@ -1,36 +1,36 @@
 {
 
-    description = "Main NixOS Configuration Entrypoint";
+  description = "Main NixOS Configuration Entrypoint";
 
-    inputs = {
+  inputs = {
 
-        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = {self, nixpkgs, home-manager, ...}@inputs: {
+  };
 
-        nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
 
-            system = "x86_64-linux";
+    nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
 
-            specialArgs = { inherit inputs; };
+      system = "x86_64-linux";
 
-            modules = [
-                # Main config
-                ./main/configuration.nix
+      specialArgs = { inherit inputs; };
 
-                # Home manager (we love these useful comments)
-                home-manager.nixosModules.home-manager
-            ];
+      modules = [
+        # Main config
+        ./main/configuration.nix
 
-        };
+        # Home manager (we love these useful comments)
+        home-manager.nixosModules.home-manager
+      ];
+
     };
+  };
 
 
 

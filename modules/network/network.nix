@@ -3,6 +3,6 @@
 { config, pkgs, lib, ... }:
 
 {
-    networking.networkmanager.enable = true;
-    services.tailscale.enable = true;
-}   
+  networking.networkmanager.enable = true;
+  services.tailscale.enable = true;
+}

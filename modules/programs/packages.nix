@@ -2,83 +2,84 @@
 { config, pkgs, lib, ... }:
 
 {
-    # List packages you want to install system-wide.
-    environment.systemPackages = with pkgs; [
-      
-        # Core Essentials
-        grub2
-        os-prober
-        networkmanager
-        gtk4
-        
-        # OS Essentials
-        git
-        github-desktop
-        zoxide
-        fastfetch
-        libnotify
-        tesseract4
-        gImageReader
-        zoom-us
-        eyedropper
-        syncthing
-        ffmpeg_6
-        neohtop
-        rclone
-        libreoffice-qt6-fresh
-        virt-manager
-        qemu
-        wine
-        bottles
-        gparted
-        kdePackages.filelight
-        swtpm
+  # List packages you want to install system-wide.
+  environment.systemPackages = with pkgs; [
 
-        # KDE things 
-        # kdewalletmanager
-        # kdePackages.kwallet
-        upower
-        xdg-desktop-portal
-        xdg-desktop-portal-gtk
+    # Core Essentials
+    grub2
+    os-prober
+    networkmanager
+    gtk4
 
-        # Hyprland
-        dunst
-        pipewire
-        wireplumber
-        hyprpaper
-        swaylock-fancy
-        waybar
-        brightnessctl
+    # OS Essentials
+    git
+    github-desktop
+    zoxide
+    fastfetch
+    libnotify
+    tesseract4
+    gImageReader
+    zoom-us
+    eyedropper
+    syncthing
+    ffmpeg_6
+    neohtop
+    rclone
+    libreoffice-qt6-fresh
+    virt-manager
+    qemu
+    wine
+    bottles
+    gparted
+    kdePackages.filelight
+    swtpm
+    nixpkgs-fmt
 
-        # Coding
-        vim
-        kitty
-        vscode
-        vscodium
-        kdePackages.yakuake 
-        arduino-ide
-        cargo
-        rustc
-        python3
-        platformio
-        jdk
+    # KDE things 
+    # kdewalletmanager
+    # kdePackages.kwallet
+    upower
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
 
+    # Hyprland
+    dunst
+    pipewire
+    wireplumber
+    hyprpaper
+    swaylock-fancy
+    waybar
+    brightnessctl
 
-        # General
-        brave 
-        spotify
-        obsidian
-        discord
-        steam
+    # Coding
+    vim
+    kitty
+    vscode
+    vscodium
+    kdePackages.yakuake
+    arduino-ide
+    cargo
+    rustc
+    python3
+    platformio
+    jdk
 
 
-        # Networking
-        # geteduroam    
-        tailscale
+    # General
+    brave
+    spotify
+    obsidian
+    discord
+    steam
 
-        # Gaming
-        prismlauncher
 
-    ];
-      
+    # Networking
+    # geteduroam    
+    tailscale
+
+    # Gaming
+    prismlauncher
+
+  ];
+
 }

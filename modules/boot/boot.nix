@@ -3,12 +3,12 @@
 { config, pkgs, lib, ... }:
 
 {
-    boot.loader.systemd-boot.enable =  false;
-    boot.loader.efi.canTouchEfiVariables = true; 
-    boot.loader.grub.enable = true;
-    boot.loader.grub.efiSupport = true;
-    boot.loader.grub.device = "nodev";  
-    boot.loader.grub.extraEntries = ''
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.extraEntries = ''
       menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-7282-E320' {
     insmod part_gpt
     insmod fat
@@ -24,9 +24,9 @@
     initrd //kernels/bww4s0s751r2xlmhlin5zzisj5ahqrkm-initrd-linux-6.12.44-initrd
     }
 
-    ''; 
-    # Takes absolute ages so commented for now 
-    boot.loader.grub.useOSProber = false;
+  '';
+  # Takes absolute ages so commented for now 
+  boot.loader.grub.useOSProber = false;
 
 
 }
