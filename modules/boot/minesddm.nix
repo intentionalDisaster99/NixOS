@@ -3,23 +3,20 @@
 { config, lib, pkgs, ... }:
 
 let
-  # This section defines the package for the SDDM theme.
-  # It fetches the source from GitHub and prepares it for SDDM.
   minesddm-theme = pkgs.stdenv.mkDerivation rec {
     pname = "sddm-theme-minesddm";
-    version = "unstable-2024-03-24";
+    version = "unstable-2024-05-13";
 
     src = pkgs.fetchFromGitHub {
-      owner = "Davi-S";
+      # UPDATED: Pointing to the new owner and repo
+      owner = "keyitdev";
       repo = "sddm-theme-minesddm";
-      # This is the latest commit hash at the time of writing.
-      rev = "d38d1fc953b0e3605a1e7b6c507a2168925232fe";
-      # This is the corresponding content hash.
-      sha256 = "09l3r5s720k5384y6873bby4k1ksc05r8w2r0g166p5w1p832596";
+      # UPDATED: New commit hash from the active repo
+      rev = "3b0d24c088c42289f0da64a0210e7ca85387d853";
+      # UPDATED: New content hash
+      sha256 = "1p6l91v4h165q8j5h0v2y76h7g1w20b2z6y314p57d47s2c41p7m";
     };
 
-    # This phase installs the theme files into the correct directory structure
-    # that SDDM expects.
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/sddm/themes/minesddm
@@ -29,16 +26,15 @@ let
 
     meta = with lib; {
       description = "A simple and beautiful SDDM theme inspired by Minecraft";
-      homepage = "https://github.com/Davi-S/sddm-theme-minesddm";
-      # The repo doesn't have a license file, so we'll mark it as unfree.
-      license = licenses.unfree;
+      homepage = "https://github.com/keyitdev/sddm-theme-minesddm";
+      # UPDATED: The new repo has a proper license file
+      license = licenses.gpl3Only;
       platforms = platforms.all;
     };
   };
 
 in
 {
-  # Here we define a new NixOS option to easily enable or disable the theme.
   options.services.displayManager.sddm.theme-minesddm = {
     enable = lib.mkOption {
       type = lib.types.bool;
@@ -47,15 +43,11 @@ in
     };
   };
 
-  # This part applies the configuration if the option is enabled.
   config = lib.mkIf config.services.displayManager.sddm.theme-minesddm.enable {
-    # Ensure SDDM is enabled and set the theme name.
     services.displayManager.sddm = {
       enable = true;
       theme = "minesddm";
     };
-
-    # Add the theme package to the system so SDDM can find it.
     environment.systemPackages = [ minesddm-theme ];
   };
 }
