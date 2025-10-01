@@ -33,7 +33,8 @@
         # Main config
         ./main/configuration.nix
 
-        minesddm.nixosModules.default
+        # minesddm.nixosModules.default
+        home-manager.nixosModules.home-manager
 
         # Home manager (we love these useful comments)
         home-manager.nixosModules.home-manager
