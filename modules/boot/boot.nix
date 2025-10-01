@@ -15,7 +15,7 @@
     search --no-floppy --fs-uuid --set=root 7282-E320
     chainloader /EFI/Microsoft/Boot/bootmgfw.efi
     }
-    
+      
     menuentry 'Arch Linux (on /dev/nvme0n1p6)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-edc2422e-b5ee-48f7-a0e7-b17f7b05e9d0' {
     insmod part_gpt
     insmod fat
@@ -27,6 +27,9 @@
   '';
   # Takes absolute ages so commented for now 
   boot.loader.grub.useOSProber = false;
+
+  # Teehee silly sddm
+  services.displayManager.sddm.theme-minesddm.enable = true;
 
 
 }
