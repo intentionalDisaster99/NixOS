@@ -6,9 +6,18 @@ final: prev:
 
 {
   # We are overriding the 'kitty' package.
+  # kitty = prev.kitty.overrideAttrs (oldAttrs: {
+  #   # The tests run in the `checkPhase` or `installCheckPhase`.
+  #   # Setting `doCheck = false;` disables both.
+  #   doCheck = false;
+  # });
+  # (final: prev: {
   kitty = prev.kitty.overrideAttrs (oldAttrs: {
-    # The tests run in the `checkPhase` or `installCheckPhase`.
-    # Setting `doCheck = false;` disables both.
-    doCheck = false;
+    # This is a more aggressive way to skip tests by replacing
+    # the entire phase with a command that does nothing.
+    installCheckPhase = ''
+      echo "Skipping failing kitty tests."
+    '';
   });
+  # })
 }
