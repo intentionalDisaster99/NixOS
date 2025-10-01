@@ -13,7 +13,7 @@
 
     # Silly sddm teehee
     minesddm = {
-      url = "github:keyitdev/sddm-theme-minesddm/main";
+      url = "github:Davi-S/sddm-theme-minesddm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,7 +27,9 @@
 
       specialArgs = { inherit inputs; };
 
-      modules = [
+      minesddm.nixosModules.default
+
+        modules = [
         # Main config
         ./main/configuration.nix
 
