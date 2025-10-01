@@ -12,6 +12,7 @@
     ../modules/syncthing/syncthing.nix
     ../modules/virtualization/virtualMachines.nix
     ../modules/platformIO/pio.nix
+    ../modules/rclone/rclone.nix
   ];
 
   # nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
