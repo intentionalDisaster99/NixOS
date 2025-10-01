@@ -21,7 +21,7 @@
   '';
 
   fileSystems = {
-    "/home/sa9m/gdrive/My Drive" = {
+    "/home/sa9m/GDrive/My Drive" = {
       device = "gdrive:/"; # 'gdrive' matches the name in brackets above, ':/' means the root
       fsType = "rclone";
       options = [
