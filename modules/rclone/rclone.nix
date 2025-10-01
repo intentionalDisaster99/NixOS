@@ -18,13 +18,17 @@
       client_secret: REDACTED
       scope: drive
       token: {"access_token":"ya29.a0AQQ_BDRZEgh50jmreFJsaNtxkxu3Fu3rGIaEME-T9l1g9UjED0IKNDty09WE_yHb_eMm_65tJmhjyDZmzWIRNxbdtewAxUusfBmjAfD5dSiJcaxEUD9gyXF3O-8smOS7envRPJzrgqqIef24PUa9-ppvfSds4fOvspcZpyuhdZUqcrheqH97EUQcWSgIKY8WxhBfzHIaCgYKAcUSARcSFQHGX2MiGlx1Uwz9FEuiiB7pIOSv3A0206","token_type":"Bearer","refresh_token":"1//01YcyVzYn3eIACgYIARAAGAESNwF-L9IrmlqQeObfFLEGwrVntjDiZ7Uldw2UM4p-IiBoVT3I0tWsoKFj1IqqeGRxnz_wWtTCs4I","expiry":"2025-10-01T14:05:20.364781868-05:00","expires_in":3599}
+      team_drive: 0APkGczOlUl_WUk9PVA
+      root_folder_id: 
 
     [Havoc]
       type: drive
       client_id: 935963070500-935963070500-1s0tcq7a52khcpmrd88f451mu9g28gvq.apps.googleusercontent.com
       client_secret: REDACTED
       scope: drive
-      token: {"access_token":"ya29.a0AQQ_BDRZEgh50jmreFJsaNtxkxu3Fu3rGIaEME-T9l1g9UjED0IKNDty09WE_yHb_eMm_65tJmhjyDZmzWIRNxbdtewAxUusfBmjAfD5dSiJcaxEUD9gyXF3O-8smOS7envRPJzrgqqIef24PUa9-ppvfSds4fOvspcZpyuhdZUqcrheqH97EUQcWSgIKY8WxhBfzHIaCgYKAcUSARcSFQHGX2MiGlx1Uwz9FEuiiB7pIOSv3A0206","token_type":"Bearer","refresh_token":"1//01YcyVzYn3eIACgYIARAAGAESNwF-L9IrmlqQeObfFLEGwrVntjDiZ7Uldw2UM4p-IiBoVT3I0tWsoKFj1IqqeGRxnz_wWtTCs4I","expiry":"2025-10-01T14:05:20.364781868-05:00","expires_in":3599}
+      token: {"access_token":"ya29.a0AQQ_BDQ3r0wP9Pxo8itwLjwT9BtKFYIbArWRI62BdWSK5fDxMzp9QpwTXDeCvH2hrXjtod05DZ3DlhqfqeByXzxI6gBiKjz5jez1f2P1VWyKNNDTnJn4LzIs-qLJ-_bCU78dVJTPg-P9QfWHNOuz_rz1e6XA7r0LmDP3_xR7QtZQWOjytj-5BQrG1yTIg_Zeg-ymp8UaCgYKAacSARcSFQHGX2Mijq8p_bM3xhA4pGcHnTZSrA0206","token_type":"Bearer","refresh_token":"1//013eqJ7FFbkD4CgYIARAAGAESNwF-L9Ir5Hg0TP1upsg6-hfddtW0q6wEkbXjx9KLo7eRMmnUn62LNlugvH29q1QJsMTwhrL2IKk","expiry":"2025-10-01T15:48:28.181801015-05:00","expires_in":3599}
+      team_drive: 0AMrYqDPmaKCOUk9PVA
+      root_folder_id: 
 
 
     # my Nas
