@@ -13,7 +13,7 @@
 
     # Silly sddm teehee
     minesddm = {
-      url = "github:keyitdev/sddm-theme-minesddm";
+      url = "github:keyitdev/sddm-theme-minesddm/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
