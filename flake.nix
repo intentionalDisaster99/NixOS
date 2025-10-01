@@ -25,9 +25,9 @@
 
       system = "x86_64-linux";
 
-      minesddm.nixosModules.default
+      minesddm.nixosModules.default;
 
-        specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs; };
 
 
       modules = [
