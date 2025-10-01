@@ -30,6 +30,7 @@
       device = "gdrive:/";
       fsType = "rclone";
       options = [
+        "_netdev"
         "allow_other"
         "nofail"
         "config=/etc/rclone.conf"
