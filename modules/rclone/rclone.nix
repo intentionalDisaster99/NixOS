@@ -46,6 +46,9 @@
         "allow_other"
         "nofail"
         "config=/etc/rclone.conf"
+        "vfs-cache-mode=writes"
+        "vfs-cache-max-age=24h"
+        "vfs-cache-max-size=2G"
       ];
     };
   };
