@@ -36,6 +36,8 @@
         "vfs-cache-mode=writes"
         "vfs-cache-max-age=24h"
         "vfs-cache-max-size=2G"
+        "uid=sa9m"
+        "gid=users"
       ];
     };
 
@@ -49,6 +51,8 @@
         "vfs-cache-mode=writes"
         "vfs-cache-max-age=24h"
         "vfs-cache-max-size=2G"
+        "uid=sa9m"
+        "gid=users"
       ];
     };
   };
