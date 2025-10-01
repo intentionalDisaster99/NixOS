@@ -33,5 +33,16 @@
     enable = true;
     theme = "minesddm";
   };
+  environment.systemPackages = with pkgs; [
+    # Add the theme package itself
+    inputs.minesddm.packages.${pkgs.system}.default
+
+    # Add the required Qt dependencies
+    qt5.qtbase
+    qt5.qtquickcontrols2
+    qt5.qtgraphicaleffects
+    # The problematic 'libsForQt5.layer-shell-qt' is now removed.
+  ];
+
 
 }
