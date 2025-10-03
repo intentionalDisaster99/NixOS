@@ -13,6 +13,7 @@
     ../modules/virtualization/virtualMachines.nix
     ../modules/platformIO/pio.nix
     ../modules/rclone/rclone.nix
+    ../modules/drive/drive.nix
   ];
 
   # nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
