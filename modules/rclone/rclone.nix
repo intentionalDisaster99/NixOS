@@ -40,12 +40,12 @@
 
   # Adding in folders if they aren't already there
   systemd.tmpfiles.rules = [
-    # "d /home/sa9m/GDrive 0755 sa9m users -"
+    "d /home/sa9m/GDrive 0755 sa9m users -"
     "d /home/sa9m/NAS    0755 sa9m users -"
   ];
 
   fileSystems = {
-    "/home/sa9m/GDrive/My Drive" = {
+    "/home/sa9m/GDrive/MyDrive" = {
       device = "gdrive:/";
       fsType = "rclone";
       options = [
