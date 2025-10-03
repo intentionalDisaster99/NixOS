@@ -7,7 +7,7 @@
     pkgs.kdePackages.kio-gdrive
   ];
 
-  services.kio-fuse.enable = true;
+  # services.kio-fuse.enable = true;
   services.gvfs.enable = true;
 
 
