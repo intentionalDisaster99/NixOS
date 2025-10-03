@@ -2,9 +2,9 @@
 
 {
   environment.systemPackages = [
-    kdePackages.kaccounts-integration
-    kdePackages.kaccounts-providers
-    kdePackages.kio-gdrive
+    pkgs.kdePackages.kaccounts-integration
+    pkgs.kdePackages.kaccounts-providers
+    pkgs.kdePackages.kio-gdrive
   ];
 
   services.kio-fuse.enable = true;
