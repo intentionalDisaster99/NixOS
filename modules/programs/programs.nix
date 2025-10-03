@@ -14,8 +14,7 @@
 
   # I need to be able to see things
   services.xserver.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Gaming
   programs.steam.enable = true;
