@@ -64,6 +64,9 @@
     platformio
     jdk
 
+    # Electrical
+    python313Packages.kicad
+
 
     # General
     brave
