@@ -27,7 +27,7 @@ git add .
 
 # Check if there are any actual changes to commit.
 if git diff --staged --quiet; then
-  echo "ℹNo changes to commit. Building the current configuration."
+  echo "No changes to commit. Building the current configuration."
 else
   # There are changes, so create a commit.
   echo "Changes detected. Creating a new commit."
