@@ -25,6 +25,7 @@
     ffmpeg_6
     neohtop
     rclone
+    celeste
     libreoffice-qt6-fresh
     virt-manager
     qemu
