@@ -74,7 +74,7 @@
     obsidian
     discord
     steam
-
+    element-desktop
 
     # Networking
     # geteduroam    
