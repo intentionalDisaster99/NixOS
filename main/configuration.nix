@@ -28,6 +28,9 @@
         '';
       });
     })
+    (final: prev: {
+      winboat = inputs.winboat.packages.${pkgs.system}.default;
+    })
   ];
 
 

@@ -17,9 +17,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # I'm dreaming of inventor on linux 🥰
+    winboat = {
+      url = "path:./modules/winboat";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, minesddm, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, minesddm, winboat, ... }@inputs: {
 
     nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
 
