@@ -79,7 +79,8 @@
       "inputs": {
         "home-manager": "home-manager",
         "minesddm": "minesddm",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "winboat": "winboat"
       }
     },
     "systems": {
@@ -96,6 +97,22 @@
         "repo": "default",
         "type": "github"
       }
+    },
+    "winboat": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./modules/winboat",
+        "type": "path"
+      },
+      "original": {
+        "path": "./modules/winboat",
+        "type": "path"
+      },
+      "parent": []
     }
   },
   "root": "root",
