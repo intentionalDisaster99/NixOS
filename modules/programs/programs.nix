@@ -46,6 +46,9 @@
     };
   };
 
+  # Docker cause duh
+  virtualisation.docker.enable = true;
+
   # My shell environment
   # users.defaultUserShell = pkgs.zsh;
 
