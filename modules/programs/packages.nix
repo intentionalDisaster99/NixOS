@@ -36,6 +36,7 @@
     nixpkgs-fmt
     winboat
     docker-compose
+    docker
     freerdp
 
     # KDE things 
