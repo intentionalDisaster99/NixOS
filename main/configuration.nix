@@ -29,7 +29,7 @@
       });
     })
     (final: prev: {
-      winboat = inputs.winboat.packages.${pkgs.system}.default;
+      winboat = inputs.winboat.packages.${pkgs.system}.winboat;
     })
   ];
 
