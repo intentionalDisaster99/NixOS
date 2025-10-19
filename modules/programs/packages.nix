@@ -34,6 +34,7 @@
     kdePackages.filelight
     swtpm
     nixpkgs-fmt
+    winboat
 
     # KDE things 
     # kdewalletmanager
