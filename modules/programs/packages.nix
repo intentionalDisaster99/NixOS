@@ -35,6 +35,8 @@
     swtpm
     nixpkgs-fmt
     winboat
+    docker-compose
+    freerdp
 
     # KDE things 
     # kdewalletmanager

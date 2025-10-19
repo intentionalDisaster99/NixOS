@@ -41,7 +41,7 @@
   users.users = {
     sa9m = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" ];
     };
   };
 
