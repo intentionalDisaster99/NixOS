@@ -38,6 +38,7 @@
     docker-compose
     docker
     freerdp
+    wgnord
 
     # KDE things 
     # kdewalletmanager
