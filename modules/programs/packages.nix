@@ -68,6 +68,8 @@
     python3
     platformio
     jdk
+    rustup
+    gcc
 
     # Electrical
     python313Packages.kicad
