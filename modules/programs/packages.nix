@@ -64,7 +64,7 @@
     kdePackages.yakuake
     arduino-ide
     cargo
-    rustc
+    #    rustc
     python3
     platformio
     jdk
