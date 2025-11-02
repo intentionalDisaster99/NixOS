@@ -72,7 +72,7 @@
     gcc
 
     # Electrical
-    python313Packages.kicad
+    kicad
 
 
     # General
