@@ -82,6 +82,7 @@
     discord
     steam
     element-desktop
+    obs-studio
 
     # Networking
     # geteduroam    
