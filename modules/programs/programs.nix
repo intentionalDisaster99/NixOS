@@ -70,6 +70,10 @@
     ];
   };
 
+  # Telling ssh to work so that GitHub can
+  programs.ssh.startAgent = true;
+
+
 
 
 }
