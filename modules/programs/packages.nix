@@ -39,6 +39,7 @@
     docker
     freerdp
     wgnord
+    ventoy
 
     # KDE things 
     # kdewalletmanager
