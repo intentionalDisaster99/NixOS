@@ -39,7 +39,7 @@
     docker
     freerdp
     wgnord
-    ventoy
+    ventoy-full
 
     # KDE things 
     # kdewalletmanager
@@ -94,8 +94,5 @@
 
   ];
 
-  permittedInsecurePackages = [
-    "ventoy-1.1.07"
-  ];
 
 }
