@@ -33,6 +33,8 @@
     })
   ];
 
+  # Unlock unfree 
+  allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "higgs-boson";
