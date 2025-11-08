@@ -40,6 +40,7 @@
     freerdp
     wgnord
     ventoy-full
+    rustdesk
 
     # KDE things 
     # kdewalletmanager
