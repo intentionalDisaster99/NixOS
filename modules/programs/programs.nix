@@ -73,6 +73,11 @@
   # Telling ssh to work so that GitHub can
   programs.ssh.startAgent = true;
 
+  # Telling nixos it can use ventoy
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.07"
+  ];
+
 
 
 
