@@ -73,6 +73,8 @@
     jdk
     rustup
     gcc
+    lazygit
+
 
     # Electrical
     kicad
