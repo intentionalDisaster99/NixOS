@@ -14,7 +14,7 @@
     ../modules/platformIO/pio.nix
     # ../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
     ../modules/drive/drive.nix
-    ../modules/google-drive.nix
+    ../modules/googele-drive/google-drive.nix
   ];
 
   # nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
