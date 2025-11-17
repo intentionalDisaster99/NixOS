@@ -41,6 +41,7 @@
     wgnord
     ventoy-full
     rustdesk
+    google-drive-ocamlfuse
 
     # KDE things 
     # kdewalletmanager
