@@ -1,4 +1,4 @@
-# This unfortunately does not work :()
+# This unfortunately does not work :(
 
 { config, pkgs, ... }:
 
