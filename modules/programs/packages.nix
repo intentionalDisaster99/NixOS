@@ -75,6 +75,8 @@
     gcc
     lazygit
 
+    # Funy
+    activate-linux
 
     # Electrical
     kicad
