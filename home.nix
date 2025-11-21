@@ -17,4 +17,20 @@
 
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
+
+  ##################
+  # Setting up SSH #
+  ##################
+
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+  };
+
+  # You can also configure Git here if you haven't already!
+  programs.git = {
+    enable = true;
+    userName = "Sam Whitlock";
+    userEmail = "your_email@example.com"; # <--- Replace this!
+  };
 }
