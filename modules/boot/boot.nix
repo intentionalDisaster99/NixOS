@@ -44,5 +44,4 @@
     qt5.qtgraphicaleffects
   ];
 
-
 }
