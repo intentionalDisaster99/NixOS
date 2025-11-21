@@ -19,9 +19,6 @@
   # Gaming
   programs.steam.enable = true;
 
-  # SDDM to switch between environments
-  services.displayManager.sddm.enable = true;
-
   # Audio
   security.rtkit.enable = true;
   services.pipewire = {
