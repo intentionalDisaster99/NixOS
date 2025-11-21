@@ -75,7 +75,8 @@
     "ventoy-1.1.07"
   ];
 
-
+  # Fish for hyprland -- I might change this
+  programs.fish.enable = true;
 
 
 }
