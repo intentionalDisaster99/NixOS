@@ -44,11 +44,11 @@
         "tooltip": false,
     },
 
-    "clock#time": {
-        "format": "{:%I:%M %p %Ez}",
-        // "locale": "en_US.UTF-8",
-        // "timezones": [ "Europe/Kyiv", "America/New_York" ],
-    },
+    // "clock#time": {
+    //     "format": "{:%I:%M %p %Ez}",
+    //     // "locale": "en_US.UTF-8",
+    //     // "timezones": [ "Europe/Kyiv", "America/New_York" ],
+    // },
 
     "custom/separator": {
         "format": "|",
