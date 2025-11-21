@@ -75,4 +75,7 @@
     "ventoy-1.1.07"
   ];
 
+  # Switching to fish
+  programs.fish.enable = true;
+
 }
