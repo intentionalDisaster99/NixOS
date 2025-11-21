@@ -20,7 +20,6 @@ $rust\
 $scala\
 $python\
 $docker_context\
-$line_break\
 $character"""
 
 [os]
