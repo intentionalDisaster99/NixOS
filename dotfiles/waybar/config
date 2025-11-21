@@ -9,7 +9,7 @@
     "height": 36, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-"modules-center": ["clock", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "custom/separator", "clock#calendar"],
+    "modules-center": ["clock", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "custom/separator", "clock#calendar"],
     "modules-right": [ "bluetooth", "network", "group/misc", "custom/logout_menu" ],
 
     // Modules Config
@@ -69,7 +69,7 @@
     },
 
     "clock#time": {
-        "format": "{:%I:%M %p %Ez}",
+        "format": "{:%H:%M %Ez}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
             "on-click-right": "mode",
