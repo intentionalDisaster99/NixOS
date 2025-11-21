@@ -32,13 +32,13 @@ NixOS = " "
 [username]
 style_user = "white bold"
 style_root = "black bold"
-format = "[$user]($style) "
+format = "[$user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = "on [$hostname](bold red) "
+format = "@[$hostname](bold red) "
 disabled = false
 
 [directory]
@@ -53,7 +53,7 @@ error_symbol = "[➜](bold red)"
 
 [git_branch]
 symbol = " "
-format = "via branch [$branch]($style) "
+format = "on branch [$branch]($style) "
 style = "bold rosewater"
 
 [git_status]
