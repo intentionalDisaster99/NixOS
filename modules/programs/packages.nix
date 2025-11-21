@@ -58,6 +58,9 @@
     swaylock-fancy
     waybar
     brightnessctl
+    rofi-wayland
+    wlogout
+    fish
 
     # Coding
     vim

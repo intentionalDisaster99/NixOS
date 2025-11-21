@@ -31,19 +31,17 @@
 
       system = "x86_64-linux";
 
-
       specialArgs = { inherit inputs; };
 
-
       modules = [
-        # Main config
         ./main/configuration.nix
-
-        # minesddm.nixosModules.default
         home-manager.nixosModules.home-manager
-
-        # Home manager (we love these useful comments)
-        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.sa9m = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
       ];
 
     };
