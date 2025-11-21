@@ -71,6 +71,7 @@
     mise
     figlet
     overskride
+    psmisc
 
 
     # Coding
