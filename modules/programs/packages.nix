@@ -61,6 +61,16 @@
     rofi
     wlogout
     fish
+    grim
+    slurp
+    wl-clipboard
+
+    # Fish & Terminal Tools (Fixes the errors you see)
+    starship
+    direnv
+    mise
+    figlet
+
 
     # Coding
     vim
