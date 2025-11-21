@@ -24,7 +24,7 @@
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    programs.ssh.matchBlocks.*.addKeysToAgent = "yes";
   };
 
   programs.git = {
