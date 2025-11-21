@@ -73,7 +73,7 @@
     overskride
     psmisc
     ripgrep
-
+    avizo
 
     # Coding
     vim
