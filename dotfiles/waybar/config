@@ -10,7 +10,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     // "modules-center": ["clock", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "clock#calendar"],
-    "modules-center": ["clock", "custom/separator", "clock#date"],
+    "modules-center": ["clock", "custom/separator", "clock#date", "custom/separator", "clock#utc"],
     "modules-right": [ "bluetooth", "network", "group/misc", "custom/logout_menu" ],
 
     // Modules Config
@@ -59,10 +59,9 @@
         "format": "|",
         "tooltip": false,
     },
-
-    // TIME MODULE (12:30)
+// TIME MODULE (Flamingo Pink)
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "<span color='#f0c6c6'>{:%H:%M}</span>",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
             "on-click-right": "mode",
@@ -83,9 +82,9 @@
         }
     },
 
-    // DATE MODULE (Fri • Nov 21, 2025)
+    // DATE MODULE (Sapphire Blue)
     "clock#date": {
-        "format": "{:%a • %b %d, %Y}",
+        "format": "<span color='#7dc4e4'>{:%a • %b %d, %Y}</span>", 
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
             "on-click-right": "mode",
@@ -104,6 +103,13 @@
                 "today": "<span color='#8bd5ca'><b><u>{}</u></b></span>"
             }
         }
+    },
+
+    // UTC CLOCK (Lavender/Blue)
+    "clock#utc": {
+        "format": "<span color='#8aadf4'>{:%H:%M} UTC</span>",
+        "timezone": "UTC",
+        "tooltip": false
     },
 
     "custom/media": {
