@@ -70,6 +70,7 @@
     direnv
     mise
     figlet
+    overskride
 
 
     # Coding
