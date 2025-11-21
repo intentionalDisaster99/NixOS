@@ -58,7 +58,7 @@
     swaylock-fancy
     waybar
     brightnessctl
-    rofi-wayland
+    rofi
     wlogout
     fish
 
