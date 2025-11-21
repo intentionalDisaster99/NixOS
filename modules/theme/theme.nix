@@ -7,9 +7,11 @@
   environment.variables.XCURSOR_SIZE = "24";
   environment.variables.HYPRCURSOR_THEME = "Catppuccin-Macchiato-Teal";
   environment.variables.HYPRCURSOR_SIZE = "24";
-  qt.enable = true;
-  qt.platformTheme = "gtk2";
-  qt.style = "gtk2";
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct"; # This sets the env var for both Qt5 and Qt6
+    style = "kvantum";
+  };
   console = {
     earlySetup = true;
     colors = [
