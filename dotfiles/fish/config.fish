@@ -22,13 +22,14 @@ alias ldocker="lazydocker"
 alias conf="z ~/.config"
 alias nixos="z /etc/nixos"
 alias store="z /nix/store"
-alias nswitch="sudo nixos-rebuild switch --flake /etc/nixos#isitreal-laptop"
-alias nswitchu="sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#isitreal-laptop --upgrade"
-alias nau="sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos"
 alias nsgc="sudo nix-store --gc"
 alias ngc="sudo nix-collect-garbage -d"
 alias ngc7="sudo nix-collect-garbage --delete-older-than 7d"
 alias ngc14="sudo nix-collect-garbage --delete-older-than 14d"
+alias nrs="/etc/nixos/scripts/nrs.sh"
+alias windows="sudo grub-reboot 1 && reboot"
+alias pioStart="nix run --impure github:xdadrm/nixos_use_platformio_patformio-ide_and_vscode#codium --"
+alias cd="z"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
