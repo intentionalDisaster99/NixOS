@@ -32,6 +32,7 @@
   services.displayManager.sddm = {
     enable = true;
     theme = "minesddm";
+    wayland.enable = true;
   };
   environment.systemPackages = with pkgs; [
     # Add the theme package itself
@@ -41,7 +42,6 @@
     qt5.qtbase
     qt5.qtquickcontrols2
     qt5.qtgraphicaleffects
-    # The problematic 'libsForQt5.layer-shell-qt' is now removed.
   ];
 
 
