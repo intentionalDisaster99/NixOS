@@ -44,12 +44,6 @@
         "tooltip": false,
     },
 
-    // "clock#time": {
-    //     "format": "{:%I:%M %p %Ez}",
-    //     // "locale": "en_US.UTF-8",
-    //     // "timezones": [ "Europe/Kyiv", "America/New_York" ],
-    // },
-
     "custom/separator": {
         "format": "|",
         "tooltip": false,
@@ -93,7 +87,7 @@
     // MODULE 1: Roaming / Local Time (System Default)
     "clock": {
         // %H:%M sets 24-hour format.
-        "format": "{:%H:%M %Ez | %a • %h | %F}",
+        "format": "{:%H:%M | %F}",
         "format-alt": "{:%H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
