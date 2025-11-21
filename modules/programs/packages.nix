@@ -64,8 +64,8 @@
     grim
     slurp
     wl-clipboard
-
-    # Fish & Terminal Tools (Fixes the errors you see)
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
     starship
     direnv
     mise
