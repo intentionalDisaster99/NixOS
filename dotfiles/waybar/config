@@ -84,6 +84,28 @@
         }
     },
 
+    "clock#date": {
+        "format": "{:%a • %b %d, %Y}",  // Shows: Fri • Nov 21, 2025
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "actions": {
+            "on-click": "mode",
+            "on-click-right": "mode"
+        },
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#f4dbd6'><b>{}</b></span>",
+                "days": "<span color='#cad3f5'><b>{}</b></span>",
+                "weeks": "<span color='#c6a0f6'><b>W{}</b></span>",
+                "weekdays": "<span color='#a6da95'><b>{}</b></span>",
+                "today": "<span color='#8bd5ca'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
     // MODULE 1: Roaming / Local Time (System Default)
     "clock": {
         // %H:%M sets 24-hour format.
