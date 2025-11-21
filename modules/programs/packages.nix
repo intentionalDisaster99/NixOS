@@ -72,6 +72,7 @@
     figlet
     overskride
     psmisc
+    ripgrep
 
 
     # Coding
