@@ -74,6 +74,7 @@
     psmisc
     ripgrep
     avizo
+    radicle-tui
 
     # Coding
     vim
