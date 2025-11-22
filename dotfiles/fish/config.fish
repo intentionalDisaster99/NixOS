@@ -30,6 +30,7 @@ alias nrs="/etc/nixos/scripts/nrs.sh"
 alias windows="sudo grub-reboot 1 && reboot"
 alias pioStart="nix run --impure github:xdadrm/nixos_use_platformio_patformio-ide_and_vscode#codium --"
 alias cd="z"
+alias ls="lsd"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
