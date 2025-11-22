@@ -42,6 +42,7 @@
     ventoy-full
     rustdesk
     google-drive-ocamlfuse
+    lsd
 
     # KDE things 
     # kdewalletmanager
@@ -75,6 +76,7 @@
     ripgrep
     avizo
     radicle-tui
+
 
     # Coding
     vim
