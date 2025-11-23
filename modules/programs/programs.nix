@@ -72,8 +72,6 @@
 
   # Telling nixos it can use ventoy
   nixpkgs.config.permittedInsecurePackages = [
-    rad
-
     "ventoy-1.1.07"
   ];
 
