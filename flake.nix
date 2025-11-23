@@ -59,13 +59,14 @@
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.backupFileExtension = "backup";
         }
-      ]
+      ];
 
-        };
+    };
+
+  };
 
 
 
-
-    }
+}
 
 
