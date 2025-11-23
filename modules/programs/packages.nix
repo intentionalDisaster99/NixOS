@@ -49,6 +49,7 @@
     neovim
     seahorse
     lm_sensors
+    wget
 
     # KDE things 
     # kdewalletmanager
