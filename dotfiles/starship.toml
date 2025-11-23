@@ -1,6 +1,8 @@
 # NixOS/dotfiles/starship.toml
 
 format = """
+$cmd_duration\
+$line_break\
 $os\
 $username\
 $hostname\
@@ -20,7 +22,6 @@ $rust\
 $scala\
 $python\
 $docker_context\
-$cmd_duration\
 $character"""
 
 [os]
