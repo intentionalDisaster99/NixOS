@@ -78,4 +78,9 @@
   # Switching to fish
   programs.fish.enable = true;
 
+
+  programs.kdeconnect = {
+    enable = true;
+  };
+
 }
