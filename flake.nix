@@ -27,12 +27,11 @@
 
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, ... }@inputs: {
 
+
+    # Laptop Configuration
     nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
-
       system = "x86_64-linux";
-
       specialArgs = { inherit inputs; };
-
       modules = [
         ./main/configuration.nix
         home-manager.nixosModules.home-manager
@@ -44,8 +43,24 @@
           home-manager.backupFileExtension = "backup";
         }
       ];
-
     };
+
+    # Desktop Configuration
+    nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/gluon/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.sa9m = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.backupFileExtension = "backup";
+        }
+      ]
+
   };
 
 
