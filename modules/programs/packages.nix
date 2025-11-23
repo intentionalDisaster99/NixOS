@@ -45,7 +45,7 @@
     lsd
     tldr
     htop
-    iwgtk
+    networkmanagerapplet
     neovim
 
     # KDE things 
