@@ -48,6 +48,7 @@
     networkmanagerapplet
     neovim
     seahorse
+    lm-sensors
 
     # KDE things 
     # kdewalletmanager
