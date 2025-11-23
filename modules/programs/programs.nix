@@ -68,7 +68,7 @@
   };
 
   # Telling ssh to work so that GitHub can
-  programs.ssh.startAgent = true;
+  programs.ssh.startAgent = false; # Gnome keyring covers this
 
   # Telling nixos it can use ventoy
   nixpkgs.config.permittedInsecurePackages = [
