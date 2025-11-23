@@ -78,9 +78,16 @@
   # Switching to fish
   programs.fish.enable = true;
 
-
+  # To connect to ma phone
   programs.kdeconnect = {
     enable = true;
   };
+
+  # We love keyrings
+  services.gnome.gnome-keyring.enable = true;
+  # Unlock the Keychain automatically when you log in via SDDM
+  security.pam.services.sddm.enableGnomeKeyring = true;
+
+
 
 }

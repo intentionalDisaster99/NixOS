@@ -53,7 +53,7 @@ error_symbol = "[➜](bold red)"
 
 [git_branch]
 symbol = " "
-format = "on branch [$branch]($style) "
+format = "on branch [$branch]($style)"
 style = "bold rosewater"
 
 [git_status]
