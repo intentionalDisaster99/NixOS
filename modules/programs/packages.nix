@@ -99,6 +99,7 @@
     rustup
     gcc
     lazygit
+    openvpn
 
     # Funy
     activate-linux
