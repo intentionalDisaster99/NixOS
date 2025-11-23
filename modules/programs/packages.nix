@@ -46,7 +46,7 @@
     tldr
     htop
     iwgtk
-    nvim
+    neovim
 
     # KDE things 
     # kdewalletmanager
