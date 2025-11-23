@@ -6,21 +6,21 @@
     # ./user.nix
 
     # All of the modules I have
-    ../modules/programs/programs.nix
-    ../modules/boot/boot.nix
-    ../modules/network/network.nix
-    ../modules/syncthing/syncthing.nix
-    ../modules/virtualization/virtualMachines.nix
-    ../modules/platformIO/pio.nix
-    # ../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
-    ../modules/drive/drive.nix
-    # ../modules/google-drive/google-drive.nix
-    ../modules/hyprland/hyprland.nix
-    ../modules/theme/theme.nix
-    ../modules/theme/fonts.nix
+    ../../modules/programs/programs.nix
+    ../../modules/boot/boot.nix
+    ../../modules/network/network.nix
+    ../../modules/syncthing/syncthing.nix
+    ../../modules/virtualization/virtualMachines.nix
+    ../../modules/platformIO/pio.nix
+    # ../../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
+    ../../modules/drive/drive.nix
+    # ../../modules/google-drive/google-drive.nix
+    ../../modules/hyprland/hyprland.nix
+    ../../modules/theme/theme.nix
+    ../../modules/theme/fonts.nix
   ];
 
-  # nixpkgs.overlays = [ (import ../overlays/kitty.nix) ];
+  # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
   # DEBUG: Define the kitty overlay inline to bypass any pathing issues.
   nixpkgs.overlays = [
     (final: prev: {
