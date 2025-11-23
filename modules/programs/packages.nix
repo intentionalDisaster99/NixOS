@@ -45,6 +45,7 @@
     lsd
     tldr
     htop
+    iwgtk
 
     # KDE things 
     # kdewalletmanager
