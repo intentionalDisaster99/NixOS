@@ -36,7 +36,7 @@ alias ls="lsd"
 #   exec Hyprland
 # end
 
-set -gx EDITOR hx
+set -gx EDITOR code
 set -gx VOLUME_STEP 5
 set -gx BRIGHTNESS_STEP 5
 
