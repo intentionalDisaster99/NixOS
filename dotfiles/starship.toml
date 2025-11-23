@@ -48,18 +48,18 @@ read_only = " 󰌾"
 truncation_length = 3
 truncate_to_repo = false
 style = "bold lavender"
-
+ 
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
 
 [git_branch]
 symbol = " "
-format = "on branch [$branch]($style)"
+format = "on branch [$branch]($style) "
 style = "bold rosewater"
 
 [git_status]
-format = "([$all_status$ahead_behind]($style) )"
+format = "[($all_status$ahead_behind)]($style) "
 style = "bold maroon"
 
 # Catppuccin Macchiato Palette (optional, Starship usually auto-detects terminal colors)
