@@ -47,6 +47,7 @@
     htop
     networkmanagerapplet
     neovim
+    seahorse
 
     # KDE things 
     # kdewalletmanager
