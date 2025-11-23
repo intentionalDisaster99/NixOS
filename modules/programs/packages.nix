@@ -43,6 +43,8 @@
     rustdesk
     google-drive-ocamlfuse
     lsd
+    tldr
+    htop
 
     # KDE things 
     # kdewalletmanager
