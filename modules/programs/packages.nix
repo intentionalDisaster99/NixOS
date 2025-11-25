@@ -50,6 +50,7 @@
     seahorse
     lm_sensors
     wget
+    texliveFull
 
     # KDE things 
     # kdewalletmanager
