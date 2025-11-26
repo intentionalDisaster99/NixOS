@@ -40,7 +40,7 @@
     freerdp
     wgnord
     ventoy-full
-    rustdesk
+    rustdesk-flutter
     google-drive-ocamlfuse
     lsd
     tldr
