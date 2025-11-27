@@ -1,10 +1,12 @@
 function check_power_save
-    # Check the actual system power profile
-    if powerprofilesctl get | grep -q "power-saver"
-        # Power Saver is ACTIVE -> Eco Mode ON (Green Leaf)
-        echo '{ "text":"󰌪", "tooltip": "power-save <span color=\'#a6da95\'>on</span>", "class": "on" }'
+    set current_profile (powerprofilesctl get)
+
+    if test "$current_profile" = "power-saver"
+        echo '{ "text":"󱈏", "tooltip": "Mode: Eco", "class": "eco" }'
+    else if test "$current_profile" = "performance"
+        echo '{ "text":"󰓅", "tooltip": "Mode: Performance", "class": "performance" }'
     else
-        # Balanced/Performance -> Eco Mode OFF (Battery Icon)
-        echo '{ "text":"󱋙", "tooltip": "power-save <span color=\'#ee99a0\'>off</span>", "class": "off" }'
+        # Default to Balanced
+        echo '{ "text":"󰁹", "tooltip": "Mode: Balanced", "class": "balanced" }'
     end
 end
