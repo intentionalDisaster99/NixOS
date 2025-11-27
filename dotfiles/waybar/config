@@ -246,6 +246,18 @@
         "start-activated": false,
     },
 
+    "power_save": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󱈏",
+            "deactivated": "󰁹"
+        },
+        "tooltip-format-activated": "power-save <span color='#a6da95'>on</span>",
+        "tooltip-format-deactivated": "power-save <span color='#ee99a0'>off</span>",
+        "start-activated": false,
+        "on-click": "fish -c power_save_toggle",
+    },
+
     "custom/logout_menu": {
         "return-type": "json",
         "exec": "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'",
