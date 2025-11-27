@@ -59,6 +59,7 @@
     firejail
     playerctl
     fzf
+    cifs-utils
 
 
     # KDE things 
