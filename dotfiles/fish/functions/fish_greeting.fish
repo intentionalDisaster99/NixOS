@@ -9,6 +9,6 @@ function fish_greeting
     # echo "󰟶 Mood:   👨‍💻"
     set_color cyan
     # figlet random -f binary
-    enter
+    echo ""
     fastfetch
 end
