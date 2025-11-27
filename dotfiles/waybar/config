@@ -175,7 +175,7 @@
             "custom/airplane_mode",
             "idle_inhibitor",
             // "power_save",
-        ],
+        ]
     },
 
     "custom/webcam": {
