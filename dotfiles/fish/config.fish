@@ -31,12 +31,13 @@ alias windows="sudo grub-reboot 1 && reboot"
 alias pioStart="nix run --impure github:xdadrm/nixos_use_platformio_patformio-ide_and_vscode#codium --"
 alias cd="z"
 alias ls="lsd"
+alias brave="brave --password-store=gnome"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
 # end
 
-set -gx EDITOR hx
+set -gx EDITOR code
 set -gx VOLUME_STEP 5
 set -gx BRIGHTNESS_STEP 5
 
@@ -57,3 +58,4 @@ starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
 mise activate fish | source
+

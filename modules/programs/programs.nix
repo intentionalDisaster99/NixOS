@@ -68,7 +68,7 @@
   };
 
   # Telling ssh to work so that GitHub can
-  programs.ssh.startAgent = true;
+  programs.ssh.startAgent = false; # Gnome keyring covers this
 
   # Telling nixos it can use ventoy
   nixpkgs.config.permittedInsecurePackages = [
@@ -77,5 +77,16 @@
 
   # Switching to fish
   programs.fish.enable = true;
+
+  # To connect to ma phone
+  programs.kdeconnect = {
+    enable = true;
+  };
+
+  # We love keyrings
+  services.gnome.gnome-keyring.enable = true;
+  # Unlock the Keychain automatically when you log in via SDDM
+  security.pam.services.sddm.enableGnomeKeyring = true;
+
 
 }
