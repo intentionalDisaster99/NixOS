@@ -56,7 +56,7 @@
     wtype
     pavucontrol
     swappy
-    firejailo
+    firejail
 
     # KDE things 
     # kdewalletmanager
