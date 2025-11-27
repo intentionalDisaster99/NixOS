@@ -12,7 +12,7 @@
     // "modules-center": ["clock", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "clock#calendar"],
     "modules-center": ["clock", "custom/separator", "clock#date", "custom/separator", "clock#utc"],
     "modules-right": [ "bluetooth", "network", "group/misc", "custom/power_save", "custom/logout_menu" ],
-    
+
     // Modules Config
     "hyprland/workspaces": {
         "on-click": "activate",  
@@ -252,7 +252,6 @@
         "return-type": "json",
         "exec": "fish -c check_power_save",
         "on-click": "fish -c power_save_toggle",
-        "restart-interval": 1,
     },
 
     "custom/logout_menu": {
