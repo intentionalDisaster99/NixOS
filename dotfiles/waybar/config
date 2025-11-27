@@ -11,7 +11,7 @@
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     // "modules-center": ["clock", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "clock#calendar"],
     "modules-center": ["clock", "custom/separator", "clock#date", "custom/separator", "clock#utc"],
-    "modules-right": [ "bluetooth", "network", "backlight", "group/misc", "custom/power_save", "custom/logout_menu" ],
+    "modules-right": [ "bluetooth", "network", "group/misc", "custom/power_save", "custom/logout_menu" ],
 
     // Modules Config
     "hyprland/workspaces": {
@@ -71,7 +71,14 @@
             "mode": "month",
             "mode-mon-col": 3,
             "weeks-pos": "right",
-            "on-scroll": 1,
+            "on-scroll": 1,    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+        "tooltip": false,
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "smooth-scrolling-threshold": 1
+    },
             "format": {
                 "months": "<span color='#f4dbd6'><b>{}</b></span>",
                 "days": "<span color='#cad3f5'><b>{}</b></span>",
@@ -176,15 +183,6 @@
             "idle_inhibitor"
             // ,"power_save",
         ]
-    },
-    
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-        "tooltip": false,
-        "on-scroll-up": "brightnessctl set 5%+",
-        "on-scroll-down": "brightnessctl set 5%-",
-        "smooth-scrolling-threshold": 1
     },
 
     "custom/webcam": {
