@@ -53,6 +53,7 @@
     texliveFull
     cliphist
     wl-clipboard
+    wtype
 
     # KDE things 
     # kdewalletmanager
