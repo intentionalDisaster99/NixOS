@@ -40,9 +40,23 @@
     freerdp
     wgnord
     ventoy-full
-    rustdesk
+    rustdesk-flutter
     google-drive-ocamlfuse
     lsd
+    tldr
+    htop
+    networkmanagerapplet
+    neovim
+    seahorse
+    lm_sensors
+    wget
+    texliveFull
+    cliphist
+    wl-clipboard
+    wtype
+    pavucontrol
+    swappy
+    firejail
 
     # KDE things 
     # kdewalletmanager
@@ -93,6 +107,7 @@
     rustup
     gcc
     lazygit
+    openvpn
 
     # Funy
     activate-linux
