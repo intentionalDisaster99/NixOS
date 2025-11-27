@@ -177,6 +177,15 @@
             // ,"power_save",
         ]
     },
+    
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+        "tooltip": false,
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "smooth-scrolling-threshold": 1
+    },
 
     "custom/webcam": {
         "interval": 1,
