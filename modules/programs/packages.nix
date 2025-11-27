@@ -58,6 +58,8 @@
     swappy
     firejail
     playerctl
+    fzf
+
 
     # KDE things 
     # kdewalletmanager
