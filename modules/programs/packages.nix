@@ -57,6 +57,7 @@
     pavucontrol
     swappy
     firejail
+    playerctl
 
     # KDE things 
     # kdewalletmanager
