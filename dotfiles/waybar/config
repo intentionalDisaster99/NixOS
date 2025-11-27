@@ -258,7 +258,7 @@
         "format": "{}",
         "return-type": "json",
         "exec": "fish -c check_power_save",
-        "on-click": "fish -c check_power_save",
+        "on-click": "fish -c power_save_toggle",
     },
 
     "custom/logout_menu": {
