@@ -54,6 +54,7 @@
     cliphist
     wl-clipboard
     wtype
+    pavucontrol
 
     # KDE things 
     # kdewalletmanager
