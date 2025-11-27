@@ -259,6 +259,7 @@
         "return-type": "json",
         "exec": "fish -c check_power_save",
         "on-click": "fish -c power_save_toggle",
+        "interval": 1,
     },
 
     "custom/logout_menu": {
@@ -298,12 +299,11 @@
     "keyboard-state": {
         "capslock": true,
         "numlock": true,
-        "format": "{name} {icon}",
+        "format": "{name} {icon} ",
         "format-icons": {
             "locked": "󰌾",
             "unlocked": "󰍀"
         },
-        "interval": 1
     },
 
     "user": {
