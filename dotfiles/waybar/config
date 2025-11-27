@@ -173,8 +173,8 @@
             "custom/dunst",
             "custom/night_mode",
             "custom/airplane_mode",
-            "idle_inhibitor",
-            // "power_save",
+            "idle_inhibitor"
+            // ,"power_save",
         ]
     },
 
