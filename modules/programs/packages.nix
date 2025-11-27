@@ -51,6 +51,8 @@
     lm_sensors
     wget
     texliveFull
+    cliphist
+    wl-clipboard
 
     # KDE things 
     # kdewalletmanager
