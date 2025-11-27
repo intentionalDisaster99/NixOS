@@ -88,6 +88,15 @@
   # Unlock the Keychain automatically when you log in via SDDM
   security.pam.services.sddm.enableGnomeKeyring = true;
 
-
+  # Enable Firejail with proper SUID permissions for Discord
+  programs.firejail = {
+    enable = true;
+    wrappedBinaries = {
+      discord = {
+        executable = "${pkgs.discord}/bin/discord";
+        profile = "${pkgs.firejail}/etc/firejail/discord.profile";
+      };
+    };
+  };
 
 }
