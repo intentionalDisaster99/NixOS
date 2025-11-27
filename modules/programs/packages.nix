@@ -55,6 +55,8 @@
     wl-clipboard
     wtype
     pavucontrol
+    swappy
+    firejailo
 
     # KDE things 
     # kdewalletmanager
