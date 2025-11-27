@@ -95,6 +95,11 @@
       discord = {
         executable = "${pkgs.discord}/bin/discord";
         profile = "${pkgs.firejail}/etc/firejail/discord.profile";
+        extraArgs = [
+          # Allow access to the entire Nix store so Python works
+          "--noblacklist=/nix/store"
+          "--read-only=/nix/store"
+        ];
       };
     };
   };
