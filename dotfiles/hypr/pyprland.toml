@@ -7,14 +7,20 @@ plugins = [
   "toggle_special",
 ]
 
+# [scratchpads.term]
+# command = "wezterm start --always-new-process"
+# class = "wezterm_dropdown"
+# animation = "fromTop"
+# unfocus = "hide"
+# excludes = "*"
+# lazy = true
+# multi = false
 [scratchpads.term]
-command = "wezterm start --always-new-process"
-class = "wezterm_dropdown"
 animation = "fromTop"
-unfocus = "hide"
-excludes = "*"
+command = "kitty --class kit-term"
+class = "kit-term"
+size = "75% 60%"
 lazy = true
-multi = false
 
 [scratchpads.volume]
 command = "pavucontrol"
