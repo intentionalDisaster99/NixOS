@@ -44,7 +44,7 @@
   users.users = {
     sa9m = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" "input" "uinput" ];
       shell = pkgs.fish;
     };
   };
