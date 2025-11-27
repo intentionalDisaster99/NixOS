@@ -247,16 +247,12 @@
         "start-activated": false,
     },
 
-    "power_save": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󱈏",
-            "deactivated": "󰁹"
-        },
-        "tooltip-format-activated": "power-save <span color='#a6da95'>on</span>",
-        "tooltip-format-deactivated": "power-save <span color='#ee99a0'>off</span>",
-        "start-activated": false,
+    "custom/power_save": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "fish -c check_power_save",
         "on-click": "fish -c power_save_toggle",
+        "restart-interval": 1,
     },
 
     "custom/logout_menu": {
@@ -295,7 +291,7 @@
 
     "keyboard-state": {
         "capslock": true,
-        // "numlock": true,
+        "numlock": true,
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "󰌾",
