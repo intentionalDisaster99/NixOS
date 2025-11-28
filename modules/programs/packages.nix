@@ -60,7 +60,8 @@
     playerctl
     fzf
     cifs-utils
-    Grsync
+    grsync
+
 
     # KDE things 
     # kdewalletmanager
