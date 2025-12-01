@@ -37,6 +37,7 @@
     winboat
     docker-compose
     docker
+    freerdp
     wgnord
     ventoy-full
     rustdesk-flutter
