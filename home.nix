@@ -34,7 +34,9 @@
 
   programs.git = {
     enable = true;
+    settings {
     userName = "Sam Whitlock";
     userEmail = "abyssalflerken@gmail.com";
   };
+};
 }
