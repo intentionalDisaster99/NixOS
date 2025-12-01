@@ -67,6 +67,7 @@
             "on-click-right": "mode",
             "on-click": "mode"
         },
+        "interval": 1,
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
