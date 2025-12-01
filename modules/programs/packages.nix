@@ -61,6 +61,7 @@
     fzf
     cifs-utils
     grsync
+    wofi-emoji
 
 
     # KDE things 
