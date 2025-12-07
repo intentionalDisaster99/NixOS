@@ -32,6 +32,7 @@ alias pioStart="nix run --impure github:xdadrm/nixos_use_platformio_patformio-id
 alias cd="z"
 alias ls="lsd"
 alias brave="brave --password-store=gnome"
+alias down="sudo shutdown +0"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
