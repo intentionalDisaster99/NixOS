@@ -39,4 +39,26 @@
       user.email = "abyssalflerken@gmail.com";
     };
   };
+
+  ################
+  # Default Apps #
+  ################
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "brave-browser.desktop";
+      "x-scheme-handler/http" = "brave-browser.desktop";
+      "x-scheme-handler/https" = "brave-browser.desktop";
+      "x-scheme-handler/about" = "brave-browser.desktop";
+      "x-scheme-handler/unknown" = "brave-browser.desktop";
+
+      "application/pdf" = "brave-browser.desktop"; # Or a specific PDF reader
+      "image/png" = "imv.desktop"; # Or whatever image viewer you use
+      "image/jpeg" = "imv.desktop";
+
+      # Optional: Set VSCode for code files
+      "text/plain" = "code.desktop";
+      "application/json" = "code.desktop";
+    };
+  };
 }
