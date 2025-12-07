@@ -89,4 +89,4 @@
     "x-scheme-handler/unknown" = "brave-browser.desktop";
   };
 };
-}
+};
