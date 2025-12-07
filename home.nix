@@ -88,5 +88,5 @@
     "x-scheme-handler/about" = "brave-browser.desktop";
     "x-scheme-handler/unknown" = "brave-browser.desktop";
   };
-};
-};
+
+}
