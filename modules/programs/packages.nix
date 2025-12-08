@@ -66,6 +66,8 @@
     gnome-control-center
     gnome-online-accounts
     gvfs
+    polkit_gnome
+    seahorse
 
 
     # KDE things 
