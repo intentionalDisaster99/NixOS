@@ -68,6 +68,7 @@
     gvfs
     polkit_gnome
     seahorse
+    glib-networking
 
 
 
