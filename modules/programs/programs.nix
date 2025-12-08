@@ -92,6 +92,8 @@
 
   # Allows nautilis to mount things
   services.gvfs.enable = true;
+  services.sysprof.enable = true;
+  nrs
 
 
-}
+    }

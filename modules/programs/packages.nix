@@ -69,6 +69,7 @@
     polkit_gnome
     seahorse
     glib-networking
+    sysprof
     gsettings-desktop-schemas
 
 
