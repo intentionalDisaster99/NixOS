@@ -85,6 +85,7 @@
 
   # We love keyrings
   services.gnome.gnome-keyring.enable = true;
+
   # Unlock the Keychain automatically when you log in via SDDM
   security.pam.services.sddm.enableGnomeKeyring = true;
 
