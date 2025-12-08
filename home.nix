@@ -15,6 +15,11 @@
     "starship.toml".source = ./dotfiles/starship.toml;
   };
 
+  home.sessionVariables = {
+    # Tell KDE apps to use the standard Plasma menu structure
+    XDG_MENU_PREFIX = "plasma-";
+  };
+
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 
