@@ -62,6 +62,10 @@
     cifs-utils
     grsync
     wofi-emoji
+    nautilus
+    gnome-control-center
+    gnome-online-accounts
+    gvfs
 
 
     # KDE things 
