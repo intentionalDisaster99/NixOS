@@ -88,5 +88,8 @@
   # Unlock the Keychain automatically when you log in via SDDM
   security.pam.services.sddm.enableGnomeKeyring = true;
 
+  # Allows nautilis to mount things
+  services.gvfs.enable = true;
+
 
 }
