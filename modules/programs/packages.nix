@@ -70,6 +70,7 @@
     seahorse
 
 
+
     # KDE things 
     # kdewalletmanager
     # kdePackages.kwallet
