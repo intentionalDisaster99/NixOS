@@ -68,6 +68,9 @@
     gvfs
     polkit_gnome
     seahorse
+    gnome.gvfs
+    gnome.gnome-control-center
+    gnome.gnome-online-accounts
 
 
 
