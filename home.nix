@@ -82,12 +82,6 @@
         "application/javascript" = "code.desktop";
         "text/css" = "code.desktop";
         "text/html" = "code.desktop";
-
-        # --- Web ---
-        "x-scheme-handler/http" = "brave-browser.desktop";
-        "x-scheme-handler/https" = "brave-browser.desktop";
-        "x-scheme-handler/about" = "brave-browser.desktop";
-        "x-scheme-handler/unknown" = "brave-browser.desktop";
       };
     in
     {
