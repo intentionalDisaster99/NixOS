@@ -18,7 +18,7 @@
   home.sessionVariables = {
     # Tell KDE apps to use the standard Plasma menu structure
     XDG_MENU_PREFIX = "plasma-";
-    GIO_EXTRA_MODULES = "${pkgs.gnome.gvfs}/lib/gio/modules";
+    GIO_EXTRA_MODULES = "${pkgs.gvfs}/lib/gio/modules:${pkgs.glib-networking}/lib/gio/modules";
   };
 
   home.stateVersion = "23.11";
