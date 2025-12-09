@@ -73,6 +73,7 @@
     gsettings-desktop-schemas
     s-tui
     openssl
+    openssl.dev
 
 
     # KDE things 
