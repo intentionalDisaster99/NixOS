@@ -74,6 +74,7 @@
     s-tui
     openssl
     openssl.dev
+    pkg-config
 
 
     # KDE things 
