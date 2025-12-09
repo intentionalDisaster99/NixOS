@@ -72,9 +72,6 @@
     sysprof
     gsettings-desktop-schemas
     s-tui
-    openssl
-    openssl.dev
-    pkg-config
 
 
     # KDE things 
