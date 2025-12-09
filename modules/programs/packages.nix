@@ -71,7 +71,7 @@
     glib-networking
     sysprof
     gsettings-desktop-schemas
-
+    s-tui
 
 
     # KDE things 
