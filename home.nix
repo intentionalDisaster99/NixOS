@@ -51,7 +51,7 @@
   ################
   xdg.mimeApps =
     let
-      my-associations = {
+      associations = {
         # --- Okular ---
         "application/pdf" = "okularApplication_pdf.desktop";
         "application/vnd.comicbook+zip" = "okularApplication_comicbook.desktop";
@@ -88,7 +88,7 @@
     {
       enable = true;
       # Apply the list to both places to satisfy Dolphin
-      defaultApplications = my-associations;
-      associations.added = my-associations;
+      defaultApplications = associations;
+      associations.added = associations;
     };
 }
