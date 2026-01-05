@@ -74,6 +74,7 @@
     s-tui
     mpvpaper
     openssh
+    SSHFS
 
 
     # KDE things 
