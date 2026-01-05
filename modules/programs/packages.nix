@@ -85,7 +85,7 @@
 
     # Hyprland
     dunst
-    pipewirenrs
+    pipewire
     wireplumber
     hyprpaper
     swaylock-fancy
