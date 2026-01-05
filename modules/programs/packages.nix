@@ -72,6 +72,7 @@
     sysprof
     gsettings-desktop-schemas
     s-tui
+    swww
 
 
     # KDE things 
