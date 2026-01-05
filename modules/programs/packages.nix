@@ -73,6 +73,7 @@
     gsettings-desktop-schemas
     s-tui
     mpvpaper
+    openssh
 
 
     # KDE things 
@@ -84,7 +85,7 @@
 
     # Hyprland
     dunst
-    pipewire
+    pipewirenrs
     wireplumber
     hyprpaper
     swaylock-fancy
