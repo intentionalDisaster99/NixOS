@@ -72,7 +72,7 @@
     sysprof
     gsettings-desktop-schemas
     s-tui
-    swww
+    mpvpaper
 
 
     # KDE things 
