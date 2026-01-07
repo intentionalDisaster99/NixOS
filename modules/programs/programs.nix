@@ -96,7 +96,8 @@
   services.udisks2.enable = true;
 
   # Power management
-  # powerManagement.enable = true;
+  powerManagement.enable = true;
+  services.power-profiles-daemon.enable = lib.mkForce false;
   services.tlp = {
     enable = true;
     settings = {
