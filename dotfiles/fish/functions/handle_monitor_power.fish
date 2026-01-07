@@ -16,63 +16,82 @@ function handle_monitor_power
         echo "CRITICAL ERROR: Video file NOT found at $VIDEO_WALLPAPER" >> $LOG
     end
 
-    # 1. CLEANUP
+    # 1. CLEANUP OLD INSTANCES
     echo "Killing old instances..." >> $LOG
-    killall -q mpvpaper 2>/dev/null
+    killall -q mpvpaper 
     sleep 1
+
+    # State tracking to prevent log spam
+    set LAST_STATE "unknown"
 
     while true
         # 2. ECO MODE CHECK
         if test -f /tmp/eco_mode
-            echo "Eco Mode detected (/tmp/eco_mode exists). Video forced OFF." >> $LOG
-            if pgrep -f "mpvpaper" > /dev/null
+            # Only kill if running
+            if pgrep -x "mpvpaper" > /dev/null
+                echo "Eco Mode detected. Killing video." >> $LOG
                 killall -q mpvpaper
             end
+            
+            # Log this only once to avoid spam
+            if test "$LAST_STATE" != "eco"
+                echo "Entered Eco Mode (paused)." >> $LOG
+                set LAST_STATE "eco"
+            end
+            
             sleep 5
             continue
         end
 
         # 3. POWER STATUS CHECK
-        # We try to read ADP1. If empty, we log it.
         set ADAPTER_RAW (cat /sys/class/power_supply/ADP1/online 2>/dev/null)
-        echo "Power Sensor (ADP1) says: '$ADAPTER_RAW'" >> $LOG
-
-        # Logic: If '1', AC. If '0', Battery. If empty, assume AC (fail-safe).
-        if test "$ADAPTER_RAW" = "1"
-            set POWER_STATUS "1"
-        else if test "$ADAPTER_RAW" = "0"
+        
+        # Logic: If '1', AC. If '0', Battery. Default to AC.
+        if test "$ADAPTER_RAW" = "0"
             set POWER_STATUS "0"
         else
-            echo "Sensor read failed/empty. Defaulting to AC." >> $LOG
             set POWER_STATUS "1"
         end
 
         # 4. ACTION
         if test "$POWER_STATUS" = "1"
-            # AC MODE
-            if pgrep -f "mpvpaper" > /dev/null
-                # It is running, do nothing (commented out to reduce log spam)
-                # echo "AC Mode: Video is running." >> $LOG
+            # --- AC MODE ---
+            # Check if running using -x (EXACT MATCH)
+            if pgrep -x "mpvpaper" > /dev/null
+                # Already running, do nothing
+                if test "$LAST_STATE" != "running"
+                     echo "AC Mode: Video confirmed running." >> $LOG
+                     set LAST_STATE "running"
+                end
             else
                 echo "AC Mode Detected: Starting mpvpaper..." >> $LOG
                 
-                # We log the launch output to a separate error log for details
+                # Launch
                 nohup mpvpaper -o "no-audio --loop --hwdec=auto-safe" $MONITOR $VIDEO_WALLPAPER >/tmp/mpv_error.log 2>&1 &
                 disown
                 
-                # Immediate check to see if it crashed
                 sleep 1
-                if pgrep -f "mpvpaper" > /dev/null
-                    echo "SUCCESS: mpvpaper launched successfully." >> $LOG
+                if pgrep -x "mpvpaper" > /dev/null
+                    echo "SUCCESS: mpvpaper launched." >> $LOG
+                    set LAST_STATE "running"
                 else
-                    echo "FAILURE: mpvpaper started but crashed immediately. Check /tmp/mpv_error.log" >> $LOG
+                    echo "FAILURE: mpvpaper crashed. Check /tmp/mpv_error.log" >> $LOG
+                    set LAST_STATE "failed"
                 end
             end
+
         else
-            # BATTERY MODE
-            if pgrep -f "mpvpaper" > /dev/null
+            # --- BATTERY MODE ---
+            if pgrep -x "mpvpaper" > /dev/null
                 echo "Battery Mode Detected: Killing video." >> $LOG
                 killall -q mpvpaper
+                set LAST_STATE "killed"
+            else
+                 # Prevent spam if already killed
+                 if test "$LAST_STATE" != "battery_idle"
+                     echo "Battery Mode: Video is off." >> $LOG
+                     set LAST_STATE "battery_idle"
+                 end
             end
         end
         
