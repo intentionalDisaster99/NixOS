@@ -20,9 +20,8 @@ function autostart
     # Wait for things to settle
     sleep 2
 
-    # --- DANGEROUS SECTION (Commented out for safety) ---
-    # handle_monitor_power & 
-    # ----------------------------------------------------
+    # Save power by stopping video wallpaper if power mode changes
+    handle_monitor_power & 
 
     # Start Waybar last
     waybar &
