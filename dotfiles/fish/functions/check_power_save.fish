@@ -1,12 +1,9 @@
 function check_power_save
-    set current_profile (powerprofilesctl get)
-
-    if test "$current_profile" = "power-saver"
-        echo '{ "text":"󰌪", "tooltip": "Mode: Eco", "class": "eco" }'
-    else if test "$current_profile" = "performance"
-        echo '{ "text":"󰓅", "tooltip": "Mode: Performance", "class": "performance" }'
+    if test -f /tmp/eco_mode
+        # JSON for "Enabled" 
+        echo '{"text": "", "tooltip": "Eco Mode: ON", "class": "active", "alt": "active"}'
     else
-        # Default to Balanced
-        echo '{ "text":"󰁹", "tooltip": "Mode: Balanced", "class": "balanced" }'
+        # JSON for "Disabled" 
+        echo '{"text": "", "tooltip": "Eco Mode: OFF", "class": "inactive", "alt": "inactive"}'
     end
 end
