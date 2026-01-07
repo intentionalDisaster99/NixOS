@@ -1,34 +1,45 @@
 function handle_monitor_power
-    set VIDEO_WALLPAPER "/etc/nixos/resources/wallpapers/car.mp4"
-    set MONITOR "eDP-1"
+    # Configuration
+    set VIDEO_WALLPAPER "/etc/nixos/resources/wallpapers/car.mp4" 
+    set MONITOR "eDP-1" 
+
+    # 1. CLEANUP ON START
+    # Kill any lingering instances so we start fresh
+    killall mpvpaper 2>/dev/null
+    sleep 1
 
     while true
-        # 1. Check for Manual Eco Mode override
+        # 2. CHECK FOR MANUAL OVERRIDE (Eco Mode)
         if test -f /tmp/eco_mode
-            if pgrep -x "mpvpaper" > /dev/null
-                echo "Eco Mode Enabled: Stopping Video"
+            if pgrep -f "mpvpaper" > /dev/null
                 killall mpvpaper
             end
-            sleep 3
-            continue # Skip the rest of the loop
+            sleep 5
+            continue
         end
 
-        # 2. Standard Power Check
-        set POWER_STATUS (cat /sys/class/power_supply/AC/online 2>/dev/null; or echo 1)
+        # 3. CHECK POWER STATUS
+        # Returns 1 for AC, 0 for Battery. Defaults to 1 if check fails.
+        set POWER_STATUS (cat /sys/class/power_supply/AC*/online 2>/dev/null; or echo 1)
 
         if test "$POWER_STATUS" = "1"
-            # AC MODE
-            if not pgrep -x "mpvpaper" > /dev/null
-                mpvpaper -o "no-audio --loop" $MONITOR $VIDEO_WALLPAPER &
+            # AC MODE: Start video ONLY if it is not already running
+            # We use 'pgrep -f' to match the full command line, which is safer here
+            if not pgrep -f "mpvpaper" > /dev/null
+                echo "Starting Video Wallpaper..."
+                # Run with nohup/disown to detach completely
+                nohup mpvpaper -o "no-audio --loop" $MONITOR $VIDEO_WALLPAPER >/dev/null 2>&1 &
                 disown
             end
         else
-            # BATTERY MODE
-            if pgrep -x "mpvpaper" > /dev/null
+            # BATTERY MODE: Kill video if running
+            if pgrep -f "mpvpaper" > /dev/null
+                echo "Stopping Video Wallpaper..."
                 killall mpvpaper
             end
         end
         
+        # Check every 5 seconds
         sleep 5
     end
 end
