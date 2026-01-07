@@ -18,7 +18,7 @@ function handle_monitor_power
 
     # 1. CLEANUP
     echo "Killing old instances..." >> $LOG
-    killall mpvpaper 2>/dev/null
+    killall -q mpvpaper 2>/dev/null
     sleep 1
 
     while true
@@ -26,7 +26,7 @@ function handle_monitor_power
         if test -f /tmp/eco_mode
             echo "Eco Mode detected (/tmp/eco_mode exists). Video forced OFF." >> $LOG
             if pgrep -f "mpvpaper" > /dev/null
-                killall mpvpaper
+                killall -q mpvpaper
             end
             sleep 5
             continue
@@ -72,7 +72,7 @@ function handle_monitor_power
             # BATTERY MODE
             if pgrep -f "mpvpaper" > /dev/null
                 echo "Battery Mode Detected: Killing video." >> $LOG
-                killall mpvpaper
+                killall -q mpvpaper
             end
         end
         
