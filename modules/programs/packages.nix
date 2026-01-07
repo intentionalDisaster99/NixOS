@@ -75,6 +75,7 @@
     mpvpaper
     openssh
     sshfs
+    tlp
 
 
     # KDE things 
