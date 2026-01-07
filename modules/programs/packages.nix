@@ -128,6 +128,9 @@
     gcc
     lazygit
     openvpn
+    netbeans
+    jetbrains-toolbox
+
 
     # Funy
     activate-linux
