@@ -96,7 +96,7 @@
   services.udisks2.enable = true;
 
   # Power management
-  powerManagement.enable = true;
+  # powerManagement.enable = true;
   services.tlp = {
     enable = true;
     settings = {
