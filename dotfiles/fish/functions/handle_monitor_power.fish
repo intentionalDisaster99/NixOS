@@ -1,52 +1,42 @@
 function handle_monitor_power
     set LOG "/tmp/wall_debug.log"
+    set PID_FILE "/tmp/mpvpaper.pid"
+    
     echo "--- Script Starting at $(date) ---" > $LOG
 
     # Configuration
     set VIDEO_WALLPAPER "/etc/nixos/resources/wallpapers/car.mp4" 
     set MONITOR "eDP-1" 
 
-    echo "Target Monitor: $MONITOR" >> $LOG
-    echo "Video Path: $VIDEO_WALLPAPER" >> $LOG
-
-    # 0. Verify file existence
-    if test -f $VIDEO_WALLPAPER
-        echo "Video file confirmed found." >> $LOG
-    else
-        echo "CRITICAL ERROR: Video file NOT found at $VIDEO_WALLPAPER" >> $LOG
-    end
-
     # 1. CLEANUP OLD INSTANCES
-    echo "Killing old instances..." >> $LOG
+    if test -f $PID_FILE
+        set OLD_PID (cat $PID_FILE)
+        if test -n "$OLD_PID"
+            kill $OLD_PID 2>/dev/null
+        end
+        rm $PID_FILE
+    end
+    # Fallback cleanup just in case
     killall -q mpvpaper 
     sleep 1
 
-    # State tracking to prevent log spam
     set LAST_STATE "unknown"
 
     while true
         # 2. ECO MODE CHECK
         if test -f /tmp/eco_mode
-            # Only kill if running
-            if pgrep -x "mpvpaper" > /dev/null
-                echo "Eco Mode detected. Killing video." >> $LOG
-                killall -q mpvpaper
+            if test -f $PID_FILE
+                set CURRENT_PID (cat $PID_FILE)
+                kill $CURRENT_PID 2>/dev/null
+                rm $PID_FILE
+                echo "Eco Mode: Killed video PID $CURRENT_PID" >> $LOG
             end
-            
-            # Log this only once to avoid spam
-            if test "$LAST_STATE" != "eco"
-                echo "Entered Eco Mode (paused)." >> $LOG
-                set LAST_STATE "eco"
-            end
-            
             sleep 5
             continue
         end
 
         # 3. POWER STATUS CHECK
         set ADAPTER_RAW (cat /sys/class/power_supply/ADP1/online 2>/dev/null)
-        
-        # Logic: If '1', AC. If '0', Battery. Default to AC.
         if test "$ADAPTER_RAW" = "0"
             set POWER_STATUS "0"
         else
@@ -56,42 +46,53 @@ function handle_monitor_power
         # 4. ACTION
         if test "$POWER_STATUS" = "1"
             # --- AC MODE ---
-            # Check if running using -x (EXACT MATCH)
-            if pgrep -x "mpvpaper" > /dev/null
-                # Already running, do nothing
+            # Check if running by looking for the PID file AND verifying the process exists
+            set IS_RUNNING 0
+            if test -f $PID_FILE
+                set CURRENT_PID (cat $PID_FILE)
+                # 'kill -0' checks if a process exists without killing it
+                if kill -0 $CURRENT_PID 2>/dev/null
+                    set IS_RUNNING 1
+                else
+                    # PID file exists but process is dead (stale file)
+                    rm $PID_FILE
+                end
+            end
+
+            if test "$IS_RUNNING" = "1"
                 if test "$LAST_STATE" != "running"
-                     echo "AC Mode: Video confirmed running." >> $LOG
+                     echo "AC Mode: Video running (PID $CURRENT_PID)." >> $LOG
                      set LAST_STATE "running"
                 end
             else
-                echo "AC Mode Detected: Starting mpvpaper..." >> $LOG
+                echo "AC Mode: Starting mpvpaper..." >> $LOG
                 
-                # Launch
-                nohup mpvpaper -o "no-audio --loop --hwdec=auto-safe" $MONITOR $VIDEO_WALLPAPER >/tmp/mpv_error.log 2>&1 &
-                disown
+                # Launch with optimized flags
+                # Removed hwdec, added software decoding just to get it stable first
+                nohup mpvpaper -o "no-audio --loop-file=inf --vd-lavc-threads=4" $MONITOR $VIDEO_WALLPAPER >/tmp/mpv_error.log 2>&1 &
+                
+                # CAPTURE THE PID IMMEDIATELY
+                set NEW_PID $last_pid
+                echo $NEW_PID > $PID_FILE
                 
                 sleep 1
-                if pgrep -x "mpvpaper" > /dev/null
-                    echo "SUCCESS: mpvpaper launched." >> $LOG
+                if kill -0 $NEW_PID 2>/dev/null
+                    echo "SUCCESS: Launched with PID $NEW_PID" >> $LOG
                     set LAST_STATE "running"
                 else
-                    echo "FAILURE: mpvpaper crashed. Check /tmp/mpv_error.log" >> $LOG
+                    echo "FAILURE: Process $NEW_PID died immediately." >> $LOG
                     set LAST_STATE "failed"
                 end
             end
 
         else
             # --- BATTERY MODE ---
-            if pgrep -x "mpvpaper" > /dev/null
-                echo "Battery Mode Detected: Killing video." >> $LOG
-                killall -q mpvpaper
+            if test -f $PID_FILE
+                set CURRENT_PID (cat $PID_FILE)
+                echo "Battery Mode: Killing PID $CURRENT_PID" >> $LOG
+                kill $CURRENT_PID 2>/dev/null
+                rm $PID_FILE
                 set LAST_STATE "killed"
-            else
-                 # Prevent spam if already killed
-                 if test "$LAST_STATE" != "battery_idle"
-                     echo "Battery Mode: Video is off." >> $LOG
-                     set LAST_STATE "battery_idle"
-                 end
             end
         end
         
