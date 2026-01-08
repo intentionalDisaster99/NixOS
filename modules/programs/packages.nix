@@ -79,6 +79,7 @@
     powertop
     cpu-x
     unclutter
+    eza
 
     # KDE things 
     # kdewalletmanager
