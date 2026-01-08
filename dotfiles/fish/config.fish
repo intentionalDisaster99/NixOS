@@ -33,6 +33,7 @@ alias cd="z"
 alias ls="eza --icons --git -l"
 alias brave="brave --password-store=gnome"
 alias down="sudo shutdown +0"
+alias bye="systemctl hibernaten"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
