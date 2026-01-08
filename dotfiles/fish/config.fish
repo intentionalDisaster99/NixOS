@@ -30,7 +30,7 @@ alias nrs="/etc/nixos/scripts/nrs.sh"
 alias windows="sudo grub-reboot 1 && reboot"
 alias pioStart="nix run --impure github:xdadrm/nixos_use_platformio_patformio-ide_and_vscode#codium --"
 alias cd="z"
-alias ls="lsd"
+alias ls="eza --icons --git -l"
 alias brave="brave --password-store=gnome"
 alias down="sudo shutdown +0"
 
