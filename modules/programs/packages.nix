@@ -77,6 +77,8 @@
     sshfs
     tlp
     powertop
+    cpu-x
+    unclutter
 
     # KDE things 
     # kdewalletmanager
