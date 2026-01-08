@@ -23,6 +23,9 @@ function autostart
     # Save power by stopping video wallpaper if power mode changes
     # handle_monitor_power & 
 
+    # Making my mouse disappear if not being used
+    unclutter & 
+
     # Start Waybar last
     waybar &
 end
