@@ -130,6 +130,7 @@
     openvpn
     netbeans
     jetbrains-toolbox
+    vlc
 
 
     # Funy
