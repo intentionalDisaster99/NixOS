@@ -76,7 +76,7 @@
     openssh
     sshfs
     tlp
-
+    powertop
 
     # KDE things 
     # kdewalletmanager
