@@ -80,6 +80,7 @@
     cpu-x
     unclutter
     eza
+    hyfetch
 
     # KDE things 
     # kdewalletmanager
