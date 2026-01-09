@@ -121,6 +121,6 @@
 
   # Turning NordVPN on
   networking.firewall.checkReversePath = false;
-
+  myypo.services.custom.nordvpn.enable = true;
 
 }
