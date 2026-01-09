@@ -63,6 +63,8 @@
   # Allowing certain things through the firewall
   networking.firewall = {
     enable = true;
+    checkReversePath = "loose";
+    trustedInterfaces = [ "wgnord" ];
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
       { from = 1194; to = 1194; } # NordVPN
