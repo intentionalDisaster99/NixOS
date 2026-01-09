@@ -36,23 +36,26 @@ in
     services.resolved.enable = true;
     environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools ];
 
-    # --- THE FIX: Allow passwordless sudo for the toggle button ---
+    # Allow sa9m to toggle the VPN without a password
     security.sudo.extraRules = [
       {
         users = [ "sa9m" ];
         commands = [
           { command = "/run/current-system/sw/bin/systemctl start wgnord"; options = [ "NOPASSWD" ]; }
           { command = "/run/current-system/sw/bin/systemctl stop wgnord"; options = [ "NOPASSWD" ]; }
-          { command = "/run/current-system/sw/bin/systemctl restart wgnord"; options = [ "NOPASSWD" ]; }
         ];
       }
     ];
-    # --------------------------------------------------------------
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
+      # It wants network-online, but doesn't force itself to start
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
+
+      # FIX: Explicitly ensure it is NOT started by multi-user.target
+      wantedBy = lib.mkForce [ ];
+
       path = [
         pkgs.wgnord
         pkgs.wireguard-tools
@@ -90,8 +93,7 @@ in
         ExecStop = "-${lib.getExe pkgs.wgnord} disconnect";
         ExecStopPost = "${pkgs.bash}/bin/bash -c '${pkgs.iproute2}/bin/ip link delete wgnord >/dev/null 2>&1 || true'";
 
-        Restart = "on-failure";
-        RestartSec = 5;
+        Restart = "no"; # Do not auto-restart if it crashes or stops
         RemainAfterExit = "yes";
       };
     };
