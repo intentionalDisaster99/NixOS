@@ -8,7 +8,6 @@ let
     PrivateKey = PRIVKEY
     Address = 10.5.0.2/32
     MTU = 1350
-    DNS = 103.86.96.100, 103.86.99.100
 
     [Peer]
     PublicKey = SERVER_PUBKEY
@@ -35,7 +34,9 @@ in
     networking.firewall.checkReversePath = "loose";
     networking.firewall.trustedInterfaces = [ "wgnord" ];
 
-    environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools pkgs.openresolv ];
+    services.resolved.enable = true;
+
+    environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools ];
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
@@ -45,9 +46,9 @@ in
       path = [
         pkgs.wgnord
         pkgs.wireguard-tools
-        pkgs.openresolv
         pkgs.iproute2
         pkgs.iptables
+        pkgs.systemd
         pkgs.gnused
         pkgs.gnugrep
         pkgs.coreutils
@@ -58,16 +59,12 @@ in
         Type = "oneshot";
         StateDirectory = "wgnord";
         StateDirectoryMode = "0700";
-
-        # Make logs visible
         StandardOutput = "journal+console";
         StandardError = "journal+console";
 
         ExecStartPre = pkgs.writeShellScript "wgnord-pre" ''
           set -e
-          # Safety cleanup (wrapped in true to never fail)
           ${pkgs.iproute2}/bin/ip link delete wgnord >/dev/null 2>&1 || true
-          
           mkdir -p /var/lib/wgnord /etc/wireguard
           chmod 700 /var/lib/wgnord /etc/wireguard
           ln -fs ${template} /var/lib/wgnord/template.conf
@@ -76,8 +73,13 @@ in
 
         ExecStart = "${lib.getExe pkgs.wgnord} connect \"${cfg.country}\"";
 
-        ExecStop = "-${lib.getExe pkgs.wgnord} disconnect";
+        ExecStartPost = pkgs.writeShellScript "wgnord-dns" ''
+          ${pkgs.systemd}/bin/resolvectl dns wgnord 103.86.96.100 103.86.99.100
+          ${pkgs.systemd}/bin/resolvectl domain wgnord ~.
+          ${pkgs.systemd}/bin/resolvectl default-route wgnord true
+        '';
 
+        ExecStop = "-${lib.getExe pkgs.wgnord} disconnect";
         ExecStopPost = "${pkgs.bash}/bin/bash -c '${pkgs.iproute2}/bin/ip link delete wgnord >/dev/null 2>&1 || true'";
 
         Restart = "on-failure";
