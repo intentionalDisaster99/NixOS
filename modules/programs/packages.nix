@@ -81,6 +81,8 @@
     unclutter
     eza
     hyfetch
+    ocrmypdf
+
 
     # KDE things 
     # kdewalletmanager
