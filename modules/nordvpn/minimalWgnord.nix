@@ -3,16 +3,14 @@
 let
   cfg = config.services.wgnord;
 
-  wgnord = pkgs.wgnord;
-  wgTools = pkgs.wireguard-tools;
-
+  # Standard WireGuard Template with DNS
+  # We let wg-quick handle the DNS logic natively
   template = pkgs.writeText "wgnord-template.conf" ''
     [Interface]
     PrivateKey = PRIVKEY
     Address = 10.5.0.2/32
     MTU = 1350
-    PostUp = resolvectl dns %i 103.86.96.100 103.86.99.100; resolvectl domain %i ~.;
-    PreDown = resolvectl revert %i
+    DNS = 103.86.96.100, 103.86.99.100
 
     [Peer]
     PublicKey = SERVER_PUBKEY
@@ -36,7 +34,10 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ wgnord wgTools pkgs.iproute2 pkgs.openresolv ];
+
+    networking.firewall.checkReversePath = "loose";
+
+    environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools pkgs.systemd ];
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
@@ -44,11 +45,14 @@ in
       wants = [ "network-online.target" ];
 
       path = [
-        wgnord
-        wgTools
+        pkgs.wgnord
+        pkgs.wireguard-tools
         pkgs.iproute2
         pkgs.iptables
         pkgs.systemd
+        pkgs.gnused
+        pkgs.gnugrep
+        pkgs.coreutils
       ];
 
       serviceConfig = {
@@ -62,11 +66,11 @@ in
           mkdir -p /etc/wireguard
           chmod 700 /var/lib/wgnord /etc/wireguard
           ln -fs ${template} /var/lib/wgnord/template.conf
-          ${lib.getExe wgnord} login "$(<${cfg.tokenFile})"
+          ${lib.getExe pkgs.wgnord} login "$(<${cfg.tokenFile})"
         '';
 
-        ExecStart = "${lib.getExe wgnord} connect \"${cfg.country}\"";
-        ExecStop = "-${lib.getExe wgnord} disconnect";
+        ExecStart = "${lib.getExe pkgs.wgnord} connect \"${cfg.country}\"";
+        ExecStop = "-${lib.getExe pkgs.wgnord} disconnect";
 
         Restart = "on-failure";
         RestartSec = 5;
