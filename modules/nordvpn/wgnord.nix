@@ -3,7 +3,8 @@
 , config
 , inputs
 , username
-,
+, ...
+  ,
 }:
 let
   inherit (lib)
