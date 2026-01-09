@@ -33,26 +33,25 @@ in
 
   config = lib.mkIf cfg.enable {
     networking.firewall.checkReversePath = "loose";
+    networking.firewall.trustedInterfaces = [ "wgnord" ];
 
-    environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools pkgs.systemd ];
+    environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools pkgs.openresolv ];
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
 
-      # Added bash and procps just in case wg-quick needs them
       path = [
         pkgs.wgnord
         pkgs.wireguard-tools
+        pkgs.openresolv
         pkgs.iproute2
         pkgs.iptables
-        pkgs.systemd
         pkgs.gnused
         pkgs.gnugrep
         pkgs.coreutils
         pkgs.bash
-        pkgs.procps
       ];
 
       serviceConfig = {
@@ -60,33 +59,26 @@ in
         StateDirectory = "wgnord";
         StateDirectoryMode = "0700";
 
-        # Make errors visible in 'systemctl status'
+        # Make logs visible
         StandardOutput = "journal+console";
         StandardError = "journal+console";
 
         ExecStartPre = pkgs.writeShellScript "wgnord-pre" ''
           set -e
+          # Safety cleanup (wrapped in true to never fail)
+          ${pkgs.iproute2}/bin/ip link delete wgnord >/dev/null 2>&1 || true
           
-          # 1. KILL ZOMBIES: Delete the interface if it exists from a failed run
-          ${pkgs.iproute2}/bin/ip link delete wgnord 2>/dev/null || true
-          
-          # 2. Setup Directories
-          mkdir -p /var/lib/wgnord
-          mkdir -p /etc/wireguard
+          mkdir -p /var/lib/wgnord /etc/wireguard
           chmod 700 /var/lib/wgnord /etc/wireguard
-          
-          # 3. Link Template & Login
           ln -fs ${template} /var/lib/wgnord/template.conf
           ${lib.getExe pkgs.wgnord} login "$(<${cfg.tokenFile})"
         '';
 
         ExecStart = "${lib.getExe pkgs.wgnord} connect \"${cfg.country}\"";
 
-        # Disconnect on stop
         ExecStop = "-${lib.getExe pkgs.wgnord} disconnect";
 
-        # Clean up interface on stop too
-        ExecStopPost = "${pkgs.iproute2}/bin/ip link delete wgnord 2>/dev/null || true";
+        ExecStopPost = "${pkgs.bash}/bin/bash -c '${pkgs.iproute2}/bin/ip link delete wgnord >/dev/null 2>&1 || true'";
 
         Restart = "on-failure";
         RestartSec = 5;
