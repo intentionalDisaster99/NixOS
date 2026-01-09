@@ -11,7 +11,8 @@ let
     PrivateKey = PRIVKEY
     Address = 10.5.0.2/32
     MTU = 1350
-    DNS = 103.86.96.100, 103.86.99.100
+    PostUp = resolvectl dns %i 103.86.96.100 103.86.99.100; resolvectl domain %i ~.;
+    PreDown = resolvectl revert %i
 
     [Peer]
     PublicKey = SERVER_PUBKEY
@@ -35,7 +36,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # Install tools globally so you can use them manually too
     environment.systemPackages = [ wgnord wgTools pkgs.iproute2 pkgs.openresolv ];
 
     systemd.services.wgnord = {
@@ -48,7 +48,6 @@ in
         wgTools
         pkgs.iproute2
         pkgs.iptables
-        pkgs.openresolv
         pkgs.systemd
       ];
 
