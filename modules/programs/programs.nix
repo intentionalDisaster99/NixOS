@@ -120,7 +120,11 @@
   };
 
   # Turning NordVPN on
-  # networking.firewall.checkReversePath = false;
-  # myypo.services.custom.nordvpn.enable = true;
+  services.wgnord = {
+    enable = true;
+    country = "United States"; # Change whenever you want
+    # Point this to wherever you keep your secret
+    tokenFile = config.age.secrets.nordToken.path;
+  };
 
 }
