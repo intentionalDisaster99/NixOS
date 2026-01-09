@@ -4,7 +4,6 @@
 , inputs
 , username
 , ...
-  ,
 }:
 let
   inherit (lib)
