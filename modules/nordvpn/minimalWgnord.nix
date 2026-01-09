@@ -2,7 +2,6 @@
 
 let
   cfg = config.services.wgnord;
-
   template = pkgs.writeText "wgnord-template.conf" ''
     [Interface]
     PrivateKey = PRIVKEY
@@ -35,14 +34,25 @@ in
     networking.firewall.trustedInterfaces = [ "wgnord" ];
 
     services.resolved.enable = true;
-
     environment.systemPackages = [ pkgs.wgnord pkgs.wireguard-tools ];
+
+    # --- THE FIX: Allow passwordless sudo for the toggle button ---
+    security.sudo.extraRules = [
+      {
+        users = [ "sa9m" ];
+        commands = [
+          { command = "/run/current-system/sw/bin/systemctl start wgnord"; options = [ "NOPASSWD" ]; }
+          { command = "/run/current-system/sw/bin/systemctl stop wgnord"; options = [ "NOPASSWD" ]; }
+          { command = "/run/current-system/sw/bin/systemctl restart wgnord"; options = [ "NOPASSWD" ]; }
+        ];
+      }
+    ];
+    # --------------------------------------------------------------
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
-
       path = [
         pkgs.wgnord
         pkgs.wireguard-tools
@@ -54,7 +64,6 @@ in
         pkgs.coreutils
         pkgs.bash
       ];
-
       serviceConfig = {
         Type = "oneshot";
         StateDirectory = "wgnord";
@@ -70,7 +79,6 @@ in
           ln -fs ${template} /var/lib/wgnord/template.conf
           ${lib.getExe pkgs.wgnord} login "$(<${cfg.tokenFile})"
         '';
-
         ExecStart = "${lib.getExe pkgs.wgnord} connect \"${cfg.country}\"";
 
         ExecStartPost = pkgs.writeShellScript "wgnord-dns" ''
