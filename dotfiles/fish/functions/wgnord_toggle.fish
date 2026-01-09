@@ -1,10 +1,11 @@
-function wgnord_status
-    # Check if the interface 'wgnord' exists
+function wgnord_toggle
     if ip link show wgnord > /dev/null 2>&1
-        # Connected: Locked icon (Green/Active class)
-        echo '{"text": "", "tooltip": "VPN Connected", "class": "connected", "alt": "connected"}'
+        notify-send "NordVPN" "Disconnecting..."
+        # We stop the service to cleanly remove the interface/DNS
+        sudo systemctl stop wg-quick-wgnord
     else
-        # Disconnected: Unlocked icon (Red/Inactive class)
-        echo '{"text": "", "tooltip": "VPN Disconnected", "class": "disconnected", "alt": "disconnected"}'
+        notify-send "NordVPN" "Connecting..."
+        # We start the service to generate config and connect
+        sudo systemctl start wg-quick-wgnord
     end
 end
