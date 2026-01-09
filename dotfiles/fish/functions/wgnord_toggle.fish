@@ -1,12 +1,10 @@
-function wgnord_toggle
-    if systemctl is-active --quiet wg-quick-wgnord
-        notify-send "NordVPN" "Disconnecting"
-        # This will trigger your GUI password prompt (Polkit)
-        # systemctl stop wg-quick-wgnord
-        wgnord d
+function wgnord_status
+    # Check if the interface 'wgnord' exists
+    if ip link show wgnord > /dev/null 2>&1
+        # Connected: Locked icon (Green/Active class)
+        echo '{"text": "", "tooltip": "VPN Connected", "class": "connected", "alt": "connected"}'
     else
-        notify-send "NordVPN" "Connecting to United States"
-        # systemctl start wg-quick-wgnord
-        wgnord c "United States"
+        # Disconnected: Unlocked icon (Red/Inactive class)
+        echo '{"text": "", "tooltip": "VPN Disconnected", "class": "disconnected", "alt": "disconnected"}'
     end
 end
