@@ -1,12 +1,8 @@
-function wgnord_toggle
-    # Check if the interface exists
+function wgnord_status
+    # Check if the interface 'wgnord' exists
     if ip link show wgnord > /dev/null 2>&1
-        notify-send "NordVPN" "Disconnecting..."
-        # Stop the correct service name
-        sudo systemctl stop wgnord
+        echo '{"text": "", "tooltip": "VPN Connected", "class": "connected", "alt": "connected"}'
     else
-        notify-send "NordVPN" "Connecting..."
-        # Start the correct service name
-        sudo systemctl start wgnord
+        echo '{"text": "", "tooltip": "VPN Disconnected", "class": "disconnected", "alt": "disconnected"}'
     end
 end
