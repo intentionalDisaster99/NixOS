@@ -83,7 +83,6 @@
     hyfetch
     ocrmypdf
     parallel
-    wgnord
 
 
     # KDE things 
