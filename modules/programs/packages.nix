@@ -82,6 +82,7 @@
     eza
     hyfetch
     ocrmypdf
+    parallel
 
 
     # KDE things 
