@@ -49,11 +49,9 @@ in
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
-      # It wants network-online, but doesn't force itself to start
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
 
-      # FIX: Explicitly ensure it is NOT started by multi-user.target
       wantedBy = lib.mkForce [ ];
 
       path = [
@@ -93,7 +91,7 @@ in
         ExecStop = "-${lib.getExe pkgs.wgnord} disconnect";
         ExecStopPost = "${pkgs.bash}/bin/bash -c '${pkgs.iproute2}/bin/ip link delete wgnord >/dev/null 2>&1 || true'";
 
-        Restart = "no"; # Do not auto-restart if it crashes or stops
+        Restart = "no";
         RemainAfterExit = "yes";
       };
     };
