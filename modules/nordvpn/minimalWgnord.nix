@@ -43,7 +43,6 @@ in
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
 
-      # FIX: Add 'openresolv' and 'systemd' so wg-quick can set DNS
       path = [
         wgnord
         wgTools
