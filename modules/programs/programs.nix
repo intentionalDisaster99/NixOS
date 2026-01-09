@@ -124,7 +124,7 @@
     enable = true;
     country = "United States"; # Change whenever you want
     # Point this to wherever you keep your secret
-    tokenFile = config.age.secrets.nordToken.path;
+    tokenFile = "/home/sa9m/.confidential/wgnordToken.txt";
   };
 
 }
