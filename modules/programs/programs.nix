@@ -119,4 +119,8 @@
     };
   };
 
+  # Turning NordVPN on
+  networking.firewall.checkReversePath = false;
+
+
 }

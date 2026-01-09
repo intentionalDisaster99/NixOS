@@ -18,6 +18,7 @@
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
+    ../../modules/nordvpn/nordvpn.nix
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
@@ -64,10 +65,12 @@
     enable = true;
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
+      { from = 1194; to = 1194; } # NordVPN
       { from = 22; to = 22; } # SSH
     ];
     allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
+      { from = 443; to = 443; } # NordVPN
       { from = 32768; to = 60999; } # Chromecast
     ];
   };
