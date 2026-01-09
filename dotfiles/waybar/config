@@ -270,7 +270,7 @@
         "on-click": "fish -c wlogout_uniqe",
     },
     "custom/vpn": {
-        "format": "VPN {}",
+        "format": "{}",
         // Run the fish function to get the icon
         "exec": "fish -c wgnord_status",
         "return-type": "json",
