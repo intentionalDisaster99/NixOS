@@ -18,7 +18,7 @@
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
-    ../../modules/nordvpn/wgnord.nix
+    ../../modules/nordvpn/minimalWngnord.nix
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
