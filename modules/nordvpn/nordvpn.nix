@@ -155,4 +155,15 @@ with lib; {
       };
     };
   };
+
+  # Allow sa9m to toggle VPN without password
+  security.sudo.extraRules = [
+    {
+      users = [ "sa9m" ];
+      commands = [
+        { command = "/run/current-system/sw/bin/systemctl start wgnord"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/systemctl stop wgnord"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
 }
