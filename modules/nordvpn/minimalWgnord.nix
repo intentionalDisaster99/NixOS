@@ -37,7 +37,7 @@ in
 
   config = lib.mkIf cfg.enable {
     # Ensure system has the tools needed for manual debugging too
-    environment.systemPackages = [ wgnord wgTools pkgs.iproute2 ];
+    environment.systemPackages = [ wgnord wgTools pkgs.iproute2 pkgs.openresolv ];
 
     systemd.services.wgnord = {
       description = "Nord Wireguard VPN";
