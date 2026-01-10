@@ -10,12 +10,12 @@ function check_wallpaper
     switch $MODE
         case "forced"
             # Icon: Fire/High Energy (Always On)
-            printf '{"text": "🔥", "tooltip": "Wallpaper: FORCED ON (High Power)", "class": "forced", "alt": "forced"}\n'
+            printf '{"text": "🔥", "tooltip": "Moving Wallpaper: Forced", "class": "forced", "alt": "forced"}\n'
         case "off"
             # Icon: Sleep/Moon (Always Off)
-            printf '{"text": "💤", "tooltip": "Wallpaper: OFF", "class": "off", "alt": "off"}\n'
+            printf '{"text": "💤", "tooltip": "Moving Wallpaper: Off", "class": "off", "alt": "off"}\n'
         case "*" 
             # Normal: Robot/Brain (Smart Automation)
-            printf '{"text": "🤖", "tooltip": "Wallpaper: Smart Mode (AC + Low CPU)", "class": "normal", "alt": "normal"}\n'
+            printf '{"text": "🤖", "tooltip": "Moving Wallpaper: Auto", "class": "normal", "alt": "normal"}\n'
     end
 end
