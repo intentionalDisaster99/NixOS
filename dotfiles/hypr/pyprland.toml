@@ -47,3 +47,11 @@ command = "spotify"
 class = "Spotify"
 size = "80% 80%"
 lazy = true
+
+
+[scratchpads.discord]
+animation = "fromBottom"
+command = "discord"
+class = "Discord"
+size = "80% 80%"
+lazy = true
