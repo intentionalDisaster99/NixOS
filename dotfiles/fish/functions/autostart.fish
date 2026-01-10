@@ -26,6 +26,8 @@ function autostart
     # Wait for things to settle
     sleep 2
 
+    notify-send "Now to start waybarn"
+
     # Start Waybar last
     waybar
 end
