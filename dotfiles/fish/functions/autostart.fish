@@ -1,11 +1,12 @@
 function autostart
-    notify-send "Beginning startup"
     # Start basic services (one per line is safer)
     hypridle & 
     dunst & 
     pypr & 
     poweralertd -s & 
     avizo-service & 
+    
+    notify-send "Beginning startup"
     
     # Clipboard managers
     wl-paste --type text --watch cliphist store & 
