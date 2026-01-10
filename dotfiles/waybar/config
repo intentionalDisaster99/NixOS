@@ -269,6 +269,7 @@
         "interval": "once",
         "on-click": "fish -c wlogout_uniqe",
     },
+
     "custom/vpn": {
         "format": "{}",
         "exec": "fish -c wgnord_status",
@@ -276,6 +277,14 @@
         "interval": 2,
         "on-click": "fish -c wgnord_toggle",
         "signal": 8
+    },
+
+    "custom/tailscale": {
+        "format": "{}",
+        "exec": "fish -c tailscale_status",
+        "return-type": "json",
+        "interval": 10,  // Check every 10 seconds
+        "on-click": "tailscale status" // Clicking still shows the peer list in a terminal if configured
     },
  
 },
