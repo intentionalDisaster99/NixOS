@@ -286,6 +286,14 @@
         "interval": 10,  // Check every 10 seconds
         "on-click": "tailscale status" // Clicking still shows the peer list in a terminal if configured
     },
+
+    // "custom/wall": {
+    //     "format": "{}",
+    //     "exec": "fish -c tailscale_status",
+    //     "return-type": "json",
+    //     "interval": 10,  // Check every 10 seconds
+    //     "on-click": "tailscale status" 
+    // },
  
 },
 
