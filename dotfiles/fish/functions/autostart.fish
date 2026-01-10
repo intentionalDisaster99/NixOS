@@ -21,7 +21,7 @@ function autostart
     sleep 2
 
     # Save power by stopping video wallpaper if power mode changes
-    # handle_monitor_power & 
+    handle_monitor_power & 
 
     # Making my mouse disappear if not being used
     unclutter & 
