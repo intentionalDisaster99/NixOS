@@ -441,3 +441,11 @@ window.left_bar .modules-center {
 #systemd-failed-units {
   color: @red;
 }
+
+#custom-tailscale.connected {
+    color: #a6da95; /* Green */
+}
+
+#custom-tailscale.disconnected {
+    color: #a5adcb; /* Gray/Subtext */
+}
