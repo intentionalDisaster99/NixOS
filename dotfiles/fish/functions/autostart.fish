@@ -13,14 +13,14 @@ function autostart
     wl-paste --type image --watch cliphist store & 
     wl-clip-persist --clipboard regular & 
     
-    # Static wallpaper (Safe fallback)
+    # Static wallpaper in the background
     hyprpaper & 
     
     # Notifications
     systemctl --user start psi-notify &
 
-    # Save power by stopping video wallpaper if power mode changes
-    handle_wallpaper & 
+    # Video wallpaper sometimes
+    fish -c "handle_wallpaper" &
 
     # Making my mouse disappear if not being used
     unclutter & 
@@ -31,5 +31,5 @@ function autostart
     notify-send "Now to start waybarn"
 
     # Start Waybar last
-    waybar
+    waybar > /tmp/waybar.log 2>&1
 end
