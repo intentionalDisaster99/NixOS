@@ -1,20 +1,13 @@
 function tailscale_status
-    # 1. Check if Tailscale is running at all
-    # We use 'tailscale status' which fails if the daemon is stopped
-    if not command -v tailscale > /dev/null; or not tailscale status > /dev/null 2>&1
-        printf '{"text": "○", "tooltip": "Tailscale Stopped", "class": "disconnected", "alt": "disconnected"}\n'
-        return
-    end
-
-    # 2. Count "active" peers (devices you are actually exchanging data with)
-    set -l active_count (tailscale status | grep -c "active;")
-
-    # 3. Output
-    if test $active_count -gt 0
-        # Connected + Active Peers: Show Count (e.g., "🌐 2")
-        printf '{"text": " %s", "tooltip": "Tailscale: %s Active Peers", "class": "connected", "alt": "connected"}\n' "$active_count" "$active_count"
+    # Ping 100.100.100.100 (Tailscale's internal DNS server)
+    # This IP is only reachable if the Tailnet mesh is actually working.
+    # -c 1: Send 1 ping
+    # -W 1: Wait max 1 second for a reply
+    if ping -c 1 -W 1 100.100.100.100 > /dev/null 2>&1
+        # Success: We can reach the internal mesh
+        printf '{"text": "", "tooltip": "Tailnet Reachable", "class": "connected", "alt": "connected"}\n'
     else
-        # Connected but Idle: Just the Globe
-        printf '{"text": "󰌙 0", "tooltip": "Tailscale: Running (Idle)", "class": "connected", "alt": "connected"}\n'
+        # Fail: Cannot reach the mesh (Blocked or Stopped)
+        printf '{"text": "󰌙", "tooltip": "Tailnet Unreachable", "class": "disconnected", "alt": "disconnected"}\n'
     end
 end
