@@ -6,8 +6,6 @@ function autostart
     poweralertd -s & 
     avizo-service & 
     
-    notify-send "Beginning startup"
-    
     # Clipboard managers
     wl-paste --type text --watch cliphist store & 
     wl-paste --type image --watch cliphist store & 
@@ -27,8 +25,6 @@ function autostart
 
     # Wait for things to settle
     sleep 0.5
-
-    notify-send "Now to start waybarn"
 
     # Start Waybar last
     waybar > /tmp/waybar.log 2>&1
