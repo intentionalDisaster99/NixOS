@@ -16,9 +16,6 @@ function autostart
     
     # Notifications
     systemctl --user start psi-notify &
-    
-    # Wait for things to settle
-    sleep 2
 
     # Save power by stopping video wallpaper if power mode changes
     handle_wallpaper & 
@@ -26,6 +23,9 @@ function autostart
     # Making my mouse disappear if not being used
     unclutter & 
 
+    # Wait for things to settle
+    sleep 2
+
     # Start Waybar last
-    waybar &
+    waybar
 end
