@@ -1,4 +1,5 @@
 function autostart
+    notify-send "Beginning startup"
     # Start basic services (one per line is safer)
     hypridle & 
     dunst & 
@@ -24,7 +25,7 @@ function autostart
     unclutter & 
 
     # Wait for things to settle
-    sleep 2
+    sleep 0.5
 
     notify-send "Now to start waybarn"
 
