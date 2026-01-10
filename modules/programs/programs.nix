@@ -129,7 +129,7 @@
 
 
   # Mounting my NAS TODO Move to a module
-  {
+
   # For mount.cifs, required unless domain name resolution is not needed.
   environment.systemPackages = [ pkgs.cifs-utils ];
   fileSystems."/mnt/NAS" = {
@@ -142,7 +142,7 @@
 
       in
       [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
-  };
-}
 
-}
+  }
+
+    }
