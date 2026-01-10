@@ -1,4 +1,4 @@
-function handle_monitor_power
+function handle_wallpaper
     set PID_FILE "/tmp/mpvpaper.pid"
     set MODE_FILE "/tmp/wallpaper_mode"
     
