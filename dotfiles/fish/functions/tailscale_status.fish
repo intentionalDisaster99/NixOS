@@ -1,14 +1,20 @@
 function tailscale_status
-    # Get the raw status in JSON format (fast and detailed)
-    set -l output (tailscale status --json 2>/dev/null)
+    # 1. Check if Tailscale is running at all
+    # We use 'tailscale status' which fails if the daemon is stopped
+    if not command -v tailscale > /dev/null; or not tailscale status > /dev/null 2>&1
+        printf '{"text": "○", "tooltip": "Tailscale Stopped", "class": "disconnected", "alt": "disconnected"}\n'
+        return
+    end
 
-    # Check if the BackendState is specifically "Running"
-    # This confirms the daemon is active, logged in, and the interface is up.
-    if string match -q '*"BackendState":"Running"*' -- (string replace -a ' ' '' "$output")
-        # Connected: World/Network Emoji
-        printf '{"text": "", "tooltip": "Tailscale: Running", "class": "connected", "alt": "connected"}\n'
+    # 2. Count "active" peers (devices you are actually exchanging data with)
+    set -l active_count (tailscale status | grep -c "active;")
+
+    # 3. Output
+    if test $active_count -gt 0
+        # Connected + Active Peers: Show Count (e.g., "🌐 2")
+        printf '{"text": " %s", "tooltip": "Tailscale: %s Active Peers", "class": "connected", "alt": "connected"}\n' "$active_count" "$active_count"
     else
-        # Disconnected: Hollow Circle
-        printf '{"text": "󰌙", "tooltip": "Tailscale: Stopped/Idle", "class": "disconnected", "alt": "disconnected"}\n'
+        # Connected but Idle: Just the Globe
+        printf '{"text": "󰌙 0", "tooltip": "Tailscale: Running (Idle)", "class": "connected", "alt": "connected"}\n'
     end
 end
