@@ -143,7 +143,6 @@
       in
       [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
 
-  }
-    }
+  };
 
-    }
+}
