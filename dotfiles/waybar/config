@@ -156,7 +156,7 @@
 
     "network": {
         "format": "󰤭",
-        "format-wifi": "{icon} {essid} - {ipaddr}",
+        "format-wifi": "{icon} {essid}",
         "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
         "format-disconnected": "󰤫 Disconnected",
         "tooltip-format": "wifi <span color='#ee99a0'>off</span>",
