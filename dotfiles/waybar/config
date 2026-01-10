@@ -255,11 +255,11 @@
         "start-activated": false,
     },
 
-    "custom/power_save": {
+    "custom/wallpaper_status": {
         "format": "{}",
         "return-type": "json",
-        "exec": "fish -c check_power_save",
-        "on-click": "fish -c power_save_toggle",
+        "exec": "fish -c check_wallpaper",
+        "on-click": "fish -c wall_toggle",
         "interval": 1,
     },
 
