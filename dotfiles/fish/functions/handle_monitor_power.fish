@@ -105,7 +105,7 @@ function handle_monitor_power
                 end
             else
                 echo "Starting: AC Connected & CPU OK ($CPU_USAGE%)." >> $LOG
-                nohup mpvpaper -o "no-audio --loop-file=inf --fps=30 --hwdec=auto-safe" $MONITOR $VIDEO_WALLPAPER >/tmp/mpv_error.log 2>&1 &
+                nohup mpvpaper -o "no-audio --loop-file=inf --profile=fast --hwdec=no --fps=30" $MONITOR $VIDEO_WALLPAPER >/tmp/mpv_error.log 2>&1 &
                 set NEW_PID $last_pid
                 echo $NEW_PID > $PID_FILE
                 set LAST_STATE "running"
