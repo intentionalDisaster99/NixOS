@@ -33,14 +33,6 @@ lazy = true
 margin = 90
 multi = false
 
-[shortcuts_menu.entries]
-
-"Color picker" = [
-    {name="format", options=["hex", "rgb", "hsv", "hsl", "cmyk"]},
-    "sleep 0.2; hyprpicker --format [format] -a" # sleep to let the menu close before the picker opens
-]
-
-
 [scratchpads.spotify]
 animation = "fromBottom"
 command = "spotify"
@@ -55,3 +47,11 @@ command = "discord"
 class = "Discord"
 size = "80% 80%"
 lazy = true
+
+[shortcuts_menu.entries]
+
+"Color picker" = [
+    {name="format", options=["hex", "rgb", "hsv", "hsl", "cmyk"]},
+    "sleep 0.2; hyprpicker --format [format] -a" # sleep to let the menu close before the picker opens
+]
+
