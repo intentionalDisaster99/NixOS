@@ -39,3 +39,11 @@ multi = false
     {name="format", options=["hex", "rgb", "hsv", "hsl", "cmyk"]},
     "sleep 0.2; hyprpicker --format [format] -a" # sleep to let the menu close before the picker opens
 ]
+
+
+[scratchpads.spotify]
+animation = "fromBottom"
+command = "spotify"
+class = "Spotify"
+size = "80% 80%"
+lazy = true
