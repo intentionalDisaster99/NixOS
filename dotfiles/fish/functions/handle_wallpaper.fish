@@ -13,7 +13,6 @@ function handle_wallpaper
     end
 
     # Clean start
-    killall -q hyprpaper
     killall -q mpvpaper
     rm -f $PID_FILE
 
