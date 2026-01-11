@@ -166,7 +166,8 @@
     # Rust embedded
     picotool
     probe-rs-tools
-    cmake
+    # cmake
+    python313Packages.cmake
 
   ];
 
