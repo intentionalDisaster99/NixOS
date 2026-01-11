@@ -163,6 +163,9 @@
     # Gaming
     prismlauncher
 
+    # Rust embedded
+    picotool
+
   ];
 
 
