@@ -39,7 +39,7 @@ animation = "fromBottom"
 command = "discord"
 class = "discord"
 size = "80% 80%"
-lazy = true
+lazy = false
 
 [shortcuts_menu.entries]
 
