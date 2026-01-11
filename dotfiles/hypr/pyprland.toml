@@ -34,13 +34,6 @@ size = "80% 80%"
 lazy = true
 
 
-[scratchpads.discord]
-animation = "fromBottom"
-command = "discord --class discord"
-class = "discord"
-size = "80% 80%"
-lazy = false
-
 [shortcuts_menu.entries]
 
 "Color picker" = [
