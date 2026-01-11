@@ -167,6 +167,7 @@
     picotool
     probe-rs-tools
     # cmake
+    gnumake42
     python313Packages.cmake
 
   ];
