@@ -168,6 +168,7 @@
     probe-rs-tools
     # cmake
     gnumake42
+    pico-sdk
     python313Packages.cmake
 
   ];
