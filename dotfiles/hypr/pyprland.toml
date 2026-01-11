@@ -36,7 +36,7 @@ lazy = true
 
 [scratchpads.discord]
 animation = "fromBottom"
-command = "discord"
+command = "discord --class discord"
 class = "discord"
 size = "80% 80%"
 lazy = false
