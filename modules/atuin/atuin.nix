@@ -9,4 +9,4 @@
       search_mode = "fuzzy";
     };
   };
-};
+}
