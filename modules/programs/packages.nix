@@ -83,6 +83,7 @@
     hyfetch
     ocrmypdf
     parallel
+    atuin
 
 
     # KDE things 
