@@ -96,7 +96,7 @@
   programs.atuin = {
     enable = true;
     settings = {
-      # auto_sync = true;
+      auto_sync = false;
       # sync_frequency = "5m";
       # sync_address = "https://api.atuin.sh";
       search_mode = "fuzzy";
