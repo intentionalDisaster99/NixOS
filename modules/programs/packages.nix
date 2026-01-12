@@ -117,7 +117,7 @@
     ripgrep
     avizo
     radicle-tui
-    qalculate
+    qalculate-gtk
 
 
     # Coding
