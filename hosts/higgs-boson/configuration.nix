@@ -19,6 +19,7 @@
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
     ../../modules/nordvpn/minimalWgnord.nix
+    ../../modules/nordvpn/atuin.nix
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
