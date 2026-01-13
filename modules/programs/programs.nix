@@ -120,12 +120,12 @@
   };
 
   # Turning NordVPN on
-  services.wgnord = {
-    enable = true;
-    country = "United States"; # Change whenever you want
-    # Point this to wherever you keep your secret
-    tokenFile = "/home/sa9m/.confidential/wgnordToken.txt";
-  };
+#  services.wgnord = {
+#    enable = true;
+#    country = "United States"; # Change whenever you want
+#    # Point this to wherever you keep your secret
+#    tokenFile = "/home/sa9m/.confidential/wgnordToken.txt";
+#  };
 
 
   # Mounting my NAS TODO Move to a module
