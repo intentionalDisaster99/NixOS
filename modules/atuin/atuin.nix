@@ -10,7 +10,7 @@
 
   programs.bash = {
     interactiveShellInit = ''
-      eval "$(atuin init bash)"
+      eval "$(atuin init fish)"
     '';
   };
 }
