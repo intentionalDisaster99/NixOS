@@ -119,6 +119,9 @@
     };
   };
 
+  # Being able to SSH into my machines
+  services.openssh.enable = true;
+
   # Turning NordVPN on
  services.wgnord = {
    enable = true;
