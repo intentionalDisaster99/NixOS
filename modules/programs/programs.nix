@@ -95,6 +95,7 @@
   services.sysprof.enable = true;
   services.udisks2.enable = true;
 
+  # TODO move this to a module so that I can exclude it from my PC
   # Power management
   powerManagement.enable = true;
   services.power-profiles-daemon.enable = lib.mkForce false;

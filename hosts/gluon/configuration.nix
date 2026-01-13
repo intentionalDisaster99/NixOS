@@ -46,7 +46,7 @@
   users.users = {
     sa9m = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" "input" "uinput" ];
       shell = pkgs.fish;
     };
   };
@@ -77,6 +77,9 @@
       { from = 32768; to = 60999; } # Chromecast
     ];
   };
+
+  # Upgrading to the most recent kernel 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   swapDevices = [
     {
