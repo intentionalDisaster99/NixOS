@@ -40,7 +40,7 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = "higgs-boson";
+  networking.hostName = "gluon";
 
   # Me :D
   users.users = {
