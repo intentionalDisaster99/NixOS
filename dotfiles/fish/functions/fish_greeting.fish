@@ -1,4 +1,6 @@
 function fish_greeting
+    eval "atuin init fish | source"
+    clear
     set_color blue
     echo " Distro:  NixOS"
     set_color white
@@ -11,4 +13,6 @@ function fish_greeting
     # # figlet random -f binary
     # echo ""
     # fastfetch
+
+    
 end
