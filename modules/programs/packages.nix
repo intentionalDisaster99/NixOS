@@ -84,6 +84,9 @@
     ocrmypdf
     parallel
     atuin
+    bat
+    fzf
+    fireplace
 
 
     # KDE things 
