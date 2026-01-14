@@ -84,6 +84,7 @@
     ocrmypdf
     parallel
     atuin
+    bat
 
 
     # KDE things 
