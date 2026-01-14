@@ -95,7 +95,7 @@
   boot.resumeDevice = "/dev/disk/by-uuid/606544fb-61ec-4f34-99fe-b9dde180c05e";
 
 
-  # OpenRGB udev rules
+  # OpenRGB udev rules I plan to be moving this to a module
   services.udev.extraRules = ''
     ${builtins.readFile ./60-openrgb.rules}
   '';
