@@ -8,9 +8,9 @@
     ./aliases.nix
   ];
 
-  ##########################
-  # Enabling all the things#
-  ##########################
+  ###########################
+  # Enabling all the things #
+  ###########################
 
   # I need to be able to see things
   services.xserver.enable = true;
@@ -49,13 +49,6 @@
   # Making sure I can use OBS
   programs.obs-studio = {
     enable = true;
-
-    # optional Nvidia hardware acceleration
-    # package = (
-    #   pkgs.obs-studio.override {
-    #     cudaSupport = true;
-    #   }
-    # );
 
     plugins = with pkgs.obs-studio-plugins; [
       wlrobs
@@ -148,9 +141,5 @@
       [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
 
   };
-
-  # TODO move this to a module so that I don't need it on every host
-  services.hardware.openrgb.enable = true;
-
 
 }
