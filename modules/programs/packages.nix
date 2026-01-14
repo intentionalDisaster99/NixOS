@@ -85,6 +85,7 @@
     parallel
     atuin
     bat
+    fzf
 
 
     # KDE things 
