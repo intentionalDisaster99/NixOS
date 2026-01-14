@@ -9,4 +9,3 @@
   services.hardware.openrgb.enable = true;
 
 }
-  n
