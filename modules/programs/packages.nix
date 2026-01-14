@@ -86,7 +86,7 @@
     bat
     fzf
     fireplace
-    openrgb-with-all-plugins
+    # openrgb-with-all-plugins
     openrgb
 
 
