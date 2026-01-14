@@ -41,8 +41,8 @@
 
   # Just trying to get it to work
   hardware.enableRedistributableFirmware = true;
-  services.dbus.implementation = pkgs.lib.mkForce  "dbus"; 
- 
+  services.dbus.implementation = pkgs.lib.mkForce "dbus";
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "gluon";
 
