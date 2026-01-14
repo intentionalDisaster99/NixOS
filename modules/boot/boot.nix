@@ -9,7 +9,7 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
   # Takes absolute ages so commented for now 
-  boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.useOSProber = true;
 
   # Teehee silly sddm
   services.displayManager.sddm = {
