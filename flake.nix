@@ -30,7 +30,7 @@
 
     # Laptop Configuration
     nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
-      stdenv.hostPlatform.system = "x86_64-linux";
+      # system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/higgs-boson/configuration.nix
@@ -47,7 +47,7 @@
 
     # Desktop Configuration
     nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
-      stdenv.hostPlatform.system = "x86_64-linux";
+      # system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/gluon/configuration.nix
