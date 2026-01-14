@@ -149,4 +149,8 @@
 
   };
 
+  # TODO move this to a module so that I don't need it on every host
+  services.hardware.openrgb.enable = true;
+
+
 }
