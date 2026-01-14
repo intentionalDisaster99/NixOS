@@ -4,7 +4,6 @@
 {
   # List packages you want to install system-wide.
   environment.systemPackages = with pkgs; [
-
     # Core Essentials
     grub2
     os-prober
