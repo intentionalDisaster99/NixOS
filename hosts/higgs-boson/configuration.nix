@@ -96,10 +96,10 @@
 
 
   # OpenRGB udev rules I plan to be moving this to a module
-  services.udev.extraRules = ''
-    ${builtins.readFile ./60-openrgb.rules}
-  '';
-  boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
+  # services.udev.extraRules = ''
+  #   ${builtins.readFile ./60-openrgb.rules}
+  # '';
+  # boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
 
 
 
