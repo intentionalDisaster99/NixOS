@@ -87,6 +87,7 @@
     bat
     fzf
     fireplace
+    openrgb-with-all-plugins
 
 
     # KDE things 
