@@ -22,7 +22,7 @@ function autostart
 
     # Making my mouse disappear if not being used
     unclutter & 
-
+    
     # Starting the ssh agent (because I've had some issues with it not starting)
     ssh-agent
 
