@@ -24,7 +24,7 @@ function autostart
     unclutter & 
     
     # Starting the ssh agent (because I've had some issues with it not starting)
-    ssh-agent
+    eval $(ssh-agent -s) 
 
     # Wait for things to settle
     sleep 0.5
