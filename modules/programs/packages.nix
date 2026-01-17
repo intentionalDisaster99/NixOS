@@ -128,6 +128,7 @@
     vim
     kitty
     vscode
+    vscodium-fhs
     kdePackages.yakuake
     arduino-ide
     cargo
