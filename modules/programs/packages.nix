@@ -22,8 +22,8 @@
     eyedropper
     syncthing
     ffmpeg_6
-    neohtop
     rclone
+    btop-cuda
     libreoffice-qt6-fresh
     virt-manager
     qemu
