@@ -35,7 +35,7 @@
       });
     })
     (final: prev: {
-      winboat = inputs.winboat.packages.${pkgs.system}.winboat;
+      winboat = inputs.winboat.packages.${pkgs.stdenv.hostPlatform.system}.winboat;
     })
   ];
 

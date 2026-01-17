@@ -20,7 +20,7 @@
   };
   environment.systemPackages = with pkgs; [
     # Add the theme package itself
-    inputs.minesddm.packages.${pkgs.system}.default
+    inputs.minesddm.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # Add the required Qt dependencies
     qt5.qtbase
