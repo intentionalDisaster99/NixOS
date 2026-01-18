@@ -176,7 +176,7 @@
     pico-sdk
     python313Packages.cmake
     direnv
-    openssl
+    cargo-generate
 
   ];
 
