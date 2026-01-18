@@ -177,6 +177,7 @@
     python313Packages.cmake
     direnv
     cargo-generate
+    tio
 
   ];
 
