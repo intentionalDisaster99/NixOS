@@ -175,6 +175,8 @@
     gnumake42
     pico-sdk
     python313Packages.cmake
+    direnv
+    openssl
 
   ];
 
