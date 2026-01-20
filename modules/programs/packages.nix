@@ -179,6 +179,9 @@
     cargo-generate
     tio
 
+    # TMP
+    rpi-imager
+
   ];
 
 
