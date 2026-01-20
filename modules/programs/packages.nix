@@ -179,6 +179,9 @@
     cargo-generate
     tio
 
+    # School
+    mathematica
+
     # TMP
     rpi-imager
 
