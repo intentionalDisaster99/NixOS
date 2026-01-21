@@ -180,7 +180,8 @@
     tio
 
     # School
-    mathematica
+    # mathematica
+    # Not needed/wanted
 
     # TMP
     rpi-imager
