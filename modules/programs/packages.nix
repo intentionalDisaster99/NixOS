@@ -141,7 +141,7 @@
     lazygit
     openvpn
     netbeans
-    jetbrains-toolbox
+    # jetbrains-toolbox
     vlc
 
 
