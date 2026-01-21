@@ -182,6 +182,7 @@
     # School
     # mathematica
     # Not needed/wanted
+    jetbrains.idea-ultimate
 
     # TMP
     rpi-imager
