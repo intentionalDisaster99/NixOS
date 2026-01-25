@@ -22,8 +22,8 @@
     eyedropper
     syncthing
     ffmpeg_6
-    neohtop
     rclone
+    btop-cuda
     libreoffice-qt6-fresh
     virt-manager
     qemu
@@ -139,7 +139,7 @@
     lazygit
     openvpn
     netbeans
-    jetbrains-toolbox
+    # jetbrains-toolbox
     vlc
 
 
@@ -160,7 +160,7 @@
     obs-studio
 
     # Networking
-    # geteduroam    
+    geteduroam
     tailscale
 
     # Gaming
@@ -173,6 +173,17 @@
     gnumake42
     pico-sdk
     python313Packages.cmake
+    direnv
+    cargo-generate
+    tio
+
+    # School
+    # mathematica
+    # Not needed/wanted
+    jetbrains.idea-ultimate
+
+    # TMP
+    rpi-imager
 
   ];
 
