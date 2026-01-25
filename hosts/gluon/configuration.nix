@@ -20,6 +20,7 @@
     ../../modules/theme/fonts.nix
     ../../modules/nordvpn/minimalWgnord.nix
     ../../modules/atuin/atuin.nix
+    ../../modules/rgb/openrgb.nix
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
