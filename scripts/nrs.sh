@@ -33,7 +33,7 @@ else
 
   # Use the first argument to the script as a commit message.
   # If no argument is provided, default to a timestamped message
-  COMMIT_MSG="${1:-Update NixOS configuration on $(date): $(hostname)}"
+  COMMIT_MSG="${1:-Update NixOS configuration on $(date) for $(hostname)}"
   git commit -m "$COMMIT_MSG"
 
   # Push the changes to your remote Git repository
