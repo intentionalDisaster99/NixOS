@@ -12,7 +12,7 @@ echo "Starting NixOS configuration update for host: $HOSTNAME"
 cd "$NIXOS_CONFIG_DIR"
 
 # Pulling any files that had been pushed before 
-echo "Pulling files.."s
+echo "Pulling files.."
 git pull
 
 # Formatting
