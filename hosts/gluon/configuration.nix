@@ -19,7 +19,7 @@
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
     ../../modules/nordvpn/minimalWgnord.nix
-    ../../modules/atuin/atuin.nix
+    ../../modules/atuin/atuin.nipx
     ../../modules/rgb/openrgb.nix
   ];
 
