@@ -13,7 +13,7 @@
     motherboard = "amd";
     server = {
       port = 6742;
-      autoStart = true;
+      # autoStart = true;
     };
   };
 
