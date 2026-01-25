@@ -11,13 +11,14 @@ echo "Starting NixOS configuration update for host: $HOSTNAME"
 
 cd "$NIXOS_CONFIG_DIR"
 
+# Pulling any files that had been pushed before 
+echo "Pulling files.."s
+git pull
+
 # Formatting
 echo "Formatting Nix files..."
 nixpkgs-fmt .
 echo "Formatting complete."
-
-# Pulling any files that had been pushed before 
-git pull
 
 # Stage all changes in the configuration directory.
 echo "Staging changes..."
