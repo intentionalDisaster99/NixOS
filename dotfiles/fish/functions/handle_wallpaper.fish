@@ -76,7 +76,7 @@ function handle_wallpaper
 
         if test "$SHOULD_RUN" = "1"
             if test "$IS_RUNNING" = "0"
-                nohup mpvpaper -o "no-audio --loop-file=inf --profile=fast --hwdec=no --panscan=1.0" $MONITOR $VIDEO_WALLPAPER >/dev/null 2>&1 &
+                nohup mpvpaper -o 'no-audio --loop-file=inf --profile=fast --hwdec=no --panscan=1.0' $MONITOR $VIDEO_WALLPAPER >/dev/null 2>&1 &
                 set NEW_PID $last_pid
                 echo $NEW_PID > $PID_FILE
                 disown
