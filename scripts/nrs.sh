@@ -16,6 +16,9 @@ echo "Formatting Nix files..."
 nixpkgs-fmt .
 echo "Formatting complete."
 
+# Pulling any files that had been pushed before 
+git pull
+
 # Stage all changes in the configuration directory.
 echo "Staging changes..."
 git add .
