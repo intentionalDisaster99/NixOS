@@ -1,3 +1,5 @@
+# Currently is not in use
+
 function check_wallpaper
     set MODE_FILE "/tmp/wallpaper_mode"
     

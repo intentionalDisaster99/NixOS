@@ -1,5 +1,5 @@
 function autostart
-    # Start basic services (one per line is safer)
+    # Start basic services 
     hypridle & 
     dunst & 
     pypr & 
