@@ -21,6 +21,8 @@
     ../../modules/nordvpn/minimalWgnord.nix
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
+    ../../modules/emacs/emacs.nix
+
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
