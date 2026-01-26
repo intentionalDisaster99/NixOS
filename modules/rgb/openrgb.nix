@@ -1,5 +1,3 @@
-# Controls the bootloader that I use (Grub)
-
 { config, pkgs, lib, inputs, ... }:
 
 {
