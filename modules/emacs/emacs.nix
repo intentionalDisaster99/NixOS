@@ -10,6 +10,9 @@
     # Optional: Language servers you might want later
     # nil  # Nix Language Server
     # zls  # Zig Language Server
+
+    # So that I can use the live latex editor
+    texlive.combined.scheme-medium
   ];
 
   # Enable Nerd Fonts (Required for Doom's icons)
