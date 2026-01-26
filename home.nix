@@ -101,4 +101,6 @@
       # recursive = true;  # Enable this if you want to symlink individual files instead of the whole folder
     };
 
-  }
+  };
+
+}
