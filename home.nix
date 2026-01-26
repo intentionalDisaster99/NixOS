@@ -92,4 +92,13 @@
       associations.added = associations;
     };
 
-}
+
+  # Doom (I didn't feel like doing the hash thingy I did before)
+  xdg.configFile = {
+    # Add this new entry:
+    "doom" = {
+      source = ./dotfiles/doom;
+      # recursive = true;  # Enable this if you want to symlink individual files instead of the whole folder
+    };
+
+  }
