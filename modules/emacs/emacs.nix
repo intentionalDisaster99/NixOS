@@ -16,4 +16,12 @@
   fonts.packages = with pkgs; [
     nerd-fonts.symbols-only
   ];
+
+  # Ensuring emacs is in my path if I ever need it
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      fish_add_path $HOME/.config/emacs/bin
+    '';
+  };
 }
