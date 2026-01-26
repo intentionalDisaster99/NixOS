@@ -87,6 +87,7 @@
     fzf
     fireplace
     usbutils
+    blueman # backup bluetooth manager `blueman-manager`
 
     # KDE things 
     # kdewalletmanager

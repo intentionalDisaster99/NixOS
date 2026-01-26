@@ -56,6 +56,10 @@
     };
   };
 
+  # Telling the computer that the bluetooth thingy does a weird thing sometimes 
+  boot.kernelParams = [ "btusb.enable_autosuspend=n" ];
+  boot.blacklistedKernelModules = [ "btintel" ]; # Force it not to try Intel drivers
+
 
   # Main config stuff that shouldn't really change
   i18n.defaultLocale = "en_US.UTF-8";
