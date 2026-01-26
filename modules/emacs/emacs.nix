@@ -13,6 +13,8 @@
 
     # So that I can use the live latex editor
     texlive.combined.scheme-medium
+
+    libtool
   ];
 
   # Enable Nerd Fonts (Required for Doom's icons)

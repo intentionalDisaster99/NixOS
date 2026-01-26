@@ -183,6 +183,7 @@
     # mathematica
     # Not needed/wanted
     jetbrains.idea-ultimate
+    logisim-evolution
 
     # TMP
     rpi-imager
