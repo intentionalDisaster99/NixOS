@@ -4,7 +4,6 @@
 {
   # List packages you want to install system-wide.
   environment.systemPackages = with pkgs; [
-
     # Core Essentials
     grub2
     os-prober
@@ -23,8 +22,8 @@
     eyedropper
     syncthing
     ffmpeg_6
-    neohtop
     rclone
+    btop-cuda
     libreoffice-qt6-fresh
     virt-manager
     qemu
@@ -40,8 +39,55 @@
     freerdp
     wgnord
     ventoy-full
-    rustdesk
+    rustdesk-flutter
     google-drive-ocamlfuse
+    lsd
+    tldr
+    htop
+    networkmanagerapplet
+    neovim
+    seahorse
+    lm_sensors
+    wget
+    texliveFull
+    cliphist
+    wl-clipboard
+    wtype
+    pavucontrol
+    swappy
+    firejail
+    playerctl
+    fzf
+    cifs-utils
+    grsync
+    wofi-emoji
+    nautilus
+    gnome-control-center
+    gnome-online-accounts
+    gvfs
+    polkit_gnome
+    seahorse
+    glib-networking
+    sysprof
+    gsettings-desktop-schemas
+    s-tui
+    mpvpaper
+    openssh
+    sshfs
+    tlp
+    powertop
+    cpu-x
+    unclutter
+    eza
+    hyfetch
+    ocrmypdf
+    parallel
+    atuin
+    bat
+    fzf
+    fireplace
+    usbutils
+    blueman # backup bluetooth manager `blueman-manager`
 
     # KDE things 
     # kdewalletmanager
@@ -58,12 +104,31 @@
     swaylock-fancy
     waybar
     brightnessctl
+    rofi
+    wlogout
+    fish
+    grim
+    slurp
+    wl-clipboard
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
+    starship
+    direnv
+    mise
+    figlet
+    overskride
+    psmisc
+    ripgrep
+    avizo
+    radicle-tui
+    qalculate-gtk
+
 
     # Coding
     vim
     kitty
     vscode
-    vscodium
+    vscodium-fhs
     kdePackages.yakuake
     arduino-ide
     cargo
@@ -74,6 +139,11 @@
     rustup
     gcc
     lazygit
+    openvpn
+    netbeans
+    # jetbrains-toolbox
+    vlc
+
 
     # Funy
     activate-linux
@@ -92,11 +162,30 @@
     obs-studio
 
     # Networking
-    # geteduroam    
+    geteduroam
     tailscale
 
     # Gaming
     prismlauncher
+
+    # Rust embedded
+    picotool
+    probe-rs-tools
+    # cmake
+    gnumake42
+    pico-sdk
+    python313Packages.cmake
+    direnv
+    cargo-generate
+    tio
+
+    # School
+    # mathematica
+    # Not needed/wanted
+    jetbrains.idea-ultimate
+
+    # TMP
+    rpi-imager
 
   ];
 
