@@ -89,3 +89,14 @@
 
 ;; Trying to get it to automatically show previews for math
 (setq org-startup-with-latex-preview t)
+;; 1. Hiding Syntax (The "Live Preview" look)
+(setq markdown-hide-urls t)      ; Hide big URLs like [Name](http://...)
+(setq markdown-hide-markup t)    ; Hide *bold* and _italic_ markers
+(setq markdown-fontify-code-blocks-natively t) ; Highlight code inside ```blocks```
+
+;; 2. Make it look like a Document, not Code (Mixed Pitch)
+;;    This makes regular text use your UI font (Sans Serif),
+;;    but keeps tables and code blocks in Monospace.
+(add-hook! 'markdown-mode-hook
+  (mixed-pitch-mode 1)
+  (display-line-numbers-mode -1)) ; Hide line numbers for a cleaner reading experience
