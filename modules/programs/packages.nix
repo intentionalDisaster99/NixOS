@@ -86,6 +86,7 @@
     bat
     fzf
     fireplace
+    usbutils
 
     # KDE things 
     # kdewalletmanager
