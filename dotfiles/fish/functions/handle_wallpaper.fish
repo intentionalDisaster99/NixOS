@@ -3,7 +3,7 @@ function handle_wallpaper
     set MODE_FILE "/tmp/wallpaper_mode"
     
     set VIDEO_WALLPAPER "/etc/nixos/resources/wallpapers/car.mp4" 
-    set MONITOR "*" 
+    set MONITOR "all" 
     set CPU_LIMIT 80
 
     echo "normal" > $MODE_FILE

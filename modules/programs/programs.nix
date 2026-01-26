@@ -43,6 +43,8 @@
     };
   };
 
+  hardware.enableAllFirmware = true;
+
   # Docker cause duh
   virtualisation.docker.enable = true;
 
