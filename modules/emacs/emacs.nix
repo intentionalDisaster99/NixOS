@@ -1,12 +1,19 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    emacs # Or emacs29 / emacs-unstable for newer features
+    fd # faster 'find' alternative, required by Doom
+    coreutils # basic GNU utilities
+    clang # often needed for compiling Emacs packages
 
-  environment.systemPackages = with pkgs; [ emacs ];
+    # Optional: Language servers you might want later
+    # nil  # Nix Language Server
+    # zls  # Zig Language Server
+  ];
 
-  services.emacs = {
-    enable = true;
-    # defaultEditor = true;
-  };
-
+  # Enable Nerd Fonts (Required for Doom's icons)
+  fonts.packages = with pkgs; [
+    nerd-fonts.symbols-only
+  ];
 }
