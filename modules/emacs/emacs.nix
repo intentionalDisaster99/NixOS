@@ -15,6 +15,7 @@
     texlive.combined.scheme-medium
 
     libtool
+    jdt-language-server
   ];
 
   # Enable Nerd Fonts (Required for Doom's icons)
