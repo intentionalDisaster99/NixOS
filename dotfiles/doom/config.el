@@ -100,3 +100,5 @@
 (add-hook! 'markdown-mode-hook
   (mixed-pitch-mode 1)
   (display-line-numbers-mode -1)) ; Hide line numbers for a cleaner reading experience
+(after! org (setq org-startup-with-latex-preview t))
+(setq display-line-numbers-type 'relative)  ;; line numbers relative to current line Hopefully for org mode
