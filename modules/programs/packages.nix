@@ -184,7 +184,6 @@
     # Not needed/wanted
     jetbrains.idea-ultimate
     logisim-evolution
-    pyzmqnr
 
     # TMP
     rpi-imager
