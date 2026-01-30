@@ -143,7 +143,8 @@
     netbeans
     # jetbrains-toolbox
     vlc
-
+    gdb
+    gef
 
     # Funy
     activate-linux
