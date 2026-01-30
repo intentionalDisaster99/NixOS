@@ -44,6 +44,6 @@ fi
 
 # Rebuild the system using the specified flake and hostname
 echo "Rebuilding the system..."
-sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME"
+sudo nixos-rebuild switch --max-jobs 8 --cores 16 --flake "$NIXOS_CONFIG_DIR#$HOSTNAME"
 
 echo "System update complete!"
