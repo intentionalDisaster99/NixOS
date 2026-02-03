@@ -62,6 +62,14 @@ style = "bold rosewater"
 format = "[($all_status$ahead_behind)]($style) "
 style = "bold maroon"
 
+[nix_shell]
+disabled = false
+impure_msg = '[dev-shell](bold red)'
+pure_msg = '[pure-shell](bold green)'
+unknown_msg = '[nix-shell](bold yellow)'
+format = 'via [$symbol$state]($style) '
+symbol = '❄️  '
+
 # Catppuccin Macchiato Palette (optional, Starship usually auto-detects terminal colors)
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
