@@ -114,11 +114,22 @@
   '';
 
   # Adding in fonts for my code editors
-  # fonts.packages = with pkgs; [
-  #   nerd-fonts.jetbrains-mono
-  #   nerd-fonts.symbols-only
-  #   noto-fonts
-  # ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+    noto-fonts
+  ];
+
+  fontconfig = {
+    enable = true;
+    defaultFonts = {
+      # This fixes Waybar! It tells the system to use Noto first, 
+      # but look in "Symbols Nerd Font" for any missing icons.
+      sansSerif = [ "Noto Sans" "Symbols Nerd Font" ];
+
+      monospace = [ "JetBrainsMono Nerd Font" ];
+    };
+  };
 
 
 }
