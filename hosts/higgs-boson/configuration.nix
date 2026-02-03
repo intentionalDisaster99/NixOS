@@ -120,15 +120,10 @@
     noto-fonts
   ];
 
-  fontconfig = {
-    enable = true;
-    defaultFonts = {
-      # This fixes Waybar! It tells the system to use Noto first, 
-      # but look in "Symbols Nerd Font" for any missing icons.
-      sansSerif = [ "Noto Sans" "Symbols Nerd Font" ];
-
-      monospace = [ "JetBrainsMono Nerd Font" ];
-    };
+  fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts = {
+    sansSerif = [ "Noto Sans" "Symbols Nerd Font" ];
+    monospace = [ "JetBrainsMono Nerd Font" ];
   };
 
 
