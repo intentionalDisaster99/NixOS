@@ -69,7 +69,7 @@ impure_msg = '[dev-shell](bold red)'
 pure_msg = '[pure-shell](bold green)'
 unknown_msg = '[nix-shell](bold yellow)'
 format = 'via [$symbol$state]($style) '
-symbol = '❄️'
+symbol = '❄️ '
 
 # Catppuccin Macchiato Palette (optional, Starship usually auto-detects terminal colors)
 [palettes.catppuccin_macchiato]
