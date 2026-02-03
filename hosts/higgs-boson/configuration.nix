@@ -116,6 +116,7 @@
   # Adding in fonts for my code editors
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
 
