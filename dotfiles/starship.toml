@@ -30,7 +30,7 @@ disabled = false
 style = "bold blue"
 
 [os.symbols]
-NixOS = "NixOS "
+NixOS = "NixOS "
 
 [username]
 style_user = "white bold"
