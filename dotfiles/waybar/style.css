@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  font-family: "Symbols Nerd Font", "Product Sans", sans-serif;
+  /* font-family: "Symbols Nerd Font", "Product Sans", sans-serif; */
 }
 
 window.bottom_bar#waybar {
