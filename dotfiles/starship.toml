@@ -9,6 +9,7 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
+$nix_shell\
 $c\
 $elixir\
 $elm\
