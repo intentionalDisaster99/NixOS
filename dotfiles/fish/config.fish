@@ -36,6 +36,7 @@ alias down="sudo shutdown +0"
 alias bye="systemctl hibernate && fireplace"
 alias byee="systemctl hibernate"
 alias cat="bat"
+alias nd="nix develop -c fish"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
