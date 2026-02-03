@@ -1,5 +1,10 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    if set -q IN_NIX_SHELL
+        set_color -o green
+        echo "❄️ nix-shell "
+        set_color normal
+    end
 end
 
 alias cl="clear"
