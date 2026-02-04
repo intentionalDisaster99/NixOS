@@ -25,10 +25,6 @@
 
   };
 
-  environment.systemPackages = with pkgs; [
-    (builtins.getFlake "github:astrada/google-drive-ocamlfuse").packages.x86_64-linux.default
-  ];
-
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, ... }@inputs: {
 
 
