@@ -1,14 +1,17 @@
-# Trying with google-drive-ocamlfuse
-
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
-  environment.systemPackages = with pkgs [
+
+  environment.systemPackages = with pkgs; [
     (builtins.getFlake "github:astrada/google-drive-ocamlfuse").packages.x86_64-linux.default
   ];
 
-    #   # services.kio-fuse.enable = true;
-    #   services.gvfs.enable = true;
+  # services.hardware.openrgb.enable = true;
+  #   services.hardware.openrgb = {
+  #     enable = true;
+  #     package = pkgs.openrgb-with-all-plugins;
+  #     motherboard = "amd";
+  #   };
 
 
-    }
+}
