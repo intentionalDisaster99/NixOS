@@ -120,11 +120,11 @@
     noto-fonts
   ];
 
-  fonts.fontconfig.enable = true;
-  fonts.fontconfig.defaultFonts = {
-    sansSerif = [ "Noto Sans" "Symbols Nerd Font" ];
-    monospace = [ "JetBrainsMono Nerd Font" ];
-  };
+  # fonts.fontconfig.enable = true;
+  # fonts.fontconfig.defaultFonts = {
+  #   sansSerif = [ "Noto Sans" "Symbols Nerd Font" ];
+  #   monospace = [ "JetBrainsMono Nerd Font" ];
+  # };
 
 
 }
