@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  /* font-family: "Symbols Nerd Font", "Noto Sans Mono", sans-serif; */
+  font-family: "NotoSans Nerd Font", sans-serif;
 }
 
 window.bottom_bar#waybar {
