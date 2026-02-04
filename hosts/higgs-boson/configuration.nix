@@ -118,6 +118,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
     noto-fonts
+    nerd-fonts.noto
   ];
 
   # fonts.fontconfig.enable = true;
