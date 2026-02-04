@@ -10,12 +10,6 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    # You can build it from source if you want
-    # (builtins.getFlake "github:astrada/google-drive-ocamlfuse").packages.x86_64-linux.default
-    google-drive-ocamlfuse
-  ];
-
   config = lib.mkIf config.services.google-drive-mount.enable {
     environment.systemPackages = [ pkgs.google-drive-ocamlfuse ];
 
