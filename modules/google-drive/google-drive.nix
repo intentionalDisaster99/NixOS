@@ -6,7 +6,7 @@
     # ...
 
     (builtins.getFlake "github:astrada/google-drive-ocamlfuse").packages.x86_64-linux.default
-    OAuth2
+    oauth2l
   ];
 
 
