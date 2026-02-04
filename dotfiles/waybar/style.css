@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  font-family: "Gentium Plus", "Font Awesome 6 Free", serif;
+  /* font-family: "Gentium Plus", "Font Awesome 6 Free", serif; */
 }
 
 window.bottom_bar#waybar {
