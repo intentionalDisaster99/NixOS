@@ -14,7 +14,7 @@
     ../../modules/platformIO/pio.nix
     # ../../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
     ../../modules/drive/drive.nix
-    ../../modules/google-drive/google-drive.nix
+    # ../../modules/google-drive/google-drive.nix
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
@@ -23,6 +23,10 @@
     ../../modules/rgb/openrgb.nix
     ../../modules/emacs/emacs.nix
 
+  ];
+
+  environment.systemPackages = with pkgs; [
+    (builtins.getFlake "github:astrada/google-drive-ocamlfuse").packages.x86_64-linux.default
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
