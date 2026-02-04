@@ -44,6 +44,6 @@ fi
 
 # Rebuild the system using the specified flake and hostname
 echo "Rebuilding the system..."
-  sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" --impure # Must be impure for google-drive-ocamlfuse
+  sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
 
 echo "System update complete!"
