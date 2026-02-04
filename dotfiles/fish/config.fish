@@ -37,6 +37,8 @@ alias bye="systemctl hibernate && fireplace"
 alias byee="systemctl hibernate"
 alias cat="bat"
 alias nd="nix develop -c fish"
+alias fix-drive="systemctl --user restart google-drive-mount"
+
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
