@@ -25,10 +25,6 @@
 
   ];
 
-  environment.systemPackages = with pkgs; [
-    (builtins.getFlake "github:astrada/google-drive-ocamlfuse").packages.x86_64-linux.default
-  ];
-
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
   # DEBUG: Define the kitty overlay inline to bypass any pathing issues.
   nixpkgs.overlays = [
