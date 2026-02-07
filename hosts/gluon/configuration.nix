@@ -42,6 +42,9 @@
     })
   ];
 
+  # So that it automatically opens Windows instead of linux (Just for now)
+  boot.loader.grub.default = 2;
+
   # Just trying to get it to work
   hardware.enableRedistributableFirmware = true;
   services.dbus.implementation = pkgs.lib.mkForce "dbus";
