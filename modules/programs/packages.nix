@@ -88,6 +88,7 @@
     fireplace
     usbutils
     blueman # backup bluetooth manager `blueman-manager`
+    pandoc
 
     # KDE things 
     # kdewalletmanager
