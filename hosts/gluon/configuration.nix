@@ -43,7 +43,7 @@
   ];
 
   # So that it automatically opens Windows instead of linux (Just for now)
-  boot.loader.grub.default = 2;
+  boot.loader.grub.default = "Windows Boot Manager (on /dev/nvme0n1p1)";
 
   # Just trying to get it to work
   hardware.enableRedistributableFirmware = true;
