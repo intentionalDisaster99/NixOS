@@ -5,6 +5,7 @@ function autostart
     pypr & 
     poweralertd -s & 
     avizo-service & 
+    emote &
     
     # Clipboard managers
     wl-paste --type text --watch cliphist store & 

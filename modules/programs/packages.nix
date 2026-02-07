@@ -89,6 +89,7 @@
     usbutils
     blueman # backup bluetooth manager `blueman-manager`
     pandoc
+    emote
 
     # KDE things 
     # kdewalletmanager
