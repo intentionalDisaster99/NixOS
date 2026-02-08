@@ -5,7 +5,7 @@
 
   # Making sure that we have access to the thing that controls the brightness
   environment.systemPackages = with pkgs; [
-    ddcutils
+    ddcutil
   ];
 
   # Everything else depends on hyprland
