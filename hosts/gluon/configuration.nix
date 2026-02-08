@@ -21,6 +21,7 @@
     ../../modules/nordvpn/minimalWgnord.nix
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
+    ../../modules/brightness/pc-brightness.nix
     ../../modules/emacs/emacs.nix
 
   ];

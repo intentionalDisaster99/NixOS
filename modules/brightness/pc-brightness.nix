@@ -8,7 +8,7 @@
     ddcutils
   ];
 
-  # In 
+  # Everything else depends on hyprland
 
 
 }
