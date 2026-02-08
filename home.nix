@@ -28,7 +28,6 @@
   ##################
   # Setting up SSH #
   ##################
-
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -92,6 +91,23 @@
       defaultApplications = associations;
       associations.added = associations;
     };
+
+  ####################################
+  ## Setting Everything to Dark Mode##
+  ####################################
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+  };
+
 
 
 }
