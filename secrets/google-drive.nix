@@ -1,5 +1,4 @@
-# secrets/google-drive.nix
 {
-  client_id = "707506217357-fnh4i36l0lspt2mnp593j0sm3442b514.apps.googleusercontent.com";
+  client_id = "707506217357-o5spe8sr2rnqu072urbtkb4av32pr3gv.apps.googleusercontent.com";
   client_secret = "REDACTED";
 }
