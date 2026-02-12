@@ -114,8 +114,8 @@
   '';
 
   # Bootloader extra entries
-  useOSProber = false;
-  extraEntries = ''
+  boot.loader.grub.useOSProber = false;
+  boot.loader.grub.extraEntries = ''
     menuentry "Windows 11" {
       insmod part_gpt
       insmod fat
