@@ -1,3 +1,4 @@
 secret.*
 smb-secrets
 *.swp
+secrets/*

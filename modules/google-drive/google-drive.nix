@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 let
-  # Import the secrets relative to this file
-  # Adjust the path "../secrets/..." if this file is deep in a subdirectory
-  driveSecrets = import ./secrets/google-drive.nix;
+  driveSecrets = import secrets/google-drive.nix;
 in
 {
   environment.systemPackages = [ pkgs.google-drive-ocamlfuse pkgs.fuse ];
