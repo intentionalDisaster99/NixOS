@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  driveSecrets = import ./secrets/google-drive.nix;
+  driveSecrets = import ../../secrets/google-drive.nix;
 in
 {
   environment.systemPackages = [ pkgs.google-drive-ocamlfuse pkgs.fuse ];
@@ -11,7 +11,6 @@ in
     wantedBy = [ "default.target" ];
 
     serviceConfig = {
-      # We inject the ID and Secret from the imported file
       ExecStart = ''
         ${pkgs.google-drive-ocamlfuse}/bin/google-drive-ocamlfuse \
           -id "${driveSecrets.client_id}" \
@@ -24,10 +23,8 @@ in
       Type = "forking";
     };
 
-    # Create mount point
     preStart = "${pkgs.coreutils}/bin/mkdir -p %h/GoogleDrive";
 
-    # Create the visible symlink for Shared Drives
     postStart = ''
       ${pkgs.coreutils}/bin/sleep 2
       ${pkgs.coreutils}/bin/ln -sfn %h/GoogleDrive/.shared %h/SharedDrives
