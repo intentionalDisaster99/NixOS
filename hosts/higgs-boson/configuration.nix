@@ -113,6 +113,19 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
 
+  # Bootloader extra entries
+  useOSProber = false;
+  extraEntries = ''
+    menuentry "Windows 11" {
+      insmod part_gpt
+      insmod fat
+      insmod search_fs_uuid
+      insmod chain
+      search --fs-uuid --set=root 7282-E320
+      chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+    }
+  '';
+
   # Adding in fonts for my code editors
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
