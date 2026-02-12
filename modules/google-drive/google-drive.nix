@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  driveSecrets = import secrets/google-drive.nix;
+  driveSecrets = import ./secrets/google-drive.nix;
 in
 {
   environment.systemPackages = [ pkgs.google-drive-ocamlfuse pkgs.fuse ];
