@@ -38,6 +38,7 @@ alias byee="systemctl hibernate"
 alias cat="bat"
 alias nd="nix develop -c fish"
 alias fix-drive="systemctl --user restart google-drive-mount"
+alias please="sudo"
 
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
