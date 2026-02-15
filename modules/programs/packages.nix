@@ -90,6 +90,7 @@
     blueman # backup bluetooth manager `blueman-manager`
     pandoc
     emote
+    direnv
 
     # KDE things 
     # kdewalletmanager
