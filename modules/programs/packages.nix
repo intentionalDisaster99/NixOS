@@ -91,6 +91,7 @@
     pandoc
     emote
     direnv
+    cheese
 
     # KDE things 
     # kdewalletmanager
