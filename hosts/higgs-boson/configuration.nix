@@ -134,4 +134,8 @@
     nerd-fonts.noto
   ];
 
+  # So that I can use direnv to make better nix dev shells
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
 }
