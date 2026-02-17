@@ -92,6 +92,7 @@
     emote
     direnv
     cheese
+    drawio
 
     # KDE things 
     # kdewalletmanager
