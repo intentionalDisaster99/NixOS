@@ -192,7 +192,7 @@
     logisim-evolution
 
     # TMP
-    rpi-imager
+    # rpi-imager
 
     # To interface with ollama on my nas
     # oterm
