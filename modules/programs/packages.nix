@@ -194,6 +194,9 @@
     # TMP
     rpi-imager
 
+    # To interface with ollama on my nas
+    oterm
+
 
   ];
 
