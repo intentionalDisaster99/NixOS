@@ -192,11 +192,6 @@
     logisim-evolution
 
     # TMP
-    # rpi-imager
-
-    # To interface with ollama on my nas
-    # oterm
-    # Only works localhost I think
 
 
   ];
