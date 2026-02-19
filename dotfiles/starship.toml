@@ -1,7 +1,7 @@
 # NixOS/dotfiles/starship.toml
 
 # Increase timeout in order to stop the warning
-scan_timeout = "100ms"
+scan_timeout = 100
 
 format = """
 $cmd_duration\
