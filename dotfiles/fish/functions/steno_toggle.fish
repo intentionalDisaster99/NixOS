@@ -1,8 +1,14 @@
 function steno_toggle
     set MODE_FILE "/tmp/steno_mode"
 
+    # Defaulting to inactive
     if not test -f $MODE_FILE
         echo "steno_inactive" > $MODE_FILE
+    end
+
+    # Creating plover
+    if not pgrep -f plover > /dev/null
+        command plover &
     end
 
     set CURRENT (cat $MODE_FILE)
