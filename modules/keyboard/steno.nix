@@ -14,7 +14,7 @@ let
     src = pkgs.python3Packages.fetchPypi {
       inherit pname version;
       # We use a fake hash here. Nix will fail the first build and tell you the real one!
-      hash = lib.fakeHash;
+      hash = "sha256-XD3zkNAEeb12N8gjv81v37Id3RuWroFUY95+HtOS1gg=";
     };
 
     doCheck = false;
