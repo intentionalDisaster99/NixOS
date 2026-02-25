@@ -37,4 +37,18 @@
       };
     };
   };
+
+  systemd.user.services.plover = {
+    description = "Plover stenography engine";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      # ExecStart runs Plover headlessly in the background
+      # Note: If you patched plover earlier, use that patched package name here
+      ExecStart = "${pkgs.plover.dev}/bin/plover -g none";
+      Restart = "on-failure";
+      # This keeps the environment clean
+      Environment = "PATH=${pkgs.coreutils}/bin";
+    };
+  };
 }
