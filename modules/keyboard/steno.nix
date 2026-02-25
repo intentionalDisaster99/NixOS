@@ -1,36 +1,41 @@
 # Trying to set up plover for stenography
 
 { inputs, pkgs, ... }: {
-  imports = [
-    inputs.plover-flake.homeManagerModules.plover
-  ];
 
-  programs.plover = {
-    enable = true;
-
-    # If I only want some specific plugins
-    # package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover.withPlugins (
-    #   ps: with ps; [
-    #     plover-lapwing-aio
-    #   ]
-    # );
-
-    # Or, use `plover-full` if you want Plover with all the plugins installed:
-    package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full;
-
-    settings = {
-      "Machine Configuration" = {
-        # I don't have a machine lol
-        # machine_type = "Gemini PR";
-        auto_start = true;
-      };
-      "Output Configuration".undo_levels = 100;
-    };
-  };
+  users.users."sa9m".extraGroups = [ "input" ];
 
   services.udev.extraRules = ''
     KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
   '';
 
-  users.users."sa9m".extraGroups = [ "input" ];
-}
+  # Some home manager definitions 
+  home-manager.users."sa9m" = {
+    imports = [
+      inputs.plover-flake.homeManagerModules.plover
+    ];
+
+    programs.plover = {
+      enable = true;
+
+      # If I only want some specific plugins
+      # package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover.withPlugins (
+      #   ps: with ps; [
+      #     plover-lapwing-aio
+      #   ]
+      # );
+
+      # Or, use `plover-full` if you want Plover with all the plugins installed:
+      package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full;
+
+      settings = {
+        "Machine Configuration" = {
+          # I don't have a machine lol
+          # machine_type = "Gemini PR";
+          auto_start = true;
+        };
+        "Output Configuration".undo_levels = 100;
+      };
+    };
+
+  }
+    }
