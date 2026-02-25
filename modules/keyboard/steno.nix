@@ -36,6 +36,5 @@
         "Output Configuration".undo_levels = 100;
       };
     };
-
-  }
-    }
+  };
+}
