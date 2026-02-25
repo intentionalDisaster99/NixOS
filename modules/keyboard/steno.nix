@@ -47,11 +47,10 @@
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
-      # Explicitly use the plover-full package from your flake inputs!
-      ExecStart = "${inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full}/bin/plover -g none";
+      # Pipe 'sleep infinity' into Plover so the console never receives an EOF and stays alive
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.coreutils}/bin/sleep infinity | ${inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full}/bin/plover -g none'";
       Restart = "on-failure";
       Environment = "PATH=${pkgs.coreutils}/bin";
     };
   };
-
 }
