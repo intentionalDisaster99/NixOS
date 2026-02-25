@@ -1,6 +1,6 @@
 # Trying to set up plover for stenography
 
-{ inputs, pkgs, home, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.plover-flake.homeManagerModules.plover
   ];
