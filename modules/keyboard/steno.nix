@@ -4,6 +4,26 @@ with lib;
 
 let
   cfg = config.programs.steno;
+
+  # Packaging a dependency that plover needs
+  rtf_tokenize = pkgs.python3Packages.buildPythonPackage rec {
+    pname = "rtf_tokenize";
+    version = "1.0.0";
+    format = "setuptools";
+
+    src = pkgs.python3Packages.fetchPypi {
+      inherit pname version;
+      # We use a fake hash here. Nix will fail the first build and tell you the real one!
+      hash = lib.fakeHash;
+    };
+
+    doCheck = false;
+  };
+
+  # Inject the dependency into Plover
+  patchedPlover = pkgs.plover.dev.overrideAttrs (old: {
+    propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ [ rtf_tokenize ];
+  });
 in
 {
   options.programs.steno = {
