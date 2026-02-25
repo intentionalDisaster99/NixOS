@@ -31,8 +31,5 @@ in
       "dialout"
       "uinput"
     ];
-
-    # Turning it on - hol up...
-    programs.steno.enable = true;
   };
 }

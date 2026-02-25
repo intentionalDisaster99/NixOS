@@ -139,4 +139,8 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
+  # Turning plover on - hol up...
+  # This should get moved to the module soon
+  programs.steno.enable = true;
+
 }
