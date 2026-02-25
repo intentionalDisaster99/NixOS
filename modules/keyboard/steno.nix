@@ -27,6 +27,11 @@
       # Or, use `plover-full` if you want Plover with all the plugins installed:
       package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full;
 
+      # Pointing to the actual keyboard itself
+      "Evdev Machine Configuration" = {
+        devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
+      };
+
       settings = {
         "Machine Configuration" = {
           # I don't have a machine lol
