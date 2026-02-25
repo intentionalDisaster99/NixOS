@@ -24,7 +24,7 @@
     };
 
     # Stenography perchance?
-    inputs.plover-flake.url = "github:openstenoproject/plover-flake";
+    plover-flake.url = "github:openstenoproject/plover-flake";
 
   };
 
