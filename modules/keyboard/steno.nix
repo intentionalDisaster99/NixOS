@@ -24,6 +24,7 @@ let
   patchedPlover = pkgs.plover.dev.overrideAttrs (old: {
     propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ [ rtf_tokenize ];
   });
+
 in
 {
   options.programs.steno = {
@@ -33,7 +34,7 @@ in
   config = mkIf cfg.enable {
     # Install the Plover package
     environment.systemPackages = with pkgs; [
-      plover.dev # The dev branch often has better Wayland support
+      patchedPlover
     ];
 
     # Enable uinput hardware module
