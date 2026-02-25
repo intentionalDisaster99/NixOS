@@ -1,56 +1,36 @@
-{ config, lib, pkgs, ... }:
+# any file imported by home-manager, e.g. home.nix
 
-with lib;
+{ inputs, ... }: {
+  imports = [
+    inputs.plover-flake.homeManagerModules.plover
+  ];
 
-let
-  cfg = config.programs.steno;
+  programs.plover = {
+    enable = true;
 
-  # Packaging a dependency that plover needs
-  rtf_tokenize = pkgs.python3Packages.buildPythonPackage rec {
-    pname = "rtf_tokenize";
-    version = "1.0.0";
-    format = "setuptools";
+    # If I only want some specific plugins
+    # package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover.withPlugins (
+    #   ps: with ps; [
+    #     plover-lapwing-aio
+    #   ]
+    # );
 
-    src = pkgs.python3Packages.fetchPypi {
-      inherit pname version;
-      # We use a fake hash here. Nix will fail the first build and tell you the real one!
-      hash = "sha256-XD3zkNAEeb12N8gjv81v37Id3RuWroFUY95+HtOS1gg=";
+    # Or, use `plover-full` if you want Plover with all the plugins installed:
+    package = inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full;
+
+    settings = {
+      "Machine Configuration" = {
+        # I don't have a machine lol
+        # machine_type = "Gemini PR";
+        auto_start = true;
+      };
+      "Output Configuration".undo_levels = 100;
     };
-
-    doCheck = false;
   };
 
-  # Inject the dependency into Plover
-  patchedPlover = pkgs.plover.dev.overrideAttrs (old: {
-    propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ [ rtf_tokenize ];
-  });
+  services.udev.extraRules = ''
+    KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
+  '';
 
-in
-{
-  options.programs.steno = {
-    enable = mkEnableOption "stenography support via Plover";
-  };
-
-  config = mkIf cfg.enable {
-    # Install the Plover package
-    environment.systemPackages = with pkgs; [
-      patchedPlover
-    ];
-
-    # Enable uinput hardware module
-    hardware.uinput.enable = true;
-
-    # Set up udev rules to allow Plover to create a virtual keyboard
-    services.udev.extraRules = ''
-      # Allow access to uinput so Plover can inject translated keystrokes
-      KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-    '';
-
-    # Add your user to the necessary groups for steno to work
-    users.users.sa9m.extraGroups = [
-      "input"
-      "dialout"
-      "uinput"
-    ];
-  };
+  users.users."sa9m".extraGroups = [ "input" ];
 }

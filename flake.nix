@@ -23,6 +23,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Stenography perchance?
+    inputs.plover-flake.url = "github:openstenoproject/plover-flake";
+
   };
 
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, ... }@inputs: {
