@@ -8,6 +8,7 @@ function steno_toggle
 
     # Creating plover
     if not pgrep -f plover > /dev/null
+        notify-send "Starting plover..."
         command plover -g none
     end
 
