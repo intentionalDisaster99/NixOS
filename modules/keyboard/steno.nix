@@ -1,6 +1,6 @@
 # any file imported by home-manager, e.g. home.nix
 
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.plover-flake.homeManagerModules.plover
   ];
