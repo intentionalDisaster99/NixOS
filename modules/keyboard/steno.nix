@@ -42,4 +42,16 @@
     };
   };
 
+  systemd.user.services.plover = {
+    description = "Plover stenography engine";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      # Explicitly use the plover-full package from your flake inputs!
+      ExecStart = "${inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full}/bin/plover -g none";
+      Restart = "on-failure";
+      Environment = "PATH=${pkgs.coreutils}/bin";
+    };
+  };
+
 }
