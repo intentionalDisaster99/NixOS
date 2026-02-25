@@ -1,6 +1,6 @@
-# any file imported by home-manager, e.g. home.nix
+# Trying to set up plover for stenography
 
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, home, ... }: {
   imports = [
     inputs.plover-flake.homeManagerModules.plover
   ];
