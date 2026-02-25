@@ -35,7 +35,7 @@
         };
         # Pointing to the actual keyboard itself
         "Evdev Machine Configuration" = {
-          devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
+          devices = ''["/dev/input/by-path/platform-i8042-serio-0-event-kbd"]'';
         };
         "Output Configuration".undo_levels = 100;
       };
