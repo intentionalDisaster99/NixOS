@@ -3,22 +3,22 @@ function steno_toggle
 
     # Defaulting to inactive
     if not test -f $MODE_FILE
-        echo "steno_inactive" > $MODE_FILE
+        echo "normal" > $MODE_FILE
     end
 
     # Creating plover
     if not pgrep -f plover > /dev/null
-        command plover &
+        command plover -g none
     end
 
     set CURRENT (cat $MODE_FILE)
 
-    if test "$CURRENT" = "steno_active"
-        echo "steno_inactive" > $MODE_FILE
+    if test "$CURRENT" = "steno"
+        echo "normal" > $MODE_FILE
         plover -s plover_send_command suspend
         notify-send -u low -t 2000 "Steno turned off."
-    else if test "$CURRENT" = "steno_inactive"
-        echo "steno_active" > $MODE_FILE
+    else if test "$CURRENT" = "normal"
+        echo "steno" > $MODE_FILE
         plover -s plover_send_command resume
         notify-send -u low -t 2000 "Steno turned on."
     end
