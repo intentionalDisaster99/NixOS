@@ -47,9 +47,10 @@
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
-      # Run the normal graphical app so Evdev and Qt can initialize properly
-      ExecStart = "${inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full}/bin/plover";
+      ExecStart = "${inputs.plover-flake.packages.${pkgs.stdenv.hostPlatform.system}.plover-full}/bin/plover -g none";
       Restart = "on-failure";
+      Environment = "PATH=${pkgs.coreutils}/bin";
     };
   };
+
 }

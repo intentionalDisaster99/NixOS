@@ -22,7 +22,7 @@
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
     ../../modules/emacs/emacs.nix
-    ../../modules/keyboard/steno.nix
+    # ../../modules/keyboard/steno.nix
 
   ];
 
