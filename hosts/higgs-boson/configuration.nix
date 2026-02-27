@@ -14,7 +14,7 @@
     ../../modules/platformIO/pio.nix
     # ../../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
     ../../modules/drive/drive.nix
-    ../../modules/google-drive/google-drive.nix
+    # ../../modules/google-drive/google-drive.nix
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
