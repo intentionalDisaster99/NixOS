@@ -3,6 +3,9 @@
 # Exit immediately if any command fails.
 set -e
 
+# Asking for sudo privaledges
+sudo -v
+
 NIXOS_CONFIG_DIR="/etc/nixos"
 # Automatically detect the system's hostname for the flake.
 HOSTNAME=$(hostname)
