@@ -1,7 +1,7 @@
 function power_save_toggle
     
     set MODE_FILE "/tmp/battery_saver_mode"
-    set CONFIG_DIR="dotfiles/waybar"
+    set CONFIG_DIR "dotfiles/waybar"
 
     # Defaulting to inactive
     if not test -f $MODE_FILE
@@ -28,7 +28,7 @@ function power_save_toggle
         echo "battery_saver" > $MODE_FILE
 
         # Switching to the low power config
-        ln -sf config-lowpower "$CONFIG_DIR/config-low-power"
+        ln -sf config-low-power "$CONFIG_DIR/config-low-power"
 
         # Turning off the wallpaper
         echo "off" > "/tmp/wallpaper_mode"
