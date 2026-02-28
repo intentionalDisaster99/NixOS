@@ -18,8 +18,8 @@ function power_save_toggle
         # Switching to the normal waybar
         ln -sf config-normal "$CONFIG_DIR/config"
 
-        # Turning off the wallpaper
-        echo "off" > "/tmp/wallpaper_mode"
+        # Turning the wallpaper to normal
+        echo "normal" > "/tmp/wallpaper_mode"
 
         notify-send -u low -t 2000 "Battery saver turned off."
     else if test "$CURRENT" = "normal"
@@ -30,8 +30,8 @@ function power_save_toggle
         # Switching to the low power config
         ln -sf config-lowpower "$CONFIG_DIR/config-low-power"
 
-        # Turning on the wallpaper to normal mode
-        echo "normal" > "/tmp/wallpaper_mode"
+        # Turning off the wallpaper
+        echo "off" > "/tmp/wallpaper_mode"
 
         notify-send -u low -t 2000 "Battery saver turned on."
     end
