@@ -28,7 +28,7 @@ function power_save_toggle
         echo "battery_saver" > $MODE_FILE
 
         # Switching to the low power config
-        ln -sf config-lowpower "$CONFIG_DIR/config"
+        ln -sf config-lowpower "$CONFIG_DIR/config-low-power"
 
         # Turning on the wallpaper to normal mode
         echo "normal" > "/tmp/wallpaper_mode"
