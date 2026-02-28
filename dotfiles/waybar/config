@@ -65,22 +65,14 @@
         "format-alt": "<span color='#f0c6c6'>{:%H:%M}</span>",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
-            "on-click-right": "mode",
-            "on-click": "mode"
+            "on-click-right": "mode" 
         },
         "interval": 1,
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
             "weeks-pos": "right",
-            "on-scroll": 1,    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-        "tooltip": false,
-        "on-scroll-up": "brightnessctl set 5%+",
-        "on-scroll-down": "brightnessctl set 5%-",
-        "smooth-scrolling-threshold": 1
-    },
+            "on-scroll": 1,
             "format": {
                 "months": "<span color='#f4dbd6'><b>{}</b></span>",
                 "days": "<span color='#cad3f5'><b>{}</b></span>",
@@ -89,6 +81,15 @@
                 "today": "<span color='#8bd5ca'><b><u>{}</u></b></span>"
             }
         }
+    },
+    
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+        "tooltip": false,
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "smooth-scrolling-threshold": 1
     },
 
     // DATE MODULE (Sapphire Blue)
