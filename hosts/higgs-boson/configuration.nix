@@ -139,7 +139,4 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  # Updating the kernal to the latest version
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
 }
