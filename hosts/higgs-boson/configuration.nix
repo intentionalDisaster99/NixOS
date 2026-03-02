@@ -14,7 +14,7 @@
     ../../modules/platformIO/pio.nix
     # ../../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
     ../../modules/drive/drive.nix
-    # ../../modules/google-drive/google-drive.nix
+    # ../../modules/google-drive/google-drive.nix # Also removed beccause it made it slow
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
@@ -22,11 +22,12 @@
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
     ../../modules/emacs/emacs.nix
-    # ../../modules/keyboard/steno.nix
+    # ../../modules/keyboard/steno.nix # Removed because I could lock my computer with it on and not be able to sign in 
 
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
+  # TODO Move this to it's own module
   # DEBUG: Define the kitty overlay inline to bypass any pathing issues.
   nixpkgs.overlays = [
     (final: prev: {
@@ -115,7 +116,7 @@
   '';
 
   # Bootloader extra entries
-  boot.loader.grub.useOSProber = true; #  false;
+  boot.loader.grub.useOSProber = true;
   boot.loader.grub.extraEntries = ''
     menuentry "Windows 11" {
       insmod part_gpt
