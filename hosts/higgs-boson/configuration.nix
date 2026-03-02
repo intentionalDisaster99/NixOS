@@ -83,7 +83,7 @@
   };
 
   # Upgrading to the most recent kernel 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_testin;
 
   # Adding in extra swap so that hibernation works
   swapDevices = [
