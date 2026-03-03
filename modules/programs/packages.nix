@@ -188,6 +188,7 @@
     # Silly
     kittysay
     neo-cowsay
+    sl
 
     # School
     # mathematica
