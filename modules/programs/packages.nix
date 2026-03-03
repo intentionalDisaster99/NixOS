@@ -185,6 +185,10 @@
     cargo-generate
     tio
 
+    # Silly
+    kittysay
+    neo-cowsay
+
     # School
     # mathematica
     # Not needed/wanted
