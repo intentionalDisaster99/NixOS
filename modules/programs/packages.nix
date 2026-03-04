@@ -197,7 +197,7 @@
     logisim-evolution
 
     # TMP
-    mapscii
+    # mapscii
 
 
   ];
