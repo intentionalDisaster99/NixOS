@@ -14,7 +14,6 @@
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
-        # No ovmf block needed anymore!
       };
     };
   };

@@ -194,8 +194,8 @@
     # mathematica
     # Not needed/wanted
     jetbrains.idea-ultimate
-    logisim-evolution
-    quartus-prime-lite
+    # logisim-evolution
+    # quartus-prime-lite
 
     # TMP
     # mapscii
