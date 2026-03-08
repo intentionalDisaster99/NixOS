@@ -23,6 +23,7 @@
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
     ../../modules/emacs/emacs.nix
+    ../../modules/random-cool-stuff/alien.nix
     # ../../modules/keyboard/steno.nix # Removed because I could lock my computer with it on and not be able to sign in 
 
   ];
