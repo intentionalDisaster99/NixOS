@@ -23,6 +23,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # For running unpatched binaries
+    nix-alien.url = "github:thiagokokada/nix-alien";
+
     # I'm dreaming of inventor on linux 🥰
     winboat = {
       url = "path:./modules/winboat";

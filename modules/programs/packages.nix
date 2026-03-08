@@ -189,6 +189,7 @@
     kittysay
     neo-cowsay
     sl
+    thefuck
 
     # School
     # mathematica
