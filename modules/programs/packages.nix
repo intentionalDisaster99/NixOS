@@ -192,6 +192,8 @@
     pay-respects
     gping
     lf
+    tldr
+    dust
 
     # School
     # mathematica
