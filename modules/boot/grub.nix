@@ -3,6 +3,7 @@
 let
   # Detect if we are on the laptop
   isHiggs = config.networking.hostName == "higgs-boson";
+  nixosInfo = config.system.nixos;
 in
 {
   boot.loader.grub = {
