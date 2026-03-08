@@ -67,4 +67,4 @@ starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
 mise activate fish | source
-pay-resects fish --alias | source
+pay-respects fish --alias | source
