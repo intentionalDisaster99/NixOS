@@ -189,7 +189,7 @@
     kittysay
     neo-cowsay
     sl
-    thefuck
+    pay-respects
 
     # School
     # mathematica
