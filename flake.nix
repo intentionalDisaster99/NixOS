@@ -17,6 +17,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Silly bootloader teehee
+    minegrub-world-sel-theme = {
+      url = "github:Lxtharia/minegrub-world-sel-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # I'm dreaming of inventor on linux 🥰
     winboat = {
       url = "path:./modules/winboat";
@@ -37,6 +43,7 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/higgs-boson/configuration.nix
+        inputs.minegrub-world-sel-theme.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -55,6 +62,7 @@
       modules = [
         ./hosts/gluon/configuration.nix
         home-manager.nixosModules.home-manager
+        inputs.minegrub-world-sel-theme.nixosModules.default
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
