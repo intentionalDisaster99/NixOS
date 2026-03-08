@@ -5,33 +5,27 @@ let
   isHiggs = hostname == "higgs-boson";
   isGluon = hostname == "gluon";
 
-  # We define the menu entry here
-  windowsEntry = uuid: ''
-    menuentry "Windows 11" --class windows {
-      insmod part_gpt
-      insmod fat
-      insmod search_fs_uuid
-      search --fs-uuid --set=root ${uuid}
-      chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-    }
-  '';
-
-  # Pick the right UUID
   activeUuid =
     if isHiggs then "7282-E320"
     else if isGluon then "1588-A8B5"
     else null;
+
+  windowsMenuEntry = ''
+    menuentry "Windows 11" --class windows {
+      insmod part_gpt
+      insmod fat
+      insmod search_fs_uuid
+      search --fs-uuid --set=root ${activeUuid}
+      chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+    }
+  '';
 in
 {
   boot.loader.grub = {
     enable = true;
     useOSProber = lib.mkForce false;
 
-    extraPrepareConfig = lib.mkIf (activeUuid != null) ''
-      cat << 'EOF'
-      ${windowsEntry activeUuid}
-      EOF
-    '';
+    extraConfig = lib.mkIf (activeUuid != null) windowsMenuEntry;
 
     minegrub-world-sel = {
       enable = true;
