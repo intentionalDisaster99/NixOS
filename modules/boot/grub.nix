@@ -5,8 +5,7 @@ let
   isHiggs = hostname == "higgs-boson";
   isGluon = hostname == "gluon";
 
-  # Manual Windows entry
-  # Note: You'll need the specific UUID for Gluon here
+  # We define the menu entry here
   windowsEntry = uuid: ''
     menuentry "Windows 11" --class windows {
       insmod part_gpt
@@ -16,19 +15,23 @@ let
       chainloader /EFI/Microsoft/Boot/bootmgfw.efi
     }
   '';
+
+  # Pick the right UUID
+  activeUuid =
+    if isHiggs then "7282-E320"
+    else if isGluon then "1588-A8B5"
+    else null;
 in
 {
   boot.loader.grub = {
     enable = true;
-
-    # Disable osProber on both to keep the menu indices static
     useOSProber = lib.mkForce false;
 
-    # Assign the correct UUID based on which machine is being built
-    extraEntries =
-      if isHiggs then (windowsEntry "7282-E320")
-      else if isGluon then (windowsEntry "1588-A8B5")
-      else "";
+    extraPrepareConfig = lib.mkIf (activeUuid != null) ''
+      cat << 'EOF'
+      ${windowsEntry activeUuid}
+      EOF
+    '';
 
     minegrub-world-sel = {
       enable = true;
@@ -39,7 +42,7 @@ in
           lineBottom = "Survival Mode, No Cheats";
           imgName = "nixos";
         }
-      ] ++ (if (isHiggs || isGluon) then [{
+      ] ++ (if (activeUuid != null) then [{
         name = "windows";
         lineTop = "Windows 11";
         lineBottom = "Hardcore Mode, All Cheats Enabled";
