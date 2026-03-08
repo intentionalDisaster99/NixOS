@@ -1,29 +1,34 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  # Detect if we are on the laptop
-  isHiggs = config.networking.hostName == "higgs-boson";
-  nixosInfo = config.system.nixos;
+  hostname = config.networking.hostName;
+  isHiggs = hostname == "higgs-boson";
+  isGluon = hostname == "gluon";
+
+  # Manual Windows entry
+  # Note: You'll need the specific UUID for Gluon here
+  windowsEntry = uuid: ''
+    menuentry "Windows 11" --class windows {
+      insmod part_gpt
+      insmod fat
+      insmod search_fs_uuid
+      search --fs-uuid --set=root ${uuid}
+      chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+    }
+  '';
 in
 {
   boot.loader.grub = {
     enable = true;
 
-    # Only disable osProber on higgs-boson to speed up rebuilds
-    useOSProber = if isHiggs then false else true;
+    # Disable osProber on both to keep the menu indices static
+    useOSProber = lib.mkForce false;
 
-    # Manually add the Windows entry ONLY for higgs-boson
+    # Assign the correct UUID based on which machine is being built
     extraEntries =
-      if isHiggs then ''
-        menuentry "Windows 11 (Fast Boot)" {
-          insmod part_gpt
-          insmod fat
-          insmod search_fs_uuid
-          # Update this UUID with the one from your laptop's EFI partition
-          search --fs-uuid --set=root 7282-E320 
-          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        }
-      '' else "";
+      if isHiggs then (windowsEntry "7282-E320")
+      else if isGluon then (windowsEntry "1588-A8B5")
+      else "";
 
     minegrub-world-sel = {
       enable = true;
@@ -31,17 +36,15 @@ in
         {
           name = "nixos";
           lineTop = "NixOS ${config.system.nixos.distroName}";
-          lineBottom = "Survival Mode, No Cheats, Version: ${config.system.nixos.release}";
+          lineBottom = "Survival Mode, No Cheats";
           imgName = "nixos";
         }
-        # Add a custom icon for the Windows entry on Higgs
-        (if isHiggs then {
-          name = "windows";
-          lineTop = "Windows 11";
-          lineBottom = "Hardcore Mode, All Cheats Enabled";
-          imgName = "windows";
-        } else { })
-      ];
+      ] ++ (if (isHiggs || isGluon) then [{
+        name = "windows";
+        lineTop = "Windows 11";
+        lineBottom = "Hardcore Mode, All Cheats Enabled";
+        imgName = "windows";
+      }] else [ ]);
     };
   };
 }
