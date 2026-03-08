@@ -190,6 +190,7 @@
     neo-cowsay
     sl
     pay-respects
+    gping
 
     # School
     # mathematica
