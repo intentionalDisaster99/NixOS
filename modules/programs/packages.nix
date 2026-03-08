@@ -191,6 +191,7 @@
     sl
     pay-respects
     gping
+    lf
 
     # School
     # mathematica
