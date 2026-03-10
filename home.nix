@@ -14,6 +14,7 @@
     "fish" = { source = ./dotfiles/fish; recursive = true; };
     "starship.toml".source = ./dotfiles/starship.toml;
     "doom" = { source = ./dotfiles/doom; };
+    "eww" = { source = config.lib.file.mkOutOfStoreSymlink "./dotfiles/eww"; recursive = true; };
   };
 
   home.sessionVariables = {

@@ -93,6 +93,8 @@
     direnv
     cheese
     drawio
+    eww
+    quickshell
 
     # KDE things 
     # kdewalletmanager

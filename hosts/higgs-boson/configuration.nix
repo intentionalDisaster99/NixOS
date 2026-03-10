@@ -77,14 +77,8 @@
       { from = 1714; to = 1764; } # KDE Connect
       { from = 1194; to = 1194; } # NordVPN
       { from = 22; to = 22; } # SSH
-      {
-        from = 25565;
-        to = 25565;
-      } # Minecraft
-      {
-        from = 36891;
-        to = 36891;
-      } # Minecraft
+      { from = 25565; to = 25565; } # Minecraft
+      { from = 36891; to = 36891; } # Minecraft
     ];
     allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
