@@ -56,7 +56,7 @@ Item {
     readonly property color maroon: "#eba0ac"
     readonly property color peach: "#fab387"
 
-    readonly property string scriptsDir: Quickshell.env("HOME") + "/.config/eww/network"
+    readonly property string scriptsDir: "/etc/nixos/dotfiles/eww/network"
 
     property string activeMode: "bt"
     readonly property color activeColor: activeMode === "wifi" ? window.sapphire : window.mauve
