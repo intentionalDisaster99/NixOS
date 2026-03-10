@@ -2,7 +2,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  # List packages you want to install system-wide.
   environment.systemPackages = with pkgs; [
 
     # ---------------------------------------------------
@@ -54,6 +53,7 @@
     pavucontrol
     playerctl
     brightnessctl
+    ffmpeg_6
 
     # GUI widget/script dependencies (Crucial for eww/quickshell!)
     jq
@@ -89,6 +89,7 @@
     atuin
     direnv
     mise
+    wget
 
     # ---------------------------------------------------
     # Dev
@@ -149,6 +150,7 @@
     bottles
     swtpm
     firejail
+    winboat
 
     # System monitoring
     btop-cuda
@@ -227,7 +229,7 @@
     # ---------------------------------------------------
     # Not needed/wanted (Kept for reference)
     # ---------------------------------------------------
-    # mathematicao
+    # mathematica
     # jetbrains.idea-ultimate
     # logisim-evolution
     # quartus-prime-lite
