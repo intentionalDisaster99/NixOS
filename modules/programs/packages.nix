@@ -4,211 +4,234 @@
 {
   # List packages you want to install system-wide.
   environment.systemPackages = with pkgs; [
-    # Core Essentials
+
+    # ---------------------------------------------------
+    # OS Utils 
+    # ---------------------------------------------------
     grub2
     os-prober
     networkmanager
     gtk4
-
-    # OS Essentials
-    git
-    github-desktop
-    zoxide
-    fastfetch
-    libnotify
-    tesseract4
-    gImageReader
-    zoom-us
-    eyedropper
-    syncthing
-    ffmpeg_6
-    rclone
-    btop-cuda
-    libreoffice-qt6-fresh
-    virt-manager
-    qemu
-    wine
-    bottles
-    gparted
-    kdePackages.filelight
-    swtpm
-    nixpkgs-fmt
-    winboat
-    docker-compose
-    docker
-    freerdp
-    wgnord
-    ventoy-full
-    rustdesk-flutter
-    google-drive-ocamlfuse
-    lsd
-    tldr
-    htop
-    networkmanagerapplet
-    neovim
-    seahorse
-    lm_sensors
-    wget
-    texliveFull
-    cliphist
-    wl-clipboard
-    wtype
-    pavucontrol
-    swappy
-    firejail
-    playerctl
-    fzf
-    cifs-utils
-    grsync
-    wofi-emoji
-    nautilus
-    gnome-control-center
-    gnome-online-accounts
-    gvfs
     polkit_gnome
-    seahorse
-    glib-networking
-    sysprof
     gsettings-desktop-schemas
-    s-tui
-    mpvpaper
-    openssh
-    sshfs
-    tlp
-    powertop
-    cpu-x
-    unclutter
-    eza
-    hyfetch
-    ocrmypdf
-    parallel
-    atuin
-    bat
-    fzf
-    fireplace
-    usbutils
-    blueman # backup bluetooth manager `blueman-manager`
-    pandoc
-    emote
-    direnv
-    cheese
-    drawio
-    eww
-    quickshell
-
-    # KDE things 
-    # kdewalletmanager
-    # kdePackages.kwallet
+    glib-networking
+    gvfs
     upower
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+    nixpkgs-fmt
 
+    # ---------------------------------------------------
     # Hyprland
-    dunst
-    pipewire
-    wireplumber
-    hyprpaper
-    swaylock-fancy
+    # ---------------------------------------------------
+    eww
+    quickshell
     waybar
-    brightnessctl
     rofi
     wlogout
-    fish
-    grim
-    slurp
-    wl-clipboard
+    hyprpaper
+    swaylock-fancy
+    dunst
+    libnotify
+    mpvpaper
+    avizo
+    unclutter
     kdePackages.qt6ct
     libsForQt5.qt5ct
+
+    # Screen capture & clipboards
+    grim
+    slurp
+    swappy
+    eyedropper
+    wl-clipboard
+    cliphist
+    wtype
+
+    # Audio & Display control
+    pipewire
+    wireplumber
+    pavucontrol
+    playerctl
+    brightnessctl
+
+    # GUI widget/script dependencies (Crucial for eww/quickshell!)
+    jq
+    socat
+    pamixer
+    acpi
+    iw
+    bluez
+    bc
+    pulseaudio
+    imagemagick
+
+    # ---------------------------------------------------
+    # Terminal stuff
+    # ---------------------------------------------------
+    fish
     starship
+    kitty
+    kdePackages.yakuake
+    zoxide
+    fastfetch
+    hyfetch
+    lsd
+    eza
+    bat
+    fzf
+    ripgrep
+    tldr
+    dust
+    lf
+    psmisc
+    parallel
+    atuin
     direnv
     mise
-    figlet
-    overskride
-    psmisc
-    ripgrep
-    avizo
-    radicle-tui
-    qalculate-gtk
 
-
-    # Coding
+    # ---------------------------------------------------
+    # Dev
+    # ---------------------------------------------------
     vim
-    kitty
+    neovim
     vscode
     vscodium-fhs
-    kdePackages.yakuake
     arduino-ide
-    cargo
-    #    rustc
-    python3
     platformio
     jdk
-    rustup
-    gcc
-    lazygit
-    openvpn
     netbeans
-    # jetbrains-toolbox
-    vlc
+    python3
+    gcc
     gdb
     gef
+    git
+    github-desktop
+    lazygit
+    radicle-tui
 
-    # Funy
-    activate-linux
+    # Rust specific
+    cargo
+    rustup
 
-    # Electrical
-    kicad
+    # ---------------------------------------------------
+    # Embedded stuff 
+    # ---------------------------------------------------
+    picotool
+    probe-rs-tools
+    pico-sdk
+    python313Packages.cmake
+    gnumake42
+    cargo-generate
+    tio
 
+    # ---------------------------------------------------
+    # Server and utilities things
+    # ---------------------------------------------------
+    docker
+    docker-compose
+    virt-manager
+    qemu
+    freerdp
+    rustdesk-flutter
+    openssh
+    sshfs
+    cifs-utils
+    syncthing
+    rclone
+    google-drive-ocamlfuse
+    grsync
+    gparted
+    kdePackages.filelight
+    usbutils
+    ventoy-full
+    wine
+    bottles
+    swtpm
+    firejail
 
-    # General
-    brave
-    spotify
-    obsidian
-    discord
-    steam
-    element-desktop
-    obs-studio
+    # System monitoring
+    btop-cuda
+    htop
+    s-tui
+    powertop
+    cpu-x
+    tlp
+    lm_sensors
+    sysprof
 
     # Networking
     geteduroam
     tailscale
+    wgnord
+    openvpn
+    networkmanagerapplet
+    blueman # backup bluetooth manager `blueman-manager`
+    overskride
 
+    # ---------------------------------------------------
+    # General Apps
+    # ---------------------------------------------------
+    brave
+    spotify
+    discord
+    element-desktop
+    zoom-us
+    obs-studio
+    vlc
+    cheese
+    nautilus
+    gnome-control-center
+    gnome-online-accounts
+    seahorse
+    wofi-emoji
+    emote
+    qalculate-gtk
+
+    # ---------------------------------------------------
+    # School
+    # ---------------------------------------------------
+    obsidian
+    libreoffice-qt6-fresh
+    texliveFull
+    pandoc
+    drawio
+    tesseract4
+    gImageReader
+    ocrmypdf
+
+    # ---------------------------------------------------
+    # Electrical
+    # ---------------------------------------------------
+    kicad
+
+    # ---------------------------------------------------
     # Gaming
+    # ---------------------------------------------------
+    steam
     prismlauncher
 
-    # Rust embedded
-    picotool
-    probe-rs-tools
-    # cmake
-    gnumake42
-    pico-sdk
-    python313Packages.cmake
-    direnv
-    cargo-generate
-    tio
-
-    # Silly
+    # ---------------------------------------------------
+    # Silly Things
+    # ---------------------------------------------------
+    activate-linux
     kittysay
     neo-cowsay
     sl
     pay-respects
     gping
-    lf
-    tldr
-    dust
-
-    # School
-    # mathematica
-    # Not needed/wanted
-    jetbrains.idea-ultimate
-    # logisim-evolution
-    # quartus-prime-lite
-
-    # TMP
+    fireplace
+    figlet
     # mapscii
 
-
+    # ---------------------------------------------------
+    # Not needed/wanted (Kept for reference)
+    # ---------------------------------------------------
+    # mathematicao
+    # jetbrains.idea-ultimate
+    # logisim-evolution
+    # quartus-prime-lite
+    # kdewalletmanager
+    # kdePackages.kwallet
   ];
-
-
 }
