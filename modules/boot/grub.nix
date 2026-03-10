@@ -25,7 +25,7 @@ in
     enable = true;
     useOSProber = lib.mkForce false;
 
-    extraConfig = lib.mkIf (activeUuid != null) windowsMenuEntry;
+    extraEntries = lib.mkIf (activeUuid != null) windowsMenuEntry;
 
     minegrub-world-sel = {
       enable = true;
