@@ -133,4 +133,10 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
 }
