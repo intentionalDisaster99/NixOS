@@ -80,6 +80,7 @@
       { from = 22; to = 22; } # SSH
       { from = 25565; to = 25565; } # Minecraft
       { from = 36891; to = 36891; } # Minecraft
+      { from = 8008; to = 8009; } # Chromecast
     ];
     allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
