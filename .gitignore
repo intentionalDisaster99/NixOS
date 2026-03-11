@@ -2,3 +2,5 @@ secret.*
 smb-secrets
 *.swp
 secrets/*
+
+**Wolfram_14.3.0_LIN_Bndl**
