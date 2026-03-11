@@ -13,7 +13,7 @@
     [NAS]
     type = smb
     host = graviton
-    pass = ${config.sops.placeholder.rclone_nas_password}
+    pass = ${config.sops.placeholder.smb_password}
   '';
 
   fileSystems."/home/sa9m/NAS" = {
