@@ -40,7 +40,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, minesddm, winboat, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, ... }@inputs: {
 
 
     # Laptop Configuration
