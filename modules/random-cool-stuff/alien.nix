@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    inputs.nix-alien.packages.${pkgs.system}.nix-alien
+    inputs.nix-alien.packages.${stdenv.hostPlatform.system}.nix-alien
   ];
 
   programs.nix-ld.enable = true;
