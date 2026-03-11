@@ -7,7 +7,7 @@
     "d /home/sa9m/NAS 0755 sa9m users -"
   ];
 
-  sops.secrets.rclone_nas_password = { };
+  sops.secrets.smb_password = { };
 
   sops.templates."rclone.conf".content = ''
     [NAS]
