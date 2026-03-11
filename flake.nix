@@ -26,6 +26,9 @@
     # For running unpatched binaries
     nix-alien.url = "github:thiagokokada/nix-alien";
 
+    # For secrets management
+    sops-nix.url = "github:Mic92/sops-nix";
+
     # I'm dreaming of inventor on linux 🥰
     winboat = {
       url = "path:./modules/winboat";
@@ -46,6 +49,7 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/higgs-boson/configuration.nix
+        sops-nix.nixosModules.sops
         inputs.minegrub-world-sel-theme.nixosModules.default
         home-manager.nixosModules.home-manager
         {
@@ -64,6 +68,7 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/gluon/configuration.nix
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
         inputs.minegrub-world-sel-theme.nixosModules.default
         {

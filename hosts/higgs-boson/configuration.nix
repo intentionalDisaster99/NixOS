@@ -1,5 +1,7 @@
 { config, pkgs, inputs, ... }:
 
+# Note to self: to edit secrets, run `sops secrets/secrets.yaml`
+
 {
   imports = [
     ./hardware-configuration.nix
@@ -14,7 +16,7 @@
     ../../modules/syncthing/syncthing.nix
     ../../modules/virtualization/virtualMachines.nix
     ../../modules/platformIO/pio.nix
-    # ../../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
+    ../../modules/rclone/rclone.nix # Added back in but limited to just NAS
     ../../modules/drive/drive.nix
     # ../../modules/google-drive/google-drive.nix # Also removed beccause it made it slow
     ../../modules/hyprland/hyprland.nix
@@ -139,5 +141,10 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+
+  # Telling sops where to find the secrets
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
 
 }
