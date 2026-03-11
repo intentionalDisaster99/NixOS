@@ -2,5 +2,6 @@ secret.*
 smb-secrets
 *.swp
 secrets/google-drive.nix
+secrets/secrets_backup.yaml
 
 **Wolfram_14.3.0_LIN_Bndl**
