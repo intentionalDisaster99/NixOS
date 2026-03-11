@@ -144,4 +144,9 @@
 
   };
 
+
+  # TODO create a pay-respects module
+  programs.pay-respects.enable = true;
+  programs.nix-index.enable = true;
+
 }
