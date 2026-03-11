@@ -1,7 +1,5 @@
-# .sops.yaml
 keys:
-  - &higgs_boson "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUcboE1pZNsnmrayLWiNiYuSvP+wO6O9irjRlOjmNFN root@nixos"
-  # - &gluon "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...<insert gluon pub key here>"
+  - &higgs_boson age1zfmfjmyx5w59dv330qnguapkc6rf6nhrzx6w0067vwfxql894f3sl80p8c
 
 creation_rules:
   - path_regex: secrets/.*$
