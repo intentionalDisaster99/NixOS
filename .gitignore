@@ -1,6 +1,6 @@
 secret.*
 smb-secrets
 *.swp
-secrets/*
+secrets/google-drive.nix
 
 **Wolfram_14.3.0_LIN_Bndl**
