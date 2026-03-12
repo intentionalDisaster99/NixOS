@@ -9,7 +9,35 @@
     workspace = {
       clickItemTo = "select";
       lookAndFeel = "org.kde.breezedark.desktop";
+
+      # Set your wallpaper directly from your resources folder!
+      wallpaper = "${../../resources/wallpapers/space.png}";
     };
+
+    # Define your declarative Waybar-style top panel
+    panels = [
+      {
+        location = "top";
+        height = 36;
+        floating = true;
+        widgets = [
+          # Left Side
+          "org.kde.plasma.kickoff" # Application Launcher icon
+          "org.kde.plasma.pager" # Workspace indicator 
+
+          # Center
+          "org.kde.plasma.icontasks" # Open windows
+
+          # Right Side
+          "org.kde.plasma.marginsseparator" # Pushes everything below this to the right
+          "org.kde.plasma.systemtray" # Network, Bluetooth, Volume
+          {
+            name = "org.kde.plasma.digitalclock";
+            config.Appearance.showDate = "true";
+          }
+        ];
+      }
+    ];
 
     # App Lauunching global shortcuts
     hotkeys.commands = {
@@ -33,10 +61,9 @@
         key = "Meta+N";
         command = "obsidian";
       };
-      launch-app-launcher = {
-        key = "Alt+Space";
-        command = "rofi -show drun";
-      };
+      # launch-app-launcher = { key = "Alt+Space";
+      #   command = "rofi -show drun";
+      # };
 
       # More global shortcuts, tho these are for specific fish scripts
       toggle-vpn = {
