@@ -64,7 +64,10 @@
 
 
   # Main config stuff that shouldn't really change
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "en_CA.UTF-8/UTF-8" # Add this to fix the perl warnings
+  ];
   time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
