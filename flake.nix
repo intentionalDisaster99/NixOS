@@ -23,6 +23,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # For managing KDE
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # For running unpatched binaries
     nix-alien.url = "github:thiagokokada/nix-alien";
 
@@ -40,7 +47,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, ... }@inputs: {
 
 
     # Laptop Configuration
@@ -55,7 +62,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.sa9m = import ./home.nix;
+          home-manager.users.sa9m = { ... }: {
+            imports = [
+              ./home.nix
+              ./modules/kde/home-kde.nix
+            ];
+          };
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.backupFileExtension = "backup";
         }
@@ -74,7 +86,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.sa9m = import ./home.nix;
+          home-manager.users.sa9m = { ... }: {
+            imports = [
+              ./home.nix
+              ./modules/kde/home-kde.nix
+            ];
+          };
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.backupFileExtension = "backup";
         }
