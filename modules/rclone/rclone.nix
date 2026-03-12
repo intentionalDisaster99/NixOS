@@ -4,7 +4,7 @@
   environment.systemPackages = [ pkgs.rclone ];
 
   systemd.tmpfiles.rules = [
-    "d /home/sa9m/NAS 0755 sa9m users -"
+    "d /mnt/NAS 0755 sa9m users -"
   ];
 
   sops.secrets.smb_password = { };
@@ -16,7 +16,7 @@
     pass = ${config.sops.placeholder.smb_password}
   '';
 
-  fileSystems."/home/sa9m/NAS" = {
+  fileSystems."/mnt/NAS" = {
     device = "NAS:/";
     fsType = "rclone";
     options = [
