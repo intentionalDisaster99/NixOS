@@ -63,9 +63,7 @@
       };
       custom-screenshot = {
         key = "Meta+Shift+S";
-        command = "grim -g \"$(slurp)\" - | wl-copy";
-        # Note: KDE has an excellent built-in tool called Spectacle. 
-        # If grim/slurp behave strangely on KWin, change this command to "spectacle -rc"
+        command = "spectacle -rc";
       };
     };
 
