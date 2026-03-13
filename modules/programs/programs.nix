@@ -127,11 +127,8 @@
   };
 
 
-  # Mounting my NAS TODO Move to a module
-  o
-
-    # TODO create a pay-respects module
-    programs.pay-respects.enable = true;
+  # TODO create a pay-respects module
+  programs.pay-respects.enable = true;
   programs.nix-index.enable = true;
 
 }
