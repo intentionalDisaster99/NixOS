@@ -35,7 +35,6 @@
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
   # TODO Move this to it's own module
-  # DEBUG: Define the kitty overlay inline to bypass any pathing issues.
   nixpkgs.overlays = [
     (final: prev: {
       kitty = prev.kitty.overrideAttrs (oldAttrs: {
@@ -76,7 +75,6 @@
   ############
   # Firewall #
   ############
-  # Allowing certain things through the firewall
   networking.firewall = {
     enable = true;
     checkReversePath = "loose";
