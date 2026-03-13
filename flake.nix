@@ -89,7 +89,7 @@
           home-manager.users.sa9m = { ... }: {
             imports = [
               ./home.nix
-              # ./modules/kde/home-kde.nix
+              ./modules/kde/home-kde.nix
             ];
           };
           home-manager.extraSpecialArgs = { inherit inputs; };

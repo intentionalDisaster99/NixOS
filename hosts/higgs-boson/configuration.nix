@@ -9,6 +9,7 @@
 
     # All of the modules I have
     ../../modules/programs/programs.nix
+    ../../modules/kde/kde.nix
     ../../modules/programs/man-cache.nix
     ../../modules/boot/boot.nix
     ../../modules/boot/grub.nix
