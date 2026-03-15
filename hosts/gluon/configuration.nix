@@ -13,7 +13,7 @@
     ../../modules/syncthing/syncthing.nix
     ../../modules/virtualization/virtualMachines.nix
     ../../modules/platformIO/pio.nix
-    # ../../modules/rclone/rclone.nix # Removed because it was making my file picker excruciatingly slow
+    ../../modules/rclone/rclone.nix
     ../../modules/drive/drive.nix
     # ../../modules/google-drive/google-drive.nix
     ../../modules/hyprland/hyprland.nix
