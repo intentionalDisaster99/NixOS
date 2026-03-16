@@ -24,6 +24,7 @@
     ../../modules/rgb/openrgb.nix
     ../../modules/brightness/pc-brightness.nix
     ../../modules/emacs/emacs.nix
+    ../../modules/school/mathematica.nix
 
   ];
 
