@@ -1,4 +1,3 @@
-# /etc/nixos/programs.nix
 { config, pkgs, lib, ... }:
 
 {

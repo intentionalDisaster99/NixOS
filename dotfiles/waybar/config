@@ -311,6 +311,7 @@
     "modules-left": ["user"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["keyboard-state", "hyprland/language"],
+    "output": "DP-1",
 
     // Modules Config
     "hyprland/window": {
@@ -354,6 +355,7 @@
     "modules-left": ["wlr/taskbar"],
     "modules-center": ["cpu", "memory", "disk", "temperature", "battery", "backlight", "pulseaudio", "systemd-failed-units"],
     "modules-right": ["tray"],
+    "output": "DP-1",
 
     // Modules Config
     "wlr/taskbar": {
