@@ -11,5 +11,5 @@
     enable = true;
     user = "sa9m";
   };
-  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = "hyprland-uwsm";
 }
