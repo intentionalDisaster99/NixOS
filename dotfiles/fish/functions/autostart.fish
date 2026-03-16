@@ -1,4 +1,8 @@
 function autostart
+
+    # Automatically lock
+    hyprlock &
+
     # Start basic services 
     hypridle & 
     dunst & 
