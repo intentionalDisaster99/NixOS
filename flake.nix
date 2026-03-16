@@ -45,6 +45,11 @@
     # Stenography perchance?
     plover-flake.url = "github:openstenoproject/plover-flake";
 
+    # Hyprland Plugins
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, ... }@inputs: {

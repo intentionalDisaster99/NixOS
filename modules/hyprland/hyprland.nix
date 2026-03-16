@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # Enable Hyprland
@@ -9,7 +9,8 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
-  environment.etc."hyprland/plugins/split-monitor-workspaces.so".source = "${pkgs.hyprlandPlugins.split-monitor-workspaces}/lib/libsplit-monitor-workspaces.so";
+  # Adding in the plugin for my desktop
+  environment.etc."hyprland/plugins/split-monitor-workspaces.so".source = "${inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces}/lib/libsplit-monitor-workspaces.so";
 
   programs.hyprlock.enable = true;
   services.hypridle.enable = true;
