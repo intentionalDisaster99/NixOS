@@ -126,6 +126,14 @@
     tokenFile = "/home/sa9m/.confidential/wgnordToken.txt";
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 30d";
+  };
+
+  nix.settings.auto-optimise-store = true;
+
 
   # TODO create a pay-respects module
   programs.pay-respects.enable = true;
