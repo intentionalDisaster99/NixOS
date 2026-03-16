@@ -9,6 +9,8 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
+  environment.etc."hyprland/plugins/split-monitor-workspaces.so".source = "${pkgs.hyprlandPlugins.split-monitor-workspaces}/lib/libsplit-monitor-workspaces.so";
+
   programs.hyprlock.enable = true;
   services.hypridle.enable = true;
 
