@@ -231,7 +231,7 @@
     # Not needed/wanted (Kept for reference)
     # ---------------------------------------------------
     # mathematica
-    blender
+    # blender
     # jetbrains.idea-ultimate
     # logisim-evolution
     # quartus-prime-lite
