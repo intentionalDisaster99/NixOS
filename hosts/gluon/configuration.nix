@@ -25,6 +25,7 @@
     ../../modules/brightness/pc-brightness.nix
     ../../modules/emacs/emacs.nix
     ../../modules/school/mathematica.nix
+    ../../modules/gaming/sunshine.nix
 
 
   ];
