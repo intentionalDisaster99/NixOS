@@ -47,6 +47,7 @@
   # Docker cause duh
   virtualisation.docker.enable = true;
 
+  # TODO move this to its own module
   # Making sure I can use OBS
   programs.obs-studio = {
     enable = true;

@@ -145,6 +145,10 @@
     openFirewall = true;
   };
 
+  # For checking battery life and time remaining
+  environment.systemPackages = [
+    pkgs.upower
+  ];
 
   # Telling sops where to find the secrets
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
