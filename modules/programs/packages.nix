@@ -151,6 +151,7 @@
     swtpm
     firejail
     winboat
+    waypipe
 
     # System monitoring
     btop-cuda
