@@ -26,6 +26,7 @@
     ../../modules/emacs/emacs.nix
     ../../modules/school/mathematica.nix
 
+
   ];
 
   # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
