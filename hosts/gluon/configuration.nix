@@ -98,12 +98,15 @@
   # Upgrading to the most recent kernel 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Adding swap so that I can hibernate
   swapDevices = [
     {
       device = "/var/lib/swapfile";
       size = 16 * 1024; # 16GB
     }
   ];
+  boot.initrd.systemd.enable = true;
+
 
   # Adding in fonts for my code editors
   fonts.packages = with pkgs; [
