@@ -1,7 +1,7 @@
 function autostart
 
-    # Automatically lock
-    hyprlock &
+    # Automatically lock (only needed if autoLogin is enabled)
+    # hyprlock &
 
     # Start basic services 
     hypridle & 
