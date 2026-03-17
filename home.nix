@@ -111,7 +111,7 @@
   # Where to save screenshots
   xdg.configFile."swappy/config".text = ''
     [Default]
-    save_dir=/home/scw0035/Pictures/Screenshots
+    save_dir=/home/sa9m/Pictures/Screenshots
     save_filename_format=screenshot-%Y%m%d-%H%M%S.png
     show_panel=false
     line_size=5
