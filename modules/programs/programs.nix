@@ -67,7 +67,7 @@
 
   # Telling nixos it can use ventoy
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.07"
+    "ventoy-1.1.10"
   ];
 
   # Switching to fish
@@ -138,10 +138,5 @@
   # TODO create a pay-respects module
   programs.pay-respects.enable = true;
   programs.nix-index.enable = true;
-
-  # Telling nixos it can use ventoy
-  nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.10"
-  ];
 
 }
