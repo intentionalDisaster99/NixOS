@@ -7,9 +7,9 @@
     capSysAdmin = true;
     openFirewall = true;
   };
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "sa9m";
-  };
-  services.displayManager.defaultSession = "hyprland-uwsm";
+  # services.displayManager.autoLogin = {
+  #   enable = true;
+  #   user = "sa9m";
+  # };
+  # services.displayManager.defaultSession = "hyprland-uwsm";
 }
