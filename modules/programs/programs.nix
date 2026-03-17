@@ -139,4 +139,9 @@
   programs.pay-respects.enable = true;
   programs.nix-index.enable = true;
 
+  # Telling nixos it can use ventoy
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.10"
+  ];
+
 }
