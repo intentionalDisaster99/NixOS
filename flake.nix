@@ -45,6 +45,9 @@
     # Stenography perchance?
     plover-flake.url = "github:openstenoproject/plover-flake";
 
+    # For better hyprland experience on my pc
+    hyprsplit.url = "github:shezdy/hyprsplit";
+
   };
 
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, ... }@inputs: {
