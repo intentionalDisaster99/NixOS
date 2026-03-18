@@ -37,4 +37,15 @@ function autostart
 
     # Start Waybar last
     waybar > /tmp/waybar.log 2>&1
+
+    # Now for random stuff that we need to start dependent on the host
+    switch $hostname
+    case higgs-boson
+        autostart-higgs-boson
+    case gluon
+        autostart-gluon
+    case '*'
+        echo Host not accounted for in my fish autostart function
+end
+
 end
