@@ -4,7 +4,7 @@ function autostart
     # hyprlock &
 
     # Start basic services 
-    hypridle & 
+    hypridle &
     dunst & 
     pypr & 
     poweralertd -s & 
@@ -17,8 +17,9 @@ function autostart
     wl-clip-persist --clipboard regular & 
     
     # Static wallpaper in the background
-    hyprpaper & 
-    
+    # hyprpaper & 
+    hyprpaper -c /etc/nixos/dotfiles/hypr/hyprpaper.conf &
+
     # Notifications
     systemctl --user start psi-notify &
 

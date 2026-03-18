@@ -190,6 +190,7 @@
     wofi-emoji
     emote
     qalculate-gtk
+    gwenview
 
     # ---------------------------------------------------
     # School
