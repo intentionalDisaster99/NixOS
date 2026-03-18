@@ -45,7 +45,7 @@ function autostart
     case gluon
         autostart-gluon
     case '*'
-        echo Host not accounted for in my fish autostart function
+        notify-send Host not accounted for in my fish autostart function
 end
 
 end
