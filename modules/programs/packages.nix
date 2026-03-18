@@ -190,7 +190,7 @@
     wofi-emoji
     emote
     qalculate-gtk
-    gwenview
+    kdePackages.gwenview
 
     # ---------------------------------------------------
     # School
