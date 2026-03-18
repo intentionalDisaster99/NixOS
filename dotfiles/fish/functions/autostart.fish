@@ -6,7 +6,8 @@ function autostart
     # Start basic services 
     hypridle &
     dunst & 
-    pypr & 
+    # pypr & 
+    pypr --config /etc/nixos/dotfiles/hypr/pyprland.toml &
     poweralertd -s & 
     avizo-service & 
     emote &

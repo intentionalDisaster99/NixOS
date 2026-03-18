@@ -2,7 +2,7 @@ function wall_toggle
     set MODE_FILE "/tmp/wallpaper_mode"
 
     if not test -f $MODE_FILE
-        echo "normal" > $MODE_FILE
+        echo "off" > $MODE_FILE
     end
 
     set CURRENT (cat $MODE_FILE)
