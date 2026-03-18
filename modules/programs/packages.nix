@@ -226,7 +226,7 @@
     fireplace
     figlet
     # mapscii
-    nyancat;;{ }
+    nyancat
 
 
     # ---------------------------------------------------
