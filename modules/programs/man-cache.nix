@@ -2,7 +2,7 @@
 
 {
   # Disable the slow, blocking generation during rebuild
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
 
   # Create the background service
   systemd.services.man-db-cache-update = {
