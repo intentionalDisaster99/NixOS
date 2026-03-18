@@ -226,6 +226,8 @@
     fireplace
     figlet
     # mapscii
+    nyancat;;{ }
+
 
     # ---------------------------------------------------
     # Not needed/wanted (Kept for reference)
