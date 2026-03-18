@@ -1,5 +1,5 @@
 function autostart-gluon
 
-    sunshine
+    sunshine &
 
 end
