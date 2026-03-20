@@ -109,6 +109,22 @@
   };
 
   # TODO Move this to its own module
+  ##################
+  # Setting up Nvim#
+  ##################
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    extraPackages = with pkgs; [
+      ripgrep
+      gcc
+      gnumake
+      unzip
+      wl-clipboard
+    ];
+  };
+
+  # TODO Move this to its own module
   # Where to save screenshots
   xdg.configFile."swappy/config".text = ''
     [Default]

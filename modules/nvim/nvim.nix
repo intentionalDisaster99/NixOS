@@ -1,3 +1,4 @@
+# I was dumb and this should actually be in home.nix
 { config, pkgs, ... }:
 
 {
