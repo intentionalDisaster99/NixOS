@@ -30,6 +30,7 @@
     ../../modules/random-cool-stuff/alien.nix
     # ../../modules/school/mathematica.nix # No longer needed
     ../../modules/gaming/moonlight.nix
+    ../../module/nvim/nvim.nix
     # ../../modules/keyboard/steno.nix # Removed because I could lock my computer with it on and not be able to sign in 
 
   ];
