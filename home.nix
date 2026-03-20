@@ -14,6 +14,7 @@
     "fish" = { source = ./dotfiles/fish; recursive = true; };
     "starship.toml".source = ./dotfiles/starship.toml;
     "doom" = { source = ./dotfiles/doom; };
+    "nvim" = { source = ./dotfiles/nvim; recursive = true; };
   };
 
   home.sessionVariables = {

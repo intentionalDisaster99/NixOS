@@ -6,16 +6,11 @@
     defaultEditor = true;
     extraPackages = with pkgs; [
       ripgrep
-      gcc # Required for Treesitter to compile parsers
+      gcc
       gnumake
       unzip
-      wl-clipboard # For clipboard support  
-
-      # You can also add specific LSPs or formatters here later
-      # nodejs_20 
+      wl-clipboard
     ];
   };
 
-  # Symlink the NvChad config from your dotfiles repository
-  xdg.configFile."nvim".source = ../dotfiles/nvim;
 }
