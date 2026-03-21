@@ -34,6 +34,14 @@ return {
     },
   }
 
+ {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = { options = vim.opt.sessionoptions:get() },
+  }, 
+
+
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
