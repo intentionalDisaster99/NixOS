@@ -25,6 +25,7 @@
     ../../modules/rgb/openrgb.nix
     ../../modules/brightness/pc-brightness.nix
     ../../modules/emacs/emacs.nix
+    ../../modules/random-cool-stuff/droidcam.nix
     # ../../modules/school/mathematica.nix # No longer neeeded
     ../../modules/gaming/sunshine.nix # I got rid of this because it was not working and causing me to boot to kde instead of hyprland
 
