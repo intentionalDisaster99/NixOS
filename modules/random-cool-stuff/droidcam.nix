@@ -1,9 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = [
-    pkgs.droidcam
-  ];
+  # Not needed because the `programs.droidcam.enable` installs it for me 
+  # environment.systemPackages = [
+  #   pkgs.droidcam
+  # ];
 
   programs.droidcam.enable = true;
   # boot.extraModulePackages = with config.boot.kernelPackages; [ 

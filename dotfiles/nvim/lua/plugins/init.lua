@@ -26,6 +26,13 @@ return {
     },
   },
 
+  {
+    "okuuva/auto-save.nvim",
+    event = { "InsertLeave", "TextChanged" }, 
+    opts = {
+      -- Blank for now, gives default settings
+    },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
