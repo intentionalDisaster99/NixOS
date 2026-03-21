@@ -19,6 +19,7 @@
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     nixpkgs-fmt
+    droidcam
 
     # ---------------------------------------------------
     # Hyprland
