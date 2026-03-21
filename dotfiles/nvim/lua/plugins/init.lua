@@ -32,7 +32,7 @@ return {
     opts = {
       -- Blank for now, gives default settings
     },
-  }
+  },
 
   {
     "folke/persistence.nvim",
