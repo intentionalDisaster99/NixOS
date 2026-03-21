@@ -40,6 +40,10 @@ return {
     opts = { options = vim.opt.sessionoptions:get() },
   }, 
 
+  {
+    "Bekaboo/dropbar.nvim",
+    event = "BufReadPre", -- This tells it to load as soon as you open a file
+  },
 
 
   -- test new blink
