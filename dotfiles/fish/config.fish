@@ -42,6 +42,9 @@ alias fix-drive="systemctl --user restart google-drive-mount"
 alias please="sudo"
 alias ssh="kitty +kitten ssh"
 alias fuck="f"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
 #   exec Hyprland
