@@ -32,6 +32,7 @@ return {
     opts = {
       -- Blank for now, gives default settings
     },
+  }
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
