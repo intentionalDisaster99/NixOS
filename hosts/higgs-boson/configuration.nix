@@ -29,7 +29,7 @@
     ../../modules/emacs/emacs.nix
     ../../modules/random-cool-stuff/alien.nix
     # ../../modules/school/mathematica.nix # No longer needed
-    ../../modules/gaming/moonlight.nix
+    ../../modules/remote/moonlight.nix
     ../../modules/random-cool-stuff/droidcam.nix
     # ../../modules/keyboard/steno.nix # Removed because I could lock my computer with it on and not be able to sign in 
 
@@ -88,6 +88,7 @@
       { from = 25565; to = 25565; } # Minecraft
       { from = 36891; to = 36891; } # Minecraft
       { from = 8008; to = 8009; } # Chromecast
+      { from = 3389; to = 3389; } # Remote Desktop 
     ];
     allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
