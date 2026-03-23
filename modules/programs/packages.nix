@@ -231,7 +231,7 @@
     cbonsai
     asciiquarium
     # lolcat
-    aewan
+    # aewan # Technically could be quite cool, but I don't really want to put the effort into learning it
 
     # ---------------------------------------------------
     # Not needed/wanted (Kept for reference)
