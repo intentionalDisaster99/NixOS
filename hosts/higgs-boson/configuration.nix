@@ -78,8 +78,8 @@
   # Firewall #
   ############
   networking.firewall = {
-    enable = true;
-    checkReversePath = "loose";
+    enable = true
+      checkReversePath = "loose";
     trustedInterfaces = [ "wgnord" ];
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
