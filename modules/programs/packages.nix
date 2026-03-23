@@ -230,6 +230,8 @@
     nyancat
     cbonsai
     asciiquarium
+    # lolcat
+    aewan
 
     # ---------------------------------------------------
     # Not needed/wanted (Kept for reference)
