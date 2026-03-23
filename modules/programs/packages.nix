@@ -229,7 +229,7 @@
     # mapscii
     nyancat
     cbonsai
-
+    asciiquarium
 
     # ---------------------------------------------------
     # Not needed/wanted (Kept for reference)
