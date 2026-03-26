@@ -221,6 +221,7 @@
     activate-linux
     kittysay
     neo-cowsay
+    fortune
     sl
     pay-respects
     gping
