@@ -230,6 +230,7 @@
     nyancat
     cbonsai
     asciiquarium
+    xcowsay
     # lolcat
     # aewan # Technically could be quite cool, but I don't really want to put the effort into learning it
 
