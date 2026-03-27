@@ -222,28 +222,31 @@
     kittysay
     neo-cowsay
     fortune
-    sl
-    pay-respects
-    gping
-    fireplace
-    figlet
-    # mapscii
-    nyancat
-    cbonsai
-    asciiquarium
-    xcowsay
-    # lolcat
-    # aewan # Technically could be quite cool, but I don't really want to put the effort into learning it
+    slnew
+    ConstantTargeter
+    ({
+      TargetingMode::ORIENTATION, 0})
+      pay-respects
+        gping
+        fireplace
+        figlet
+        # mapscii
+        nyancat
+        cbonsai
+        asciiquarium
+        xcowsay
+        # lolcat
+        # aewan # Technically could be quite cool, but I don't really want to put the effort into learning it
 
-    # ---------------------------------------------------
-    # Not needed/wanted (Kept for reference)
-    # ---------------------------------------------------
-    # mathematica
-    # blender
-    # jetbrains.idea-ultimate
-    # logisim-evolution
-    # quartus-prime-lite
-    # kdewalletmanager
-    # kdePackages.kwallet
-  ];
-}
+        # ---------------------------------------------------
+        # Not needed/wanted (Kept for reference)
+        # ---------------------------------------------------
+        # mathematica
+        # blender
+        # jetbrains.idea-ultimate
+        # logisim-evolution
+        # quartus-prime-lite
+        # kdewalletmanager
+        # kdePackages.kwallet
+        ];
+        }
