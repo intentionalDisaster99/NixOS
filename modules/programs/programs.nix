@@ -25,6 +25,30 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+
+    # Fixing the default audio on my laptop
+    wireplumber = {
+      enable = true;
+      extraConfig = {
+        "99-lower-loopback-priority" = {
+          "monitor.alsa.rules" = [
+            {
+              matches = [
+                {
+                  "node.description" = "Loopback Analog Stereo";
+                }
+              ];
+              actions = {
+                update-props = {
+                  "priority.session" = 1;
+                  "priority.driver" = 1;
+                };
+              };
+            }
+          ];
+        };
+      };
+    };
   };
 
   # Bluetooth
@@ -138,31 +162,5 @@
   programs.pay-respects.enable = true;
   programs.nix-index.enable = true;
 
-  # Fixing the default audio on my laptop
-  services.pipewire = {
-    enable = true;
-    wireplumber = {
-      enable = true;
-      extraConfig = {
-        "99-lower-loopback-priority" = {
-          "monitor.alsa.rules" = [
-            {
-              matches = [
-                {
-                  "node.description" = "Loopback Analog Stereo";
-                }
-              ];
-              actions = {
-                update-props = {
-                  "priority.session" = 1;
-                  "priority.driver" = 1;
-                };
-              };
-            }
-          ];
-        };
-      };
-    };
-  };
 
 }
