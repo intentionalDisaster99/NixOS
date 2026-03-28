@@ -27,7 +27,6 @@
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
     ../../modules/emacs/emacs.nix
-    ../../modules/platformIO/pio.nix
     ../../modules/random-cool-stuff/alien.nix
     # ../../modules/school/mathematica.nix # No longer needed
     ../../modules/remote/moonlight.nix
@@ -129,6 +128,7 @@
     # Generic CMSIS-DAP probes (if you use a different debugger)
     SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
+  services.udev.packages = with pkgs; [ platformio-core.udev ];
 
   # Adding in fonts for my code editors
   fonts.packages = with pkgs; [
