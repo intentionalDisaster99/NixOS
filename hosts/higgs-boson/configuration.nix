@@ -27,6 +27,7 @@
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
     ../../modules/emacs/emacs.nix
+    ../../modules/platformIO/pio.nix
     ../../modules/random-cool-stuff/alien.nix
     # ../../modules/school/mathematica.nix # No longer needed
     ../../modules/remote/moonlight.nix
