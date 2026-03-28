@@ -23,6 +23,7 @@
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/theme.nix
     ../../modules/theme/fonts.nix
+    ../../modules/platformIO/pio.nix
     ../../modules/nordvpn/minimalWgnord.nix
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
@@ -128,7 +129,6 @@
     # Generic CMSIS-DAP probes (if you use a different debugger)
     SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
-  services.udev.packages = with pkgs; [ platformio-core.udev ];
 
   # Adding in fonts for my code editors
   fonts.packages = with pkgs; [
