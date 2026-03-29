@@ -111,6 +111,7 @@
   boot.kernelParams = [
     "resume=UUID=606544fb-61ec-4f34-99fe-b9dde180c05e"
     "resume_offset=116987904"
+    "usbhid.quirks=0x04f3:0c00:0x0040"
   ];
   boot.resumeDevice = "/dev/disk/by-uuid/606544fb-61ec-4f34-99fe-b9dde180c05e";
 
@@ -120,14 +121,17 @@
   # TODO move to a module
   # Udev rules for the pico 
   services.udev.extraRules = ''
-    # Raspberry Pi Pico (Bootloader Mode)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+      # Raspberry Pi Pico (Bootloader Mode)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
     
-    # Raspberry Pi Debug Probe (CMSIS-DAP)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
+      # Raspberry Pi Debug Probe (CMSIS-DAP)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
     
-    # Generic CMSIS-DAP probes (if you use a different debugger)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
+      # Generic CMSIS-DAP probes (if you use a different debugger)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
+
+      \# Force ELAN2513 touchscreen to bind elants_i2c driver
+    SUBSYSTEM=="i2c", ATTRS{name}=="ELAN2513:00", RUN+="/bin/sh -c 'echo elants_i2c > /sys/bus/i2c/devices/i2c-ELAN2513:00/driver_override && echo i2c-ELAN2513:00 > /sys/bus/i2c/drivers/elants_i2c/bind'"
   '';
 
   # Adding in fonts for my code editors
@@ -158,7 +162,7 @@
   sops.defaultSopsFormat = "yaml";
 
   # Touchscreen? 
-  boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" ];
+  boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" "elants_i2c" ];
   services.libinput.enable = true;
   hardware.enableRedistributableFirmware = true;
   # or for all firmware:
