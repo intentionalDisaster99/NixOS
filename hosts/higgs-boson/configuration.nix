@@ -162,7 +162,8 @@
   sops.defaultSopsFormat = "yaml";
 
   # Touchscreen? 
-  boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" "elants_i2c" ];
+  boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" ];
+  boot.initrd.prepend = [ "/etc/nixos/ssdt-touchscreen.aml" ];
   services.libinput.enable = true;
   hardware.enableRedistributableFirmware = true;
   # or for all firmware:
