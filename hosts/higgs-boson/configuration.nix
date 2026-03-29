@@ -162,7 +162,7 @@
   sops.defaultSopsFormat = "yaml";
 
   # Touchscreen? 
-  boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" ];
+  boot.initrd.availableKernelModules = [ "nvme" "ext4" "xhci_pci" "usb_storage" "sd_mod" ];
   boot.initrd.prepend = [ "${../../ssdt-touchscreen.aml}" ];
   services.libinput.enable = true;
   hardware.enableRedistributableFirmware = true;
