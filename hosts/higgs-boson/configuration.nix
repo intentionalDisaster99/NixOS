@@ -163,7 +163,7 @@
 
   # Touchscreen? 
   boot.initrd.availableKernelModules = [ "nvme" "ext4" "xhci_pci" "usb_storage" "sd_mod" ];
-  boot.initrd.prepend = [ "${../../ssdt-touchscreen.aml}" ];
+  boot.initrd.prepend = [ "${./ssdt-touchscreen.cpio}" ];
   services.libinput.enable = true;
   hardware.enableRedistributableFirmware = true;
   # or for all firmware:
