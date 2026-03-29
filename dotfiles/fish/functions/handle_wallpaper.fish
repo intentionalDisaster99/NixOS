@@ -6,7 +6,7 @@ function handle_wallpaper
     set MONITOR "all" 
     set CPU_LIMIT 80
 
-    echo "normal" > $MODE_FILE
+    echo "off" > $MODE_FILE
 
     # Clean start
     killall -q mpvpaper
@@ -24,7 +24,7 @@ function handle_wallpaper
         if test -f $MODE_FILE
             set MODE (cat $MODE_FILE)
         else
-            set MODE "normal"
+            set MODE "off"
         end
 
         set SHOULD_RUN 0
