@@ -157,6 +157,12 @@
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
 
-
+  # Touchscreen? 
+  boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" ];
+  services.libinput.enable = true;
+  hardware.enableRedistributableFirmware = true;
+  # or for all firmware:
+  hardware.enableAllFirmware = true;
+  services.udev.packages = [ pkgs.libinput ];
 
 }
