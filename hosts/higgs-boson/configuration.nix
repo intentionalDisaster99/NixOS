@@ -163,7 +163,7 @@
 
   # Touchscreen? 
   boot.kernelModules = [ "i2c_hid" "i2c_hid_acpi" ];
-  boot.initrd.prepend = [ "${builtins.path { path = /etc/nixos/ssdt-touchscreen.aml; name = "ssdt-touchscreen.aml"; }}" ];
+  boot.initrd.prepend = [ "${./ssdt-touchscreen.aml}" ];
   services.libinput.enable = true;
   hardware.enableRedistributableFirmware = true;
   # or for all firmware:
