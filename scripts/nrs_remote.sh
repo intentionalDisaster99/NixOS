@@ -49,7 +49,7 @@ fi
 echo "Rebuilding the system..."
 # nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME" -- builders 'ssh:gluon-linux'
 # nix run nixpkgs#nh -- os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
-sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" --builders 'gluon-linux' #|& nix run nixpkgs#nix-output-monitor
+sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" --builders 'gluon-linux?ssh-key=/home/sa9m/id_ed25519' #|& nix run nixpkgs#nix-output-monitor
 # sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
 
 echo "System update complete!"
