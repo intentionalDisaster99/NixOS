@@ -243,7 +243,7 @@
     # blender
     # jetbrains.idea-ultimate
     # logisim-evolution
-    quartus-prime-lite
+    # quartus-prime-lite
     # kdewalletmanager
     # kdePackages.kwallet
   ];
