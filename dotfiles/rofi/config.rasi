@@ -13,4 +13,4 @@ configuration{
     border-radius: 10;
 }
 
-@theme "~/.config/rofi/themes/gruvbox-dark.rasi"
+@theme "gruvbox-dark-hard"
