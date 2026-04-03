@@ -1,5 +1,5 @@
-@import "macchiato.css";
-
+/* @import "macchiato.css"; */
+@import "gruvbox.css";
 * {
   border: none;
   font-family: "NotoSans Nerd Font", sans-serif;
