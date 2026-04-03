@@ -125,13 +125,13 @@
   #     package = pkgs.gnome-themes-extra;
   #   };
   # };
-  gtk = {
-    enable = true;
-    theme = {
-      name = "catppuccin-macchiato-teal-standard";
-      package = pkgs.catppuccin-gtk;
-    };
-  };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "catppuccin-macchiato-teal-standard";
+  #     package = pkgs.catppuccin-gtk;
+  #   };
+  # };
 
   # TODO Move this to its own module
   ##################
