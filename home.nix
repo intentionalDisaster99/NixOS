@@ -4,7 +4,7 @@ let
     owner = "TheSerphh";
     repo = "Gruvbox-Kvantum";
     rev = "master";
-    sha256 = lib.fakeHash;
+    sha256 = "sha256-o3EEpd8fsrKPNA6TmiK7KLxy6hld+MpSrtLAKPhtJOE=";
   };
 in
 {
