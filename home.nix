@@ -84,6 +84,24 @@
         "application/javascript" = "code.desktop";
         "text/css" = "code.desktop";
         "text/html" = "code.desktop";
+
+        # --- Directories ---
+        "inode/directory" = "org.kde.dolphin.desktop";
+
+        # --- Images ---
+        "image/png" = "org.kde.gwenview.desktop";
+        "image/jpeg" = "org.kde.gwenview.desktop";
+        "image/gif" = "org.kde.gwenview.desktop";
+        "image/webp" = "org.kde.gwenview.desktop";
+
+        # --- Video ---
+        "video/mp4" = "vlc.desktop";
+        "video/x-matroska" = "vlc.desktop";
+        "video/webm" = "vlc.desktop";
+
+        # --- Audio ---
+        "audio/mpeg" = "vlc.desktop";
+        "audio/flac" = "vlc.desktop";
       };
     in
     {
@@ -96,15 +114,22 @@
   ####################################
   ## Setting Everything to Dark Mode##
   ####################################
-  qt = {
-    enable = true;
-    style.name = "adwaita-dark";
-  };
+  # qt = {
+  #   enable = true;
+  #   style.name = "adwaita-dark";
+  # };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Adwaita-dark";
+  #     package = pkgs.gnome-themes-extra;
+  #   };
+  # };
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "catppuccin-macchiato-teal-standard";
+      package = pkgs.catppuccin-gtk;
     };
   };
 
