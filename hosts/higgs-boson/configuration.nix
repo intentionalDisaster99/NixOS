@@ -56,7 +56,7 @@
       spotify = (import
         (builtins.fetchTarball {
           # 
-          url = "https://github.com/NixOS/nixpkgs/archive/ee09932cedcef15aaf476f9343d1dea2cb77e261#spotify.tar.gz";
+          url = "https://github.com/NixOS/nixpkgs/archive/1xz5pa6la2fyj5b1cfigmg3nmml11fyf9ah0rnr4zfgmnwimn2gn.tar.gz";
           # Always include the SHA256 hash for integrity
           sha256 = "1xz5pa6la2fyj5b1cfigmg3nmml11fyf9ah0rnr4zfgmnwimn2gn";
         })
