@@ -51,6 +51,19 @@
     (final: prev: {
       winboat = inputs.winboat.packages.${pkgs.stdenv.hostPlatform.system}.winboat;
     })
+    # Pinning Spotify so that it doesn't crash
+    (final: prev: {
+      spotify = (import
+        (builtins.fetchTarball {
+          # 
+          url = "https://github.com/NixOS/nixpkgs/archive/ee09932cedcef15aaf476f9343d1dea2cb77e261#spotify.tar.gz";
+          # Always include the SHA256 hash for integrity
+          sha256 = "sha256-ee09932cedcef15aaf476f9343d1dea2cb77e261#spotify";
+        })
+        {
+          inherit (final) system;
+        }).pkgs.spotify;
+    })
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -170,17 +183,4 @@
   # hardware.enableAllFirmware = true;
   # services.udev.packages = [ pkgs.libinput ];
 
-  # Pinning Spotify so that it doesn't crash
-  (final: prev: {
-  spotify = (import
-    (builtins.fetchTarball {
-      # 
-      url = "https://github.com/NixOS/nixpkgs/archive/ee09932cedcef15aaf476f9343d1dea2cb77e261#spotify.tar.gz";
-      # Always include the SHA256 hash for integrity
-      sha256 = "sha256-ee09932cedcef15aaf476f9343d1dea2cb77e261#spotify";
-    })
-    {
-      inherit (final) system;
-    }).pkgs.spotify;
-})
 }
