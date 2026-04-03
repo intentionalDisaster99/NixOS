@@ -22,10 +22,12 @@ in
     "starship.toml".source = ./dotfiles/starship.toml;
     "doom" = { source = ./dotfiles/doom; };
     "nvim" = { source = ./dotfiles/nvim; recursive = true; };
-    "Kvantum/gruvbox-kvantum".source = "${gruvbox-kvantum}/gruvbox-kvantum";
+    "Kvantum/Gruvbox-Dark-Brown".source =
+      "${gruvbox-kvantum}/Gruvbox-Dark-Brown";
+
     "Kvantum/kvantum.kvconfig".text = ''
       [General]
-      theme=gruvbox-kvantum
+      theme=Gruvbox-Dark-Brown
     '';
   };
 
