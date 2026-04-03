@@ -111,10 +111,11 @@
       associations.added = associations;
     };
   home.activation.updateDesktopDatabase = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.desktop-file-utils}/bin/update-desktop-database --quiet \
-      $HOME/.local/share/applications/ \
+    ${pkgs.desktop-file-utils}/bin/update-desktop-database ~/.local/share/applications/
+    run mkdir -p ~/.local/share/applications
+    run ${pkgs.desktop-file-utils}/bin/update-desktop-database \
       /run/current-system/sw/share/applications/ \
-      /etc/profiles/per-user/sa9m/share/applications/ || true
+      ~/.local/share/applications/ || true
   '';
 
   ####################################
