@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 let
   gruvbox-kvantum = pkgs.fetchFromGitHub {
-    owner = "TheSerphh";
-    repo = "Gruvbox-Kvantum";
-    rev = "master";
-    sha256 = "sha256-o3EEpd8fsrKPNA6TmiK7KLxy6hld+MpSrtLAKPhtJOE=";
+    owner = "sachnr";
+    repo = "gruvbox-kvantum-themes";
+    rev = "main";
+    sha256 = lib.fakeHash;
   };
 in
 {
