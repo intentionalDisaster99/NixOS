@@ -192,6 +192,15 @@
     emote
     qalculate-gtk
     kdePackages.gwenview
+    kdePackages.dolphin
+    kdePackages.dolphin-plugins
+    kdePackages.ark
+    kdePackages.kio
+    kdePackages.kio-extras
+    xdg-utils
+    shared-mime-info
+    kdePackages.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
 
     # ---------------------------------------------------
     # School

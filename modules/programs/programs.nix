@@ -162,4 +162,17 @@
   programs.nix-index.enable = true;
 
 
+  # MIME default applications
+  xdg.mime.defaultApplications = {
+    "inode/directory" = "org.kde.dolphin.desktop";
+    "image/png" = "org.kde.gwenview.desktop";
+    "image/jpeg" = "org.kde.gwenview.desktop";
+    "image/gif" = "org.kde.gwenview.desktop";
+    "video/mp4" = "vlc.desktop";
+    "video/mkv" = "vlc.desktop";
+    "text/plain" = "nvim.desktop"; # or kate if you prefer GUI
+    "application/pdf" = "org.kde.okular.desktop";
+    "application/zip" = "org.kde.ark.desktop";
+  };
+
 }
