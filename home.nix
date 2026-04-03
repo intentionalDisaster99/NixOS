@@ -1,5 +1,12 @@
 { config, pkgs, lib, ... }:
-
+let
+  gruvbox-kvantum = pkgs.fetchFromGitHub {
+    owner = "TheSerphh";
+    repo = "Gruvbox-Kvantum";
+    rev = "master";
+    sha256 = lib.fakeHash;
+  };
+in
 {
   home.username = "sa9m";
   home.homeDirectory = "/home/sa9m";
@@ -15,6 +22,11 @@
     "starship.toml".source = ./dotfiles/starship.toml;
     "doom" = { source = ./dotfiles/doom; };
     "nvim" = { source = ./dotfiles/nvim; recursive = true; };
+    "Kvantum/gruvbox-kvantum".source = "${gruvbox-kvantum}/gruvbox-kvantum";
+    "Kvantum/kvantum.kvconfig".text = ''
+      [General]
+      theme=gruvbox-kvantum
+    '';
   };
 
   home.sessionVariables = {
