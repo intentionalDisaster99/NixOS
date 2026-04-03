@@ -58,7 +58,7 @@
           # 
           url = "https://github.com/NixOS/nixpkgs/archive/1xz5pa6la2fyj5b1cfigmg3nmml11fyf9ah0rnr4zfgmnwimn2gn.tar.gz";
           # Always include the SHA256 hash for integrity
-          sha256 = "1xz5pa6la2fyj5b1cfigmg3nmml11fyf9ah0rnr4zfgmnwimn2gn";
+          sha256 = "0000000000000000000000000000000000000000000000000000";
         })
         {
           inherit (final) system;
