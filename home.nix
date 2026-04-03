@@ -110,6 +110,9 @@
       defaultApplications = associations;
       associations.added = associations;
     };
+  home.activation.updateDesktopDatabase = lib.mkAfter ''
+    ${pkgs.desktop-file-utils}/bin/update-desktop-database ~/.local/share/applications/
+  '';
 
   ####################################
   ## Setting Everything to Dark Mode##
