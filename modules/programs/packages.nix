@@ -194,6 +194,7 @@
     kdePackages.gwenview
     kdePackages.dolphin
     kdePackages.dolphin-plugins
+    desktop-file-utils
     kdePackages.ark
     kdePackages.kio
     kdePackages.kio-extras
