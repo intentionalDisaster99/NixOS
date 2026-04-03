@@ -18,6 +18,8 @@ cd "$NIXOS_CONFIG_DIR"
 echo "Pulling files.."
 git pull
 
+# delay 10
+
 # Formatting
 echo "Formatting Nix files..."
 nixpkgs-fmt .

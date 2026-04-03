@@ -111,11 +111,8 @@
       associations.added = associations;
     };
   home.activation.updateDesktopDatabase = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.desktop-file-utils}/bin/update-desktop-database ~/.local/share/applications/
-    run mkdir -p ~/.local/share/applications
-    run ${pkgs.desktop-file-utils}/bin/update-desktop-database \
-      /run/current-system/sw/share/applications/ \
-      ~/.local/share/applications/ || true
+    run cp -rn /run/current-system/sw/share/applications/. ~/.local/share/applications/ 2>/dev/null || true
+    run ${pkgs.desktop-file-utils}/bin/update-desktop-database ~/.local/share/applications/
   '';
 
   ####################################
