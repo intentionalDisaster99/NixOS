@@ -21,7 +21,7 @@
     ../../modules/drive/drive.nix
     # ../../modules/google-drive/google-drive.nix # Also removed beccause it made it slow
     ../../modules/hyprland/hyprland.nix
-    ../../modules/theme/theme.nix
+    ../../modules/theme/gruvbox.nix
     ../../modules/theme/fonts.nix
     ../../modules/platformIO/pio.nix
     ../../modules/nordvpn/minimalWgnord.nix
