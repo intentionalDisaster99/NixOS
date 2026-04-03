@@ -18,7 +18,7 @@ cd "$NIXOS_CONFIG_DIR"
 echo "Pulling files.."
 git pull
 
-# delay 10
+sleep 1
 
 # Formatting
 echo "Formatting Nix files..."

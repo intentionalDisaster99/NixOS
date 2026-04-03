@@ -195,6 +195,7 @@
     kdePackages.dolphin
     kdePackages.dolphin-plugins
     desktop-file-utils
+    kdePackages.plasma-workspace
     kdePackages.ark
     kdePackages.kio
     kdePackages.kio-extras
