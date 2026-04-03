@@ -4,7 +4,7 @@ let
     owner = "sachnr";
     repo = "gruvbox-kvantum-themes";
     rev = "main";
-    sha256 = lib.fakeHash;
+    sha256 = "sha256-u2J4Zf9HuMjNCt3qVpgEffkytl/t277FzOvWL8Nm8os=";
   };
 in
 {
