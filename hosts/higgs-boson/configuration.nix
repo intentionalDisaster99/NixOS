@@ -55,14 +55,13 @@
     (final: prev: {
       spotify = (import
         (builtins.fetchTarball {
-          # 
-          url = "https://github.com/NixOS/nixpkgs/archive/1xz5pa6la2fyj5b1cfigmg3nmml11fyf9ah0rnr4zfgmnwimn2gn.tar.gz";
-          # Always include the SHA256 hash for integrity
-          sha256 = "0000000000000000000000000000000000000000000000000000";
+          url = "https://github.com/NixOS/nixpkgs/archive/571c71e6f73af34a229414f51585738894211408.tar.gz";
+          sha256 = "0fgp5sqfmh5zgx75rs5101ywkz0fkjff67abms0kc8hyaxmlc7js";
         })
         {
           inherit (final) system;
-        }).pkgs.spotify;
+          config.allowUnfree = true;
+        }).spotify;
     })
   ];
 
