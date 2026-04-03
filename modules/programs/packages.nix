@@ -177,7 +177,7 @@
     # General Apps
     # ---------------------------------------------------
     brave
-    # spotify
+    spotify
     discord
     element-desktop
     zoom-us
