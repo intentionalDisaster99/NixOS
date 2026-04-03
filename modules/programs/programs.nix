@@ -175,4 +175,6 @@
     "application/zip" = "org.kde.ark.desktop";
   };
 
+  environment.pathsToLink = [ "/share/applications" ];
+
 }
