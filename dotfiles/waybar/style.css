@@ -53,6 +53,7 @@ window.bottom_bar .modules-right {
 
 #user {
   padding-left: 10;
+  color: @text;
 }
 
 #language {
