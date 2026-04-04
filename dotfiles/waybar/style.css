@@ -444,9 +444,13 @@ window.left_bar .modules-center {
 }
 
 #custom-tailscale.connected {
-    color: #a6da95; /* Green */
+    color: #a6da95;
 }
 
 #custom-tailscale.disconnected {
-    color: #a5adcb; /* Gray/Subtext */
+    color: #a5adcb;
+}
+
+#network.ethernet {
+  color: @green;
 }

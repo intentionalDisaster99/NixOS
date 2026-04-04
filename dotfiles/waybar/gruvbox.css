@@ -5,8 +5,8 @@
 @define-color text     #ebdbb2;
 @define-color subtext0 #a89984;
 @define-color subtext1 #bdae93;
-/* #3c3836; was the old surface0 */
-@define-color surface0 #e8e1dd;
+
+@define-color surface0 #3c3836;
 @define-color surface1 #504945;
 @define-color surface2 #665c54;
 
