@@ -61,8 +61,8 @@
     },
 // TIME MODULE (Flamingo Pink)
     "clock": {
-        "format": "<span color='#f0c6c6'>{:%H:%M:%OS}</span>",
-        "format-alt": "<span color='#f0c6c6'>{:%H:%M}</span>",
+        "format": "<span color='#d65d0e'>{:%H:%M:%OS}</span>",
+        "format-alt": "<span color='#d65d0e'>{:%H:%M}</span>",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
             "on-click-right": "mode" 
@@ -74,11 +74,11 @@
             "weeks-pos": "right",
             "on-scroll": 1,
             "format": {
-                "months": "<span color='#f4dbd6'><b>{}</b></span>",
-                "days": "<span color='#cad3f5'><b>{}</b></span>",
-                "weeks": "<span color='#c6a0f6'><b>W{}</b></span>",
-                "weekdays": "<span color='#a6da95'><b>{}</b></span>",
-                "today": "<span color='#8bd5ca'><b><u>{}</u></b></span>"
+                "months": "<span color='#ebdbb2'><b>{}</b></span>",
+                "days": "<span color='#83a598'><b>{}</b></span>",
+                "weeks": "<span color='#d3869b'><b>W{}</b></span>",
+                "weekdays": "<span color='#b8bb26'><b>{}</b></span>",
+                "today": "<span color='#689d6a'><b><u>{}</u></b></span>"
             }
         }
     },
@@ -94,7 +94,7 @@
 
     // DATE MODULE (Sapphire Blue)
     "clock#date": {
-        "format": "<span color='#7dc4e4'>{:%a • %b %d, %Y}</span>", 
+        "format": "<span color='#458588'>{:%a • %b %d, %Y}</span>", 
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
             "on-click-right": "mode",
@@ -106,18 +106,18 @@
             "weeks-pos": "right",
             "on-scroll": 1,
             "format": {
-                "months": "<span color='#f4dbd6'><b>{}</b></span>",
-                "days": "<span color='#cad3f5'><b>{}</b></span>",
-                "weeks": "<span color='#c6a0f6'><b>W{}</b></span>",
-                "weekdays": "<span color='#a6da95'><b>{}</b></span>",
-                "today": "<span color='#8bd5ca'><b><u>{}</u></b></span>"
+                "months": "<span color='#ebdbb2'><b>{}</b></span>",
+                "days": "<span color='#83a598'><b>{}</b></span>",
+                "weeks": "<span color='#d3869b'><b>W{}</b></span>",
+                "weekdays": "<span color='#b8bb26'><b>{}</b></span>",
+                "today": "<span color='#689d6a'><b><u>{}</u></b></span>"
             }
         }
     },
 
     // UTC CLOCK (Lavender/Blue)
     "clock#utc": {
-        "format": "<span color='#8aadf4'>{:%H:%M} UTC</span>",
+        "format": "<span color='#458588'>{:%H:%M} UTC</span>",
         "timezone": "UTC",
         "tooltip": false
     },
