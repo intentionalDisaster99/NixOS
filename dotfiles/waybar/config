@@ -61,8 +61,8 @@
     },
 // TIME MODULE (Flamingo Pink)
     "clock": {
-        "format": "<span color='#d65d0e'>{:%H:%M:%OS}</span>",
-        "format-alt": "<span color='#d65d0e'>{:%H:%M}</span>",
+        "format": "<span color='#d3869b'>{:%H:%M:%OS}</span>",
+        "format-alt": "<span color='#d3869b'>{:%H:%M}</span>",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "actions": {
             "on-click-right": "mode" 
@@ -117,7 +117,7 @@
 
     // UTC CLOCK (Lavender/Blue)
     "clock#utc": {
-        "format": "<span color='#458588'>{:%H:%M} UTC</span>",
+        "format": "<span color='#b8bb26'>{:%H:%M} UTC</span>",
         "timezone": "UTC",
         "tooltip": false
     },
