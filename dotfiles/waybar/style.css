@@ -444,7 +444,7 @@ window.left_bar .modules-center {
 }
 
 #custom-tailscale.connected {
-    color: #a6da95;
+    color: @green;
 }
 
 #custom-tailscale.disconnected {
