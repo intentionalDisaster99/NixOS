@@ -59,7 +59,7 @@
         "format": "|",
         "tooltip": false,
     },
-// TIME MODULE (Flamingo Pink)
+
     "clock": {
         "format": "<span color='#d3869b'>{:%H:%M:%OS}</span>",
         "format-alt": "<span color='#d3869b'>{:%H:%M}</span>",
@@ -92,7 +92,7 @@
         "smooth-scrolling-threshold": 1
     },
 
-    // DATE MODULE (Sapphire Blue)
+    // DATE MODULE 
     "clock#date": {
         "format": "<span color='#458588'>{:%a • %b %d, %Y}</span>", 
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
@@ -115,7 +115,7 @@
         }
     },
 
-    // UTC CLOCK (Lavender/Blue)
+    // UTC CLOCK 
     "clock#utc": {
         "format": "<span color='#b8bb26'>{:%H:%M} UTC</span>",
         "timezone": "UTC",
