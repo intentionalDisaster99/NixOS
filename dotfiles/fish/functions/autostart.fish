@@ -47,7 +47,7 @@ function autostart
     end
 
     # Automatically lock (only needed if autoLogin is enabled)
-    sleep 0.25
+    # sleep 0.25
     hyprlock &
 
 end
