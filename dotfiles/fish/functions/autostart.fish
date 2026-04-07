@@ -33,8 +33,8 @@ function autostart
     # Wait for things to settle
     sleep 0.5
 
-    # Start Waybar last
-    waybar > /tmp/waybar.log 2>&1
+    # Start Waybar last before going to host dependent stuff
+    waybar > /tmp/waybar.log 2>&1 & 
 
     # Now for random stuff that we need to start dependent on the host
     switch $hostname
