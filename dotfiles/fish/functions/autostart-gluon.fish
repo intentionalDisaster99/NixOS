@@ -1,7 +1,7 @@
 function autostart-gluon
 
     # Starting my gaming server automatically
-    sunshine &
+    systemctl --user restart sunshine &
 
     notify-send "sunshine started"
 

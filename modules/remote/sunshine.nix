@@ -6,7 +6,11 @@
     autoStart = true;
     capSysAdmin = true;
     openFirewall = true;
+    settings = {
+      output_name = "HEADLESS-1";
+    };
   };
+
   # services.displayManager.autoLogin = {
   #   enable = true;
   #   user = "sa9m";
