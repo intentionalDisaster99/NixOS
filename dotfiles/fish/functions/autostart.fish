@@ -1,5 +1,9 @@
 function autostart
 
+    # Static wallpaper in the background
+    # hyprpaper & 
+    hyprpaper -c /etc/nixos/dotfiles/hypr/hyprpaper.conf &
+    
     # Automatically lock (only needed if autoLogin is enabled)
     hyprlock &
 
@@ -17,10 +21,6 @@ function autostart
     wl-paste --type image --watch cliphist store & 
     wl-clip-persist --clipboard regular & 
     
-    # Static wallpaper in the background
-    # hyprpaper & 
-    hyprpaper -c /etc/nixos/dotfiles/hypr/hyprpaper.conf &
-
     # Notifications
     systemctl --user start psi-notify &
 
