@@ -3,9 +3,6 @@ function autostart
     # Static wallpaper in the background
     # hyprpaper & 
     hyprpaper -c /etc/nixos/dotfiles/hypr/hyprpaper.conf &
-    
-    # Automatically lock (only needed if autoLogin is enabled)
-    hyprlock &
 
     # Start basic services 
     hypridle &
@@ -41,12 +38,16 @@ function autostart
 
     # Now for random stuff that we need to start dependent on the host
     switch $hostname
-    case higgs-boson
-        autostart-higgs-boson
-    case gluon
-        autostart-gluon
-    case '*'
-        notify-send Host not accounted for in my fish autostart function
-end
+        case higgs-boson
+            autostart-higgs-boson
+        case gluon
+            autostart-gluon
+        case '*'
+            notify-send Host not accounted for in my fish autostart function
+    end
+
+    # Automatically lock (only needed if autoLogin is enabled)
+    sleep 0.25
+    hyprlock &
 
 end
