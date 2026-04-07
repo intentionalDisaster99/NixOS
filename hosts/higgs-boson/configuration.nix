@@ -183,9 +183,9 @@
   # services.udev.packages = [ pkgs.libinput ];
 
   # Allowing automatic signing in (specifically for remote access)
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "sa9m";
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "sa9m";
 
 }
