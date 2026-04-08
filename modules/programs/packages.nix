@@ -253,7 +253,7 @@
     # ---------------------------------------------------
     # mathematica
     # blender
-    # jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
     # logisim-evolution
     # quartus-prime-lite
     # kdewalletmanager
