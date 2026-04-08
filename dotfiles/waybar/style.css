@@ -3,7 +3,7 @@
 * {
   border: none;
   font-family: "NotoSans Nerd Font", sans-serif;
-  color: @text;
+  /* color: @text; */
 }
 
 window.bottom_bar#waybar {
