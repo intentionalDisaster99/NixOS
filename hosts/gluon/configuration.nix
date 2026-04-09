@@ -15,7 +15,7 @@
     ../../modules/platformIO/pio.nix
     # ../../modules/rclone/rclone.nix # Commented until we add in the gluon key
     ../../modules/drive/drive.nix
-    # ../../modules/kde/kde.nix
+    ../../modules/kde/kde.nix
     # ../../modules/google-drive/google-drive.nix
     ../../modules/hyprland/hyprland.nix
     ../../modules/theme/gruvbox.nix
