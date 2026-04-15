@@ -58,10 +58,10 @@ set -gx BRIGHTNESS_STEP 5
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $HOME/.npm-packages/bin $PATH
 
-set fish_vi_force_cursor
-set fish_cursor_default block
-set fish_cursor_insert line blink
-set fish_cursor_visual underscore blink
+# set fish_vi_force_cursor
+# set fish_cursor_default block
+# set fish_cursor_insert line blink
+# set fish_cursor_visual underscore blink
 
 set -Ux FZF_DEFAULT_OPTS "\
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
