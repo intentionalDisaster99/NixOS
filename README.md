@@ -90,7 +90,7 @@ sudo nixos-rebuild switch --flake /etc/nixos#gluon
 
 
 ### Updating the `nrs` command
-Included in this repository is a custom bash script located at scripts/nrs.sh. This script acts as a powerful shortcut that automatically formats your Nix files, commits any changes to Git, pushes them to the cloud for backup, and rebuilds the system with a clean output monitor.
+Included in this repository is a custom bash script located at `scripts/nrs.sh`. This script acts as a powerful shortcut that automatically formats your Nix files, commits any changes to Git, pushes them to the cloud for backup, and rebuilds the system with a clean output monitor.
 
 However, if you try to run it immediately, it will fail. This is because the script runs git push, which will attempt to push your local changes back to my GitHub repository, where you do not have write permissions. To fix this, you have two options: use your own repository or remove the GitHub sync.
 
@@ -116,5 +116,75 @@ If you only want to track changes locally on your machine and don't care about G
 1. Open `/etc/nixos/scripts/nrs.sh` in your text editor.
 
 2. Scroll down and delete or comment out the git push line.
+
+---
+
+## Using Your New Configuration
+
+## Keyboard Shortcuts
+The fastest way to do stuff is by keeping your fingers on the keyboard, so I have a bunch of keyboard shortcuts set up. Don't worry if you don't want to worry about keyboard shortcuts, though, you can use your mouse too.
+
+Note that the `SUPER` key I talk about is the windows key on most keyboards. 
+
+### Core Window Management
+* **`SUPER + Shift + Q`**: Close the active window
+* **`SUPER + Shift + F`**: Toggle floating for the active window
+* **`SUPER + Ctrl + F`**: Toggle fullscreen
+* **`SUPER + Arrow Keys`** (or **`H, J, K, L`**): Move focus between open windows
+* **`SUPER + 1-0`**: Switch to workspace 1-10
+* **`SUPER + Shift + 1-0`**: Move the active window to workspace 1-10
+* **`SUPER + Mouse Scroll`** (or **`< / >`**): Cycle through open workspaces
+* **`SUPER + Left Click & Drag`**: Move a floating window
+* **`SUPER + Right Click & Drag`**: Resize a floating window
+
+### Launching Applications
+* **`ALT + Space`**: Open the application launcher (Rofi)
+* **`SUPER + T`**: Open Terminal (Kitty)
+* **`SUPER + B`**: Open Web Browser (Brave)
+* **`SUPER + E`**: Open File Manager (Dolphin)
+* **`SUPER + I`**: Open Code Editor (VS Code)
+* **`SUPER + N`**: Open Notes (Obsidian)
+* **`SUPER + G`**: Open Steam
+
+### Special Workspaces 
+These shortcuts open applications in a hidden "special" workspace that drops down over your current screen, letting you quickly check them and hide them again.
+* **`SUPER + S`**: Toggle Spotify 
+* **`SUPER + D`**: Toggle Discord 
+* **`SUPER + M`**: Toggle Google Messages 
+* **`SUPER + K`**: Toggle Calculator
+* **`SUPER + O`**: Toggle a hidden dropdown terminal
+
+### Utilities & System Toggles
+* **`SUPER + L`**: Lock the screen
+* **`SUPER + Esc`**: Open the Power/Logout menu
+* **`SUPER + Shift + S`**: Select an area to screenshot and copy to clipboard
+* **`SUPER + Shift + E`**: Select an area to screenshot and open in the image editor (Swappy)
+* **`SUPER + V`**: Open clipboard history to paste previous items
+* **`SUPER + C`**: Open color picker
+* **`SUPER + W`**: Cycle the wallpaper to being video or not
+* **`SUPER + U`**: Toggle NordVPN (Wireguard)
+* **`SUPER + P`**: Toggle power saving mode (though it doesn't currently do much)
+* **`SUPER + Shift + N`**: Pause/Unpause desktop notifications
+* **`SUPER + Shift + A`**: Toggle Airplane Mode
+* **`SUPER + Shift + Y`**: Toggle Bluetooth
+* **`SUPER + Shift + W`**: Toggle Wi-Fi
+
+### Media Controls
+* **`SUPER + Ctrl + P`**: Play/Pause media
+* **`SUPER + ]`**: Next track
+* **`SUPER + [`**: Previous track
+
+
+### Updates and Changes to Your Configuration
+
+#### Adding Systemwide Programs
+
+other things you think should go here
+
+#### Understanding The Config
+
+A large part of being able to update and modify the configuration to your liking is understanding everything that is in the config. 
+At the most basic level, here is teh structure of my configuration:
+
 
 
