@@ -135,7 +135,7 @@
   # Allowing me to run reboot without a password
   security.sudo.extraRules = [
     {
-      users = [ "yourusername" ];
+      users = [ "sa9m" ];
       commands = [
         {
           command = "/run/current-system/sw/bin/reboot";
