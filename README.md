@@ -9,6 +9,85 @@ I am planning to use this repository for two purposes: to host my nixos configur
 
 
 
+
+## Tech Stack
+
+### Core Operating System
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **NixOS** | The foundational declarative operating system. |
+| **Flakes & Home Manager** | Tools used to manage system reproducibility and user-specific configurations declaratively. |
+| **GRUB** | The bootloader, specifically configured with a Minecraft-style theme (`minegrub`). |
+
+### Desktop Environments
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Hyprland** | The primary, dynamic tiling Wayland compositor. |
+| **KDE Plasma** | A traditional desktop environment configured as a reliable fallback. (note I don't often use this, so there could be issues with it) |
+
+### Hyprland Ecosystem
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Waybar** | Highly customizable status bar for Wayland. |
+| **Rofi** | Application launcher and search utility. |
+| **Dunst** | Lightweight desktop notification daemon. |
+| **Wlogout** | Wayland-based logout and power management menu. |
+| **Hyprpaper / Hyprlock / Hypridle** | Wallpaper management, screen locking, and idle management natively built for Hyprland. |
+
+### Terminal & Shell
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Kitty** | The default, GPU-accelerated terminal emulator. |
+| **Fish** | The default user shell, featuring robust auto-completion and syntax highlighting. |
+| **Starship** | Fast, highly customizable cross-shell prompt. |
+| **Atuin** | Magical shell history sync and search tool via an SQLite database. |
+
+### Text Editors & IDEs
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Neovim** | Highly customized modal terminal editor. |
+| **Doom Emacs** | Configuration framework for GNU Emacs tailored for speed and Vim keybindings. |
+| **VS Code / IntelliJ** | Supported GUI-based code editors with custom window rules for seamless Hyprland integration. |
+
+### Networking & VPN
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **NordVPN / Wgnord** | VPN integration explicitly using WireGuard via the wgnord utility. |
+
+### Storage & Syncing
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Syncthing** | Continuous file synchronization across devices (e.g., syncing Obsidian vaults). |
+| **Rclone / Google Drive** | Tools for mounting and syncing remote cloud storage directly to the file system. |
+
+### Remote Access
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Sunshine & Moonlight** | Host and client applications for high-performance, low-latency remote desktop and game streaming. |
+| **RustDesk** | Fantastic remote desktop software, but does not allow you to remote into a NixOS computer. Because I dual boot, I can reboot my PC into Windows and use RustDesk to remote into it if I need to. |
+
+### Hardware & Peripherals
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **OpenRGB** | Open-source software for controlling RGB lighting across different hardware components. |
+| **Plover** | Open-source stenography engine for writing at the speed of thought. |
+| **Droidcam** | Utility to use a smartphone as a wireless webcam for the PC. |
+
+### Development & Virtualization
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Virtual Machines** | Configured QEMU/KVM modules for virtualization and safe sandboxing. |
+| **PlatformIO** | Ecosystem for embedded development and IoT. |
+| **Nix-Alien** | Utility to run unpatched binaries and AppImages on NixOS seamlessly. |
+
+### Theming & Appearance
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Catppuccin & Gruvbox** | Cohesive, warm color palettes applied across the system and terminals. |
+| **JetBrains Mono Nerd Font** | Primary typography used for clear code legibility and UI icon rendering. |
+
+
+
 ## NixOS Installation
 This is where I guide you through installing NixOS onto your system. 
 If you already have NixOS installed onto your system and you just want to try out my configuration, then feel free to jump over to [Configuration Installation](#configuration-installation).
@@ -181,10 +260,30 @@ These shortcuts open applications in a hidden "special" workspace that drops dow
 
 other things you think should go here
 
-#### Understanding The Config
-
+#### Understanding The Config Structure
 A large part of being able to update and modify the configuration to your liking is understanding everything that is in the config. 
-At the most basic level, here is teh structure of my configuration:
+At the most basic level, here is the structure of my configuration:
+
+
+`flake.nix`: The master entry point of the entire system. This file defines where NixOS gets its packages (the inputs) and defines the specific machines you can build (the outputs, like gluon and higgs-boson). It links all the other folders together.
+
+`home.nix`: The master entry point for Home Manager. While `flake.nix` builds the underlying computer and system services, `home.nix` builds your user environment. It dictates which personal packages you have installed and acts as the bridge connecting your user profile to all of your custom dotfiles.
+
+`/hosts/`: This directory contains folders for specific, physical computers. Inside, you will find files like hardware-configuration.nix (which tells NixOS about your specific motherboards, drives, and kernel modules) and configuration.nix (which defines the user accounts and hostnames for that specific machine).
+
+`/modules/`: This is the core of the setup. Instead of having one massive, unreadable configuration file, everything is broken down into modular chunks based on purpose. If you want to change VPN settings, you look in `modules/nordvpn/`. If you want to change what fonts are installed, look in `modules/theme/fonts.nix`. This keeps the system organized.
+
+`/dotfiles/`: While the rest of the configuration handles system-level stuff (like firewalls and display managers), this folder handles user-level application settings managed through a tool called Home Manager. This is where you will find the specific configuration files for applications like Hyprland, Waybar, the Fish shell, and the Kitty terminal.
+
+`/scripts/`: A small folder containing useful bash scripts to make managing the system easier, such as the `nrs.sh` auto-rebuild script.
+
+
+
+ 
+
+
+
+
 
 
 
