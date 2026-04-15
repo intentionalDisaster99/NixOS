@@ -90,3 +90,31 @@ sudo nixos-rebuild switch --flake /etc/nixos#gluon
 
 
 ### Updating the `nrs` command
+Included in this repository is a custom bash script located at scripts/nrs.sh. This script acts as a powerful shortcut that automatically formats your Nix files, commits any changes to Git, pushes them to the cloud for backup, and rebuilds the system with a clean output monitor.
+
+However, if you try to run it immediately, it will fail. This is because the script runs git push, which will attempt to push your local changes back to my GitHub repository, where you do not have write permissions. To fix this, you have two options: use your own repository or remove the GitHub sync.
+
+
+#### Point Git to your own repository
+This is what I would recommend, because it means that you will have a backup of your system configuration so if you accidentally break something or get a new device, you can easily get everything set up again.
+
+1. Create a new, empty git repository on your personal GitHub account.
+
+2. Tell Git to use your new repository instead of my repository. You can do this with this group of commands:
+
+```
+cd /etc/nixos
+sudo git remote set-url origin https://github.com/YourUsername/YourNewRepoName.git
+sudo git push -u origin main
+```
+
+Now, every time you run the nrs script, it will safely back up your configuration to your own GitHub repository.
+
+#### Remove the GitHub sync
+If you only want to track changes locally on your machine and don't care about GitHub backups, you can simply remove the push command from the script.
+
+1. Open `/etc/nixos/scripts/nrs.sh` in your text editor.
+
+2. Scroll down and delete or comment out the git push line.
+
+
