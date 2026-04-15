@@ -5,3 +5,6 @@ secrets/google-drive.nix
 secrets/secrets_backup.yaml
 
 **Wolfram_14.3.0_LIN_Bndl**
+
+# Any VM images made in testing
+**.qcow2
