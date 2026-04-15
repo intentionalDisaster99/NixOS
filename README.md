@@ -8,7 +8,8 @@ I am planning to use this repository for two purposes: to host my nixos configur
 
 
 
-
+## Credits
+Before we get any further into this readme, I would like to give credit ot 
 
 ## Tech Stack
 
@@ -42,17 +43,16 @@ I am planning to use this repository for two purposes: to host my nixos configur
 | **Starship** | Fast, highly customizable cross-shell prompt. |
 | **Atuin** | Magical shell history sync and search tool via an SQLite database. |
 
-### Text Editors & IDEs
-| Software / Tool | Description / Role |
-| :--- | :--- |
-| **Neovim** | Highly customized modal terminal editor. |
-| **Doom Emacs** | Configuration framework for GNU Emacs tailored for speed and Vim keybindings. |
-| **VS Code / IntelliJ** | Supported GUI-based code editors with custom window rules for seamless Hyprland integration. |
-
 ### Networking & VPN
 | Software / Tool | Description / Role |
 | :--- | :--- |
 | **NordVPN / Wgnord** | VPN integration explicitly using WireGuard via the wgnord utility. |
+
+### Web Browsing
+| Software / Tool | Description / Role |
+| :--- | :--- |
+| **Brave** | A great browser with built in ad blocking (no YouTube ads) |
+
 
 ### Storage & Syncing
 | Software / Tool | Description / Role |
@@ -77,8 +77,11 @@ I am planning to use this repository for two purposes: to host my nixos configur
 | Software / Tool | Description / Role |
 | :--- | :--- |
 | **Virtual Machines** | Configured QEMU/KVM modules for virtualization and safe sandboxing. |
-| **PlatformIO** | Ecosystem for embedded development and IoT. |
+| **PlatformIO** | Ecosystem for embedded development. |
 | **Nix-Alien** | Utility to run unpatched binaries and AppImages on NixOS seamlessly. |
+| **Neovim** | Highly customized modal terminal editor. |
+| **Doom Emacs** | Configuration framework for GNU Emacs tailored for speed and Vim keybindings. |
+| **VS Code / IntelliJ** | Supported GUI-based code editors with custom window rules for Hyprland integration. |
 
 ### Theming & Appearance
 | Software / Tool | Description / Role |
