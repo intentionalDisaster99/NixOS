@@ -140,7 +140,7 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark-Brown";
+      name = "gruvbox-dark";
       package = pkgs.gruvbox-dark-gtk;
     };
     iconTheme = {
