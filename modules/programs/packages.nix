@@ -184,6 +184,7 @@
     zoom-us
     obs-studio
     vlc
+    blender
     cheese
     nautilus
     gnome-control-center
