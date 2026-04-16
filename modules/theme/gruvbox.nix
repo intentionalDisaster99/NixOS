@@ -1,8 +1,13 @@
 { pkgs, ... }:
 
 {
-  environment.variables.GTK_THEME = "gruvbox-dark";
-  environment.variables.XCURSOR_THEME = "Nordzy-cursors";
+
+  environment.variables = {
+    GTK_THEME = "Gruvbox-Dark-Brown";
+    ADW_DISABLE_PORTAL = "0";
+    XCURSOR_THEME = "Nordzy-cursors";
+  };
+
   environment.variables.XCURSOR_SIZE = "24";
   environment.variables.HYPRCURSOR_THEME = "Nordzy-cursors";
   environment.variables.HYPRCURSOR_SIZE = "24";
