@@ -129,9 +129,14 @@ in
     run ${pkgs.desktop-file-utils}/bin/update-desktop-database ~/.local/share/applications/
   '';
 
-  ####################################
-  ## Setting Everything to Dark Mode##
-  ####################################
+  #####################################
+  ## Setting Everything to Dark Mode ##
+  #####################################
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
   gtk = {
     enable = true;
     theme = {
@@ -150,9 +155,9 @@ in
   };
 
   # TODO Move this to its own module
-  ##################
-  # Setting up Nvim#
-  ##################
+  ###################
+  # Setting up Nvim #
+  ###################
   programs.neovim = {
     enable = true;
     defaultEditor = true;
