@@ -143,6 +143,11 @@ in
       package = pkgs.gruvbox-plus-icons;
     };
   };
+  qt = {
+    enable = true;
+    platformTheme.name = "qt5ct";
+    style.name = "kvantum";
+  };
 
   # TODO Move this to its own module
   ##################
