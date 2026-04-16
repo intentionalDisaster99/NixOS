@@ -204,6 +204,8 @@
     shared-mime-info
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
+    gruvbox-dark-gtk
+    gruvbox-plus-icons
 
     # ---------------------------------------------------
     # School

@@ -135,8 +135,8 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark-Brown"; # Matches your Kvantum theme
-      package = pkgs.gruvbox-dark-gtk; # Ensure this is in your systemPackages
+      name = "Gruvbox-Dark-Brown";
+      package = pkgs.gruvbox-dark-gtk;
     };
     iconTheme = {
       name = "Gruvbox-Plus-Dark";
