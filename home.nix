@@ -132,24 +132,17 @@ in
   ####################################
   ## Setting Everything to Dark Mode##
   ####################################
-  # qt = {
-  #   enable = true;
-  #   style.name = "adwaita-dark";
-  # };
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "Adwaita-dark";
-  #     package = pkgs.gnome-themes-extra;
-  #   };
-  # };
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "catppuccin-macchiato-teal-standard";
-  #     package = pkgs.catppuccin-gtk;
-  #   };
-  # };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Gruvbox-Dark-Brown"; # Matches your Kvantum theme
+      package = pkgs.gruvbox-dark-gtk; # Ensure this is in your systemPackages
+    };
+    iconTheme = {
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
+    };
+  };
 
   # TODO Move this to its own module
   ##################
