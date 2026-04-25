@@ -1,7 +1,7 @@
 # Define superworkspaces 
 activities = ["Main", "Dev", "School", "Media"] 
 
-# Create 10 workspaces per activity (5 columns, 2 rows)
+# Create 10 workspaces per activity
 workspaces = [10] 
 
 [daemon]
