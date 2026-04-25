@@ -48,6 +48,9 @@
     # For better hyprland experience on my pc
     hyprsplit.url = "github:shezdy/hyprsplit";
 
+    # For activities 
+    hyprkool.url = "github:thrombe/hyprkool";
+
   };
 
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, ... }@inputs: {

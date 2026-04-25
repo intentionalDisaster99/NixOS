@@ -12,10 +12,10 @@
 
   # Adding in the plugin for my desktop
   # environment.etc."hyprland/plugins/hyprsplit.so".source = "${pkgs.hyprlandPlugins.hyprsplit}/lib/libhyprsplit.so";
-  environment.etc."hyprland/plugins/hyprsplit.so".source = "${pkgs.hyprlandPlugins.hyprsplit.overrideAttrs (old: {
-    src = inputs.hyprsplit;
-    version = "latest";
-  })}/lib/libhyprsplit.so";
+  # environment.etc."hyprland/plugins/hyprsplit.so".source = "${pkgs.hyprlandPlugins.hyprsplit.overrideAttrs (old: {
+  #   src = inputs.hyprsplit;
+  #   version = "latest";
+  # })}/lib/libhyprsplit.so";
 
 
   programs.hyprlock.enable = true;
@@ -31,6 +31,7 @@
     hyprpaper
     hyprsunset
     hyprpolkitagent
+    inputs.hyprkool.packages.${pkgs.system}.default
   ];
 
   xdg.portal = {

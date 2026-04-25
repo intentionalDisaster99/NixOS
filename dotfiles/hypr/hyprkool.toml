@@ -1,0 +1,10 @@
+# Define superworkspaces 
+activities = ["Main", "Dev", "School", "Media"] 
+
+# Create 10 workspaces per activity (5 columns, 2 rows)
+workspaces = [5, 2] 
+
+[daemon]
+# This ensures that when you switch back to an activity, 
+# you are on the same workspace you left off on.
+remember_activity_focus = true
