@@ -19,6 +19,7 @@
 
 
   programs.hyprlock.enable = true;
+  security.pam.services.hyprlock.enableGnomeKeyring = true;
   services.hypridle.enable = true;
 
   environment.systemPackages = with pkgs; [
