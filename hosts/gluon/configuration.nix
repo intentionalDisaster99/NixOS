@@ -48,17 +48,17 @@
       winboat = inputs.winboat.packages.${pkgs.stdenv.hostPlatform.system}.winboat;
     })
     # Pinning Spotify so that it doesn't crash
-    (final: prev: {
-      spotify = (import
-        (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/571c71e6f73af34a229414f51585738894211408.tar.gz";
-          sha256 = "0fgp5sqfmh5zgx75rs5101ywkz0fkjff67abms0kc8hyaxmlc7js";
-        })
-        {
-          inherit (final) system;
-          config.allowUnfree = true;
-        }).spotify;
-    })
+    # (final: prev: {
+    #   spotify = (import
+    #     (builtins.fetchTarball {
+    #       url = "https://github.com/NixOS/nixpkgs/archive/571c71e6f73af34a229414f51585738894211408.tar.gz";
+    #       sha256 = "0fgp5sqfmh5zgx75rs5101ywkz0fkjff67abms0kc8hyaxmlc7js";
+    #     })
+    #     {
+    #       inherit (final) system;
+    #       config.allowUnfree = true;
+    #     }).spotify;
+    # })
   ];
 
   # So that it automatically opens Windows instead of linux (Just for now)
