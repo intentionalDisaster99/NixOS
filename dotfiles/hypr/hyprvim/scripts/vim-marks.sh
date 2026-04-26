@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # scripts/vim-marks.sh
 # hypr/.config/hypr/hyprvim/scripts/vim-marks.sh
 ################################################################################

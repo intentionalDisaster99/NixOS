@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-find.sh
 ################################################################################
 # vim-find.sh - Interactive find with configurable input methods

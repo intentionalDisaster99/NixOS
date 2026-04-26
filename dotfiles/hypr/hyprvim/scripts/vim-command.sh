@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-command.sh
 ################################################################################
 # vim-command.sh - Command mode for HyprVim

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/lib/clipboard.sh
 ################################################################################
 # Clipboard functions for HyprVim scripts

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-registers.sh
 ################################################################################
 # vim-registers.sh - Register management for HyprVim

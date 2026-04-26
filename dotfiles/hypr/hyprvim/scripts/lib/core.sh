@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/lib/core.sh
 ################################################################################
 # Core utility functions for HyprVim scripts

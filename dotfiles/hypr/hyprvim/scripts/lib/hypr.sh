@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/lib/hypr.sh
 ################################################################################
 # Hyprland integration functions for HyprVim scripts

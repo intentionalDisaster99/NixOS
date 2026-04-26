@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/lib/state.sh
 ################################################################################
 # State management functions for HyprVim scripts

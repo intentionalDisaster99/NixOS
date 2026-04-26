@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-line-motion.sh
 ################################################################################
 # vim-line-motion.sh - Execute V-LINE mode motions with count support

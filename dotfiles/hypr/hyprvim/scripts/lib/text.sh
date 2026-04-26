@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/lib/text.sh
 ################################################################################
 # Text utility functions for HyprVim scripts

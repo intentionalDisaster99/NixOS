@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-operator-motion.sh
 ################################################################################
 # vim-operator-motion.sh - Execute operator motions with count-aware selection

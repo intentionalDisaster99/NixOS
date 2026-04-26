@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-replace.sh
 ################################################################################
 # vim-replace.sh - Replace characters (r) or forward by string (R)

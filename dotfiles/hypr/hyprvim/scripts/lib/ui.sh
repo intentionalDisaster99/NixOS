@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # scripts/lib/ui.sh
 # hypr/.config/hypr/hyprvim/scripts/lib/ui.sh
 ################################################################################

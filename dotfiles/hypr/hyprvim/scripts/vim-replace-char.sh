@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # hypr/.config/hypr/hyprvim/scripts/vim-replace-char-handler.sh
 ################################################################################
 # vim-replace-char-handler.sh - Router for r command (submap vs script)

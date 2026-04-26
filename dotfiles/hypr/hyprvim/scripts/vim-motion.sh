@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # scripts/vim-motion.sh
 # hypr/.config/hypr/hyprvim/scripts/vim-motion.sh
 ################################################################################
