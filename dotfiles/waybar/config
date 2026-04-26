@@ -41,7 +41,7 @@
         },
 
         "hyprland/submap": {
-            "format": "<span color='#a6da95'>Mode:</span> <span color='#57bae1'>{}<\span>",
+            "format": "<span color='#a6da95'>Mode:</span> <span color='#57bae1'>{}</span>",
             "tooltip": false,
         },
 
