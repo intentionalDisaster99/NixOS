@@ -48,6 +48,7 @@
     wl-clipboard
     cliphist
     wtype
+    jq
 
     # Audio & Display control
     pipewire
