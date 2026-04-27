@@ -403,6 +403,6 @@ There are lots of other great resources from the NixOS community, so for more in
 - [NixOS Wiki Home](http://wiki.nixos.org/wiki/NixOS_Wiki)
 
 ### Community and Learning Resources
-- [Awesone Nix List](http://nix-community.github.io/awesome-nix/)
+- [Awesome Nix List](http://nix-community.github.io/awesome-nix/)
 - [Learn Nix](http://nixos.org/learn/)
 
