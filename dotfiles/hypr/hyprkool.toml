@@ -2,7 +2,7 @@
 activities = ["Main", "Dev", "School", "Media"] 
 
 # Create 10 workspaces per activity
-workspaces = [10] 
+workspaces = [10, 1] 
 
 [daemon]
 # This ensures that when you switch back to an activity, 
