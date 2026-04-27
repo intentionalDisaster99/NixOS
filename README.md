@@ -2,9 +2,58 @@
 Welcome to my definitely totally fantastic and not at all randomly pieced together NixOS Configuration! :D
 I am planning to use this repository for two purposes: to host my nixos configuration and to act as a simple beginner friendly tutorial for transitioning to NixOS.
 
+## Images
+
+![A screenshot of my wallpaper with my waybar around it](wallpaper.png)
+![Fastfetch, pipes.sh, and fireplace running on my computer](fastfetch.png)
+
+
 
 ## Table of Contents
-
+- [Credits](#credits)
+- [Tech Stack](#tech-stack)
+  - [Core Operating System](#core-operating-system)
+  - [Desktop Environments](#desktop-environments)
+  - [Hyprland Ecosystem](#hyprland-ecosystem)
+  - [Terminal & Shell](#terminal--shell)
+  - [Networking & VPN](#networking--vpn)
+  - [Web Browsing](#web-browsing)
+  - [Storage & Syncing](#storage--syncing)
+  - [Remote Access](#remote-access)
+  - [Hardware & Peripherals](#hardware--peripherals)
+  - [Development & Virtualization](#development--virtualization)
+  - [Theming & Appearance](#theming--appearance)
+- [Prerequisites for NixOS Installation](#prerequisites-for-nixos-installation)
+- [NixOS Installation](#nixos-installation)
+  - [1. Boot from your USB](#1-boot-from-your-usb)
+  - [2. Connect to the Internet](#2-connect-to-the-internet)
+  - [3. Run the Installer](#3-run-the-installer)
+- [Configuration Installation](#configuration-installation)
+  - [Cloning this Repository](#cloning-this-repository)
+    - [1. Backup your hardware configuration](#1-backup-your-hardware-configuration)
+    - [2. Clear your configuration directory](#2-clear-your-configuration-directory)
+    - [3. Clone this Repository](#3-clone-this-repository)
+    - [4. Restore your hardware configuration](#4-restore-your-hardware-configuration)
+    - [5. Ensure the correct permissions](#5-ensure-the-correct-permissions)
+  - [Preparing your new configuration for use](#preparing-your-new-configuration-for-use)
+    - [1. Update the Username](#1-update-the-username)
+    - [2. Update your Hostname](#2-update-your-hostname)
+    - [3. Perform the Initial Build](#3-perform-the-initial-build)
+  - [Updating the nrs command](#updating-the-nrs-command)
+    - [Point Git to your own repository](#point-git-to-your-own-repository)
+    - [Remove the GitHub sync](#remove-the-github-sync)
+- [Using Your New Configuration](#using-your-new-configuration)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+  - [Core Window Management](#core-window-management)
+  - [Launching Applications](#launching-applications)
+  - [Special Workspaces](#special-workspaces)
+  - [Utilities & System Toggles](#utilities--system-toggles)
+  - [Media Controls](#media-controls)
+- [Updates and Changes to Your Configuration](#updates-and-changes-to-your-configuration)
+  - [Adding Systemwide Programs](#adding-systemwide-programs)
+  - [Garbage Collection (Freeing up Disk Space)](#garbage-collection-freeing-up-disk-space)
+  - [Rolling Back](#rolling-back)
+  - [Understanding The Config Structure](#understanding-the-config-structure)
 
 
 
