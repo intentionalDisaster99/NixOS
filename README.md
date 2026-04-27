@@ -297,7 +297,11 @@ sudo nano /etc/nixos/modules/programs/packages.nix
 ```
 3. Scroll down to an appropriate category block (like the # General Apps section) and type `gimp` on a new line. Make sure it stays within the main square brackets [ ... ] that contain all the packages.
 
-4. Save and exit the file. ()
+4. Save and exit the file. (ctrl + s then ctrl + x in nano)
+
+5. Rebuild your system using our custom script by running `nrs` in your terminal (or `sudo nixos-rebuild switch --flake /etc/nixos#gluon` if you skipped the script setup).
+
+Once the build finishes, that program is now downloaded and ready for you to use!
 
 
 #### Understanding The Config Structure
