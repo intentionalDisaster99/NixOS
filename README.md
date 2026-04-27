@@ -103,17 +103,17 @@ If you already have NixOS installed onto your system and you just want to try ou
 
 ### 1. Boot from your USB
 
-    The first thing you need to do is actually enter the live environment on your USB drive. To do that, simply plug the USB drive into your computer, restart, and enter the BIOS(you can enter the BIOS by repeated pressing a key on your keyboard. It varies with motherboards and keyboards, but usually is escape or f11). From the BIOS you should be able to find a boot menu where you can select the USB.
+The first thing you need to do is actually enter the live environment on your USB drive. To do that, simply plug the USB drive into your computer, restart, and enter the BIOS(you can enter the BIOS by repeated pressing a key on your keyboard. It varies with motherboards and keyboards, but usually is escape or f11). From the BIOS you should be able to find a boot menu where you can select the USB.
 
 ### 2. Connect to the Internet
 
-    Once you are in the live environment, you are going to want to connect to the internet so that you can download and install the operating system. To do that, you can either simply connect an ethernet cable or click the network icon in the system tray and select the Wi-Fi that you are connecting to.
+Once you are in the live environment, you are going to want to connect to the internet so that you can download and install the operating system. To do that, you can either simply connect an ethernet cable or click the network icon in the system tray and select the Wi-Fi that you are connecting to.
 
 ### 3. Run the Installer
 
-    Click the "Install NixOS" icon on the desktop to launch the graphical intaller. The installer will give you a lot of prompts to do things like select your language, timezone, and keyboard layout and then ask you which desktop environment to install. For the desktop environment, really any of them will work, but I will bring you through using Plasma (KDE), so you should select that one. It will then ask you to allow unfree software. For this configuration, you will need to allow unfree software because a lot of the software used in this configuration is unfree. 
+Click the "Install NixOS" icon on the desktop to launch the graphical intaller. The installer will give you a lot of prompts to do things like select your language, timezone, and keyboard layout and then ask you which desktop environment to install. For the desktop environment, really any of them will work, but I will bring you through using Plasma (KDE), so you should select that one. It will then ask you to allow unfree software. For this configuration, you will need to allow unfree software because a lot of the software used in this configuration is unfree. 
 
-    Let the installer partition your drive (be careful here to select the drive that you want NixOS on, because it completely wipes the partition it uses) and then install the system. Once it finished, you can remove the USB drive and you will boot into your new NixOS installation!
+Let the installer partition your drive (be careful here to select the drive that you want NixOS on, because it completely wipes the partition it uses) and then install the system. Once it finished, you can remove the USB drive and you will boot into your new NixOS installation!
 
 ## Configuration Installation
 This is where I guide you through actually installing and using the files that I have in this repository to make your NixOS configuration look like mine.
@@ -129,13 +129,13 @@ This also assumes that you have a fresh NixOS install with your `hardware-config
 There are a few steps involved in this:
 #### 1. Backup your hardware configuration
 
-    NixOS stores the information for how the system should interact with the hardware in a file called `hardware-configuration.nix`. If you have different hardware to the hardware I am running, which is highly likely, my `hardware-configuration.nix` will not work for you. So, we need to backup your `hardware-configuration.nix`, which we can do with 
+NixOS stores the information for how the system should interact with the hardware in a file called `hardware-configuration.nix`. If you have different hardware to the hardware I am running, which is highly likely, my `hardware-configuration.nix` will not work for you. So, we need to backup your `hardware-configuration.nix`, which we can do with 
 ```
 cp /etc/nixos/hardware-configuration.nix ~/hardware-configuration.nix.bak
 ``` 
 #### 2. Clear your configuration directory
 
-    Next up, we need to clear out the directory so that Git doesn't get unhappy when we clone this repo. To do this, we have to run a remove command from the commandline. As a side note, this is a fantastic time to remind you to only run commands that you trust. This next command, `sudo rm -rf`, has the ability to recursively force the removal of files from your computer. We are only using it to remove what is in your `/etc/nixos` folder \(which is what the `/etc/nixos/*` is in the command\), so you can safely run it. 
+Next up, we need to clear out the directory so that Git doesn't get unhappy when we clone this repo. To do this, we have to run a remove command from the commandline. As a side note, this is a fantastic time to remind you to only run commands that you trust. This next command, `sudo rm -rf`, has the ability to recursively force the removal of files from your computer. We are only using it to remove what is in your `/etc/nixos` folder \(which is what the `/etc/nixos/*` is in the command\), so you can safely run it. 
 ```
 sudo rm -rf /etc/nixos/*
 ``` 
@@ -149,14 +149,14 @@ sudo git clone https://github.com/intentionalDisaster99/NixOS.git /etc/nixos
 
 #### 4. Restore your hardware configuration
 
-    Now that you have everything downloaded, you can put your `hardware-configuration.nix` back in place. You can do this the same way that we backed it up before, with a `cp`\(copy\) command:
+Now that you have everything downloaded, you can put your `hardware-configuration.nix` back in place. You can do this the same way that we backed it up before, with a `cp`\(copy\) command:
 ```
 sudo cp ~/hardware-configuration.nix.bak /etc/nixos/hosts/gluon/hardware-configuration.nix
 ```
 
 #### 5. Ensure the correct permissions
 
-    We used `sudo` to clone and copy files to make sure that they were successfully cloned and copied, so we need to make sure that your user owns the files. This allows you to edit them freely for when you want to update your configuration later on. We can do a simple `chown` for this:
+We used `sudo` to clone and copy files to make sure that they were successfully cloned and copied, so we need to make sure that your user owns the files. This allows you to edit them freely for when you want to update your configuration later on. We can do a simple `chown` for this:
 ```
 sudo chown -R $USER:users /etc/nixos
 ```
@@ -164,7 +164,7 @@ sudo chown -R $USER:users /etc/nixos
 ### Preparing your new configuration for use
 Now that you have the configuration cloned and set up for your hardware, we need to update the users and get set up to load it for the first time.
 
-    Because this configuration is tailored to my personal setup, it expects my username (sa9m) and my desktop's hostname (gluon). Before applying the system switch, you need to swap these out for your own so that your home directory sets up correctly and you aren't locked out of your own machine.
+Because this configuration is tailored to my personal setup, it expects my username (sa9m) and my desktop's hostname (gluon). Before applying the system switch, you need to swap these out for your own so that your home directory sets up correctly and you aren't locked out of your own machine.
 
 #### 1. Update the Username
 
