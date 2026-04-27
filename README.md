@@ -303,6 +303,28 @@ sudo nano /etc/nixos/modules/programs/packages.nix
 
 Once the build finishes, that program is now downloaded and ready for you to use!
 
+#### Garbage Collection (Freeing up Disk Space)
+One of the quirks of NixOS is that it never deletes your old packages when you update or rebuild. It keeps them safely stored away so you can always roll back if something breaks or you want to use an old config without changing your configuration again. The only issue with this is that it takes up a lot of disk space.
+
+When you are happy with your current system build and want to free up space by deleting all your old, unused system states, run the garbage collector:
+
+```
+sudo nix-collect-garbage -d
+```
+
+Note: This will delete your old boot menu options, so make sure your current system is stable before running this!
+
+If you want to keep some of your old packages, but also want to free up some space, you can run the garbage collected with a specified cutoff for deleting old programs:
+```
+sudo nix-collect-garbage --delete-older-than 30d
+```
+The above command deletes everything older than 30 days old, so you can still roll back to about the last month with this command.
+
+#### Rolling Back
+As I said in the [Garbage Collection](#garbage-collection), NixOS saves your old configurations so that you can roll back to them whenever you want to. If something breaks or you update a program and it starts crashing, you can simply roll back to a state where it works. 
+
+To roll back to an older "Generation", as NixOS calls them, you can simply restart your computer and when the GRUB boot menu shows up (if you have applied my configuration, it will be Minecraft themed) you will see a NixOS generations option. When you navagate down to it with your keyboard and hit enter, it will show you every generation that you have saved to your computer. Select one and your computer will boot into that configuration.
+
 
 #### Understanding The Config Structure
 A large part of being able to update and modify the configuration to your liking is understanding everything that is in the config. 
@@ -320,14 +342,4 @@ At the most basic level, here is the structure of my configuration:
 `/dotfiles/`: While the rest of the configuration handles system-level stuff (like firewalls and display managers), this folder handles user-level application settings managed through a tool called Home Manager. This is where you will find the specific configuration files for applications like Hyprland, Waybar, the Fish shell, and the Kitty terminal.
 
 `/scripts/`: A small folder containing useful bash scripts to make managing the system easier, such as the `nrs.sh` auto-rebuild script.
-
-
-
- 
-
-
-
-
-
-
 
