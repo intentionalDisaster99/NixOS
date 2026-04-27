@@ -118,7 +118,7 @@ Let the installer partition your drive (be careful here to select the drive that
 ## Configuration Installation
 This is where I guide you through actually installing and using the files that I have in this repository to make your NixOS configuration look like mine.
 This repository has two configurations, one for a laptop and one for a desktop. While they share many modules and configs, they are distinct in a few ways (for example, I have a remote gaming hosting software run on my desktop but not my laptop so that I can remotely game).
- 
+
 These installation instructions are specifically for `gluon`, my desktop configuration. If you want to install `higgs-boson`, my laptop configuration, then you can simply change `gluon` to `higgs-boson` in all of the commands that we will run. \(Yes, I am a nerd and my devices are named after subatomic particles\)
 Alternatively, if you want to set up both a laptop and a desktop configuration, you can just rerun each command \(other than cloning the repository\)
 
@@ -280,7 +280,25 @@ These shortcuts open applications in a hidden "special" workspace that drops dow
 
 #### Adding Systemwide Programs
 
-other things you think should go here
+One of the biggest mental shifts when transitioning to NixOS is realizing you don't use commands like `apt install` or `pacman -S`. Instead, you add the package name to a configuration file, rebuild the system, and it will install it for you.
+
+To keep things organized and prevent a single massive configuration file, I use a specific module for enabling system-wide programs located at `modules/programs/packages.nix`. 
+
+If you open `/etc/nixos/modules/programs/packages.nix`, you will see a list of packages organized by category (like "OS Utils", "Hyprland", "Terminal stuff", and "General Apps"). These define what are installed on the system.
+
+To add a new program to your computer:
+
+1. Search for the exact package name on the [NixOS Search page](https://search.nixos.org/packages). Let's say you want to install the GIMP image editor. You can search for "gimp" on the NixOS search page, you will find that the package name is simply `gimp` (not all of them will match up perfectly like this, so if you can't find a program it is a good idea to search for it).
+
+2. Open the packages module in your favorite text editor, here I'll be using nano: 
+
+```bash
+sudo nano /etc/nixos/modules/programs/packages.nix
+```
+3. Scroll down to an appropriate category block (like the # General Apps section) and type `gimp` on a new line. Make sure it stays within the main square brackets [ ... ] that contain all the packages.
+
+4. Save and exit the file. ()
+
 
 #### Understanding The Config Structure
 A large part of being able to update and modify the configuration to your liking is understanding everything that is in the config. 

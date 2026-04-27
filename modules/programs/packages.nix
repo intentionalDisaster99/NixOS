@@ -98,6 +98,7 @@
     # Dev
     # ---------------------------------------------------
     vim
+    nano
     neovim
     vscode
     vscodium-fhs
