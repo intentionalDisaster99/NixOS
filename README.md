@@ -4,9 +4,9 @@ I am planning to use this repository for two purposes: to host my nixos configur
 
 ## Images
 
-![A screenshot of my wallpaper with my waybar around it](wallpaper.png)
-![Fastfetch, pipes.sh, and fireplace running on my computer](fastfetch.png)
-
+![A screenshot of my wallpaper with my waybar around it](pretty-pictures/wallpaper.png)
+![Fastfetch, pipes.sh, and fireplace running on my computer](pretty-pictures/fastfetch.png)
+![My dev environment behind rofi, my filepicker](pretty-pictures/rofi.png)
 
 
 ## Table of Contents
