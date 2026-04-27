@@ -392,3 +392,17 @@ At the most basic level, here is the structure of my configuration:
 
 `/scripts/`: A small folder containing useful bash scripts to make managing the system easier, such as the `nrs.sh` auto-rebuild script.
 
+## Other Resources
+There are lots of other great resources from the NixOS community, so for more information go check them out!
+
+### Official Documentation
+- [NixOS Manual](http://nixos.org/manual/nixos/stable/)
+- [Nixpkgs Reference Manual](http://nixos.org/nixpkgs/manual/)
+- [Home Manager Manual](https://nix-community.github.io/home-manager/)
+- [NixOS Wiki - Installation Guide](http://wiki.nixos.org/wiki/NixOS_Installation_Guide)
+- [NixOS Wiki Home](http://wiki.nixos.org/wiki/NixOS_Wiki)
+
+### Community and Learning Resources
+- [Awesone Nix List](http://nix-community.github.io/awesome-nix/)
+- [Learn Nix](http://nixos.org/learn/)
+
