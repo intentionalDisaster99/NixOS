@@ -9,7 +9,7 @@ I am planning to use this repository for two purposes: to host my nixos configur
 
 
 ## Credits
-Before we get any further into this readme, I would like to give credit ot 
+Before we get any further into this readme, I would like to give credit to the 
 
 ## Tech Stack
 
