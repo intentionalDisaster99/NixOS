@@ -31,6 +31,7 @@
     hyprpaper
     hyprsunset
     hyprpolkitagent
+    pkgs.kio-fuse
   ];
 
   xdg.portal = {
