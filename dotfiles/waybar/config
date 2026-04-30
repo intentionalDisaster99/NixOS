@@ -320,7 +320,7 @@
         },
 
         "hyprland/language": {
-            "format-en": "🇺🇸 ENG (US)",
+            "format-en": "<span color='#ebdbb2'>🇺🇸 ENG (US)</span>",
             "keyboard-name": "at-translated-set-2-keyboard",
             "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
         },
