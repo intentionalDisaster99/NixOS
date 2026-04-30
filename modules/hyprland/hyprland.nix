@@ -42,7 +42,7 @@
     xdgOpenUsePortal = true;
     config = {
       common = {
-        default = [ "hyprland" "gtk" ];
+        default = [ "hyprland" "gtk" "kde " ];
       };
     };
   };
