@@ -185,6 +185,7 @@
     element-desktop
     zoom-us
     obs-studio
+    davichi-resolve
     vlc
     blender
     cheese
