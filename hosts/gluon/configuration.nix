@@ -167,7 +167,10 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      rocmPackages.clr.icd
+      mesa.opencl
     ];
+  };
+  environment.variables = {
+    RUSTICL_ENABLE = "radeonsi";
   };
 }
