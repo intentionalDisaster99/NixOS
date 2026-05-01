@@ -163,4 +163,11 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "sa9m";
   services.displayManager.defaultSession = "hyprland";
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+    ];
+  };
 }
