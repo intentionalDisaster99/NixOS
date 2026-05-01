@@ -44,6 +44,7 @@
     config = {
       common = {
         default = [ "hyprland" "gtk" "kde " ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
       };
     };
   };
