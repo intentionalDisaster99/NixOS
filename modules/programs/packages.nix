@@ -186,7 +186,7 @@
     zoom-us
     obs-studio
     davinci-resolve
-    kdenlive
+    kdePackages.kdenlive
     vlc
     blender
     cheese
