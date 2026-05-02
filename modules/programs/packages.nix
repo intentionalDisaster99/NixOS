@@ -186,6 +186,7 @@
     zoom-us
     obs-studio
     davinci-resolve
+    kdenlive
     vlc
     blender
     cheese

@@ -164,6 +164,7 @@
   services.displayManager.autoLogin.user = "sa9m";
   services.displayManager.defaultSession = "hyprland";
 
+  hardware.amdgpu.opencl.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
