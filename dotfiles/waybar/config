@@ -311,7 +311,8 @@
         "modules-left": ["user"],
         "modules-center": ["hyprland/window"],
         "modules-right": ["keyboard-state", "hyprland/language"],
-        "output": ["DP-1", "eDP-1"],
+        // "output": ["DP-1", "eDP-1"], 
+        "output": ["HDMI-A-1", "eDP-1"], // REMOVE THESE WERE ADDED WHILE I WAIT FOR NEW CABLES
 
         // Modules Config
         "hyprland/window": {
@@ -355,7 +356,9 @@
         "modules-left": ["wlr/taskbar"],
         "modules-center": ["cpu", "memory", "disk", "temperature", "battery", "backlight", "pulseaudio", "systemd-failed-units"],
         "modules-right": ["tray"],
-        "output": ["DP-1", "eDP-1"],
+        // "output": ["DP-1", "eDP-1"],
+        "output": ["HDMI-A-1", "eDP-1"], // REMOVE THESE WERE ADDED WHILE I WAIT FOR NEW CABLES
+
 
         // Modules Config
         "wlr/taskbar": {
