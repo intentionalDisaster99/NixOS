@@ -70,6 +70,7 @@ function getLightThemeConf(colours) {
 
 function setTheme(newThemeConfigPath) {
   const dunstConfigPath = HOME_DIR.concat("/.cache/dunst/dunstrc-colors");
+  const dunstOldConfig = STD.loadFile(dunstConfigPath);
   const newThemeConfig = STD.loadFile(newThemeConfigPath);
   let filterOut = false;
   let updated = false;
