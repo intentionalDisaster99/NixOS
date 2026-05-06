@@ -8,6 +8,34 @@ let
   };
 in
 {
+
+  imports = [
+    ./modules/theme/wallrizz.nix # Wallpaper picker
+  ];
+
+  # TODO move to a home-manager module
+  # Setting up wallpaper picker
+  programs.wallrizz = {
+    enable = true;
+
+    extensionScripts = {
+      # This creates ~/.config/WallRizz/themeExtensionScripts/update-waybar.sh
+      "update-waybar.sh" = ''
+        #!/usr/bin/env bash
+        # WallRizz passes colors as arguments, or you can source the generated file
+        killall waybar
+        waybar &
+      '';
+
+      # This creates ~/.config/WallRizz/themeExtensionScripts/update-kitty.sh
+      "update-kitty.sh" = ''
+        #!/usr/bin/env bash
+        killall -SIGUSR1 kitty
+      '';
+    };
+  };
+
+
   home.username = "sa9m";
   home.homeDirectory = "/home/sa9m";
 

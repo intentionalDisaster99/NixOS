@@ -363,6 +363,21 @@
         "type": "github"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -484,6 +499,7 @@
         "plasma-manager": "plasma-manager",
         "plover-flake": "plover-flake",
         "sops-nix": "sops-nix",
+        "terminal-rain": "terminal-rain",
         "winboat": "winboat"
       }
     },
@@ -563,6 +579,24 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "terminal-rain": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1777997637,
+        "narHash": "sha256-4n7deKtYJH/oktdmXldDAyPljar8KQW9DXltKPP2zPc=",
+        "owner": "delta-psi",
+        "repo": "terminal-rain-lightning-flake",
+        "rev": "11b2029b7dba376ce0fe40894b62ec83822c1a54",
+        "type": "github"
+      },
+      "original": {
+        "owner": "delta-psi",
+        "repo": "terminal-rain-lightning-flake",
         "type": "github"
       }
     },
