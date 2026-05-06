@@ -23,8 +23,8 @@ let
       tar -xzf $src -C $out/bin/
       mv $out/bin/WallRizz* $out/bin/wallrizz
       chmod +x $out/bin/wallrizz
-      # wrapProgram $out/bin/wallrizz \
-        # --add-flags "-d /etc/nixos/resources/wallpapers/"
+      wrapProgram $out/bin/wallrizz \
+        --add-flags "-d /etc/nixos/resources/wallpapers/"
     '';
   };
 
@@ -43,6 +43,6 @@ in
     home.packages = [ wallrizzPkg ];
 
     # Symlinking to ~/.config/WallRizz/themeExtensionScripts/
-    xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
+    # xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
   };
 }
