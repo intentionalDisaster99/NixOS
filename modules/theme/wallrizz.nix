@@ -10,7 +10,7 @@ let
 
     src = pkgs.fetchurl {
       url = "https://github.com/5hubham5ingh/WallRizz/releases/tag/v${version}";
-      sha256 = pkgs.lib.fakeSha256;
+      sha256 = "sha256-P8HllDD3bEX0rIGEMqiNFCd7+I9uJowaSCFf/u/u1vk=";
     };
 
     dontUnpack = true;
