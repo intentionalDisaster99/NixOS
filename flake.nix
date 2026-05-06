@@ -48,65 +48,68 @@
     # For better hyprland experience on my pc
     hyprsplit.url = "github:shezdy/hyprsplit";
 
-  };
+    # For a silly little terminal rain package
+    terminal-rain.packages.${stdenv.hostPlatform.system}.terminal-rain-lightning
 
-  outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, ... }@inputs: {
+      };
+
+      outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, terminal-rain, ... }@inputs: {
 
 
-    # Laptop Configuration
-    nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/higgs-boson/configuration.nix
-        sops-nix.nixosModules.sops
-        inputs.minegrub-world-sel-theme.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.sa9m = { ... }: {
-            imports = [
-              ./home.nix
-              ./modules/kde/home-kde.nix
-            ];
-          };
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.backupFileExtension = "backup";
-        }
-      ];
+      # Laptop Configuration
+      nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/higgs-boson/configuration.nix
+          sops-nix.nixosModules.sops
+          inputs.minegrub-world-sel-theme.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.sa9m = { ... }: {
+              imports = [
+                ./home.nix
+                ./modules/kde/home-kde.nix
+              ];
+            };
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
+
+      # Desktop Configuration
+      nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/gluon/configuration.nix
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          inputs.minegrub-world-sel-theme.nixosModules.default
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.sa9m = { ... }: {
+              imports = [
+                ./home.nix
+                ./modules/kde/home-kde.nix
+              ];
+            };
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+
+      };
+
     };
 
-    # Desktop Configuration
-    nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/gluon/configuration.nix
-        sops-nix.nixosModules.sops
-        home-manager.nixosModules.home-manager
-        inputs.minegrub-world-sel-theme.nixosModules.default
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.sa9m = { ... }: {
-            imports = [
-              ./home.nix
-              ./modules/kde/home-kde.nix
-            ];
-          };
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.backupFileExtension = "backup";
-        }
-      ];
-
-    };
-
-  };
 
 
 
-
-}
+  }
 
 

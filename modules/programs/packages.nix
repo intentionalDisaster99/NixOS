@@ -255,6 +255,8 @@
     pipes
     # lolcat
     # aewan # Technically could be quite cool, but I don't really want to put the effort into learning it
+    inputs.terminal-rain.packages.${stdenv.hostPlatform.system}.terminal-rain-lightning
+
 
     # ---------------------------------------------------
     # Not needed/wanted (Kept for reference)
