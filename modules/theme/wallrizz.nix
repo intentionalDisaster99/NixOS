@@ -27,34 +27,16 @@ in
   options.programs.wallrizz = {
     enable = lib.mkEnableOption "WallRizz terminal-based wallpaper and system theme manager";
 
-    package = lib.mkOption {
-      type = lib.types.package;
-      default = wallrizzPkg;
-      description = "The WallRizz package to install.";
-    };
-
-    extensionScripts = lib.mkOption {
-      type = lib.types.attrsOf lib.types.lines;
-      default = { };
-      example = {
-        "waybar.sh" = ''
-          # Script content here
-        '';
-      };
-      description = "Scripts to place in ~/.config/WallRizz/themeExtensionScripts/ to be executed on theme changes.";
+    scriptSource = lib.mkOption {
+      type = lib.types.path;
+      description = "Path to the directory in your dotfiles containing your WallRizz extension scripts.";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ cfg.package ];
+    home.packages = [ wallrizzPkg ];
 
-    xdg.configFile = lib.mapAttrs'
-      (name: content:
-        lib.nameValuePair "WallRizz/themeExtensionScripts/${name}" {
-          text = content;
-          executable = true;
-        }
-      )
-      cfg.extensionScripts;
+    # Symlinking to ~/.config/WallRizz/themeExtensionScripts/
+    xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
   };
 }
