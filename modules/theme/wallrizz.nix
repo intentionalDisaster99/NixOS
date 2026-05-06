@@ -13,6 +13,9 @@ let
       sha256 = "sha256-qBwd6yN8m1YKCVCma81UZFxQ2//ymk/ZRFNHigAnKBk=";
     };
 
+    nativeBuildInputs = [ pkgs.autoPatchelfHook ];
+    buildInputs = [ pkgs.stdenv.cc.cc.lib ];
+
     dontUnpack = true;
 
     installPhase = ''
