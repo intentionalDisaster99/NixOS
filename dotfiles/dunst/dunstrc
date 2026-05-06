@@ -24,3 +24,6 @@ foreground = "#ebdbb2"
 background = "#282828"
 foreground = "#ebdbb2"
 frame_color = "#fe8019"
+
+[include]
+path = ~/.cache/dunst/dunstrc-colors

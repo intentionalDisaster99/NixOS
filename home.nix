@@ -19,6 +19,9 @@ in
     enable = true;
     scriptSource = ./dotfiles/wallrizz/scripts;
   };
+  home.activation.createDunstCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p ~/.cache/dunst
+  '';
 
   home.username = "sa9m";
   home.homeDirectory = "/home/sa9m";
