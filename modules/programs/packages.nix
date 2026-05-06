@@ -114,6 +114,7 @@
     github-desktop
     lazygit
     radicle-tui
+    curl
 
     # Rust specific
     cargo
