@@ -43,6 +43,6 @@ in
     home.packages = [ wallrizzPkg ];
 
     # Symlinking to ~/.config/WallRizz/themeExtensionScripts/
-    xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
+    # xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
   };
 }
