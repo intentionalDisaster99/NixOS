@@ -20,7 +20,8 @@ let
 
     installPhase = ''
       mkdir -p $out/bin
-      cp $src $out/bin/wallrizz
+      tar -xzf $src -C $out/bin/
+      mv $out/bin/WallRizz* $out/bin/wallrizz
       chmod +x $out/bin/wallrizz
     '';
   };
