@@ -1,5 +1,5 @@
 # This module is for enabling system-wide programs and services.
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
