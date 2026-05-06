@@ -6,11 +6,10 @@ let
   # Our custom WallRizz derivation
   wallrizzPkg = pkgs.stdenv.mkDerivation rec {
     pname = "wallrizz";
-    version = "1.1.0"; # Update this to the latest release version
+    version = "1.4.0";
 
     src = pkgs.fetchurl {
-      url = "https://github.com/5hubham5ingh/WallRizz/releases/download/v${version}/WallRizz-linux-amd64";
-      # Remember to update this hash! Run `nix-prefetch-url <url>` to get the correct one.
+      url = "https://github.com/5hubham5ingh/WallRizz/releases/tag/v${version}";
       sha256 = pkgs.lib.fakeSha256;
     };
 
