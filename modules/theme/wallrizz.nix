@@ -3,13 +3,13 @@
 let
   cfg = config.programs.wallrizz;
 
-  # Our custom WallRizz derivation
+  # Custom WallRizz derivation
   wallrizzPkg = pkgs.stdenv.mkDerivation rec {
     pname = "wallrizz";
     version = "1.4.0";
 
     src = pkgs.fetchurl {
-      url = "https://github.com/5hubham5ingh/WallRizz/releases/tag/v${version}";
+      url = "https://github.com/5hubham5ingh/WallRizz/releases/download/v${version}/WallRizz-linux-amd64";
       sha256 = "sha256-P8HllDD3bEX0rIGEMqiNFCd7+I9uJowaSCFf/u/u1vk=";
     };
 
@@ -46,10 +46,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # 1. Install the package
     home.packages = [ cfg.package ];
 
-    # 2. Declaratively map the extension scripts to the ~/.config/WallRizz directory
     xdg.configFile = lib.mapAttrs'
       (name: content:
         lib.nameValuePair "WallRizz/themeExtensionScripts/${name}" {
