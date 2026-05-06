@@ -9,7 +9,7 @@ let
     version = "1.4.0";
 
     src = pkgs.fetchurl {
-      url = "https://github.com/5hubham5ingh/WallRizz/releases/download/v${version}/WallRizz-linux-amd64";
+      url = "https://github.com/5hubham5ingh/WallRizz/releases/download/v${version}/WallRizz-linux-86_64";
       sha256 = "sha256-P8HllDD3bEX0rIGEMqiNFCd7+I9uJowaSCFf/u/u1vk=";
     };
 
