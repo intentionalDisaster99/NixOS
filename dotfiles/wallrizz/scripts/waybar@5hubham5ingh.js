@@ -7,6 +7,9 @@ export function setTheme(newThemeConfigPath) {
     const liveConfigPath = cacheDir.concat("/waybar.css");
     OS.exec(["mkdir", "-p", cacheDir]);
 
+    // Waiting for kitty to make sure it is done
+    OS.exec(["sleep", "1"]);
+
     let configText = STD.loadFile(newThemeConfigPath);
     if (!configText || configText.length < 100) {
         configText = STD.loadFile(cacheDir.concat("/kitty.conf"));
