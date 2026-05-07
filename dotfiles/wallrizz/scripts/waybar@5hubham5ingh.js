@@ -40,7 +40,7 @@ export function setTheme(newThemeConfigPath) {
         const c8 = extract("color8", "#585b70");
 
         const css = `/* Waybar Colors perfectly mapped from Kitty UI config */
-@define-color base ${bg};
+@define-color base ${c0};
 @define-color mantle ${bg};
 @define-color crust ${bg};
 
