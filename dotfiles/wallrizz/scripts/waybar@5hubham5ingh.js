@@ -46,7 +46,8 @@ function applyThemeDirectly(colors, isDark) {
     const css = generateTheme(colors, isDark);
 
     try {
-        const cacheDir = HOME_DIR.concat("/.cache/wallrizz");
+        ;
+        const cacheDir = "/home/sa9m/.cache/wallrizz"; // HOME_DIR.concat("/.cache/wallrizz");
         const liveConfigPath = cacheDir.concat("/waybar.css");
         OS.exec(["mkdir", "-p", cacheDir]);
 
