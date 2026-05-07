@@ -17,9 +17,28 @@ export function getLightThemeConf(colors) {
   return generateThemeConfig(theme);
 }
 
-export function setTheme(themeConfPath) {
-  return execAsync(["kitty", "@", "set-colors", "-a", "-c", themeConfPath]);
+// Old theme that I remade
+// export function setTheme(themeConfPath) {
+//   return execAsync(["kitty", "@", "set-colors", "-a", "-c", themeConfPath]);
+// }
+
+function setTheme(newThemeConfigPath) {
+  const cacheDir = HOME_DIR.concat("/.cache/wallrizz");
+  const liveConfigPath = cacheDir.concat("/kitty.conf");
+  OS.exec(["mkdir", "-p", cacheDir]);
+  const newThemeConfig = STD.loadFile(newThemeConfigPath);
+
+  if (newThemeConfig) {
+    const file = STD.open(liveConfigPath, "w");
+    if (file) {
+      file.puts(newThemeConfig);
+      file.close();
+    }
+
+    OS.exec(["kitty", "@", "set-colors", "-a", "all", liveConfigPath]);
+  }
 }
+
 
 function generateTheme(colorCodes, isDark = true) {
   const colors = colorCodes.map((c) => Color(c));
@@ -32,8 +51,8 @@ function generateTheme(colorCodes, isDark = true) {
     return index !== -1
       ? colors.splice(index, 1)[0]
       : isDark
-      ? Color("black")
-      : Color("white");
+        ? Color("black")
+        : Color("white");
   };
 
   const background = pickColor();
