@@ -35,7 +35,7 @@ export function setTheme(newThemeConfigPath) {
       file.close();
     }
 
-    OS.exec(["kitty", "@", "set-colors", "-a", "all", liveConfigPath]);
+    OS.exec(["kitty", "@", "set-colors", "--all", "--config", liveConfigPath]);
   }
   return;
 }
