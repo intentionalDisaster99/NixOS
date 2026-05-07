@@ -22,7 +22,7 @@ export function getLightThemeConf(colors) {
 //   return execAsync(["kitty", "@", "set-colors", "-a", "-c", themeConfPath]);
 // }
 
-function setTheme(newThemeConfigPath) {
+export function setTheme(newThemeConfigPath) {
   const cacheDir = HOME_DIR.concat("/.cache/wallrizz");
   const liveConfigPath = cacheDir.concat("/kitty.conf");
   OS.exec(["mkdir", "-p", cacheDir]);
@@ -37,6 +37,7 @@ function setTheme(newThemeConfigPath) {
 
     OS.exec(["kitty", "@", "set-colors", "-a", "all", liveConfigPath]);
   }
+  return;
 }
 
 
