@@ -457,3 +457,44 @@ window.left_bar .modules-center {
 #network.ethernet {
   color: @green;
 }
+
+/* Main Clock Modules */
+#clock {
+  color: @mauve;
+}
+
+#clock.date {
+  color: @sky;
+}
+
+#clock.utc {
+  color: @green;
+}
+
+/* Calendar Popup Colors */
+#clock tooltip {
+  background-color: alpha(@base, 0.9);
+  border: 2px solid @overlay0;
+}
+
+#clock calendar.months {
+  color: @text;
+}
+
+#clock calendar.days {
+  color: @blue;
+}
+
+#clock calendar.weeks {
+  color: @mauve;
+}
+
+#clock calendar.weekdays {
+  color: @green;
+}
+
+#clock calendar.today {
+  color: @peach;
+  background-color: alpha(@surface2, 0.7);
+  border-radius: 5px;
+}

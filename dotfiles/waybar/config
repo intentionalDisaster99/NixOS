@@ -60,9 +60,19 @@
             "tooltip": false,
         },
 
+        \
+        "backlight": {
+            "format": "{icon} {percent}%",
+            "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+            "tooltip": false,
+            "on-scroll-up": "brightnessctl set 5%+",
+            "on-scroll-down": "brightnessctl set 5%-",
+            "smooth-scrolling-threshold": 1
+        },
+
         "clock": {
-            "format": "<span color='#d3869b'>{:%H:%M:%OS}</span>",
-            "format-alt": "<span color='#d3869b'>{:%H:%M}</span>",
+            "format": "{:%H:%M:%OS}",
+            "format-alt": "{:%H:%M}",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "actions": {
                 "on-click-right": "mode"
@@ -74,27 +84,17 @@
                 "weeks-pos": "right",
                 "on-scroll": 1,
                 "format": {
-                    "months": "<span color='#ebdbb2'><b>{}</b></span>",
-                    "days": "<span color='#83a598'><b>{}</b></span>",
-                    "weeks": "<span color='#d3869b'><b>W{}</b></span>",
-                    "weekdays": "<span color='#b8bb26'><b>{}</b></span>",
-                    "today": "<span color='#689d6a'><b><u>{}</u></b></span>"
+                    "months": "<b>{}</b>",
+                    "days": "<b>{}</b>",
+                    "weeks": "<b>W{}</b>",
+                    "weekdays": "<b>{}</b>",
+                    "today": "<b><u>{}</u></b>"
                 }
             }
         },
 
-        "backlight": {
-            "format": "{icon} {percent}%",
-            "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-            "tooltip": false,
-            "on-scroll-up": "brightnessctl set 5%+",
-            "on-scroll-down": "brightnessctl set 5%-",
-            "smooth-scrolling-threshold": 1
-        },
-
-        // DATE MODULE 
         "clock#date": {
-            "format": "<span color='#458588'>{:%a • %b %d, %Y}</span>",
+            "format": "{:%a • %b %d, %Y}",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "actions": {
                 "on-click-right": "mode",
@@ -106,18 +106,17 @@
                 "weeks-pos": "right",
                 "on-scroll": 1,
                 "format": {
-                    "months": "<span color='#ebdbb2'><b>{}</b></span>",
-                    "days": "<span color='#83a598'><b>{}</b></span>",
-                    "weeks": "<span color='#d3869b'><b>W{}</b></span>",
-                    "weekdays": "<span color='#b8bb26'><b>{}</b></span>",
-                    "today": "<span color='#689d6a'><b><u>{}</u></b></span>"
+                    "months": "<b>{}</b>",
+                    "days": "<b>{}</b>",
+                    "weeks": "<b>W{}</b>",
+                    "weekdays": "<b>{}</b>",
+                    "today": "<b><u>{}</u></b>"
                 }
             }
         },
 
-        // UTC CLOCK 
         "clock#utc": {
-            "format": "<span color='#b8bb26'>{:%H:%M} UTC</span>",
+            "format": "{:%H:%M} UTC",
             "timezone": "UTC",
             "tooltip": false
         },
