@@ -1,6 +1,6 @@
 /* @import "macchiato.css"; */
 /* @import "gruvbox.css"; */
-@import "~/.cache/wallrizz/waybar.css";
+@import url("file:///home/sa9m/.cache/wallrizz/waybar.css");
 * {
   border: none;
   font-family: "NotoSans Nerd Font", sans-serif;
