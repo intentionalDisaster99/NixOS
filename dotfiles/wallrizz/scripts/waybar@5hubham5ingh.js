@@ -1,4 +1,4 @@
-export function generateTheme(colors, isDark = true) {
+function generateTheme(colors, isDark = true) {
     const getCol = (c, fallback) => {
         if (!c || c === "undefined" || c === "null" || String(c).trim() === "") {
             return fallback;
@@ -42,6 +42,14 @@ export function generateTheme(colors, isDark = true) {
 @define-color flamingo  ${getCol(colors.color1, "#f0c6c6")};
 @define-color rosewater ${getCol(colors.color1, "#f4dbd6")};
 `;
+}
+
+export function getDarkThemeConf(colors) {
+    return generateTheme(colors, true);
+}
+
+export function getLightThemeConf(colors) {
+    return generateTheme(colors, false);
 }
 
 export function setTheme(newThemeConfigPath) {
