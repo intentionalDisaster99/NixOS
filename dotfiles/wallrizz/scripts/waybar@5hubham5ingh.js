@@ -22,18 +22,12 @@ export function setTheme(newThemeConfigPath) {
             }
             return fallback;
         };
+
         const bg = extract("background", "#1e1e2e");
         const fg = extract("foreground", "#cdd6f4");
 
-        const tabInactiveBg = extract("inactive_tab_background", "#181825");
-        const tabActiveBg = extract("active_tab_background", "#313244");
-        const selectionBg = extract("selection_background", "#45475a");
-
-        const tabInactiveFg = extract("inactive_tab_foreground", "#a6adc8");
-        const tabActiveFg = extract("active_tab_foreground", "#bac2de");
-
-        const borderInactive = extract("inactive_border_color", "#6c7086");
-        const borderActive = extract("active_border_color", "#7f849c");
+        const darkModuleBg = extract("inactive_tab_background", "#181825");
+        const textMuted = extract("inactive_tab_foreground", "#a6adc8");
 
         const c0 = extract("color0", "#45475a");
         const c1 = extract("color1", "#f38ba8");
@@ -42,26 +36,27 @@ export function setTheme(newThemeConfigPath) {
         const c4 = extract("color4", "#89b4fa");
         const c5 = extract("color5", "#cba6f7");
         const c6 = extract("color6", "#94e2d5");
+        const c7 = extract("color7", "#bac2de");
+        const c8 = extract("color8", "#585b70");
 
         const css = `/* Waybar Colors perfectly mapped from Kitty UI config */
 @define-color base ${bg};
-@define-color mantle ${c0};
-@define-color crust ${tabInactiveBg};
+@define-color mantle ${bg};
+@define-color crust ${bg};
 
 @define-color text ${fg};
-@define-color subtext0 ${tabInactiveFg};
-@define-color subtext1 ${tabActiveFg};
+@define-color subtext0 ${textMuted};
+@define-color subtext1 ${fg};
 
-/* Waybar module backgrounds now use Kitty's tab/selection shading */
-@define-color surface0 ${tabInactiveBg};
-@define-color surface1 ${tabActiveBg};
-@define-color surface2 ${selectionBg};
+/* Waybar modules now use the dark background for high contrast */
+@define-color surface0 ${darkModuleBg};
+@define-color surface1 ${darkModuleBg};
+@define-color surface2 ${darkModuleBg};
 
-@define-color overlay0 ${borderInactive};
-@define-color overlay1 ${borderActive};
+@define-color overlay0 ${c8};
+@define-color overlay1 ${c7};
 @define-color overlay2 ${fg};
 
-/* Standard Accents */
 @define-color blue ${c4};
 @define-color lavender ${c4};
 @define-color sapphire ${c4};
