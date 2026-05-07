@@ -33,6 +33,9 @@ function autostart
     # Wait for things to settle
     sleep 0.5
 
+    # Creating a theme colors if there isn't one already 
+    touch ~/.cache/wallrizz/colors/waybar.css
+
     # Start Waybar last before going to host dependent stuff
     waybar > /tmp/waybar.log 2>&1 & 
 
