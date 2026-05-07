@@ -35,7 +35,14 @@ export function setTheme(newThemeConfigPath) {
       file.close();
     }
 
-    OS.exec(["kitty", "@", "set-colors", "--all", "--config", liveConfigPath]);
+    OS.exec([
+      "/run/current-system/sw/bin/kitty",
+      "@",
+      "--to", "unix:/tmp/mykitty",
+      "set-colors",
+      "--all",
+      liveConfigPath
+    ]);
   }
   return;
 }
