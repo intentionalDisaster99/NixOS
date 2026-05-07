@@ -42,7 +42,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [ wallrizzPkg ];
 
-    Symlinking to ~/.config/WallRizz/themeExtensionScripts/
-    # xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
-    };
-    }
+    # Symlinking to ~/.config/WallRizz/themeExtensionScripts/
+    xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
+  };
+}

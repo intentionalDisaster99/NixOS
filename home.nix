@@ -17,7 +17,7 @@ in
   # Setting up wallpaper picker
   programs.wallrizz = {
     enable = true;
-    scriptSource = ./dotfiles/wallrizz/test_scripts;
+    scriptSource = ./dotfiles/wallrizz/scripts;
   };
   home.activation.createDunstCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p ~/.cache/dunst
