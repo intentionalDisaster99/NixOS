@@ -41,8 +41,8 @@ export function setTheme(newThemeConfigPath) {
 
         const css = `/* Waybar Colors perfectly mapped from Kitty UI config */
 @define-color base ${c0};
-@define-color mantle ${bg};
-@define-color crust ${bg};
+@define-color mantle ${c0};
+@define-color crust ${c0};
 
 @define-color text ${fg};
 @define-color subtext0 ${textMuted};
