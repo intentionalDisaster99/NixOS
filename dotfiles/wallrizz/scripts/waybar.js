@@ -1,4 +1,3 @@
-
 import * as std from 'std';
 import * as os from 'os';
 
@@ -27,15 +26,24 @@ export function generateThemeConfig(colors) {
 }
 
 export function setTheme(newThemeConfigPath) {
-    const liveConfigPath = HOME_DIR.concat("/.cache/wallrizz/waybar.css");
+    const cacheDir = HOME_DIR + "/.cache/wallrizz";
+    const liveConfigPath = cacheDir + "/waybar.css";
 
-    const newThemeConfig = STD.loadFile(newThemeConfigPath);
+    try {
+        os.exec(["mkdir", "-p", cacheDir]);
+    } catch (e) { }
+
+    const newThemeConfig = std.loadFile(newThemeConfigPath);
 
     if (newThemeConfig) {
-        const file = STD.open(liveConfigPath, "w");
+        const file = std.open(liveConfigPath, "w");
         if (file) {
             file.puts(newThemeConfig);
             file.close();
+
+            try {
+                os.exec(["pkill", "-SIGUSR2", "waybar"]);
+            } catch (e) { }
         }
     }
 }
