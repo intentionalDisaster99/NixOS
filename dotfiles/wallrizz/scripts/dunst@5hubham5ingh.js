@@ -69,26 +69,36 @@ function getLightThemeConf(colours) {
 }
 
 function setTheme(newThemeConfigPath) {
-  const dunstConfigPath = HOME_DIR.concat("/.cache/dunst/dunstrc-colors");
-
+  const dunstConfigPath = HOME_DIR.concat("/.config/dunst/dunstrc");
+  const dunstOldConfig = STD.loadFile(dunstConfigPath);
   const newThemeConfig = STD.loadFile(newThemeConfigPath);
+  let filterOut = false;
+  let updated = false;
+  const updatedConfig = dunstOldConfig.split("\n")
+    .filter((line) => {
+      if (line.includes("# WallRiz theme")) {
+        filterOut = true;
+        updated = true;
+        return false;
+      }
+      if (filterOut) {
+        if (line.includes("# end")) {
+          filterOut = false;
+          return false;
+        }
+        return false;
+      }
+      return true;
+    })
+    .join("\n") + "\n" + newThemeConfig;
 
-  if (!newThemeConfig) {
-    console.log("Error: Could not load new theme config from " + newThemeConfigPath);
-    return;
-  }
+  if (!updated) dunstOldConfig.concat("\n", newThemeConfig);
+  const dunstConfig = STD.open(dunstConfigPath, "w+");
 
-  const dunstConfig = STD.open(dunstConfigPath, "w");
+  dunstConfig.puts(updatedConfig);
+  dunstConfig.close();
 
-  if (dunstConfig) {
-    dunstConfig.puts(newThemeConfig);
-    dunstConfig.close();
-
-    // Restart Dunst to apply changes
-    OS.exec(["pkill", "dunst"]);
-  } else {
-    console.log("Error: Could not open " + dunstConfigPath + " for writing.");
-  }
+  OS.exec(["pkill", "dunst"]);
 }
 
 export { getDarkThemeConf, getLightThemeConf, setTheme };
