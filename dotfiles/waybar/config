@@ -1,19 +1,14 @@
-// Double Bar Config
 [
-    // Top Bar Config
     {
-        // Main Config
         "name": "top_bar",
-        "layer": "top", // Waybar at top layer
-        "position": "top", // Waybar position (top|bottom|left|right)
-        "height": 36, // Waybar height (to be removed for auto height)
-        "spacing": 4, // Gaps between modules (4px)
+        "layer": "top",
+        "position": "top",
+        "height": 36,
+        "spacing": 4,
         "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-        // "modules-center": ["clock", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "clock#calendar"],
         "modules-center": ["clock", "custom/separator", "clock#date", "custom/separator", "clock#utc"],
         "modules-right": ["bluetooth", "network", "group/misc", "custom/vpn", "custom/tailscale", "custom/power_save", "custom/logout_menu"],
 
-        // Modules Config
         "hyprland/workspaces": {
             "on-click": "activate",
             "format": "{icon}",
@@ -29,45 +24,26 @@
                 "9": "󰲰",
                 "10": "󰿬",
                 "special": ""
-
-                // "active": "",
-                // "default": "",
-                // "empty": ""
             },
             "show-special": true,
             "persistent-workspaces": {
-                "*": 10,
-            },
+                "*": 10
+            }
         },
 
         "hyprland/submap": {
             "format": "<span color='#a6da95'>Mode:</span> <span color='#57bae1'>{}</span>",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/separator": {
             "format": "|",
-            "tooltip": false,
+            "tooltip": false
         },
 
         "custom/separator_dot": {
             "format": "•",
-            "tooltip": false,
-        },
-
-        "custom/separator": {
-            "format": "|",
-            "tooltip": false,
-        },
-
-        \
-        "backlight": {
-            "format": "{icon} {percent}%",
-            "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-            "tooltip": false,
-            "on-scroll-up": "brightnessctl set 5%+",
-            "on-scroll-down": "brightnessctl set 5%-",
-            "smooth-scrolling-threshold": 1
+            "tooltip": false
         },
 
         "clock": {
@@ -121,13 +97,22 @@
             "tooltip": false
         },
 
+        "backlight": {
+            "format": "{icon} {percent}%",
+            "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+            "tooltip": false,
+            "on-scroll-up": "brightnessctl set 5%+",
+            "on-scroll-down": "brightnessctl set 5%-",
+            "smooth-scrolling-threshold": 1
+        },
+
         "custom/media": {
             "format": "{icon}󰎈",
             "restart-interval": 2,
             "return-type": "json",
             "format-icons": {
                 "Playing": "",
-                "Paused": "",
+                "Paused": ""
             },
             "max-length": 35,
             "exec": "fish -c fetch_music_player_data",
@@ -136,7 +121,7 @@
             "on-click-middle": "playerctl prev",
             "on-scroll-up": "playerctl volume 0.05-",
             "on-scroll-down": "playerctl volume 0.05+",
-            "smooth-scrolling-threshold": "0.1",
+            "smooth-scrolling-threshold": "0.1"
         },
 
         "bluetooth": {
@@ -144,7 +129,6 @@
             "format-disabled": "󰂲",
             "format-connected": "󰂱 {device_alias}",
             "format-connected-battery": "󰂱 {device_alias} (󰥉 {device_battery_percentage}%)",
-            // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
             "tooltip-format": "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected",
             "tooltip-format-disabled": "bluetooth off",
             "tooltip-format-connected": "{controller_alias}\t{controller_address} ({status})\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -152,7 +136,7 @@
             "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t({device_battery_percentage}%)",
             "max-length": 35,
             "on-click": "fish -c bluetooth_toggle",
-            "on-click-right": "overskride",
+            "on-click-right": "overskride"
         },
 
         "network": {
@@ -168,7 +152,7 @@
             "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>",
             "max-length": 35,
             "on-click": "fish -c wifi_toggle",
-            "on-click-right": "nm-connection-editor",
+            "on-click-right": "nm-connection-editor"
         },
 
         "group/misc": {
@@ -183,14 +167,13 @@
                 "custom/night_mode",
                 "custom/airplane_mode",
                 "idle_inhibitor"
-                // ,"power_save",
             ]
         },
 
         "custom/webcam": {
             "interval": 1,
             "exec": "fish -c check_webcam",
-            "return-type": "json",
+            "return-type": "json"
         },
 
         "privacy": {
@@ -199,11 +182,11 @@
             "transition-duration": 250,
             "modules": [
                 {
-                    "type": "audio-in",
+                    "type": "audio-in"
                 },
                 {
-                    "type": "screenshare",
-                },
+                    "type": "screenshare"
+                }
             ]
         },
 
@@ -211,21 +194,21 @@
             "interval": 1,
             "exec-if": "pgrep wl-screenrec",
             "exec": "fish -c check_recording",
-            "return-type": "json",
+            "return-type": "json"
         },
 
         "custom/geo": {
             "interval": 1,
             "exec-if": "pgrep geoclue",
             "exec": "fish -c check_geo_module",
-            "return-type": "json",
+            "return-type": "json"
         },
 
         "custom/airplane_mode": {
             "return-type": "json",
             "interval": 1,
             "exec": "fish -c check_airplane_mode",
-            "on-click": "fish -c airplane_mode_toggle",
+            "on-click": "fish -c airplane_mode_toggle"
         },
 
         "custom/night_mode": {
@@ -235,14 +218,14 @@
             "on-scroll-up": "fish -c night_mode_temp_down",
             "smooth-scrolling-threshold": 2.0,
             "exec": "fish -c check_night_mode",
-            "on-click": "fish -c night_mode_toggle",
+            "on-click": "fish -c night_mode_toggle"
         },
 
         "custom/dunst": {
             "return-type": "json",
             "exec": "fish -c dunst_pause",
             "on-click": "dunstctl set-paused toggle",
-            "restart-interval": 1,
+            "restart-interval": 1
         },
 
         "idle_inhibitor": {
@@ -253,7 +236,7 @@
             },
             "tooltip-format-activated": "idle-inhibitor <span color='#a6da95'>on</span>",
             "tooltip-format-deactivated": "idle-inhibitor <span color='#ee99a0'>off</span>",
-            "start-activated": false,
+            "start-activated": false
         },
 
         "custom/wallpaper_status": {
@@ -261,14 +244,14 @@
             "return-type": "json",
             "exec": "fish -c check_wallpaper",
             "on-click": "fish -c wall_toggle",
-            "interval": 1,
+            "interval": 1
         },
 
         "custom/logout_menu": {
             "return-type": "json",
             "exec": "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }'",
             "interval": "once",
-            "on-click": "fish -c wlogout_uniqe",
+            "on-click": "fish -c wlogout_uniqe"
         },
 
         "custom/vpn": {
@@ -284,45 +267,31 @@
             "format": "{}",
             "exec": "fish -c tailscale_status",
             "return-type": "json",
-            "interval": 10,  // Check every 10 seconds
-            "on-click": "tailscale status" // Clicking still shows the peer list in a terminal if configured
-        },
-
-        // "custom/wall": {
-        //     "format": "{}",
-        //     "exec": "fish -c tailscale_status",
-        //     "return-type": "json",
-        //     "interval": 10,  // Check every 10 seconds
-        //     "on-click": "tailscale status" 
-        // },
-
+            "interval": 10,
+            "on-click": "tailscale status"
+        }
     },
 
-
-    // Bottom Bar Config
     {
-        // Main Config
         "name": "bottom_bar",
-        "layer": "top", // Waybar at top layer
-        "position": "bottom", // Waybar position (top|bottom|left|right)
-        "height": 36, // Waybar height (to be removed for auto height)
-        "spacing": 4, // Gaps between modules (4px)
+        "layer": "top",
+        "position": "bottom",
+        "height": 36,
+        "spacing": 4,
         "modules-left": ["user"],
         "modules-center": ["hyprland/window"],
         "modules-right": ["keyboard-state", "hyprland/language"],
-        // "output": ["DP-1", "eDP-1"], 
-        "output": ["HDMI-A-1", "eDP-1"], // REMOVE THESE WERE ADDED WHILE I WAIT FOR NEW CABLES
+        "output": ["HDMI-A-1", "eDP-1"],
 
-        // Modules Config
         "hyprland/window": {
             "format": "{title}",
-            "max-length": 50,
+            "max-length": 50
         },
 
         "hyprland/language": {
             "format-en": "<span color='#ebdbb2'>🇺🇸 ENG (US)</span>",
             "keyboard-name": "at-translated-set-2-keyboard",
-            "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+            "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
         },
 
         "keyboard-state": {
@@ -332,34 +301,28 @@
             "format-icons": {
                 "locked": "󰌾",
                 "unlocked": "󰍀"
-            },
+            }
         },
 
         "user": {
             "format": " <span color='#ebdbb2'>{user}</span> (up <span color='#d3869b'>{work_d} d</span> <span color='#83a598'>{work_H} h</span> <span color='#fabd2f'>{work_M} min</span> <span color='#b8bb26'>↑</span>)",
-            "icon": true,
-        },
+            "icon": true
+        }
     },
 
-
-    // Left Bar Config
     {
-        // Main Config
         "name": "left_bar",
-        "layer": "top", // Waybar at top layer
-        "position": "left", // Waybar position (top|bottom|left|right)
-        "spacing": 4, // Gaps between modules (4px)
+        "layer": "top",
+        "position": "left",
+        "spacing": 4,
         "width": 75,
         "margin-top": 10,
         "margin-bottom": 10,
         "modules-left": ["wlr/taskbar"],
         "modules-center": ["cpu", "memory", "disk", "temperature", "battery", "backlight", "pulseaudio", "systemd-failed-units"],
         "modules-right": ["tray"],
-        // "output": ["DP-1", "eDP-1"],
-        "output": ["HDMI-A-1", "eDP-1"], // REMOVE THESE WERE ADDED WHILE I WAIT FOR NEW CABLES
+        "output": ["HDMI-A-1", "eDP-1"],
 
-
-        // Modules Config
         "wlr/taskbar": {
             "format": "{icon}",
             "icon-size": 20,
@@ -367,12 +330,12 @@
             "tooltip-format": "{title}",
             "on-click": "activate",
             "on-click-right": "close",
-            "on-click-middle": "fullscreen",
+            "on-click-middle": "fullscreen"
         },
 
         "tray": {
             "icon-size": 20,
-            "spacing": 2,
+            "spacing": 2
         },
 
         "cpu": {
@@ -382,10 +345,10 @@
                 "upper-medium": 70,
                 "medium": 50,
                 "lower-medium": 30,
-                "low": 10,
+                "low": 10
             },
             "on-click": "wezterm start btop",
-            "on-click-right": "wezterm start btm",
+            "on-click-right": "wezterm start btm"
         },
 
         "memory": {
@@ -396,10 +359,10 @@
                 "upper-medium": 70,
                 "medium": 50,
                 "lower-medium": 30,
-                "low": 10,
+                "low": 10
             },
             "on-click": "wezterm start btop",
-            "on-click-right": "wezterm start btm",
+            "on-click-right": "wezterm start btm"
         },
 
         "disk": {
@@ -410,10 +373,10 @@
                 "upper-medium": 70,
                 "medium": 50,
                 "lower-medium": 30,
-                "low": 10,
+                "low": 10
             },
             "on-click": "wezterm start btop",
-            "on-click-right": "wezterm start btm",
+            "on-click-right": "wezterm start btm"
         },
 
         "temperature": {
@@ -422,7 +385,7 @@
             "critical-threshold": 80,
             "format": "{icon}{temperatureC}󰔄",
             "format-critical": "🔥{icon}{temperatureC}󰔄",
-            "format-icons": ["", ""],
+            "format-icons": ["", ""]
         },
 
         "battery": {
@@ -431,14 +394,14 @@
                 "upper-medium": 70,
                 "medium": 50,
                 "lower-medium": 30,
-                "low": 10,
+                "low": 10
             },
             "format": "{icon}{capacity}%",
             "format-charging": "󱐋{icon}{capacity}%",
             "format-plugged": "󰚥{icon}{capacity}%",
             "format-time": "{H} h {M} min",
             "format-icons": ["󱃍", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "tooltip-format": "{timeTo}",
+            "tooltip-format": "{timeTo}"
         },
 
         "backlight": {
@@ -454,7 +417,7 @@
                 "󱩔",
                 "󱩕",
                 "󱩖",
-                "󰛨",
+                "󰛨"
             ],
             "tooltip": false,
             "states": {
@@ -462,10 +425,10 @@
                 "upper-medium": 70,
                 "medium": 50,
                 "lower-medium": 30,
-                "low": 10,
+                "low": 10
             },
             "reverse-scrolling": true,
-            "reverse-mouse-scrolling": true,
+            "reverse-mouse-scrolling": true
         },
 
         "pulseaudio": {
@@ -474,7 +437,7 @@
                 "upper-medium": 70,
                 "medium": 50,
                 "lower-medium": 30,
-                "low": 10,
+                "low": 10
             },
             "tooltip-format": "{desc}",
             "format": "{icon}{volume}%\n{format_source}",
@@ -496,16 +459,16 @@
                 "default": [
                     "󰕿",
                     "󰖀",
-                    "󰕾",
-                ],
+                    "󰕾"
+                ]
             },
             "reverse-scrolling": true,
             "reverse-mouse-scrolling": true,
-            "on-click": "pavucontrol",
+            "on-click": "pavucontrol"
         },
 
         "systemd-failed-units": {
-            "format": "✗ {nr_failed}",
-        },
-    },
+            "format": "✗ {nr_failed}"
+        }
+    }
 ]
