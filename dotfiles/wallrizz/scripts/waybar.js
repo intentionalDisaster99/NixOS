@@ -39,7 +39,7 @@ export function setTheme(newThemeConfigPath) {
             file.puts(newThemeConfig);
             file.close();
 
-            OS.exec(["/run/current-system/sw/bin/pkill", "-SIGUSR2", "waybar"]);
+            // OS.exec(["/run/current-system/sw/bin/pkill", "-SIGUSR2", "waybar"]);
         }
     }
 }
