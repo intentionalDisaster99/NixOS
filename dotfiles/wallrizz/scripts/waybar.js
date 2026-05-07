@@ -21,7 +21,7 @@ export function generateTheme(colors) {
     css += `@define-color blue ${colors.color4 || "#83a598"};\n`;
     css += `@define-color purple ${colors.color5 || "#d3869b"};\n`;
     css += `@define-color aqua ${colors.color6 || "#8ec07c"};\n`;
-
+    console.log("basically done");
     return css;
 }
 
