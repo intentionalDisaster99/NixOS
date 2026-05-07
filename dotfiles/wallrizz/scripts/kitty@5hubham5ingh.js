@@ -35,11 +35,13 @@ export function setTheme(newThemeConfigPath) {
       file.close();
     }
 
-    try {
-      OS.exec(["sh", "-c", "/run/current-system/sw/bin/kitty @ set-colors --all " + liveConfigPath + " > /dev/null 2>&1"]);
-    } catch (e) {
-    }
+    OS.exec(["sh", "-c", "pkill -USR1 kitty > /dev/null 2>&1"]);
+    // try {
+    //   OS.exec(["sh", "-c", "/run/current-system/sw/bin/kitty @ set-colors --all " + liveConfigPath + " > /dev/null 2>&1"]);
+    // } catch (e) {
+    // }
   }
+  OS.exec(["sh", "-c", "pkill -USR1 kitty > /dev/null 2>&1"]);
   return;
 }
 
