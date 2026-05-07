@@ -35,14 +35,10 @@ export function setTheme(newThemeConfigPath) {
       file.close();
     }
 
-    OS.exec([
-      "/run/current-system/sw/bin/kitty",
-      "@",
-      "--to", "unix:/tmp/mykitty",
-      "set-colors",
-      "--all",
-      liveConfigPath
-    ]);
+    try {
+      OS.exec(["sh", "-c", "/run/current-system/sw/bin/kitty @ set-colors --all " + liveConfigPath + " > /dev/null 2>&1"]);
+    } catch (e) {
+    }
   }
   return;
 }
