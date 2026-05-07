@@ -1,5 +1,3 @@
-import * as OS from 'os';
-import * as STD from 'std';
 
 const HOME_DIR = OS.getenv("HOME");
 
