@@ -44,7 +44,7 @@ in
 
     # Symlinking to ~/.config/WallRizz/themeExtensionScripts/
     xdg.configFile."WallRizz/themeExtensionScripts".source = cfg.scriptSource;
-    xdg.configFile."WallRizz/hyprpaper.js".source = ./dotfiles/wallrizz/hyprpaper.js;
+    xdg.configFile."WallRizz/hyprpaper.js".source = ../../dotfiles/wallrizz/hyprpaper.js;
 
   };
 }
