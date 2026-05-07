@@ -18,7 +18,6 @@ in
   programs.wallrizz = {
     enable = true;
     scriptSource = ./dotfiles/wallrizz/scripts;
-    xdg.configFile."WallRizz/hyprpaper.js".source = ./dotfiles/wallrizz/hyprpaper.js;
   };
   home.activation.createDunstCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p ~/.cache/dunst
