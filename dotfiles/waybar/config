@@ -281,7 +281,7 @@
         "modules-left": ["user"],
         "modules-center": ["hyprland/window"],
         "modules-right": ["keyboard-state", "hyprland/language"],
-        "output": ["HDMI-A-1", "eDP-1"],
+        "output": ["DP-1", "eDP-1"],
 
         "hyprland/window": {
             "format": "{title}",
@@ -321,7 +321,7 @@
         "modules-left": ["wlr/taskbar"],
         "modules-center": ["cpu", "memory", "disk", "temperature", "battery", "backlight", "pulseaudio", "systemd-failed-units"],
         "modules-right": ["tray"],
-        "output": ["HDMI-A-1", "eDP-1"],
+        "output": ["DP-1", "eDP-1"],
 
         "wlr/taskbar": {
             "format": "{icon}",
