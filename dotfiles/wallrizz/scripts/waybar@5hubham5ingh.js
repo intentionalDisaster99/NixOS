@@ -48,10 +48,10 @@ export function setTheme(newThemeConfigPath) {
 @define-color crust ${c0};
 
 @define-color text ${fg};
-@define-color subtext0 ${textMuted};
+@define-color subtext0 ${fg}; /* Used to be ${textMuted}; */
 @define-color subtext1 ${fg};
 
-/* Waybar modules now use the dark background for high contrast */
+/* Waybar modules use the dark background for high contrast */
 @define-color surface0 ${darkModuleBg};
 @define-color surface1 ${darkModuleBg};
 @define-color surface2 ${darkModuleBg};

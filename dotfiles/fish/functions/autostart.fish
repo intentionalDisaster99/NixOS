@@ -28,7 +28,10 @@ function autostart
     unclutter & 
     
     # Starting the ssh agent (because I've had some issues with it not starting)
-    eval $(ssh-agent -s) 
+    eval $(ssh-agent -s)
+
+    # Starting the mpris proxy service so that I can control media with bluetooth headphones
+    mpris-proxy &
 
     # Wait for things to settle
     sleep 0.5
