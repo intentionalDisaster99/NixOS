@@ -1,57 +1,57 @@
-// NOTHING would work, so I had to just pull it from the kitty config that it created and use that
-export function getDarkThemeConf(colors) { return ""; }
-export function getLightThemeConf(colors) { return ""; }
+export function getDarkThemeConf(colors) {
+    const theme = generateTheme(colors, true);
+    return generateWaybarCss(theme);
+}
+
+export function getLightThemeConf(colors) {
+    const theme = generateTheme(colors, false);
+    return generateWaybarCss(theme);
+}
 
 export function setTheme(newThemeConfigPath) {
     const cacheDir = HOME_DIR.concat("/.cache/wallrizz");
     const liveConfigPath = cacheDir.concat("/waybar.css");
     OS.exec(["mkdir", "-p", cacheDir]);
 
-    // Waiting for kitty to make sure it is done
-    OS.exec(["sleep", "1"]);
-
-    let configText = STD.loadFile(newThemeConfigPath);
-    if (!configText || configText.length < 100) {
-        configText = STD.loadFile(cacheDir.concat("/kitty.conf"));
+    const configText = STD.loadFile(newThemeConfigPath);
+    if (configText) {
+        const file = STD.open(liveConfigPath, "w");
+        if (file) {
+            file.puts(configText);
+            file.close();
+        }
     }
 
-    if (configText) {
-        const extract = (key, fallback) => {
-            const searchStr = key + " #";
-            const idx = configText.indexOf(searchStr);
-            if (idx !== -1) {
-                const start = idx + key.length + 1;
-                return configText.substring(start, start + 7);
-            }
-            return fallback;
-        };
+    OS.exec(["sh", "-c", "pkill -SIGUSR2 waybar > /dev/null 2>&1"]);
+}
 
-        const bg = extract("background", "#1e1e2e");
-        const fg = extract("foreground", "#cdd6f4");
 
-        const darkModuleBg = extract("inactive_tab_background", "#181825");
-        const textMuted = extract("inactive_tab_foreground", "#a6adc8");
+function generateWaybarCss(theme) {
+    const bg = theme.background.darken(5).toHexString();
+    const fg = theme.foreground.toHexString();
 
-        const c0 = extract("color0", "#45475a");
-        const c1 = extract("color1", "#f38ba8");
-        const c2 = extract("color2", "#a6e3a1");
-        const c3 = extract("color3", "#f9e2af");
-        const c4 = extract("color4", "#89b4fa");
-        const c5 = extract("color5", "#cba6f7");
-        const c6 = extract("color6", "#94e2d5");
-        const c7 = extract("color7", "#bac2de");
-        const c8 = extract("color8", "#585b70");
+    const darkModuleBg = theme.background.lighten(5).toHexString();
+    const textMuted = theme.foreground.desaturate().toHexString();
 
-        const css = `/* Waybar Colors perfectly mapped from Kitty UI config */
+    const c0 = theme.color0.toHexString();
+    const c1 = theme.color1.toHexString();
+    const c2 = theme.color2.toHexString();
+    const c3 = theme.color3.toHexString();
+    const c4 = theme.color4.toHexString();
+    const c5 = theme.color5.toHexString();
+    const c6 = theme.color6.toHexString();
+    const c7 = theme.color7.toHexString();
+    const c8 = theme.color0.darken().toHexString();
+
+    return `/* Waybar Colors perfectly mapped from Wallrizz */
 @define-color base ${c0};
 @define-color mantle ${c0};
 @define-color crust ${c0};
 
 @define-color text ${fg};
-@define-color subtext0 ${fg}; /* Used to be ${textMuted}; */
+@define-color subtext0 ${fg}; 
 @define-color subtext1 ${fg};
 
-/* Waybar modules use the dark background for high contrast */
 @define-color surface0 ${darkModuleBg};
 @define-color surface1 ${darkModuleBg};
 @define-color surface2 ${darkModuleBg};
@@ -75,13 +75,87 @@ export function setTheme(newThemeConfigPath) {
 @define-color flamingo ${c1};
 @define-color rosewater ${c1};
 `;
+}
 
-        const file = STD.open(liveConfigPath, "w");
-        if (file) {
-            file.puts(css);
-            file.close();
+
+function generateTheme(colorCodes, isDark = true) {
+    const colors = colorCodes.map((c) => Color(c));
+    const pickColor = (dark) => {
+        const index = colors.findIndex((color) =>
+            (dark ?? isDark) ? color.isDark() : color.isLight()
+        );
+
+        return index !== -1
+            ? colors.splice(index, 1)[0]
+            : isDark
+                ? Color("black")
+                : Color("white");
+    };
+
+    const background = pickColor();
+
+    for (const color of colors) {
+        while (!Color.isReadable(color, background)) {
+            isDark ? color.saturate(1).brighten(1) : color.desaturate(1).darken(1);
         }
     }
 
-    OS.exec(["sh", "-c", "pkill -SIGUSR2 waybar > /dev/null 2>&1"]);
+    while (colors.length < 8) {
+        colors.push(
+            colors[Math.floor(Math.random() * colors.length)].analogous()[3],
+        );
+    }
+
+    return Object.assign(
+        {
+            background,
+            foreground: pickColor(false),
+            cursor: pickColor(),
+        },
+        ...selectDistinctColors(colors, 8).map((color, i) => ({
+            [`color${i}`]: color,
+        })),
+    );
+}
+
+function selectDistinctColors(colorObjects, count) {
+    const sortedColors = colorObjects.sort((a, b) =>
+        a.getBrightness() - b.getBrightness()
+    );
+
+    const selectedColors = [];
+    while (selectedColors.length < count && colorObjects.length > 0) {
+        if (selectedColors.length === 0) {
+            const midIndex = Math.floor(sortedColors.length / 2);
+            selectedColors.push(sortedColors[midIndex]);
+            sortedColors.splice(midIndex, 1);
+            continue;
+        }
+
+        let maxDistanceColor = null;
+        let maxDistance = -1;
+
+        for (let i = 0; i < sortedColors.length; i++) {
+            const currentColor = sortedColors[i];
+            const minDistance = Math.min(
+                ...selectedColors.map((selected) =>
+                    Color.readability(selected, currentColor)
+                ),
+            );
+
+            if (minDistance > maxDistance) {
+                maxDistance = minDistance;
+                maxDistanceColor = currentColor;
+            }
+        }
+
+        if (maxDistanceColor) {
+            selectedColors.push(maxDistanceColor);
+            sortedColors.splice(sortedColors.indexOf(maxDistanceColor), 1);
+        } else {
+            break;
+        }
+    }
+
+    return selectedColors;
 }
