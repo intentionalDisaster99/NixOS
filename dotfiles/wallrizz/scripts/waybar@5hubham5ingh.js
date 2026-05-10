@@ -3,7 +3,7 @@ export function getDarkThemeConf(colors) {
         const theme = generateTheme(colors, true);
         return generateWaybarCss(theme);
     } catch (e) {
-        return `/* Theme Generation Error Avoided: ${e.message} */\n` + getFallbackCss();
+        return `/* Theme Gen Error: ${e.message} */\n` + getFallbackCss();
     }
 }
 
@@ -12,7 +12,7 @@ export function getLightThemeConf(colors) {
         const theme = generateTheme(colors, false);
         return generateWaybarCss(theme);
     } catch (e) {
-        return `/* Theme Generation Error Avoided: ${e.message} */\n` + getFallbackCss();
+        return `/* Theme Gen Error: ${e.message} */\n` + getFallbackCss();
     }
 }
 
@@ -21,7 +21,12 @@ export function setTheme(newThemeConfigPath) {
     const liveConfigPath = cacheDir.concat("/waybar.css");
     OS.exec(["mkdir", "-p", cacheDir]);
 
-    const configText = STD.loadFile(newThemeConfigPath);
+    let configText = STD.loadFile(newThemeConfigPath);
+
+    if (configText && !configText.includes("@define-color")) {
+        configText = getFallbackCss();
+    }
+
     if (configText) {
         const file = STD.open(liveConfigPath, "w");
         if (file) {
@@ -130,11 +135,7 @@ function generateTheme(colorCodes, isDark = true) {
         accents.push(newColor);
     }
 
-    return {
-        background: bg,
-        foreground: fg,
-        colors: accents
-    };
+    return { background: bg, foreground: fg, colors: accents };
 }
 
 function getFallbackCss() {
