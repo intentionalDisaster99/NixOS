@@ -22,9 +22,8 @@ export function setTheme(newThemeConfigPath) {
         }
     }
 
-    OS.exec(["sh", "-c", "pkill -SIGUSR2 waybar > /dev/null 2>&1"]);
+    OS.exec(["sh", "-c", "killall -SIGUSR2 waybar || pkill -SIGUSR2 waybar"]);
 }
-
 
 function generateWaybarCss(theme) {
     const bgHex = theme.background.toHexString();
@@ -63,7 +62,7 @@ function generateWaybarCss(theme) {
 @define-color overlay1 ${overlay1};
 @define-color overlay2 ${overlay2};
 
-/* 14 Distinct Accent Colors */
+/* 14 Distinct Accent Colors Pulled from the Expanded Pool */
 @define-color blue ${theme.color0.toHexString()};
 @define-color lavender ${theme.color1.toHexString()};
 @define-color sapphire ${theme.color2.toHexString()};
@@ -103,10 +102,18 @@ function generateTheme(colorCodes, isDark = true) {
         }
     }
 
-    while (colors.length < 14) {
-        colors.push(
-            colors[Math.floor(Math.random() * colors.length)].analogous()[3],
-        );
+    const originalColors = [...colors];
+    if (originalColors.length > 0) {
+        for (let i = 1; i <= 60; i++) {
+            let baseColor = originalColors[i % originalColors.length];
+            let spinAngle = (i * 15) % 360;
+            let variation = baseColor.spin(spinAngle);
+
+            if (i % 2 === 0) variation.saturate(15);
+            if (i % 3 === 0) isDark ? variation.brighten(15) : variation.darken(15);
+
+            colors.push(variation);
+        }
     }
 
     return Object.assign(
