@@ -54,7 +54,8 @@ if ! command -v nh >/dev/null 2>&1
 then
   sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
 else 
-  nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
+  # nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
+  nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
 fi 
 
 echo "System update complete!"
