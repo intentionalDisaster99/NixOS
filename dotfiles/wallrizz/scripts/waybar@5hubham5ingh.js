@@ -81,90 +81,48 @@ function generateWaybarCss(theme) {
 }
 
 function generateTheme(colorCodes, isDark = true) {
-    const colors = colorCodes.map((c) => Color(c));
-    const pickColor = (dark) => {
-        const index = colors.findIndex((color) =>
-            (dark ?? isDark) ? color.isDark() : color.isLight()
-        );
+    const rawColors = colorCodes.map((c) => Color(c));
 
-        return index !== -1
-            ? colors.splice(index, 1)[0]
-            : isDark
-                ? Color("black")
-                : Color("white");
-    };
+    // Set safe defaults just in case the wallpaper is pure black/white
+    let bg = Color(isDark ? "#1e1e2e" : "#eff1f5");
+    let fg = Color(isDark ? "#cdd6f4" : "#4c4f69");
 
-    const background = pickColor();
-    const foreground = pickColor(false);
-    const cursor = pickColor();
+    if (rawColors.length > 0) {
+        // Sort by brightness to reliably grab a background and foreground
+        const sorted = [...rawColors].sort((a, b) => a.getBrightness() - b.getBrightness());
+        bg = isDark ? sorted[0] : sorted[sorted.length - 1];
+        fg = isDark ? sorted[sorted.length - 1] : sorted[0];
+    }
 
-    const safeColors = colors.length > 0 ? colors : [Color(background.toHexString()), Color(foreground.toHexString())];
+    const accents = [];
+    const basePool = rawColors.length > 0 ? rawColors : [fg];
 
-    for (const color of safeColors) {
-        while (!Color.isReadable(color, background)) {
+    for (let i = 0; i < 14; i++) {
+        if (i < basePool.length) {
+            accents.push(basePool[i]);
+        } else {
+            let sourceColor = basePool[i % basePool.length];
+            let spinAmt = (i * 35) % 360;
+
+            let newColor = Color(sourceColor.toHexString()).spin(spinAmt);
+
+            if (i % 2 === 0) newColor.saturate(20);
+            if (i % 3 === 0) isDark ? newColor.brighten(15) : newColor.darken(15);
+
+            accents.push(newColor);
+        }
+    }
+
+    for (let color of accents) {
+        while (!Color.isReadable(color, bg)) {
             isDark ? color.saturate(1).brighten(1) : color.desaturate(1).darken(1);
         }
     }
 
-    const expandedPool = [...safeColors];
-    for (let i = 1; i <= 60; i++) {
-        // Re-instantiate the color to guarantee we don't mutate the original reference
-        let baseColor = Color(safeColors[i % safeColors.length].toHexString());
-        let spinAngle = (i * 15) % 360;
-        let variation = baseColor.spin(spinAngle);
-
-        if (i % 2 === 0) variation.saturate(20);
-        if (i % 3 === 0) isDark ? variation.brighten(20) : variation.darken(20);
-
-        expandedPool.push(variation);
+    const themeMap = { background: bg, foreground: fg };
+    for (let i = 0; i < 14; i++) {
+        themeMap[`color${i}`] = accents[i];
     }
 
-    return Object.assign(
-        { background, foreground, cursor },
-        ...selectDistinctColors(expandedPool, 14).map((color, i) => ({
-            [`color${i}`]: color,
-        }))
-    );
-}
-
-function selectDistinctColors(colorObjects, count) {
-    const sortedColors = colorObjects.sort((a, b) =>
-        a.getBrightness() - b.getBrightness()
-    );
-
-    const selectedColors = [];
-    while (selectedColors.length < count && colorObjects.length > 0) {
-        if (selectedColors.length === 0) {
-            const midIndex = Math.floor(sortedColors.length / 2);
-            selectedColors.push(sortedColors[midIndex]);
-            sortedColors.splice(midIndex, 1);
-            continue;
-        }
-
-        let maxDistanceColor = null;
-        let maxDistance = -1;
-
-        for (let i = 0; i < sortedColors.length; i++) {
-            const currentColor = sortedColors[i];
-            const minDistance = Math.min(
-                ...selectedColors.map((selected) =>
-                    Color.readability(selected, currentColor)
-                ),
-            );
-
-            if (minDistance > maxDistance) {
-                maxDistance = minDistance;
-                maxDistanceColor = currentColor;
-            }
-        }
-
-        if (maxDistanceColor) {
-            selectedColors.push(maxDistanceColor);
-            sortedColors.splice(sortedColors.indexOf(maxDistanceColor), 1);
-        } else {
-            break;
-        }
-    }
-
-    return selectedColors;
+    return themeMap;
 }
