@@ -48,7 +48,7 @@ else
 fi
 
 # Only using nh if it is installed on the system (for speed)
-if command -v nh >/dev/null 2>&1 && command -v nix-output-monitor >/dev/null 2>&1; then
+if command -v nh >/dev/null 2>&1; then
   echo "Building with nh..."
   nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
 elif ping -c 1 -W 2 1.1.1.1 >/dev/null 2>&1; then
