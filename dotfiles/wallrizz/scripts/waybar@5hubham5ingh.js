@@ -1,11 +1,19 @@
 export function getDarkThemeConf(colors) {
-    const theme = generateTheme(colors, true);
-    return generateWaybarCss(theme);
+    try {
+        const theme = generateTheme(colors, true);
+        return generateWaybarCss(theme);
+    } catch (e) {
+        return `/* Theme Generation Error Avoided: ${e.message} */\n` + getFallbackCss();
+    }
 }
 
 export function getLightThemeConf(colors) {
-    const theme = generateTheme(colors, false);
-    return generateWaybarCss(theme);
+    try {
+        const theme = generateTheme(colors, false);
+        return generateWaybarCss(theme);
+    } catch (e) {
+        return `/* Theme Generation Error Avoided: ${e.message} */\n` + getFallbackCss();
+    }
 }
 
 export function setTheme(newThemeConfigPath) {
@@ -63,66 +71,99 @@ function generateWaybarCss(theme) {
 @define-color overlay1 ${overlay1};
 @define-color overlay2 ${overlay2};
 
-@define-color blue ${theme.color0.toHexString()};
-@define-color lavender ${theme.color1.toHexString()};
-@define-color sapphire ${theme.color2.toHexString()};
-@define-color sky ${theme.color3.toHexString()};
-@define-color teal ${theme.color4.toHexString()};
-@define-color green ${theme.color5.toHexString()};
-@define-color yellow ${theme.color6.toHexString()};
-@define-color peach ${theme.color7.toHexString()};
-@define-color maroon ${theme.color8.toHexString()};
-@define-color red ${theme.color9.toHexString()};
-@define-color mauve ${theme.color10.toHexString()};
-@define-color pink ${theme.color11.toHexString()};
-@define-color flamingo ${theme.color12.toHexString()};
-@define-color rosewater ${theme.color13.toHexString()};
+/* 14 Distinct Accent Colors */
+@define-color blue ${theme.colors[0].toHexString()};
+@define-color lavender ${theme.colors[1].toHexString()};
+@define-color sapphire ${theme.colors[2].toHexString()};
+@define-color sky ${theme.colors[3].toHexString()};
+@define-color teal ${theme.colors[4].toHexString()};
+@define-color green ${theme.colors[5].toHexString()};
+@define-color yellow ${theme.colors[6].toHexString()};
+@define-color peach ${theme.colors[7].toHexString()};
+@define-color maroon ${theme.colors[8].toHexString()};
+@define-color red ${theme.colors[9].toHexString()};
+@define-color mauve ${theme.colors[10].toHexString()};
+@define-color pink ${theme.colors[11].toHexString()};
+@define-color flamingo ${theme.colors[12].toHexString()};
+@define-color rosewater ${theme.colors[13].toHexString()};
 `;
 }
 
 function generateTheme(colorCodes, isDark = true) {
-    const rawColors = colorCodes.map((c) => Color(c));
-
-    // Set safe defaults just in case the wallpaper is pure black/white
-    let bg = Color(isDark ? "#1e1e2e" : "#eff1f5");
-    let fg = Color(isDark ? "#cdd6f4" : "#4c4f69");
-
-    if (rawColors.length > 0) {
-        // Sort by brightness to reliably grab a background and foreground
-        const sorted = [...rawColors].sort((a, b) => a.getBrightness() - b.getBrightness());
-        bg = isDark ? sorted[0] : sorted[sorted.length - 1];
-        fg = isDark ? sorted[sorted.length - 1] : sorted[0];
+    let pool = [];
+    if (colorCodes && colorCodes.length > 0) {
+        pool = colorCodes.map(c => Color(c));
+    } else {
+        pool = [Color("#89b4fa"), Color("#f38ba8"), Color("#a6e3a1"), Color("#cba6f7"), Color("#94e2d5")];
     }
 
-    const accents = [];
-    const basePool = rawColors.length > 0 ? rawColors : [fg];
+    pool.sort((a, b) => a.getBrightness() - b.getBrightness());
 
+    let bgHex = isDark ? pool[0].toHexString() : pool[pool.length - 1].toHexString();
+    let fgHex = isDark ? pool[pool.length - 1].toHexString() : pool[0].toHexString();
+
+    let bg = Color(bgHex);
+    let fg = Color(fgHex);
+
+    if (Math.abs(bg.getBrightness() - fg.getBrightness()) < 50) {
+        bg = Color(isDark ? "#1e1e2e" : "#eff1f5");
+        fg = Color(isDark ? "#cdd6f4" : "#4c4f69");
+    }
+
+    let accents = [];
     for (let i = 0; i < 14; i++) {
-        if (i < basePool.length) {
-            accents.push(basePool[i]);
-        } else {
-            let sourceColor = basePool[i % basePool.length];
-            let spinAmt = (i * 35) % 360;
+        let baseColor = pool[i % pool.length];
+        let newColor = Color(baseColor.toHexString());
 
-            let newColor = Color(sourceColor.toHexString()).spin(spinAmt);
+        let spinAmt = (i * 25) % 360;
+        if (spinAmt !== 0) newColor.spin(spinAmt);
 
-            if (i % 2 === 0) newColor.saturate(20);
-            if (i % 3 === 0) isDark ? newColor.brighten(15) : newColor.darken(15);
+        if (i % 2 === 1) newColor.saturate(20);
+        if (i % 3 === 1) isDark ? newColor.brighten(15) : newColor.darken(15);
 
-            accents.push(newColor);
+        let attempts = 0;
+        while (!Color.isReadable(newColor, bg) && attempts < 10) {
+            isDark ? newColor.saturate(5).brighten(5) : newColor.desaturate(5).darken(5);
+            attempts++;
         }
+
+        accents.push(newColor);
     }
 
-    for (let color of accents) {
-        while (!Color.isReadable(color, bg)) {
-            isDark ? color.saturate(1).brighten(1) : color.desaturate(1).darken(1);
-        }
-    }
+    return {
+        background: bg,
+        foreground: fg,
+        colors: accents
+    };
+}
 
-    const themeMap = { background: bg, foreground: fg };
-    for (let i = 0; i < 14; i++) {
-        themeMap[`color${i}`] = accents[i];
-    }
-
-    return themeMap;
+function getFallbackCss() {
+    return `
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color sapphire #74c7ec;
+@define-color sky #89dceb;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color maroon #eba0ac;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color pink #f5c2e7;
+@define-color flamingo #f2cdcd;
+@define-color rosewater #f5e0dc;
+`;
 }
