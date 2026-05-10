@@ -22,8 +22,9 @@ export function setTheme(newThemeConfigPath) {
         }
     }
 
-    OS.exec(["sh", "-c", "killall -SIGUSR2 waybar || pkill -SIGUSR2 waybar"]);
+    OS.exec(["sh", "-c", "killall -SIGUSR2 waybar || pkill -SIGUSR2 waybar > /dev/null 2>&1"]);
 }
+
 
 function generateWaybarCss(theme) {
     const bgHex = theme.background.toHexString();
@@ -62,21 +63,20 @@ function generateWaybarCss(theme) {
 @define-color overlay1 ${overlay1};
 @define-color overlay2 ${overlay2};
 
-/* 14 Distinct Accent Colors Pulled from the Expanded Pool */
 @define-color blue ${theme.color0.toHexString()};
-@define-color lavender ${theme.color1.toHexString()};
-@define-color sapphire ${theme.color2.toHexString()};
-@define-color sky ${theme.color3.toHexString()};
-@define-color teal ${theme.color4.toHexString()};
-@define-color green ${theme.color5.toHexString()};
-@define-color yellow ${theme.color6.toHexString()};
-@define-color peach ${theme.color7.toHexString()};
-@define-color maroon ${theme.color8.toHexString()};
-@define-color red ${theme.color9.toHexString()};
-@define-color mauve ${theme.color10.toHexString()};
-@define-color pink ${theme.color11.toHexString()};
-@define-color flamingo ${theme.color12.toHexString()};
-@define-color rosewater ${theme.color13.toHexString()};
+@define-color lavender ${theme.color0.spin(15).lighten(5).toHexString()};
+@define-color sapphire ${theme.color1.toHexString()};
+@define-color sky ${theme.color1.spin(-15).toHexString()};
+@define-color teal ${theme.color2.toHexString()};
+@define-color green ${theme.color2.spin(20).toHexString()};
+@define-color yellow ${theme.color3.toHexString()};
+@define-color peach ${theme.color3.spin(-15).toHexString()};
+@define-color maroon ${theme.color4.toHexString()};
+@define-color red ${theme.color4.spin(15).saturate(10).toHexString()};
+@define-color mauve ${theme.color5.toHexString()};
+@define-color pink ${theme.color6.toHexString()};
+@define-color flamingo ${theme.color7.toHexString()};
+@define-color rosewater ${theme.color7.spin(10).lighten(5).toHexString()};
 `;
 }
 
@@ -102,18 +102,10 @@ function generateTheme(colorCodes, isDark = true) {
         }
     }
 
-    const originalColors = [...colors];
-    if (originalColors.length > 0) {
-        for (let i = 1; i <= 60; i++) {
-            let baseColor = originalColors[i % originalColors.length];
-            let spinAngle = (i * 15) % 360;
-            let variation = baseColor.spin(spinAngle);
-
-            if (i % 2 === 0) variation.saturate(15);
-            if (i % 3 === 0) isDark ? variation.brighten(15) : variation.darken(15);
-
-            colors.push(variation);
-        }
+    while (colors.length < 8) {
+        colors.push(
+            colors[Math.floor(Math.random() * colors.length)].analogous()[3],
+        );
     }
 
     return Object.assign(
@@ -122,7 +114,7 @@ function generateTheme(colorCodes, isDark = true) {
             foreground: pickColor(false),
             cursor: pickColor(),
         },
-        ...selectDistinctColors(colors, 14).map((color, i) => ({
+        ...selectDistinctColors(colors, 8).map((color, i) => ({
             [`color${i}`]: color,
         })),
     );
