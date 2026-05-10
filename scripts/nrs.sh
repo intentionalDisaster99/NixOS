@@ -50,8 +50,7 @@ fi
 # Rebuild the system using the specified flake and hostname
 echo "Rebuilding the system..."
 # Only using nh if it is installed on the system (for speed)
-if [! command -v nh >/dev/null 2>&1] || [! command -v nix-output-monitor >/dev/null 2>&1]
-then
+if ! command -v nh >/dev/null 2>&1 || ! command -v nix-output-monitor >/dev/null 2>&1; then
   sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
 else 
   # nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
