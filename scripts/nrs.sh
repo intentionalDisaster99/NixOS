@@ -49,9 +49,12 @@ fi
 
 # Rebuild the system using the specified flake and hostname
 echo "Rebuilding the system..."
-nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
-# nix run nixpkgs#nh -- os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
-# sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" |& nix run nixpkgs#nix-output-monitor
-# sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
+# Only using nh if it is installed on the system (for speed)
+if ! nh -v <the_command> >/dev/null 2>&1
+then
+  sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
+else 
+  nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
+fi 
 
 echo "System update complete!"
