@@ -20,6 +20,7 @@
     xdg-desktop-portal-gtk
     nixpkgs-fmt
     nix-output-monitor
+    nh
 
     # ---------------------------------------------------
     # Hyprland
