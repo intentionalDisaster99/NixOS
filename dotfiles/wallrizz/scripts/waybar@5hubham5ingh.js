@@ -27,56 +27,59 @@ export function setTheme(newThemeConfigPath) {
 
 
 function generateWaybarCss(theme) {
-    const bg = theme.background.darken(5).toHexString();
-    const fg = theme.foreground.toHexString();
+    const bgHex = theme.background.toHexString();
+    const fgHex = theme.foreground.toHexString();
 
-    const darkModuleBg = theme.background.lighten(5).toHexString();
-    const textMuted = theme.foreground.desaturate().toHexString();
+    const base = Color(bgHex).darken(5).toHexString();
+    const mantle = Color(bgHex).darken(8).toHexString();
+    const crust = Color(bgHex).darken(10).toHexString();
 
-    const c0 = theme.color0.toHexString();
-    const c1 = theme.color1.toHexString();
-    const c2 = theme.color2.toHexString();
-    const c3 = theme.color3.toHexString();
-    const c4 = theme.color4.toHexString();
-    const c5 = theme.color5.toHexString();
-    const c6 = theme.color6.toHexString();
-    const c7 = theme.color7.toHexString();
-    const c8 = theme.color0.darken().toHexString();
+    const surface0 = bgHex;
+    const surface1 = Color(bgHex).lighten(5).toHexString();
+    const surface2 = Color(bgHex).lighten(10).toHexString();
+
+    const text = fgHex;
+    const subtext1 = Color(fgHex).darken(10).toHexString();
+    const subtext0 = Color(fgHex).darken(20).toHexString();
+
+    const overlay2 = Color(fgHex).darken(30).toHexString();
+    const overlay1 = Color(fgHex).darken(40).toHexString();
+    const overlay0 = Color(fgHex).darken(50).toHexString();
 
     return `/* Waybar Colors perfectly mapped from Wallrizz */
-@define-color base ${c0};
-@define-color mantle ${c0};
-@define-color crust ${c0};
+@define-color base ${base};
+@define-color mantle ${mantle};
+@define-color crust ${crust};
 
-@define-color text ${fg};
-@define-color subtext0 ${fg}; 
-@define-color subtext1 ${fg};
+@define-color text ${text};
+@define-color subtext0 ${subtext0};
+@define-color subtext1 ${subtext1};
 
-@define-color surface0 ${darkModuleBg};
-@define-color surface1 ${darkModuleBg};
-@define-color surface2 ${darkModuleBg};
+@define-color surface0 ${surface0};
+@define-color surface1 ${surface1};
+@define-color surface2 ${surface2};
 
-@define-color overlay0 ${c8};
-@define-color overlay1 ${c7};
-@define-color overlay2 ${fg};
+@define-color overlay0 ${overlay0};
+@define-color overlay1 ${overlay1};
+@define-color overlay2 ${overlay2};
 
-@define-color blue ${c4};
-@define-color lavender ${c4};
-@define-color sapphire ${c4};
-@define-color sky ${c6};
-@define-color teal ${c6};
-@define-color green ${c2};
-@define-color yellow ${c3};
-@define-color peach ${c3};
-@define-color maroon ${c1};
-@define-color red ${c1};
-@define-color mauve ${c5};
-@define-color pink ${c5};
-@define-color flamingo ${c1};
-@define-color rosewater ${c1};
+/* 14 Distinct Accent Colors */
+@define-color blue ${theme.color0.toHexString()};
+@define-color lavender ${theme.color1.toHexString()};
+@define-color sapphire ${theme.color2.toHexString()};
+@define-color sky ${theme.color3.toHexString()};
+@define-color teal ${theme.color4.toHexString()};
+@define-color green ${theme.color5.toHexString()};
+@define-color yellow ${theme.color6.toHexString()};
+@define-color peach ${theme.color7.toHexString()};
+@define-color maroon ${theme.color8.toHexString()};
+@define-color red ${theme.color9.toHexString()};
+@define-color mauve ${theme.color10.toHexString()};
+@define-color pink ${theme.color11.toHexString()};
+@define-color flamingo ${theme.color12.toHexString()};
+@define-color rosewater ${theme.color13.toHexString()};
 `;
 }
-
 
 function generateTheme(colorCodes, isDark = true) {
     const colors = colorCodes.map((c) => Color(c));
@@ -100,7 +103,7 @@ function generateTheme(colorCodes, isDark = true) {
         }
     }
 
-    while (colors.length < 8) {
+    while (colors.length < 14) {
         colors.push(
             colors[Math.floor(Math.random() * colors.length)].analogous()[3],
         );
@@ -112,7 +115,7 @@ function generateTheme(colorCodes, isDark = true) {
             foreground: pickColor(false),
             cursor: pickColor(),
         },
-        ...selectDistinctColors(colors, 8).map((color, i) => ({
+        ...selectDistinctColors(colors, 14).map((color, i) => ({
             [`color${i}`]: color,
         })),
     );
