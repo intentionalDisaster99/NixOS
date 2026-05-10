@@ -50,7 +50,7 @@ fi
 # Rebuild the system using the specified flake and hostname
 echo "Rebuilding the system..."
 # Only using nh if it is installed on the system (for speed)
-if ! nh -v <the_command> >/dev/null 2>&1
+if ! command -v nh >/dev/null 2>&1
 then
   sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
 else 
