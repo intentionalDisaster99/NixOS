@@ -47,13 +47,15 @@ else
   echo "Push successful."
 fi
 
-# Rebuild the system using the specified flake and hostname
-echo "Rebuilding the system..."
 # Only using nh if it is installed on the system (for speed)
 if ! command -v nh >/dev/null 2>&1 || ! command -v nix-output-monitor >/dev/null 2>&1; then
+  echo "Commands missing, building without nh..."
   sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" 
+elif ping -c 1 -W 2 1.1.1.1 >/dev/null 2>&1; then
+  echo "Building with nh through nix shell..."
+  nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
 else 
-  # nix shell nixpkgs#nh nixpkgs#nix-output-monitor -c nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
+  echo "Building with nh..."
   nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
 fi 
 
