@@ -64,19 +64,19 @@ function generateWaybarCss(theme) {
 @define-color overlay2 ${overlay2};
 
 @define-color blue ${theme.color0.toHexString()};
-@define-color lavender ${theme.color0.spin(15).lighten(5).toHexString()};
-@define-color sapphire ${theme.color1.toHexString()};
-@define-color sky ${theme.color1.spin(-15).toHexString()};
-@define-color teal ${theme.color2.toHexString()};
-@define-color green ${theme.color2.spin(20).toHexString()};
-@define-color yellow ${theme.color3.toHexString()};
-@define-color peach ${theme.color3.spin(-15).toHexString()};
-@define-color maroon ${theme.color4.toHexString()};
-@define-color red ${theme.color4.spin(15).saturate(10).toHexString()};
-@define-color mauve ${theme.color5.toHexString()};
-@define-color pink ${theme.color6.toHexString()};
-@define-color flamingo ${theme.color7.toHexString()};
-@define-color rosewater ${theme.color7.spin(10).lighten(5).toHexString()};
+@define-color lavender ${theme.color1.toHexString()};
+@define-color sapphire ${theme.color2.toHexString()};
+@define-color sky ${theme.color3.toHexString()};
+@define-color teal ${theme.color4.toHexString()};
+@define-color green ${theme.color5.toHexString()};
+@define-color yellow ${theme.color6.toHexString()};
+@define-color peach ${theme.color7.toHexString()};
+@define-color maroon ${theme.color8.toHexString()};
+@define-color red ${theme.color9.toHexString()};
+@define-color mauve ${theme.color10.toHexString()};
+@define-color pink ${theme.color11.toHexString()};
+@define-color flamingo ${theme.color12.toHexString()};
+@define-color rosewater ${theme.color13.toHexString()};
 `;
 }
 
@@ -95,28 +95,35 @@ function generateTheme(colorCodes, isDark = true) {
     };
 
     const background = pickColor();
+    const foreground = pickColor(false);
+    const cursor = pickColor();
 
-    for (const color of colors) {
+    const safeColors = colors.length > 0 ? colors : [Color(background.toHexString()), Color(foreground.toHexString())];
+
+    for (const color of safeColors) {
         while (!Color.isReadable(color, background)) {
             isDark ? color.saturate(1).brighten(1) : color.desaturate(1).darken(1);
         }
     }
 
-    while (colors.length < 8) {
-        colors.push(
-            colors[Math.floor(Math.random() * colors.length)].analogous()[3],
-        );
+    const expandedPool = [...safeColors];
+    for (let i = 1; i <= 60; i++) {
+        // Re-instantiate the color to guarantee we don't mutate the original reference
+        let baseColor = Color(safeColors[i % safeColors.length].toHexString());
+        let spinAngle = (i * 15) % 360;
+        let variation = baseColor.spin(spinAngle);
+
+        if (i % 2 === 0) variation.saturate(20);
+        if (i % 3 === 0) isDark ? variation.brighten(20) : variation.darken(20);
+
+        expandedPool.push(variation);
     }
 
     return Object.assign(
-        {
-            background,
-            foreground: pickColor(false),
-            cursor: pickColor(),
-        },
-        ...selectDistinctColors(colors, 8).map((color, i) => ({
+        { background, foreground, cursor },
+        ...selectDistinctColors(expandedPool, 14).map((color, i) => ({
             [`color${i}`]: color,
-        })),
+        }))
     );
 }
 
