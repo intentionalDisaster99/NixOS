@@ -6,7 +6,6 @@ if status is-interactive
         exec tmux new-session -A -s main
     end
 end
-end
 
 alias cl="clear"
 alias rad="rad-tui"
