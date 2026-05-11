@@ -106,7 +106,8 @@
     arduino-ide
     platformio
     jdk
-    netbeans
+    tmux
+    # netbeans
     python3
     gcc
     gdb
