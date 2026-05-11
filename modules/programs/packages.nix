@@ -249,7 +249,7 @@
     gping
     fireplace
     figlet
-    # mapscii
+    mapscii
     nyancat
     cbonsai
     asciiquarium
@@ -268,7 +268,7 @@
     # blender
     jetbrains.idea
     # logisim-evolution
-    quartus-prime-lite
+    # quartus-prime-lite
     # kdewalletmanager
     # kdePackages.kwallet
   ];
