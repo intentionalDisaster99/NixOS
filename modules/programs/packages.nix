@@ -158,6 +158,7 @@
     firejail
     winboat
     waypipe
+    comma
 
     # System monitoring
     btop-cuda
