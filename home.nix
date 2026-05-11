@@ -186,6 +186,13 @@ in
     ];
   };
 
+  # Tmux, perchance
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    mouse = true;
+  };
+
   # TODO Move this to its own module
   # Where to save screenshots
   xdg.configFile."swappy/config".text = ''
