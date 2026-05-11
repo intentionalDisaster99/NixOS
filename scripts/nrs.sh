@@ -57,9 +57,11 @@ fi
 
 if [ "$REMOTE" -eq 1 ]; then
   echo "Initiating remote build on gluon-linux..."
+  # sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" \
+  #   --build-host sa9m@gluon-linux \
+  #   --target-host localhost |& nix run nixpkgs#nix-output-monitor
   sudo nixos-rebuild switch --flake "$NIXOS_CONFIG_DIR#$HOSTNAME" \
-    --build-host sa9m@gluon-linux \
-    --target-host localhost |& nix run nixpkgs#nix-output-monitor
+    --build-host sa9m@gluon-linux |& nix run nixpkgs#nix-output-monitor
 elif command -v nh >/dev/null 2>&1 && command -v nom >/dev/null 2>&1; then
   echo "Building with nh and nom..."
   nh os switch "$NIXOS_CONFIG_DIR" --hostname "$HOSTNAME"
