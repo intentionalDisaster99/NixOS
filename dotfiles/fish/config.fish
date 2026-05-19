@@ -1,11 +1,11 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+# if status is-interactive
+#     # Commands to run in interactive sessions can go here
 
-    # Going into tmux if not alrady 
-    if not set -q TMUX
-        exec tmux new-session -A -s main
-    end
-end
+#     # Going into tmux if not alrady 
+#     if not set -q TMUX
+#         exec tmux new-session -A -s main
+#     end
+# end
 
 alias cl="clear"
 alias rad="rad-tui"
