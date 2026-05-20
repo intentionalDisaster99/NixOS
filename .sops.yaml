@@ -1,9 +1,9 @@
 keys:
   - &higgs_boson age1zfmfjmyx5w59dv330qnguapkc6rf6nhrzx6w0067vwfxql894f3sl80p8c
-
+  - &gluon age1cnlzay6kamw6p73uev0xcsvywmm43u677dx3s47axfrkmmglqvzqwh70qz
 creation_rules:
   - path_regex: secrets/.*$
     key_groups:
       - age:
         - *higgs_boson
-        # - *gluon
+        - *gluon
