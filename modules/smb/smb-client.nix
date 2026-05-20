@@ -18,6 +18,11 @@
       "x-systemd.automount"
       "noauto"
 
+      # Stuff for tailscale (I think)
+      "_netdev"
+      "x-systemd.network-online.target"
+      "x-systemd.after=tailscaled.service"
+
       # Timeout if the NAS is down so the system doesn't freeze
       "x-systemd.idle-timeout=60"
       "x-systemd.device-timeout=5s"
