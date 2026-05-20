@@ -50,7 +50,7 @@
       "sec=ntlmssp"
 
       "username=sa9m"
-      "password=${config.sops.secrets.smb_password}"
+      "password=${config.sops.placeholder.smb_password}"
     ];
   };
 }
