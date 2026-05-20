@@ -34,6 +34,9 @@
       "file_mode=0755"
       "dir_mode=0755"
 
+      # Setting the version
+      "vers=3.0"
+
       # Adding in the smb credentials
       "credentials=${config.sops.templates."smb-secrets".path}"
     ];
