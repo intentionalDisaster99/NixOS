@@ -3,41 +3,30 @@
     cifs-utils
   ];
 
-  # Making a simple template file that I can pass in
+  sops.secrets.smb_password = { };
+
   sops.templates."smb-secrets".content = ''
     username=sa9m
     password=${config.sops.placeholder.smb_password}
   '';
 
-  # Define the mount point using systemd
   fileSystems."/home/sa9m/NAS" = {
     device = "//100.85.53.124/share";
     fsType = "cifs";
     options = [
-      # Only mounts when you access the folder
       "x-systemd.automount"
       "noauto"
 
-      # Stuff for tailscale (I think)
-      "_netdev"
-      "x-systemd.network-online.target"
-      "x-systemd.after=tailscaled.service"
-
-      # Timeout if the NAS is down so the system doesn't freeze
-      "x-systemd.idle-timeout=60"
-      "x-systemd.device-timeout=5s"
       "x-systemd.mount-timeout=5s"
+      "x-systemd.idle-timeout=60"
 
-      # Permissions setup 
       "uid=1000"
       "gid=1000"
       "file_mode=0755"
       "dir_mode=0755"
 
-      # Setting the version
-      "vers=3.0"
+      "sec=ntlmssp"
 
-      # Adding in the smb credentials
       "credentials=${config.sops.templates."smb-secrets".path}"
     ];
   };
