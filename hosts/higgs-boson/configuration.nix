@@ -17,7 +17,7 @@
     ../../modules/syncthing/syncthing.nix
     ../../modules/virtualization/virtualMachines.nix
     ../../modules/platformIO/pio.nix
-    ../../modules/rclone/rclone.nix # Added back in but limited to just NAS
+    # ../../modules/rclone/rclone.nix # Added back in but limited to just NAS
     ../../modules/drive/drive.nix
     # ../../modules/google-drive/google-drive.nix # Also removed beccause it made it slow
     ../../modules/hyprland/hyprland.nix
