@@ -11,7 +11,7 @@
 
   # Define the mount point using systemd
   fileSystems."/home/sa9m/NAS" = {
-    device = "//100.85.53.124/NAS";
+    device = "//100.85.53.124/share";
     fsType = "cifs";
     options = [
       # Only mounts when you access the folder
