@@ -4,13 +4,13 @@
   ];
 
   # Saving a formatted string to use as credentials
-  sops.secrets.smb_password = {
-    # Formatting things
-    text = ''
-      username=sa9m
-      password=${config.sops.placeholder.smb_password}
-    '';
-  };
+  # sops.secrets.smb_password = {
+  #   # Formatting things
+  #   text = ''
+  #     username=sa9m
+  #     password=${config.sops.placeholder.smb_password}
+  #   '';
+  # };
 
   # Define the mount point using systemd
   fileSystems."/home/sa9m/NAS" = {
@@ -33,7 +33,8 @@
       "dir_mode=0755"
 
       # Adding in the smb credentials
-      "credentials=${config.sops.secrets.smb_password.path}"
+      "username=sa9m"
+      "password=${config.sops.placeholder.smb_password}"
     ];
   };
 }
