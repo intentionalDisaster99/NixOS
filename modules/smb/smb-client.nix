@@ -4,11 +4,7 @@
   ];
 
   sops.secrets.smb_password = {
-    sopsFile = ../../secrets/secrets.yaml;
-
-    # Optional: If the key inside your yaml file is exactly "smb_password", 
-    # you can omit this line. If it's named something else, specify it here:
-    # key = "my_nas_password"; 
+    sopsFile = ../../../secrets/secrets.yaml;
   };
   # Define the mount point using systemd
   fileSystems."/home/sa9m/NAS" = {
