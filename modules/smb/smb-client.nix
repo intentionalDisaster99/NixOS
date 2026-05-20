@@ -49,7 +49,8 @@
 
       "sec=ntlmssp"
 
-      "credentials=/run/secrets-custom/smb-credentials"
+      "username=sa9m"
+      "password=${config.sops.secrets.smb_password}"
     ];
   };
 }
