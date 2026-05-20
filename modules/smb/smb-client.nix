@@ -3,9 +3,11 @@
     cifs-utils
   ];
 
-  # sops.secrets.smb_password = {
-  #   sopsFile = ../../../secrets/secrets.yaml;
-  # };
+  # Making a simple template file that I can pass in
+  sops.templates."smb-secrets".content = ''
+    username=sa9m
+    password=${config.sops.placeholder.smb_password}
+  '';
 
   # Define the mount point using systemd
   fileSystems."/home/sa9m/NAS" = {
@@ -28,8 +30,7 @@
       "dir_mode=0755"
 
       # Adding in the smb credentials
-      "username=sa9m"
-      "password=${config.sops.placeholder.smb_password}"
+      "credentials=${config.sops.templates."smb-secrets".path}"
     ];
   };
 }
