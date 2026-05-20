@@ -3,9 +3,10 @@
     cifs-utils
   ];
 
-  sops.secrets.smb_password = {
-    sopsFile = ../../../secrets/secrets.yaml;
-  };
+  # sops.secrets.smb_password = {
+  #   sopsFile = ../../../secrets/secrets.yaml;
+  # };
+
   # Define the mount point using systemd
   fileSystems."/home/sa9m/NAS" = {
     device = "//100.85.53.124/NAS";
@@ -28,7 +29,7 @@
 
       # Adding in the smb credentials
       "username=sa9m"
-      "password=${config.sops.secrets.smb_password.path}"
+      "password=${config.sops.placeholder.smb_password}"
     ];
   };
 }
