@@ -25,6 +25,8 @@
       "file_mode=0777"
       "dir_mode=0777"
 
+      "noperm"
+
       "sec=ntlmssp"
 
       "credentials=${config.sops.templates."smb-secrets".path}"
