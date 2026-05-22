@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs.stremio
+    pkgs.stremio-linux-shell
   ];
 
   networking.firewall = {
