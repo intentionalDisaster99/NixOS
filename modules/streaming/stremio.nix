@@ -2,7 +2,14 @@
 
 {
   environment.systemPackages = [
-    pkgs.stremio-linux-shell
+    (pkgs.symlinkJoin {
+      name = "stremio-fixed";
+      paths = [ pkgs.stremio-linux-shell ];
+      postBuild = ''
+        wrapProgram $out/bin/stremio-linux-shell \
+          --add-flags "--no-sandbox"
+      '';
+    })
   ];
 
   networking.firewall = {
