@@ -1,15 +1,23 @@
 { config, pkgs, ... }:
 
+let
+  stremio-wrapped = pkgs.writeShellScriptBin "stremio" ''
+    exec ${pkgs.stremio-linux-shell}/bin/stremio-linux-shell --no-sandbox "$@"
+  '';
+
+  stremio-desktop = pkgs.makeDesktopItem {
+    name = "stremio";
+    desktopName = "Stremio";
+    exec = "${stremio-wrapped}/bin/stremio";
+    icon = "stremio";
+    comment = "Watch videos, movies, and TV shows easily";
+    categories = [ "Video" "AudioVideo" "Player" "TV" ];
+  };
+in
 {
   environment.systemPackages = [
-    (pkgs.symlinkJoin {
-      name = "stremio-fixed";
-      paths = [ pkgs.stremio-linux-shell ];
-      postBuild = ''
-        wrapProgram $out/bin/stremio-linux-shell \
-          --add-flags "--no-sandbox"
-      '';
-    })
+    stremio-wrapped
+    stremio-desktop
   ];
 
   networking.firewall = {
