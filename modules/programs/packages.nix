@@ -215,6 +215,7 @@
     libsForQt5.qtstyleplugin-kvantum
     gruvbox-dark-gtk
     gruvbox-plus-icons
+    stremio
 
     # ---------------------------------------------------
     # School
