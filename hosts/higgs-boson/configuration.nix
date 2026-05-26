@@ -28,7 +28,7 @@
     ../../modules/atuin/atuin.nix
     ../../modules/rgb/openrgb.nix
     ../../modules/smb/smb-client.nix
-    ../../modules/streaming/stremio.nix
+    # ../../modules/streaming/stremio.nix
     ../../modules/emacs/emacs.nix
     ../../modules/random-cool-stuff/alien.nix
     # ../../modules/school/mathematica.nix # No longer needed
