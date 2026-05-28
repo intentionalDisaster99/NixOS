@@ -62,6 +62,10 @@
     # })
   ];
 
+  # Telling sops where to find the secrets
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+
   # So that it automatically opens Windows instead of linux (Just for now)
   boot.loader.grub.default = "Windows Boot Manager (on /dev/nvme0n1p1)";
 
