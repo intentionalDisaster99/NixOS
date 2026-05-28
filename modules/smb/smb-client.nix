@@ -16,6 +16,8 @@
     options = [
       "x-systemd.automount"
       "noauto"
+      "_netdev"
+      "x-systemd.after=network-online.target"
 
       "x-systemd.mount-timeout=5s"
       "x-systemd.idle-timeout=60"
