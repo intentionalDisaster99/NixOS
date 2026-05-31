@@ -108,11 +108,14 @@
       { from = 1714; to = 1764; } # KDE Connect
       { from = 1194; to = 1194; } # NordVPN
       { from = 22; to = 22; } # SSH
+      { from = 21114; to = 21119; } # RustDesk 
+      { from = 8000; to = 8000; } # RustDesk
     ];
     allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
       { from = 443; to = 443; } # NordVPN
       { from = 32768; to = 60999; } # Chromecast
+      { from = 21114; to = 21119; } # RustDesk
     ];
   };
 
