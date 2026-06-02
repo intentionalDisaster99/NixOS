@@ -42,6 +42,9 @@ function autostart
     # Start Waybar last before going to host dependent stuff
     waybar > /tmp/waybar.log 2>&1 & 
 
+    # Starting rustdesk for remote access
+    uwsm app -- rustdesk --tray
+
     # Now for random stuff that we need to start dependent on the host
     switch $hostname
         case higgs-boson
