@@ -178,6 +178,18 @@
   environment.pathsToLink = [ "/share/applications" ];
 
   # TODO move to it's own module
-  systemd.services.rustdesk.enable = true;
+  systemd.services.rustdesk = {
+    description = "RustDesk Daemon";
+    requires = [ "network-online.target" ];
+    after = [ "network-online.target" "systemd-logind.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs-latest.rustdesk-flutter}/bin/rustdesk --server";
+      Restart = "always";
+      RestartSec = "3";
+      User = "root";
+    };
+  };`
 
 }
