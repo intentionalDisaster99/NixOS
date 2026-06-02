@@ -260,7 +260,7 @@
     pkgs.lolcat
     pkgs.golazo
     # aewan # Technically could be quite cool, but I don't really want to put the effort into learning it
-    pkgs.inputs.terminal-rain.packages.${stdenv.hostPlatform.system}.terminal-rain-lightning
+    # inputs.terminal-rain.packages.${stdenv.hostPlatform.system}.terminal-rain-lightning
     pywal
 
 
