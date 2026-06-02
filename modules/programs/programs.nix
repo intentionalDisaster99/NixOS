@@ -183,6 +183,10 @@
     requires = [ "network-online.target" ];
     after = [ "network-online.target" "systemd-logind.service" ];
     wantedBy = [ "multi-user.target" ];
+    environment = {
+      XDG_SESSION_TYPE = "wayland";
+      WAYLAND_DISPLAY = "wayland-1";
+    };
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs-latest.rustdesk-flutter}/bin/rustdesk --server";
