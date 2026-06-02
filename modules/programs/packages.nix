@@ -276,9 +276,9 @@
   ];
 
   # Packages that I want to keep on the bleeding edge 
-  environment.systemPackages = with pkges-latest; {
-                                                    # Keeping RustDesk updated so that it actually works
-                                                    rustdesk-flutter
+  environment.systemPackages = with pkges-latest; [
+    # Keeping RustDesk updated so that it actually works
+    rustdesk-flutter
 
-                                                  }
-    }
+  ];
+}
