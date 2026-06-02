@@ -177,4 +177,7 @@
 
   environment.pathsToLink = [ "/share/applications" ];
 
+  # TODO move to it's own module
+  systemd.services.rustdesk.enable = true;
+
 }

@@ -43,7 +43,7 @@
     xdgOpenUsePortal = true;
     config = {
       common = {
-        default = [ "hyprland" "gtk" "kde " ];
+        default = [ "hyprland" "gtk" "kde" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
       };
     };
