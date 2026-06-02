@@ -5,6 +5,7 @@
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-latest.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -53,12 +54,18 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, terminal-rain, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, terminal-rain, nixpkgs-latest, ... }@inputs: {
 
 
     # Laptop Configuration
     nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        pkgs-latest = import nixpkgs-latest {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      };
       system = "x86_64-linux";
       modules = [
         ./hosts/higgs-boson/configuration.nix
@@ -82,7 +89,13 @@
 
     # Desktop Configuration
     nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        pkgs-latest = import nixpkgs-latest {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      };
       system = "x86_64-linux";
       modules = [
         ./hosts/gluon/configuration.nix

@@ -1,5 +1,5 @@
 # This module is for enabling system-wide programs and services.
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, pkgs-latest, lib, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -141,7 +141,6 @@
     virt-manager
     qemu
     freerdp
-    rustdesk-flutter
     openssh
     sshfs
     cifs-utils
@@ -275,4 +274,11 @@
     # kdewalletmanager
     # kdePackages.kwallet
   ];
-}
+
+  # Packages that I want to keep on the bleeding edge 
+  environment.systemPackages = with pkges-latest; {
+                                                    # Keeping RustDesk updated so that it actually works
+                                                    rustdesk-flutter
+
+                                                  }
+    }
