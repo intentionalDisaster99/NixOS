@@ -187,8 +187,8 @@
     pkgs.discord
     pkgs.element-desktop
     pkgs.zoom-us
-    # pkgs-latest.rustdesk-flutter
-    pkgs-latest.rustdesk
+    pkgs-latest.rustdesk-flutter
+    # pkgs-latest.rustdesk
     pkgs.obs-studio
     pkgs.davinci-resolve
     pkgs.kdePackages.kdenlive
