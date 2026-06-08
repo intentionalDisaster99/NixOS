@@ -275,6 +275,8 @@
     # quartus-prime-lite
     # kdewalletmanager
     pkgs.adb-sync
+    pkgs.v4l-utils
+    pkgs.android-tools
     # kdePackages.kwallet
   ];
 
