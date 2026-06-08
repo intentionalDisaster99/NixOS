@@ -274,6 +274,7 @@
     # logisim-evolution
     # quartus-prime-lite
     # kdewalletmanager
+    adb-sync
     # kdePackages.kwallet
   ];
 
