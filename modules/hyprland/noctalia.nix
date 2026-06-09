@@ -6,7 +6,9 @@
   };
   # install package
   environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # ... maybe other stuff
+    (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (oldAttrs: {
+      nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.kdePackages.wrapQtAppsHook ];
+      buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ pkgs.kdePackages.kirigami ];
+    }))
   ];
 }
