@@ -40,7 +40,8 @@ function autostart
     touch ~/.cache/wallrizz/colors/waybar.css
 
     # Start Waybar last before going to host dependent stuff
-    waybar > /tmp/waybar.log 2>&1 & 
+    # waybar > /tmp/waybar.log 2>&1 & 
+    qs -c noctalia-shell &
 
     # Starting rustdesk for remote access
     uwsm app -- rustdesk --tray
