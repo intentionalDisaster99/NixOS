@@ -18,6 +18,7 @@
     ../../modules/kde/kde.nix
     # ../../modules/google-drive/google-drive.nix
     ../../modules/hyprland/hyprland.nix
+    ../../modules/hyprland/noctalia.nix
     ../../modules/theme/gruvbox.nix
     ../../modules/theme/fonts.nix
     ../../modules/nordvpn/minimalWgnord.nix

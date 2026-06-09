@@ -52,6 +52,11 @@
     # For a silly little terminal rain package
     terminal-rain.url = "github:delta-psi/terminal-rain-lightning-flake";
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/legacy-v4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, minesddm, winboat, sops-nix, plasma-manager, terminal-rain, nixpkgs-latest, ... }@inputs: {
