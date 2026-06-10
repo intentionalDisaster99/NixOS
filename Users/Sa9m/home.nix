@@ -25,8 +25,8 @@
   # My basic git configuration which I will always want on my system
   programs.git = {
     enable = true;
-    userName = "Sa9m";
-    userEmail = "abyssalflerken@gmail.com";
+    settings.user.name = "Sa9m";
+    settings.user.email = "abyssalflerken@gmail.com";
   };
 
   home.stateVersion = "26.05";

@@ -1,19 +1,24 @@
 # Installs and enables fish as the default shell
 { users, config, pkgs, inputs, ...}: 
 {
+
+  imports = [
+    ./atuin.nix
+  ];
+
   programs.fish = {
     enable = true;
 
     shellAliases = {
       cd = "z";
-      ls = "eza"
-    }
+      ls = "eza";
+    };
 
   };
 
   # Including some nice things that I like for my shells, like eza and z
- environment.systemPackages = with pkgs; [
-  z
+ home.packages = with pkgs; [
+  zoxide
   eza
  ];
 
