@@ -12,6 +12,7 @@
     shellAliases = {
       cd = "z";
       ls = "eza";
+      nrs = "/etc/nixos/scripts/nrs.sh";
     };
 
   };

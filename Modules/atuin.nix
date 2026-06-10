@@ -7,14 +7,14 @@
   # Install atuin package to system and add to path.
   home.packages = with pkgs; [ atuin ];
 
-  services.atuin = {
+  programs.atuin = {
     enable = true;
+    settings = {
+      auto_sync = true;
+      sync_frequency = "5m";
+      sync_address = "https://api.atuin.sh";
+      search_mode = "fuzzy";
+    };
   };
 
-  programs.bash = {
-    interactiveShellInit = ''
-      eval "atuin init fish | source"
-    '';
-
-  };
 }
