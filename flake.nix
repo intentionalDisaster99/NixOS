@@ -37,6 +37,7 @@
       system = "x86_64-linux";
       modules = [
         ./Hosts/Higgs-boson/configuration.nix
+        ./Modules/cachix.nix
         home-manager.nixosModules.home-manager {
           home-manager.useglobalPkgs = true;
           home-manager.useuserPackages = true;
@@ -53,6 +54,7 @@
       system = "x86_64-linux";
       modules = [
         ./Hosts/Gluon/configuration.nix
+        ./Modules/cachix.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
