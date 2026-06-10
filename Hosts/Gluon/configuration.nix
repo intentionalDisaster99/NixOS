@@ -13,7 +13,6 @@
     sa9m = {
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" "input" "uinput" ];
-      shell = pkgs.fish;
     };
   };
 
@@ -22,14 +21,10 @@
   time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
-
-  ############
-  # Firewall #
-  ############
-  # Allowing certain things through the firewall
   networking.firewall = {
     enable = true;
   };
+  boot.loader.grub.device = "nodev";
 
   # Upgrading to the most recent kernel 
   boot.kernelPackages = pkgs.linuxPackages_latest;

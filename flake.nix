@@ -18,23 +18,39 @@
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  }
+  };
 
 
   outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, ... }@inputs: {
 
     # Laptop
-    nixosConfiguration.higgs-boson = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
       };
       system = "x86_64-linux";
       modules = [
-        ./Hosts/higgs-boson/configuration.nix
+        ./Hosts/Higgs-boson/configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager.useglobalPkgs = true;
           home-manager.useuserPackages = true;
-          home-manager.users.sa9m = import ./Users/Sa9m/home.nix
+          home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+        }
+      ];
+    };
+
+    # Desktop
+    nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs;
+      };
+      system = "x86_64-linux";
+      modules = [
+        ./Hosts/Gluon/configuration.nix
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
         }
       ];
     };
