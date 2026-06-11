@@ -36,6 +36,12 @@ echo "Formatting complete."
 echo "Staging changes..."
 git add .
 
+# Checking to see if it actually can build before it pushes
+if sudo nixos-rebuild build $status -ne 0
+  echo "Build unsuccessful, configuration not pushing nor switching.\nExiting..."
+  return 1
+end
+
 # Check if there are any actual changes to commit.
 if git diff --staged --quiet; then
   echo "No changes to commit. Building the current configuration."

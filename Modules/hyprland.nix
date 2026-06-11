@@ -35,6 +35,7 @@
 
   # Configuration stuff goes past here
   wayland.windowManager.hyprland = {
+    enable = true;
     systemd.enable = false;
     settings = {
       decoration = {
