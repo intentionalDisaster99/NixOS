@@ -59,5 +59,7 @@
       # Generic CMSIS-DAP probes (if you use a different debugger)
       SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
+  
+ programs.hyprland.enable = true;
 
 }
