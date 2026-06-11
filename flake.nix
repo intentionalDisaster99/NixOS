@@ -39,9 +39,12 @@
         ./Hosts/Higgs-boson/configuration.nix
         ./Modules/cachix.nix
         home-manager.nixosModules.home-manager {
-          home-manager.useglobalPkgs = true;
-          home-manager.useuserPackages = true;
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
           home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
         }
       ];
     };
@@ -59,6 +62,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
         }
       ];
     };
