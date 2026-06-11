@@ -25,6 +25,10 @@
     enable = true;
   };
   boot.loader.grub.device = "nodev";
+  environment.pathsToLink = [
+    "/share/xdg-desktop-portal"
+    "/share/applications"
+  ];
 
   # Upgrading to the most recent kernel 
   boot.kernelPackages = pkgs.linuxPackages_latest;
