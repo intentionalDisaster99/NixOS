@@ -5,71 +5,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./user.nix
-
-    # All of the modules I have
-    ../../modules/programs/programs.nix
-    ../../modules/kde/kde.nix
-    ../../modules/programs/man-cache.nix
-    ../../modules/boot/boot.nix
-    ../../modules/boot/grub.nix
-    ../../modules/network/network.nix
-    ../../modules/syncthing/syncthing.nix
-    ../../modules/virtualization/virtualMachines.nix
-    ../../modules/platformIO/pio.nix
-    # ../../modules/rclone/rclone.nix # Added back in but limited to just NAS
-    ../../modules/drive/drive.nix
-    # ../../modules/google-drive/google-drive.nix # Also removed beccause it made it slow
-    ../../modules/hyprland/hyprland.nix
-    ../../modules/hyprland/noctalia.nix
-    ../../modules/theme/gruvbox.nix
-    ../../modules/theme/fonts.nix
-    ../../modules/platformIO/pio.nix
-    ../../modules/nordvpn/minimalWgnord.nix
-    ../../modules/atuin/atuin.nix
-    ../../modules/rgb/openrgb.nix
-    ../../modules/smb/smb-client.nix
-    # ../../modules/streaming/stremio.nix
-    ../../modules/emacs/emacs.nix
-    ../../modules/random-cool-stuff/alien.nix
-    # ../../modules/school/mathematica.nix # No longer needed
-    ../../modules/remote/moonlight.nix
-    ../../modules/random-cool-stuff/droidcam.nix
-    # ../../modules/keyboard/steno.nix # Removed because I could lock my computer with it on and not be able to sign in 
-
   ];
-
-  # nixpkgs.overlays = [ (import ../../overlays/kitty.nix) ];
-  # TODO Move this to it's own module
-  nixpkgs.overlays = [
-    (final: prev: {
-      kitty = prev.kitty.overrideAttrs (oldAttrs: {
-        # This is a more aggressive way to skip tests by replacing
-        # the entire phase with a command that does nothing.
-        installCheckPhase = ''
-          echo "Skipping failing kitty tests."
-        '';
-      });
-    })
-    (final: prev: {
-      winboat = inputs.winboat.packages.${pkgs.stdenv.hostPlatform.system}.winboat;
-    })
-    # Pinning Spotify so that it doesn't crash
-    (final: prev: {
-      spotify = (import
-        (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/571c71e6f73af34a229414f51585738894211408.tar.gz";
-          sha256 = "0fgp5sqfmh5zgx75rs5101ywkz0fkjff67abms0kc8hyaxmlc7js";
-        })
-        {
-          inherit (final) system;
-          config.allowUnfree = true;
-        }).spotify;
-    })
-  ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = "higgs-boson";
 
   # Me :D
   users.users = {
@@ -79,44 +15,17 @@
       shell = pkgs.fish;
     };
   };
-
-
+  
   # Main config stuff that shouldn't really change
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
-    "en_CA.UTF-8/UTF-8" # Add this to fix the perl warnings
   ];
   time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
-
-  ############
-  # Firewall #
-  ############
-  networking.firewall = {
-    enable = true;
-    checkReversePath = "loose";
-    trustedInterfaces = [ "wgnord" ];
-    allowedTCPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-      { from = 1194; to = 1194; } # NordVPN
-      { from = 22; to = 22; } # SSH
-      { from = 25565; to = 25565; } # Minecraft
-      { from = 36891; to = 36891; } # Minecraft
-      { from = 8008; to = 8009; } # Chromecast
-      { from = 3389; to = 3389; } # Remote Desktop 
-    ];
-    allowedUDPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-      { from = 443; to = 443; } # NordVPN
-      { from = 32768; to = 60999; } # Chromecast
-    ];
-  };
-
-  # Upgrading to the most recent kernel 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  networking.hostName = "higgs-boson";
   boot.kernelPackages = pkgs.linuxPackages_testing;
-
-  # Adding in extra swap so that hibernation works
   swapDevices = [
     {
       device = "/var/lib/swapfile";
@@ -144,51 +53,6 @@
     
       # Generic CMSIS-DAP probes (if you use a different debugger)
       SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
-
-      # Force ELAN2513 touchscreen to bind elants_i2c driver
-    SUBSYSTEM=="i2c", ATTRS{name}=="ELAN2513:00", RUN+="/bin/sh -c 'echo elants_i2c > /sys/bus/i2c/devices/i2c-ELAN2513:00/driver_override && echo i2c-ELAN2513:00 > /sys/bus/i2c/drivers/elants_i2c/bind'"
   '';
-
-  # Adding in fonts for my code editors
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
-    noto-fonts
-    nerd-fonts.noto
-  ];
-
-  # So that I can use direnv to make better nix dev shells
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
-  # For checking battery life and time remaining
-  environment.systemPackages = [
-    pkgs.upower
-  ];
-
-  # Telling sops where to find the secrets
-  sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-
-  # Touchscreen? 
-  # boot.initrd.availableKernelModules = [ "nvme" "ext4" "xhci_pci" "usb_storage" "sd_mod" ];
-  # boot.initrd.prepend = [ "${./ssdt-touchscreen.cpio}" ];
-  # services.libinput.enable = true;
-  # hardware.enableRedistributableFirmware = true;
-  # # or for all firmware:
-  # hardware.enableAllFirmware = true;
-  # services.udev.packages = [ pkgs.libinput ];
-
-  # Allowing automatic signing in (specifically for remote access)
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "sa9m";
 
 }

@@ -12,8 +12,14 @@
   home.packages = with pkgs; [
     kitty
     xdg-desktop-portal-gtk
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+    noto-fonts
+    nerd-fonts.noto
   ];
 
+  # Things that we need for Kitty (required by hyprland)
+  fonts.fontconfig.enable = true;
   programs.kitty.enable = true;
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -28,7 +34,6 @@
   };
 
   # Configuration stuff goes past here
-
   wayland.windowManager.hyprland = {
     systemd.enable = false;
     settings = {
