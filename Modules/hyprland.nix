@@ -76,9 +76,9 @@
         # Utility shortcuts (more info because I forget these a lot lol)
         "$mainMod SHIFT, T, exec, Telegram"                            # Telegram to take text out of a screenshot
         "$mainMod, C, exec, hyprpicker -a"                             # Grabs a color code on the screen 
-        "$mainMod SHIFT, C, exec, pypr menu "Color picker""            # Same as above, but with more options
-        "$mainMod SHIFT, S, exec, grim -g "$(slurp)" - | wl-copy"      # Takes a screenshot and copies it
-        "$mainMod SHIFT, E, exec, grim -g "$(slurp)" - | swappy -f - " # Same as above but with more options
+        "$mainMod SHIFT, C, exec, pypr menu \"Color picker\""            # Same as above, but with more options
+        "$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"      # Takes a screenshot and copies it
+        "$mainMod SHIFT, E, exec, grim -g \"$(slurp)\" - | swappy -f - " # Same as above but with more options
         "$mainMod SHIFT, V, exec, emote"                               # A way to copy emojis
         "$mainMod, code:60 , workspace, e+1"                           # Switching workspaces on my PC
         "$mainMod, code:59 , workspace, e-1"                           # Switching workspaces on my PC
