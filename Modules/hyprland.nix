@@ -271,215 +271,215 @@
       ];
     };
 
-    extraConfig = ''
-      # -----------------------------------------------------
-      # Plugins
-      # -----------------------------------------------------
-      plugin = /etc/hyprland/plugins/hyprsplit.so
-      plugin {
-          hyprsplit {
-              num_workspaces = 10
-              persistent_workspaces = true
-          }
-      }
-
-      # -----------------------------------------------------
-      # Submaps
-      # -----------------------------------------------------
-      # Resize Submap
-      bind = $mainMod ALT, R, submap, resize
-      submap = resize
-      binde = , right, resizeactive, 10 0
-      binde = , left, resizeactive, -10 0
-      binde = , up, resizeactive, 0 -10
-      binde = , down, resizeactive, 0 10
-      binde = , l, resizeactive, 10 0
-      binde = , h, resizeactive, -10 0
-      binde = , k, resizeactive, 0 -10
-      binde = , j, resizeactive, 0 10
-      bind = , escape, submap, reset 
-      submap = reset
-
-      # Move Submap
-      bind = $mainMod ALT, M, submap, move
-      submap = move
-      bind = , right, movewindow, r
-      bind = , left, movewindow, l
-      bind = , up, movewindow, u
-      bind = , down, movewindow, d
-      bind = , l, movewindow, r
-      bind = , h, movewindow, l
-      bind = , k, movewindow, u
-      bind = , j, movewindow, d
-      bind = , escape, submap, reset 
-      submap = reset
-
-      # -----------------------------------------------------
-      # Window & Layer Rules (V3 Syntax preserved)
-      # -----------------------------------------------------
-      layerrule {
-          name = logout_blur
-          match:namespace = logout_dialog
-          blur = on
-      }
-
-      windowrule {
-          name = mpv_media
-          match:title = .*mpv$
-          float = on
-          opaque = on
-          size = 50% 50%
-      }
-
-      windowrule {
-          name = wallrizz
-          match:class = wallrizz
-          float = on
-          opaque = on
-          size = 70% 50%
-      }
-
-      windowrule {
-          name = Board_Game_Search_Project
-          match:class = MeepMeep
-          float = on
-          opaque = on
-          size = 50% 50%
-      }
-
-      windowrule {
-          name = video_media
-          match:content = video
-          float = on
-          opaque = on
-          size = 50% 50%
-      }
-
-      windowrule {
-          name = imv_media
-          match:title = .*imv.*
-          float = on
-          opaque = on
-          size = 70% 70%
-      }
-
-      windowrule {
-          name = photo_media
-          match:content = photo
-          float = on
-          opaque = on
-          size = 70% 70%
-      }
-
-      windowrule {
-          name = pdf_viewer
-          match:title = .*\.pdf$
-          float = on
-          opaque = on
-          maximize = on
-      }
-
-      windowrule {
-          name = youtube_opaque
-          match:title = .*YouTube.*
-          opaque = on
-      }
-
-      windowrule {
-          name = swappy_screenshot
-          match:title = swappy
-          opaque = on
-          center = on
-          stay_focused = on
-      }
-
-      windowrule {
-          name = brave_opacity
-          match:class = ^(brave-browser)$
-          opacity = 1.0 override 1.0 override
-      }
-
-      windowrule {
-          name = vscode_opacity
-          match:class = ^(code)$
-          opacity = 1.0 override 1.0 override
-      }
-
-      windowrule {
-          name = obsidian_opacity
-          match:class = ^(obsidian)$
-          opacity = 1.0 override 1.0 override
-      }
-
-      windowrule {
-          name = dolphin_opacity
-          match:class = ^(Dolphin)$
-          opacity = 1.0 override 1.0 override
-      }
-
-      windowrule {
-          name = wezterm_dropdown
-          match:title = ^wezterm_dropdown$
-          float = on
-      }
-
-      windowrule {
-          name = volume_control
-          match:title = ^Volume Control$
-          float = on
-          opacity = 1.0 override 1.0 override
-          size = 70% 70%
-      }
-
-      windowrule {
-          name = discord_workspace
-          match:class = ^(discord)$
-          workspace = special:discord
-          float = on
-          maximize = on
-      }
-
-      windowrule {
-          name = spotify_workspace
-          match:class = ^(spotify)$
-          workspace = special:spotify
-          float = on
-          maximize = on
-      }
-
-      windowrule {
-          name = calculator_workspace
-          match:class = qalculate-gtk
-          workspace = special:calculator
-          float = on
-      }
-
-      windowrule {
-          name = overskride_float
-          match:title = .*overskride$
-          float = on
-      }
-
-      windowrule {
-          name = brave_pwa_float
-          match:class = ^(brave-nngceckbapebfimnlniiiahkandclblb-Default)$
-          float = on
-      }
-
-      windowrule {
-          name = network_connections
-          match:title = .*Network Connections$
-          float = on
-      }
-
-      # Jetbrains fix
-      windowrule {
-          name = jetbrains_flicker_fix
-          match:class = ^jetbrains-(?!toolbox)
-          match:title = ^win\d+$
-          float = on
-          no_initial_focus = on
-      }
-    '';
+    # extraConfig = ''
+    #   # -----------------------------------------------------
+    #   # Plugins
+    #   # -----------------------------------------------------
+    #   plugin = /etc/hyprland/plugins/hyprsplit.so
+    #   plugin {
+    #       hyprsplit {
+    #           num_workspaces = 10
+    #           persistent_workspaces = true
+    #       }
+    #   }
+    #
+    #   # -----------------------------------------------------
+    #   # Submaps
+    #   # -----------------------------------------------------
+    #   # Resize Submap
+    #   bind = $mainMod ALT, R, submap, resize
+    #   submap = resize
+    #   binde = , right, resizeactive, 10 0
+    #   binde = , left, resizeactive, -10 0
+    #   binde = , up, resizeactive, 0 -10
+    #   binde = , down, resizeactive, 0 10
+    #   binde = , l, resizeactive, 10 0
+    #   binde = , h, resizeactive, -10 0
+    #   binde = , k, resizeactive, 0 -10
+    #   binde = , j, resizeactive, 0 10
+    #   bind = , escape, submap, reset 
+    #   submap = reset
+    #
+    #   # Move Submap
+    #   bind = $mainMod ALT, M, submap, move
+    #   submap = move
+    #   bind = , right, movewindow, r
+    #   bind = , left, movewindow, l
+    #   bind = , up, movewindow, u
+    #   bind = , down, movewindow, d
+    #   bind = , l, movewindow, r
+    #   bind = , h, movewindow, l
+    #   bind = , k, movewindow, u
+    #   bind = , j, movewindow, d
+    #   bind = , escape, submap, reset 
+    #   submap = reset
+    #
+    #   # -----------------------------------------------------
+    #   # Window & Layer Rules (V3 Syntax preserved)
+    #   # -----------------------------------------------------
+    #   layerrule {
+    #       name = logout_blur
+    #       match:namespace = logout_dialog
+    #       blur = on
+    #   }
+    #
+    #   windowrule {
+    #       name = mpv_media
+    #       match:title = .*mpv$
+    #       float = on
+    #       opaque = on
+    #       size = 50% 50%
+    #   }
+    #
+    #   windowrule {
+    #       name = wallrizz
+    #       match:class = wallrizz
+    #       float = on
+    #       opaque = on
+    #       size = 70% 50%
+    #   }
+    #
+    #   windowrule {
+    #       name = Board_Game_Search_Project
+    #       match:class = MeepMeep
+    #       float = on
+    #       opaque = on
+    #       size = 50% 50%
+    #   }
+    #
+    #   windowrule {
+    #       name = video_media
+    #       match:content = video
+    #       float = on
+    #       opaque = on
+    #       size = 50% 50%
+    #   }
+    #
+    #   windowrule {
+    #       name = imv_media
+    #       match:title = .*imv.*
+    #       float = on
+    #       opaque = on
+    #       size = 70% 70%
+    #   }
+    #
+    #   windowrule {
+    #       name = photo_media
+    #       match:content = photo
+    #       float = on
+    #       opaque = on
+    #       size = 70% 70%
+    #   }
+    #
+    #   windowrule {
+    #       name = pdf_viewer
+    #       match:title = .*\.pdf$
+    #       float = on
+    #       opaque = on
+    #       maximize = on
+    #   }
+    #
+    #   windowrule {
+    #       name = youtube_opaque
+    #       match:title = .*YouTube.*
+    #       opaque = on
+    #   }
+    #
+    #   windowrule {
+    #       name = swappy_screenshot
+    #       match:title = swappy
+    #       opaque = on
+    #       center = on
+    #       stay_focused = on
+    #   }
+    #
+    #   windowrule {
+    #       name = brave_opacity
+    #       match:class = ^(brave-browser)$
+    #       opacity = 1.0 override 1.0 override
+    #   }
+    #
+    #   windowrule {
+    #       name = vscode_opacity
+    #       match:class = ^(code)$
+    #       opacity = 1.0 override 1.0 override
+    #   }
+    #
+    #   windowrule {
+    #       name = obsidian_opacity
+    #       match:class = ^(obsidian)$
+    #       opacity = 1.0 override 1.0 override
+    #   }
+    #
+    #   windowrule {
+    #       name = dolphin_opacity
+    #       match:class = ^(Dolphin)$
+    #       opacity = 1.0 override 1.0 override
+    #   }
+    #
+    #   windowrule {
+    #       name = wezterm_dropdown
+    #       match:title = ^wezterm_dropdown$
+    #       float = on
+    #   }
+    #
+    #   windowrule {
+    #       name = volume_control
+    #       match:title = ^Volume Control$
+    #       float = on
+    #       opacity = 1.0 override 1.0 override
+    #       size = 70% 70%
+    #   }
+    #
+    #   windowrule {
+    #       name = discord_workspace
+    #       match:class = ^(discord)$
+    #       workspace = special:discord
+    #       float = on
+    #       maximize = on
+    #   }
+    #
+    #   windowrule {
+    #       name = spotify_workspace
+    #       match:class = ^(spotify)$
+    #       workspace = special:spotify
+    #       float = on
+    #       maximize = on
+    #   }
+    #
+    #   windowrule {
+    #       name = calculator_workspace
+    #       match:class = qalculate-gtk
+    #       workspace = special:calculator
+    #       float = on
+    #   }
+    #
+    #   windowrule {
+    #       name = overskride_float
+    #       match:title = .*overskride$
+    #       float = on
+    #   }
+    #
+    #   windowrule {
+    #       name = brave_pwa_float
+    #       match:class = ^(brave-nngceckbapebfimnlniiiahkandclblb-Default)$
+    #       float = on
+    #   }
+    #
+    #   windowrule {
+    #       name = network_connections
+    #       match:title = .*Network Connections$
+    #       float = on
+    #   }
+    #
+    #   # Jetbrains fix
+    #   windowrule {
+    #       name = jetbrains_flicker_fix
+    #       match:class = ^jetbrains-(?!toolbox)
+    #       match:title = ^win\d+$
+    #       float = on
+    #       no_initial_focus = on
+    #   }
+    # '';
   };
 }
