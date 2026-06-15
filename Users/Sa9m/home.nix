@@ -13,7 +13,7 @@
   imports = [
     # Empty for now, but where I will be putting all of my specific modules for my user
     ./../../Modules/fish.nix
-    ./../../Modules/hyprland.nix
+    ./../../Modules/Hyprland/hyprland.nix
     ./../../Modules/nvim.nix
   ];
 
