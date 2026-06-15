@@ -262,4 +262,5 @@ hl.bind(mainMod, "code:61", "workspace", "empty")
 -- Mouse Resizing
 hl.bindm(mainMod, "mouse:272", "movewindow")
 hl.bindm(mainMod, "mouse:273", "resizewindow")
-hl.bindm(mainMod ALT, "mouse:273", "resizewindow")
+-- hl.bindm(mainMod ALT, "mouse:273", "resizewindow")
+hl.bindm(mainMod, "mouse:273", "resizewindow")
