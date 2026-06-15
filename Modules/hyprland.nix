@@ -72,11 +72,11 @@
         "XDG_SESSION_DESKTOP,Hyprland"
       ];
 
-      source = [
-        "~/.config/hypr/gruvbox.conf"
-        "~/.config/hypr/hyprvim/init.conf"
-        "host-specific/auto.conf"
-      ];
+      # source = [
+      #   "~/.config/hypr/gruvbox.conf"
+      #   "~/.config/hypr/hyprvim/init.conf"
+      #   "host-specific/auto.conf"
+      # ];
 
       input = {
         kb_layout = "us";
