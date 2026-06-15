@@ -19,7 +19,7 @@
 
   # Everything that isn't installed here will be imported in modules, so I only have a few basic things here
   home.packages = with pkgs; [
-
+    brave 
   ];
 
   # My basic git configuration which I will always want on my system
