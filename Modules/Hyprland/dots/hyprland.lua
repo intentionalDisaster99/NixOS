@@ -62,14 +62,22 @@ hl.on("hyprland.start", function ()
 end)
 
 
-
+-- Random env variables
 hl.env("HYPRCURSOR_THEME", "breeze_cursors")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
--- -----------------------------------------------------
--- General Settings
--- -----------------------------------------------------
+
+-- Configuration
+hl.general({
+    gaps_in = 5,
+    gaps_out = 10,
+    border_size = 2,
+    -- ['col.active_border'] = "$yellow",
+    -- ['col.inactive_border'] = "$surface1", -- Theoretically these will be covered by noctalia's generated stuff
+    layout = "dwindle"
+})
+
 hl.input({
     kb_layout = "us",
     follow_mouse = 1,
@@ -77,16 +85,13 @@ hl.input({
         natural_scroll = true,
         ['tap-and-drag'] = true
     },
-    sensitivity = 0
+    numlock_by_default = true
 })
 
-hl.general({
-    gaps_in = 5,
-    gaps_out = 10,
-    border_size = 2,
-    ['col.active_border'] = "$yellow",
-    ['col.inactive_border'] = "$surface1",
-    layout = "dwindle"
+hl.gesture({
+   fingers = 3,
+   direction = "horizontal",
+   action = "workspace"
 })
 
 hl.decoration({
@@ -100,12 +105,7 @@ hl.decoration({
         range = 15,
         render_power = 3,
         offset = "0, 0",
-        color = "$yellow",
-        color_inactive = "0xff$baseAlpha"
     },
-    active_opacity = 1.0,
-    inactive_opacity = 1.0,
-    fullscreen_opacity = 1.0
 })
 
 hl.animations({
@@ -120,26 +120,17 @@ hl.animations({
     }
 })
 
-hl.dwindle({
-    pseudotile = true,
-    preserve_split = true,
-    force_split = 2
-})
-
-hl.master({
-    new_status = "master"
-})
-
-hl.gesture("3, horizontal, workspace")
 
 hl.misc({
-    disable_hyprland_logo = true,
+    disable_hyprland_logo = true,   -- Sorry hyprland devs :(
     disable_splash_rendering = true,
     background_color = "0x24273a"
 })
 
 hl.binds({
-    workspace_back_and_forth = true
+    workspace_back_and_forth = true,
+    allow_pin_fullscreen = true,
+    drag_threshold = 10
 })
 
 hl.device({
@@ -147,9 +138,6 @@ hl.device({
     sensitivity = -0.5
 })
 
--- -----------------------------------------------------
--- Window & Layer Rules
--- -----------------------------------------------------
 hl.layerrule("blur, logout_dialog")
 
 hl.windowrulev2("float, title:(.*mpv$)")
@@ -207,82 +195,77 @@ hl.windowrulev2("float, title:(.*Network Connections$)")
 hl.windowrulev2("float, class:^jetbrains-(?!toolbox), title:^win\\d+$")
 hl.windowrulev2("noinitialfocus, class:^jetbrains-(?!toolbox), title:^win\\d+$")
 
--- -----------------------------------------------------
--- Special Workspaces
--- -----------------------------------------------------
-hl.workspace("special:discord, on-created-empty:discord")
+
+-- Some of the workspaces
+hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
 hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
-hl.workspace("special:messages, on-created-empty:brave --new-window https://messages.google.com/web/u/1/conversations")
+hl.workspace("special:messages, on-created-empty:uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations")
 
--- -----------------------------------------------------
--- Keybindings
--- -----------------------------------------------------
-hl.source("~/.config/hypr/hyprvim/init.conf")
 
--- Scratchpads
-hl.bind(mainMod, "O", "exec", "pypr toggle term")
-hl.bind(mainMod, "V", "exec", "fish -c clipboard_to_type")
-hl.bind(mainMod .. " CTRL", "V", "exec", "pypr toggle volume")
-hl.bind(mainMod .. " CTRL", "E", "exec", "pypr expose")
-hl.bind(mainMod, "Z", "exec", "pypr zoom")
+-- Keybinds start here
+
+-- Magic workspaces
+hl.bind("${mainMod} + O", hl.dsp.exec_cmd("pypr toggle term"))
+hl.bind("${mainMod} + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
 
 -- Meta actions
-hl.bind(mainMod .. " SHIFT", "l", "exec", "fish -c wlogout_uniqe") -- TODO change to match noctalia
-hl.bind(mainMod, "L", "exec", "hyprlock") -- TODO change to match noctalia
-hl.bind(mainMod .. " SHIFT", "C", "exec", 'pypr menu "Color picker"')
-hl.bind(mainMod .. " SHIFT", "Q", "killactive")
-hl.bind(mainMod .. " SHIFT", "F", "togglefloating", "")
-hl.bind(mainMod .. " CTRL", "F", "fullscreen", "0")
+hl.bind("${mainMod} + SHIFT + l", hl.dsp.exec_cmd("fish -c wlogout_uniqe")) -- TODO change to match noctalia
+hl.bind("${mainMod} + L", hl.dsp.exec_cmd("hyprlock")) -- TODO change to match noctalia
+hl.bind("${mainMod} + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
+hl.bind("${mainMod} + SHIFT + Q", hl.dsp.killactive())
+hl.bind("${mainMod} + SHIFT + F", hl.dsp.togglefloating(""))
+hl.bind("${mainMod} + CTRL + F", hl.dsp.fullscreen("0"))
+hl.bind("${mainMod} + Z", hl.dsp.exec_cmd("pypr zoom"))
 
--- Opening Apps
-hl.bind(mainMod, "T", "exec", "kitty")
-hl.bind("ALT", "SPACE", "exec", "rofi -show drun")
-hl.bind(mainMod, "B", "exec", "brave")
-hl.bind(mainMod, "T", "exec", "kitty")
-hl.bind("SUPER", "I", "exec", "code")
-hl.bind(mainMod, "E", "exec", "dolphin")
-hl.bind(mainMod, "G", "exec", "steam")
-hl.bind(mainMod, "N", "exec", "obsidian")
+-- Opening Apps (Wrapped in uwsm)
+hl.bind("ALT + SPACE", hl.dsp.exec_cmd("uwsm app -- rofi -show drun")) -- TODO change to match noctalia launcher
+hl.bind("${mainMod} + B", hl.dsp.exec_cmd("uwsm app -- brave"))
+hl.bind("${mainMod} + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
+hl.bind("${mainMod} + I", hl.dsp.exec_cmd("uwsm app -- code"))
+hl.bind("${mainMod} + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
+hl.bind("${mainMod} + G", hl.dsp.exec_cmd("uwsm app -- steam"))
+hl.bind("${mainMod} + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 
 -- Utilities
-hl.bind(mainMod .. " SHIFT", "S", "exec", 'grim -g "$(slurp)" - | wl-copy')
-hl.bind(mainMod .. " SHIFT", "T", "exec", 'grim -g "$(slurp)" - | tesseract - - | wl-copy')
-hl.bind(mainMod .. " SHIFT", "E", "exec", 'grim -g "$(slurp)" - | swappy -f -')
-hl.bind(mainMod .. " SHIFT", "V", "exec", "emote")
-hl.bind(mainMod, "C", "exec", "hyprpicker -a")
+hl.bind("${mainMod} + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind("${mainMod} + SHIFT + T", hl.dsp.exec_cmd('grim -g "$(slurp)" - | tesseract - - | wl-copy'))
+hl.bind("${mainMod} + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind("${mainMod} + SHIFT + V", hl.dsp.exec_cmd("uwsm app -- emote"))
+hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Special workspaces
-hl.bind(mainMod, "D", "togglespecialworkspace", "discord")
-hl.bind(mainMod, "M", "togglespecialworkspace", "messages")
-hl.bind(mainMod, "S", "togglespecialworkspace", "spotify")
-hl.bind("SUPER", "K", "exec", "pgrep qalculate-gtk && hyprctl dispatch togglespecialworkspace calculator || qalculate-gtk &")
-hl.bind(mainMod .. " SHIFT", "J", "movetoworkspace", "special:magic")
-hl.bind(mainMod, "J", "togglespecialworkspace", "magic")
+hl.bind("${mainMod} + D", hl.dsp.togglespecialworkspace("discord"))
+hl.bind("${mainMod} + M", hl.dsp.togglespecialworkspace("messages"))
+hl.bind("${mainMod} + S", hl.dsp.togglespecialworkspace("spotify"))
+
+-- Updated the fallback launch here to use uwsm
+hl.bind("${mainMod} + K", hl.dsp.exec_cmd("pgrep qalculate-gtk && hyprctl dispatch togglespecialworkspace calculator || uwsm app -- qalculate-gtk &"))
+hl.bind("${mainMod} + SHIFT + J", hl.dsp.movetoworkspace("special:magic"))
+hl.bind("${mainMod} + J", hl.dsp.togglespecialworkspace("magic"))
 
 -- Media Controls
-hl.bind("", "XF86AudioRaiseVolume", "exec", "volumectl -u up")
-hl.bind("", "XF86AudioLowerVolume", "exec", "volumectl -u down")
-hl.bind("", "XF86AudioMute", "exec", "volumectl toggle-mute")
-hl.bind("", "XF86AudioMicMute", "exec", "volumectl -m toggle-mute")
-hl.bind("", "XF86MonBrightnessUp", "exec", "lightctl -D intel_backlight up")
-hl.bind("", "XF86MonBrightnessDown", "exec", "lightctl -D intel_backlight down")
-
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("volumectl -u up"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("volumectl -u down"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("volumectl toggle-mute"))
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("volumectl -m toggle-mute"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("lightctl -D intel_backlight up"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("lightctl -D intel_backlight down"))
 
 -- Workspaces 
 for i = 1, 9 do
-    hl.bind(mainMod, tostring(i), "split:workspace", tostring(i))
-    hl.bind(mainMod .. " SHIFT", tostring(i), "split:movetoworkspace", tostring(i))
+    hl.bind("${mainMod} + " .. tostring(i), hl.dsp["split:workspace"](tostring(i)))
+    hl.bind("${mainMod} + SHIFT + " .. tostring(i), hl.dsp["split:movetoworkspace"](tostring(i)))
 end
-hl.bind(mainMod, "0", "split:workspace", "10")
-hl.bind(mainMod .. " SHIFT", "0", "split:movetoworkspace", "10")
+hl.bind("${mainMod} + 0", hl.dsp["split:workspace"]("10"))
+hl.bind("${mainMod} + SHIFT + 0", hl.dsp["split:movetoworkspace"]("10"))
 
 -- To move between workspaces
-hl.bind(mainMod, "code:60", "workspace", "e+1")
-hl.bind(mainMod, "code:59", "workspace", "e-1")
-hl.bind(mainMod, "code:61", "workspace", "empty")
+hl.bind("${mainMod} + code:60", hl.dsp.workspace("e+1"))
+hl.bind("${mainMod} + code:59", hl.dsp.workspace("e-1"))
+hl.bind("${mainMod} + code:61", hl.dsp.workspace("empty"))
 
 -- Mouse Resizing
-hl.bindm(mainMod, "mouse:272", "movewindow")
-hl.bindm(mainMod, "mouse:273", "resizewindow")
--- hl.bindm(mainMod ALT, "mouse:273", "resizewindow")
-hl.bindm(mainMod, "mouse:273", "resizewindow")
+hl.bind("${mainMod} + mouse:272", hl.dsp.togglefloating(""), { release = true })
+hl.bind("${mainMod} + mouse:273", hl.dsp.pin(""), { release = true })
+hl.bindm("${mainMod} + mouse:272", hl.dsp.movewindow())
+hl.bindm("${mainMod} + mouse:273", hl.dsp.resizewindow())
