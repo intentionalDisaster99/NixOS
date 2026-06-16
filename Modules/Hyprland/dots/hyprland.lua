@@ -67,72 +67,72 @@ hl.env("HYPRCURSOR_THEME", "breeze_cursors")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
+hl.config({
+    general({
+        gaps_in = 5,
+        gaps_out = 10,
+        border_size = 2
+    })
 
--- Configuration
-hl.general({
-    gaps_in = 5,
-    gaps_out = 10,
-    border_size = 2
-})
+    input({
+        kb_layout = "us",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = true,
+            ['tap-and-drag'] = true
+        },
+        numlock_by_default = true
+    })
 
-hl.input({
-    kb_layout = "us",
-    follow_mouse = 1,
-    touchpad = {
-        natural_scroll = true,
-        ['tap-and-drag'] = true
-    },
-    numlock_by_default = true
-})
+    gesture({
+       fingers = 3,
+       direction = "horizontal",
+       action = "workspace"
+    })
 
-hl.gesture({
-   fingers = 3,
-   direction = "horizontal",
-   action = "workspace"
-})
+    decoration({
+        rounding = 10,
+        blur = {
+            size = 8,
+            passes = 2
+        },
+        shadow = {
+            enabled = true,
+            range = 15,
+            render_power = 3,
+            offset = "0, 0",
+        },
+    })
 
-hl.decoration({
-    rounding = 10,
-    blur = {
-        size = 8,
-        passes = 2
-    },
-    shadow = {
+    animations({
         enabled = true,
-        range = 15,
-        render_power = 3,
-        offset = "0, 0",
-    },
-})
-
-hl.animations({
-    enabled = true,
-    bezier = "myBezier, 0.05, 0.9, 0.1, 1.05",
-    animation = {
-        "windows, 1, 2, myBezier",
-        "windowsOut, 1, 2, default, popin 80%",
-        "border, 1, 3, default",
-        "fade, 1, 2, default",
-        "workspaces, 1, 1, default"
-    }
-})
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05",
+        animation = {
+            "windows, 1, 2, myBezier",
+            "windowsOut, 1, 2, default, popin 80%",
+            "border, 1, 3, default",
+            "fade, 1, 2, default",
+            "workspaces, 1, 1, default"
+        }
+    })
 
 
-hl.misc({
-    disable_hyprland_logo = true,   -- Sorry hyprland devs :(
-    disable_splash_rendering = true,
-    background_color = "0x24273a"
-})
+    misc({
+        disable_hyprland_logo = true,   -- Sorry hyprland devs :(
+        disable_splash_rendering = true,
+        background_color = "0x24273a"
+    })
 
-hl.binds({
-    workspace_back_and_forth = true,
-    allow_pin_fullscreen = true,
-    drag_threshold = 10
-})
+    binds({
+        workspace_back_and_forth = true,
+        allow_pin_fullscreen = true,
+        drag_threshold = 10
+    })
 
-hl.device({
-    name = "epic mouse V1",
-    sensitivity = -0.5
+    device({
+        name = "epic mouse V1",
+        sensitivity = -0.5
+    })
 })
 
 hl.layerrule("blur, logout_dialog")
