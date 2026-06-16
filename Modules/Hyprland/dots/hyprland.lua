@@ -1,49 +1,71 @@
--- ~/.config/hypr/hyprland.lua
 
+
+-- Variables for launching stuff
+local terminal    = "kitty"
+local fileManager = "dolphin"
+local menu        = "hyprlauncher"
+
+-- My main modifier
 local mainMod = "SUPER"
+
+
+
 
 -- -----------------------------------------------------
 -- Monitors
 -- -----------------------------------------------------
-hl.monitor("eDP-1, preferred, auto, 1")
-hl.monitor("DP-1, preferred, 0x0 , 1")
-hl.monitor("HDMI-A-1, preferred, auto-right, 1")
-hl.monitor("DP-3, preferred, auto-left, 1")
-hl.monitor(", preferred, auto, 1, mirror, eDP-1")
-hl.monitor("HEADLESS-1, 1920x1080@60, 0x0, 1")
-
--- -----------------------------------------------------
--- Plugins
--- -----------------------------------------------------
-hl.plugin("/etc/hyprland/plugins/hyprsplit.so")
-hl.plugin({
-    hyprsplit = {
-        num_workspaces = 10,
-        persistent_workspaces = true
-    }
+hl.monitor({
+    output   = "eDP-1",
+    mode     = "preferred",
+    position = "auto",
+    scale    = "1",
+})
+hl.monitor({
+    output   = "DP-1",
+    mode     = "preferred",
+    position = "0x0",
+    scale    = "1",
+})
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "preferred",
+    position = "auto-right",
+    scale    = "1",
+})
+hl.monitor({
+    output   = "DP-3",
+    mode     = "preferred",
+    position = "auto",
+    scale    = "1",
+})
+hl.monitor({
+    output   = "HEADLESS-1",
+    mode     = "preferred",
+    position = "1920x1080@60",
+    scale    = "1",
 })
 
--- -----------------------------------------------------
--- Autostart & Environment
--- -----------------------------------------------------
-hl.exec_once("fish -c autostart")
-hl.exec_once("kded6")
-hl.exec_once("kiod6")
-hl.env("QT_QPA_PLATFORMTHEME,kde")
-hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION,1")
-hl.exec_once("gsettings set org.freedesktop.appearance color-scheme 1")
-hl.exec_once("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
+-- TODO Setup hyprsplit
+-- hl.plugin("/etc/hyprland/plugins/hyprsplit.so")
+-- hl.plugin({
+--     hyprsplit = {
+--         num_workspaces = 10,
+--         persistent_workspaces = true
+--     }
+-- })
 
-hl.source("~/.config/hypr/gruvbox.conf")
 
-hl.env("HYPRCURSOR_THEME,breeze_cursors")
-hl.env("HYPRCURSOR_SIZE,24")
-hl.env("XCURSOR_THEME,breeze_cursors")
-hl.env("XCURSOR_SIZE,24")
-hl.env("XDG_MENU_PREFIX,plasma-")
-hl.env("XDG_SESSION_TYPE,wayland")
-hl.env("XDG_CURRENT_DESKTOP,Hyprland")
-hl.env("XDG_SESSION_DESKTOP,Hyprland")
+-- Automatically startign stuff
+hl.on("hyprland.start", function () 
+  hl.exec_cmd("noctalia-shell")
+  -- hl.exec_cmd(terminal) -- Set aside for a fish autostart function
+end)
+
+
+
+hl.env("HYPRCURSOR_THEME", "breeze_cursors")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XDG_SESSION_TYPE", "wayland")
 
 -- -----------------------------------------------------
 -- General Settings
