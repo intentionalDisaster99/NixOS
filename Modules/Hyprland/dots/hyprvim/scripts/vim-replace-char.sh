@@ -1,1 +1,0 @@
-/nix/store/d0156lw1alj0cdi5a5355y36wv32iyxi-home-manager-files/.config/hypr/hyprvim/scripts/vim-replace-char.sh
