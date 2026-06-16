@@ -68,13 +68,13 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
 hl.config({
-    general{
+    general = {
         gaps_in = 5,
         gaps_out = 10,
         border_size = 2
     },
 
-    input{
+    input = {
         kb_layout = "us",
         follow_mouse = 1,
         touchpad = {
@@ -84,13 +84,13 @@ hl.config({
         numlock_by_default = true
     },
 
-    gesture{
+    gesture = {
        fingers = 3,
        direction = "horizontal",
        action = "workspace"
     },
 
-    decoration{
+    decoration = {
         rounding = 10,
         blur = {
             size = 8,
@@ -104,7 +104,7 @@ hl.config({
         },
     },
 
-    animations{
+    animations = {
         enabled = true,
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05",
         animation = {
@@ -117,19 +117,19 @@ hl.config({
     },
 
 
-    misc{
+    misc = {
         disable_hyprland_logo = true,   -- Sorry hyprland devs :(
         disable_splash_rendering = true,
         background_color = "0x24273a"
     },
 
-    binds{
+    binds = {
         workspace_back_and_forth = true,
         allow_pin_fullscreen = true,
         drag_threshold = 10
     },
 
-    device{
+    device = {
         name = "epic mouse V1",
         sensitivity = -0.5
     },
