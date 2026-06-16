@@ -72,10 +72,7 @@ hl.env("XDG_SESSION_TYPE", "wayland")
 hl.general({
     gaps_in = 5,
     gaps_out = 10,
-    border_size = 2,
-    -- ['col.active_border'] = "$yellow",
-    -- ['col.inactive_border'] = "$surface1", -- Theoretically these will be covered by noctalia's generated stuff
-    layout = "dwindle"
+    border_size = 2
 })
 
 hl.input({
