@@ -211,7 +211,7 @@ hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO 
 hl.bind(mainMod.. " + SHIFT + l", hl.dsp.exec_cmd("fish -c wlogout_uniqe")) -- TODO change to match noctalia
 hl.bind(mainMod.. " + L", hl.dsp.exec_cmd("hyprlock")) -- TODO change to match noctalia
 hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
-hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.killactive())
+-- hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.killactive())
 -- hl.bind("${mainMod} + SHIFT + F", hl.dsp.togglefloating(""))
 -- hl.bind("${mainMod} + CTRL + F", hl.dsp.fullscreen("0"))
 -- hl.bind("${mainMod} + Z", hl.dsp.exec_cmd("pypr zoom"))
