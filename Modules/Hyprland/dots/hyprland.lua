@@ -84,11 +84,11 @@ hl.config({
         numlock_by_default = true
     },
 
-    gesture = {
-       fingers = 3,
-       direction = "horizontal",
-       action = "workspace"
-    },
+    -- gesture = {
+    --    fingers = 3,
+    --    direction = "horizontal",
+    --    action = "workspace"
+    -- },
 
     decoration = {
         rounding = 10,
