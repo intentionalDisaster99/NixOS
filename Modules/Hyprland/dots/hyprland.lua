@@ -266,5 +266,5 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("lightctl -D intel_backlight do
 -- Mouse Resizing
 -- hl.bind(mainMod.. " + mouse:272", hl.dsp.togglefloating(""), { release = true })
 -- hl.bind(mainMod.. " + mouse:273", hl.dsp.pin(""), { release = true })
-hl.bindm(mainMod.." + mouse:272", hl.dsp.movewindow())
-hl.bindm(mainMod.. " + mouse:273", hl.dsp.resizewindow())
+-- hl.bindm(mainMod.." + mouse:272", hl.dsp.movewindow())
+-- hl.bindm(mainMod.. " + mouse:273", hl.dsp.resizewindow())
