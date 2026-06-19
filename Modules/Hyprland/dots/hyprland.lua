@@ -104,17 +104,19 @@ hl.config({
         },
     },
 
-    animations = {
-        enabled = true,
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05",
-        animation = {
-            "windows, 1, 2, myBezier",
-            "windowsOut, 1, 2, default, popin 80%",
-            "border, 1, 3, default",
-            "fade, 1, 2, default",
-            "workspaces, 1, 1, default"
-        }
-    },
+    -- Were causing errors, so I went ahead and commented until we figure it out 
+    -- TODO come back to this and fix
+    -- animations = {
+    --     enabled = true,
+    --     bezier = "myBezier, 0.05, 0.9, 0.1, 1.05",
+    --     animation = {
+    --         "windows, 1, 2, myBezier",
+    --         "windowsOut, 1, 2, default, popin 80%",
+    --         "border, 1, 3, default",
+    --         "fade, 1, 2, default",
+    --         "workspaces, 1, 1, default"
+    --     }
+    -- },
 
 
     misc = {
