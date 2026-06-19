@@ -15,12 +15,14 @@
     ./../../Modules/fish.nix
     ./../../Modules/Hyprland/hyprland.nix
     ./../../Modules/nvim.nix
+    ./../../Resources/Profile/profile.nix
   ];
 
   # Everything that isn't installed here will be imported in modules, so I only have a few basic things here
   home.packages = with pkgs; [
     brave 
     vscode
+    kdePackages.dolphin # TODO move to a better place
   ];
 
   # My basic git configuration which I will always want on my system

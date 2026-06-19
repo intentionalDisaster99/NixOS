@@ -67,6 +67,8 @@ hl.env("HYPRCURSOR_THEME", "breeze_cursors")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
+
+
 hl.config({
     general = {
         gaps_in = 5,
@@ -84,40 +86,19 @@ hl.config({
         numlock_by_default = true
     },
 
-    -- gesture = {
-    --    fingers = 3,
-    --    direction = "horizontal",
-    --    action = "workspace"
-    -- },
-
-    -- decoration = {
-    --     rounding = 10,
-    --     blur = {
-    --         size = 8,
-    --         passes = 2
-    --     },
-    --     shadow = {
-    --         enabled = true,
-    --         range = 15,
-    --         render_power = 3,
-    --         offset = "0, 0",
-    --     },
-    -- },
-
-    -- Were causing errors, so I went ahead and commented until we figure it out 
-    -- TODO come back to this and fix
-    -- animations = {
-    --     enabled = true,
-    --     bezier = "myBezier, 0.05, 0.9, 0.1, 1.05",
-    --     animation = {
-    --         "windows, 1, 2, myBezier",
-    --         "windowsOut, 1, 2, default, popin 80%",
-    --         "border, 1, 3, default",
-    --         "fade, 1, 2, default",
-    --         "workspaces, 1, 1, default"
-    --     }
-    -- },
-
+    decoration = {
+        rounding = 10,
+        blur = {
+            size = 8,
+            passes = 2
+        },
+        shadow = {
+            enabled = true,
+            range = 15,
+            render_power = 3,
+            offset = "0, 0",
+        },
+    },
 
     misc = {
         disable_hyprland_logo = true,   -- Sorry hyprland devs :(
@@ -131,11 +112,15 @@ hl.config({
     --     drag_threshold = 10
     -- },
 
-    -- device = {
-    --     name = "epic mouse V1",
-    --     sensitivity = -0.5
-    -- },
 })
+
+-- Movements between workspaces (animations and gestures)
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace"
+})
+
 
 -- hl.layerrule("blur, logout_dialog")
 --

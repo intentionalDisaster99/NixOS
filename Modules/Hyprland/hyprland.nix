@@ -16,6 +16,8 @@
     nerd-fonts.symbols-only
     noto-fonts
     nerd-fonts.noto
+    hyprcursor
+
   ];
 
   # Things that we need for Kitty (required by hyprland)
