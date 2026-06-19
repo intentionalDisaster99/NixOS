@@ -90,19 +90,19 @@ hl.config({
     --    action = "workspace"
     -- },
 
-    decoration = {
-        rounding = 10,
-        blur = {
-            size = 8,
-            passes = 2
-        },
-        shadow = {
-            enabled = true,
-            range = 15,
-            render_power = 3,
-            offset = "0, 0",
-        },
-    },
+    -- decoration = {
+    --     rounding = 10,
+    --     blur = {
+    --         size = 8,
+    --         passes = 2
+    --     },
+    --     shadow = {
+    --         enabled = true,
+    --         range = 15,
+    --         render_power = 3,
+    --         offset = "0, 0",
+    --     },
+    -- },
 
     -- Were causing errors, so I went ahead and commented until we figure it out 
     -- TODO come back to this and fix
@@ -125,16 +125,16 @@ hl.config({
         background_color = "0x24273a"
     },
 
-    binds = {
-        workspace_back_and_forth = true,
-        allow_pin_fullscreen = true,
-        drag_threshold = 10
-    },
+    -- binds = {
+    --     workspace_back_and_forth = true,
+    --     allow_pin_fullscreen = true,
+    --     drag_threshold = 10
+    -- },
 
-    device = {
-        name = "epic mouse V1",
-        sensitivity = -0.5
-    },
+    -- device = {
+    --     name = "epic mouse V1",
+    --     sensitivity = -0.5
+    -- },
 })
 
 hl.layerrule("blur, logout_dialog")
