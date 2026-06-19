@@ -11,7 +11,7 @@ withUWSM = true; # recommended for most users
     xwayland.enable = true; # Xwayland can be disabled.
  };
 
-wayland.windowManager.hyprland.systemd.enable = false;
+# wayland.windowManager.hyprland.systemd.enable = false;
 
 
 }

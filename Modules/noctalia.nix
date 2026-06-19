@@ -8,8 +8,9 @@ home.packages = with pkgs; [
   noctalia-shell
 ];
 
-programs.noctalia = {
-  enable = true;
-};
+# I guess this isn't needed?
+# programs.noctalia = {
+#   enable = true;
+# };
 
 }

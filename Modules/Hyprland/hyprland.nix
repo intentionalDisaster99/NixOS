@@ -6,7 +6,7 @@
 {
 
   imports = [
-    # ./noctalia.nix
+    ./../noctalia.nix
   ];
 
   home.packages = with pkgs; [

@@ -5,6 +5,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../Modules/System/hyprland.nix
   ];
 
   # Me :D

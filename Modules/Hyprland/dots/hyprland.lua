@@ -211,19 +211,18 @@ hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO 
 hl.bind(mainMod.. " + SHIFT + l", hl.dsp.exec_cmd("fish -c wlogout_uniqe")) -- TODO change to match noctalia
 hl.bind(mainMod.. " + L", hl.dsp.exec_cmd("hyprlock")) -- TODO change to match noctalia
 hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
--- hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.killactive())
+hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
 -- hl.bind("${mainMod} + SHIFT + F", hl.dsp.togglefloating(""))
 -- hl.bind("${mainMod} + CTRL + F", hl.dsp.fullscreen("0"))
 -- hl.bind("${mainMod} + Z", hl.dsp.exec_cmd("pypr zoom"))
 --
 -- -- Opening Apps (Wrapped in uwsm)
 -- hl.bind("ALT + SPACE", hl.dsp.exec_cmd("uwsm app -- rofi -show drun")) -- TODO change to match noctalia launcher
--- hl.bind("${mainMod} + B", hl.dsp.exec_cmd("uwsm app -- brave"))
+hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("brave")) -- ("uwsm app -- brave"))
 hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
-hl.bind("SUPER + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
 hl.bind("SUPER + Y", hl.dsp.exec_cmd("kitty")) 
--- hl.bind("${mainMod} + I", hl.dsp.exec_cmd("uwsm app -- code"))
--- hl.bind("${mainMod} + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
+hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("code"))
+hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 -- hl.bind("${mainMod} + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 -- hl.bind("${mainMod} + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 --
@@ -253,17 +252,17 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("lightctl -D intel_backlight up")
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("lightctl -D intel_backlight down"))
 
 -- Workspaces 
--- for i = 1, 9 do
---     hl.bind("${mainMod} + " .. tostring(i), hl.dsp["split:workspace"](tostring(i)))
---     hl.bind("${mainMod} + SHIFT + " .. tostring(i), hl.dsp["split:movetoworkspace"](tostring(i)))
--- end
--- hl.bind("${mainMod} + 0", hl.dsp["split:workspace"]("10"))
--- hl.bind("${mainMod} + SHIFT + 0", hl.dsp["split:movetoworkspace"]("10"))
+for i = 1, 9 do
+    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
+end
+
+hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = 10 }))
+hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
 -- To move between workspaces
--- hl.bind("${mainMod} + code:60", hl.dsp.workspace("e+1"))
--- hl.bind("${mainMod} + code:59", hl.dsp.workspace("e-1"))
--- hl.bind("${mainMod} + code:61", hl.dsp.workspace("empty"))
+hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Mouse Resizing
 -- hl.bind(mainMod.. " + mouse:272", hl.dsp.togglefloating(""), { release = true })
