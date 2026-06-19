@@ -196,9 +196,9 @@ hl.config({
 --
 
 -- Some of the workspaces
-hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
-hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
-hl.workspace("special:messages, on-created-empty:uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations")
+-- hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
+-- hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
+-- hl.workspace("special:messages, on-created-empty:uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations")
 
 
 -- Keybinds start here
