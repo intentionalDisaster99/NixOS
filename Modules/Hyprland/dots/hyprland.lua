@@ -220,6 +220,8 @@ hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
 -- hl.bind("ALT + SPACE", hl.dsp.exec_cmd("uwsm app -- rofi -show drun")) -- TODO change to match noctalia launcher
 -- hl.bind("${mainMod} + B", hl.dsp.exec_cmd("uwsm app -- brave"))
 hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
+hl.bind("SUPER + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
+hl.bind("SUPER + Y", hl.dsp.exec_cmd("kitty")) 
 -- hl.bind("${mainMod} + I", hl.dsp.exec_cmd("uwsm app -- code"))
 -- hl.bind("${mainMod} + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 -- hl.bind("${mainMod} + G", hl.dsp.exec_cmd("uwsm app -- steam"))
