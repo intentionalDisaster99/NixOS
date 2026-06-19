@@ -137,7 +137,7 @@ hl.config({
     -- },
 })
 
-hl.layerrule("blur, logout_dialog")
+-- hl.layerrule("blur, logout_dialog")
 
 hl.windowrulev2("float, title:(.*mpv$)")
 hl.windowrulev2("opaque, title:(.*mpv$)")
