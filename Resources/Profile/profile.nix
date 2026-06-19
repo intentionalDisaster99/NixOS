@@ -6,7 +6,7 @@
 {
 
   home.file.".face" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Resources/Profile/profile.jpg"
-  }
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Resources/Profile/profile.jpg";
+  };
 
 }
