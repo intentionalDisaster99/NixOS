@@ -138,62 +138,62 @@ hl.config({
 })
 
 -- hl.layerrule("blur, logout_dialog")
-
-hl.windowrulev2("float, title:(.*mpv$)")
-hl.windowrulev2("opaque, title:(.*mpv$)")
-hl.windowrulev2("size 50% 50%, title:(.*mpv$)")
-
-hl.windowrulev2("float, class:(wallrizz)")
-hl.windowrulev2("opaque, class:(wallrizz)")
-hl.windowrulev2("size 70% 50%, class:(wallrizz)")
-
-hl.windowrulev2("float, class:(MeepMeep)")
-hl.windowrulev2("opaque, class:(MeepMeep)")
-hl.windowrulev2("size 50% 50%, class:(MeepMeep)")
-
-hl.windowrulev2("float, title:(.*imv.*)")
-hl.windowrulev2("opaque, title:(.*imv.*)")
-hl.windowrulev2("size 70% 70%, title:(.*imv.*)")
-
-hl.windowrulev2("float, title:(.*\\.pdf$)")
-hl.windowrulev2("opaque, title:(.*\\.pdf$)")
-hl.windowrulev2("maximize, title:(.*\\.pdf$)")
-
-hl.windowrulev2("opaque, title:(.*YouTube.*)")
-
-hl.windowrulev2("opaque, title:(swappy)")
-hl.windowrulev2("center, title:(swappy)")
-hl.windowrulev2("stayfocused, title:(swappy)")
-
-hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(brave-browser)$")
-hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(code)$")
-hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(obsidian)$")
-hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(Dolphin)$")
-
-hl.windowrulev2("float, title:^wezterm_dropdown$")
-
-hl.windowrulev2("float, title:^Volume Control$")
-hl.windowrulev2("opacity 1.0 override 1.0 override, title:^Volume Control$")
-hl.windowrulev2("size 70% 70%, title:^Volume Control$")
-
-hl.windowrulev2("workspace special:discord, class:^(discord)$")
-hl.windowrulev2("float, class:^(discord)$")
-hl.windowrulev2("maximize, class:^(discord)$")
-
-hl.windowrulev2("workspace special:spotify, class:^(spotify)$")
-hl.windowrulev2("float, class:^(spotify)$")
-hl.windowrulev2("maximize, class:^(spotify)$")
-
-hl.windowrulev2("workspace special:calculator, class:(qalculate-gtk)")
-hl.windowrulev2("float, class:(qalculate-gtk)")
-
-hl.windowrulev2("float, title:(.*overskride$)")
-hl.windowrulev2("float, class:^(brave-nngceckbapebfimnlniiiahkandclblb-Default)$")
-hl.windowrulev2("float, title:(.*Network Connections$)")
-
-hl.windowrulev2("float, class:^jetbrains-(?!toolbox), title:^win\\d+$")
-hl.windowrulev2("noinitialfocus, class:^jetbrains-(?!toolbox), title:^win\\d+$")
-
+--
+-- hl.windowrulev2("float, title:(.*mpv$)")
+-- hl.windowrulev2("opaque, title:(.*mpv$)")
+-- hl.windowrulev2("size 50% 50%, title:(.*mpv$)")
+--
+-- hl.windowrulev2("float, class:(wallrizz)")
+-- hl.windowrulev2("opaque, class:(wallrizz)")
+-- hl.windowrulev2("size 70% 50%, class:(wallrizz)")
+--
+-- hl.windowrulev2("float, class:(MeepMeep)")
+-- hl.windowrulev2("opaque, class:(MeepMeep)")
+-- hl.windowrulev2("size 50% 50%, class:(MeepMeep)")
+--
+-- hl.windowrulev2("float, title:(.*imv.*)")
+-- hl.windowrulev2("opaque, title:(.*imv.*)")
+-- hl.windowrulev2("size 70% 70%, title:(.*imv.*)")
+--
+-- hl.windowrulev2("float, title:(.*\\.pdf$)")
+-- hl.windowrulev2("opaque, title:(.*\\.pdf$)")
+-- hl.windowrulev2("maximize, title:(.*\\.pdf$)")
+--
+-- hl.windowrulev2("opaque, title:(.*YouTube.*)")
+--
+-- hl.windowrulev2("opaque, title:(swappy)")
+-- hl.windowrulev2("center, title:(swappy)")
+-- hl.windowrulev2("stayfocused, title:(swappy)")
+--
+-- hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(brave-browser)$")
+-- hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(code)$")
+-- hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(obsidian)$")
+-- hl.windowrulev2("opacity 1.0 override 1.0 override, class:^(Dolphin)$")
+--
+-- hl.windowrulev2("float, title:^wezterm_dropdown$")
+--
+-- hl.windowrulev2("float, title:^Volume Control$")
+-- hl.windowrulev2("opacity 1.0 override 1.0 override, title:^Volume Control$")
+-- hl.windowrulev2("size 70% 70%, title:^Volume Control$")
+--
+-- hl.windowrulev2("workspace special:discord, class:^(discord)$")
+-- hl.windowrulev2("float, class:^(discord)$")
+-- hl.windowrulev2("maximize, class:^(discord)$")
+--
+-- hl.windowrulev2("workspace special:spotify, class:^(spotify)$")
+-- hl.windowrulev2("float, class:^(spotify)$")
+-- hl.windowrulev2("maximize, class:^(spotify)$")
+--
+-- hl.windowrulev2("workspace special:calculator, class:(qalculate-gtk)")
+-- hl.windowrulev2("float, class:(qalculate-gtk)")
+--
+-- hl.windowrulev2("float, title:(.*overskride$)")
+-- hl.windowrulev2("float, class:^(brave-nngceckbapebfimnlniiiahkandclblb-Default)$")
+-- hl.windowrulev2("float, title:(.*Network Connections$)")
+--
+-- hl.windowrulev2("float, class:^jetbrains-(?!toolbox), title:^win\\d+$")
+-- hl.windowrulev2("noinitialfocus, class:^jetbrains-(?!toolbox), title:^win\\d+$")
+--
 
 -- Some of the workspaces
 hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
