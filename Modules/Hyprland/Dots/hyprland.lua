@@ -1,4 +1,6 @@
 
+-- Colors from noctalia
+require("noctalia-colors")
 
 -- Variables for launching stuff
 local terminal    = "kitty"
@@ -89,19 +91,23 @@ hl.config({
         numlock_by_default = true
     },
 
-    decoration = {
-        rounding = 10,
-        blur = {
-            size = 8,
-            passes = 2
-        },
-        shadow = {
-            enabled = true,
-            range = 15,
-            render_power = 3,
-            offset = "0, 0",
-        },
-    },
+    -- decoration = {
+    --     rounding = 10,
+    --     blur = {
+    --         size = 8,
+    --         passes = 2
+    --     },
+        -- shadow = {
+        --     enabled = true,
+        --     range = 15,
+        --     render_power = 30,
+        --     offset = "0, 0",
+        -- },
+        -- glow = {
+        --     enabled = true,
+        --     range = 20,
+        -- }
+    -- },
 
     misc = {
         disable_hyprland_logo = true,   -- Sorry hyprland devs :(
