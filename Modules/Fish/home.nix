@@ -17,6 +17,9 @@
 
   };
 
+  home.shell = pkgs.fish;
+
+
   # Including some nice things that I like for my shells, like eza and z
  home.packages = with pkgs; [
   zoxide

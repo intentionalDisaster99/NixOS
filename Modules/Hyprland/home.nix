@@ -8,8 +8,21 @@
 
   imports = [
     ./../Noctalia/home.nix
-    # ./../ # Kitty (which should import fish and starship)
+    ./../Kitty/home.nix
   ];
+
+      shellIntegration.enableFishIntegration = true;
+programs.kitty = {
+  enable = true;
+  
+  # Enable native Fish integration (adds completions and keybindings)
+  shellIntegration.enableFishIntegration = true;
+  
+  # Explicitly set the shell Kitty should launch
+  settings = {
+    shell = "${pkgs.fish}/bin/fish";
+  };
+};
 
   home.packages = with pkgs; [
     kitty
