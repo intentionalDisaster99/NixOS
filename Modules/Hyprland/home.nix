@@ -43,4 +43,14 @@
     source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots";
   };
 
+  home.pointerCursor = {
+    name = "breeze_cursors";
+    package = pkgs.kdePackages.breeze;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+    # Explicitly enable hyprcursor support if using HM 24.05+
+    hyprcursor.enable = true;
+  };
+
 }

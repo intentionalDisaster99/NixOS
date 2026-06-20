@@ -27,7 +27,7 @@
   home.packages = with pkgs; [
     brave
     vscode
-    kdePackages.dolphin # TODO move to a better place
+    kdePackages.dolphin
     nixpkgs-fmt
     nom
     nh
