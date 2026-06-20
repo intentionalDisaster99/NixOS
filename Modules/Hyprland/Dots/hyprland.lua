@@ -57,6 +57,7 @@ hl.monitor({
 -- Automatically startign stuff
 hl.on("hyprland.start", function () 
   hl.exec_cmd("noctalia-shell")
+  hl.exec_cmd("pypr") -- TODO move to fish autostart
   -- hl.exec_cmd(terminal) -- Set aside for a fish autostart function
 end)
 
