@@ -1,7 +1,3 @@
-
--- Colors from noctalia
--- require("noctalia-colors")
-
 -- Variables for launching stuff
 local terminal    = "kitty"
 local fileManager = "dolphin"
@@ -262,3 +258,9 @@ hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
 -- hl.bind(mainMod.. " + mouse:273", hl.dsp.pin(""), { release = true })
 -- hl.bindm(mainMod.." + mouse:272", hl.dsp.movewindow())
 -- hl.bindm(mainMod.. " + mouse:273", hl.dsp.resizewindow())
+
+
+-- Colors from noctalia
+local decor = require("noctalia-colors")
+hl.config(decor)
+-- require("noctalia-colors")
