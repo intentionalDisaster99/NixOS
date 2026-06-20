@@ -23,4 +23,18 @@ hl.config({
             },
         },
     },
+    decoration = {
+        rounding = 10,
+        blur = {
+            size = 8,
+            passes = 2
+        },
+        shadow = {
+            enabled = true,
+            range = 15,
+            render_power = 3,
+            color = "rgb(e6beab)",
+            color_inactive = "0x00000000",
+        },
+    }
 })
