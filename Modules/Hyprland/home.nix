@@ -41,7 +41,7 @@
   home.file.".config/hypr" = {
     # Notice we are building a string using your home directory, 
     # not a relative Nix path.
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Home-manager/Hyprland/Dots";
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots";
   };
 
 }
