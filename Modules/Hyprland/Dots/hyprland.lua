@@ -1,6 +1,6 @@
 
 -- Colors from noctalia
-require("noctalia-colors")
+-- require("noctalia-colors")
 
 -- Variables for launching stuff
 local terminal    = "kitty"
