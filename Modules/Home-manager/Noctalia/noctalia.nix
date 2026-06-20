@@ -1,6 +1,5 @@
 # A nice shell/bar that I can use (it has a crap ton of stuff builtin and is just overall really nice to use)
 
-# Deprecated, check for a different location
 { inputs, config, pkgs, ...}:
 
 {

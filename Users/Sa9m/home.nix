@@ -11,11 +11,15 @@
 
 
   imports = [
-    # Empty for now, but where I will be putting all of my specific modules for my user
-    ./../../Modules/fish.nix
-    ./../../Modules/Hyprland/hyprland.nix
+
+    # All of the program home manageing
+    ./../../Modules/Home-manager/Fish/fish.nix
+    ./../../Modules/Home-manager/Hyprland/hyprland.nix
     ./../../Modules/nvim.nix
+
+    # Resource movement
     ./../../Resources/Profile/profile.nix
+    ./../../Resources/Wallpaper/wallpaper.nix
   ];
 
   # Everything that isn't installed here will be imported in modules, so I only have a few basic things here

@@ -1,13 +1,14 @@
 
 # Enables hyprland and everything that I use with hyprland (like noctalia)
+# This is the Home-manager module, note that there is also a required System module, because we need to run it with UWSM
 
 { pkgs, hyprland, config, inputs, ...}:
 
 {
 
   imports = [
-    ./../noctalia.nix
-    # ./../ 
+    ./../Noctalia/noctalia.nix
+    # ./../ # Kitty (which should import fish and starship)
   ];
 
   home.packages = with pkgs; [
@@ -40,7 +41,7 @@
   home.file.".config/hypr" = {
     # Notice we are building a string using your home directory, 
     # not a relative Nix path.
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/dots";
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Home-manager/Hyprland/Dots";
   };
 
 }
