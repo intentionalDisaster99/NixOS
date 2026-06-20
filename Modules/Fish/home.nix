@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./../Atuin/atuin.nix
+    ./../Atuin/home.nix
   ];
 
   programs.fish = {

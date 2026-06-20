@@ -7,7 +7,7 @@
 {
 
   imports = [
-    ./../Noctalia/noctalia.nix
+    ./../Noctalia/home.nix
     # ./../ # Kitty (which should import fish and starship)
   ];
 

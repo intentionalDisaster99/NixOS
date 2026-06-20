@@ -3,7 +3,7 @@
 {
 
  # Literally the only reason I needed this
- programs.noctalia = {
+ programs.noctalia-shell = {
    enable = true;
  };
 

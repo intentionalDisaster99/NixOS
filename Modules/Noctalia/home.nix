@@ -9,8 +9,8 @@ home.packages = with pkgs; [
 ];
 
 # I guess this isn't needed?
-programs.noctalia = {
-  enable = true;
-};
+# programs.noctalia = {
+#   enable = true;
+# };
 
 }
