@@ -15,7 +15,8 @@
     # All of the program home manageing
     ./../../Modules/Fish/home.nix
     ./../../Modules/Hyprland/home.nix
-    # ./../../Modules/nvim.nix # Removed till updating
+    ./../../Modules/Spotify/home.nix
+    ./../../Modules/nvim.nix # Removed till updating
 
     # Resource movement
     ./../../Resources/Profile/profile.nix

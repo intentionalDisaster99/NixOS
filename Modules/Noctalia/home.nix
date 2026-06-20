@@ -6,11 +6,7 @@
 
 home.packages = with pkgs; [
   noctalia-shell
+  evtest
 ];
-
-# I guess this isn't needed?
-# programs.noctalia = {
-#   enable = true;
-# };
 
 }
