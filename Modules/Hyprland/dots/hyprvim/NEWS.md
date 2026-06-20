@@ -1,1 +1,0 @@
-/nix/store/m1gjzjj3bxrcvsiqpjl2vbrxw3ldzi5q-home-manager-files/.config/hypr/hyprvim/NEWS.md

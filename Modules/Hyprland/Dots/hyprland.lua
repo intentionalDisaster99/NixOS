@@ -7,6 +7,7 @@ local menu        = "hyprlauncher"
 
 -- My main modifier
 local mainMod = "SUPER"
+local ipc = "noctalia-shell ipc call"
 
 
 
@@ -204,13 +205,12 @@ hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
 -- hl.bind("${mainMod} + Z", hl.dsp.exec_cmd("pypr zoom"))
 --
 -- -- Opening Apps (Wrapped in uwsm)
--- hl.bind("ALT + SPACE", hl.dsp.exec_cmd("uwsm app -- rofi -show drun")) -- TODO change to match noctalia launcher
-hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("brave")) -- ("uwsm app -- brave"))
+hl.bind("ALT + SPACE", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
+hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("uwsm app -- brave")) -- ("uwsm app -- brave"))
 hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
-hl.bind("SUPER + Y", hl.dsp.exec_cmd("kitty")) 
 hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("code"))
 hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
--- hl.bind("${mainMod} + G", hl.dsp.exec_cmd("uwsm app -- steam"))
+hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 -- hl.bind("${mainMod} + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 --
 -- -- Utilities
@@ -231,12 +231,12 @@ hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 -- hl.bind("${mainMod} + J", hl.dsp.togglespecialworkspace("magic"))
 
 -- Media Controls
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("volumectl -u up"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("volumectl -u down"))
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("volumectl toggle-mute"))
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("volumectl -m toggle-mute"))
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("lightctl -D intel_backlight up"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("lightctl -D intel_backlight down"))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc.. "volume increase"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc.. "volume decrease"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc.. "volume muteOutput"))
+-- hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("volumectl -m toggle-mute")) -- removed because my keyboard doesn't have this key
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc.. "brightness increase"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc.. "brightness decrease"))
 
 -- Workspaces 
 for i = 1, 9 do

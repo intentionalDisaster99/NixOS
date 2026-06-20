@@ -13,9 +13,9 @@
   imports = [
 
     # All of the program home manageing
-    ./../../Modules/Home-manager/Fish/fish.nix
-    ./../../Modules/Home-manager/Hyprland/hyprland.nix
-    ./../../Modules/nvim.nix
+    ./../../Modules/Fish/home.nix
+    ./../../Modules/Hyprland/home.nix
+    # ./../../Modules/nvim.nix # Removed till updating
 
     # Resource movement
     ./../../Resources/Profile/profile.nix
