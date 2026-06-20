@@ -1,5 +1,5 @@
 # Installs and enables fish as the default shell
-{ users, config, pkgs, inputs, ...}: 
+{ users, config, pkgs, inputs, ... }:
 {
 
   imports = [
@@ -10,21 +10,20 @@
     enable = true;
 
     shellAliases = {
-      cd = "z";
-      ls = "eza";
+      # cd = "z";
+      # ls = "eza";
       nrs = "/etc/nixos/Scripts/nrs.sh";
     };
 
   };
 
-  home.shell = pkgs.fish;
 
 
   # Including some nice things that I like for my shells, like eza and z
- home.packages = with pkgs; [
-  zoxide
-  eza
- ];
+  home.packages = with pkgs; [
+    zoxide
+    eza
+  ];
 
   # *theoretically, later this will link my dotfiles for fish like my functions and my shortcuts*
 }

@@ -38,7 +38,8 @@
       modules = [
         ./Hosts/Higgs-boson/configuration.nix
         ./Modules/cachix.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
@@ -58,7 +59,8 @@
       modules = [
         ./Hosts/Gluon/configuration.nix
         ./Modules/cachix.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.sa9m = import ./Users/Sa9m/home.nix;

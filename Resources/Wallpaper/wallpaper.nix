@@ -2,7 +2,7 @@
 # This is in ~/.face
 
 
-{ pkgs, hyprland, config, inputs, ...}:
+{ pkgs, hyprland, config, inputs, ... }:
 
 {
 

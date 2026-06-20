@@ -1,4 +1,3 @@
-
 # A better history thingy
 
 { config, pkgs, ... }:

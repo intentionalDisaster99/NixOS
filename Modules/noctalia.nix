@@ -1,17 +1,17 @@
 # A nice shell/bar that I can use (it has a crap ton of stuff builtin and is just overall really nice to use)
 
 # Deprecated, check for a different location
-{ inputs, config, pkgs, ...}:
+{ inputs, config, pkgs, ... }:
 
 {
 
-home.packages = with pkgs; [
-  noctalia-shell
-];
+  home.packages = with pkgs; [
+    noctalia-shell
+  ];
 
-# I guess this isn't needed?
-# programs.noctalia = {
-#   enable = true;
-# };
+  # I guess this isn't needed?
+  # programs.noctalia = {
+  #   enable = true;
+  # };
 
-}a
+} a

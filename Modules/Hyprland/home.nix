@@ -1,8 +1,7 @@
-
 # Enables hyprland and everything that I use with hyprland (like noctalia)
 # This is the Home-manager module, note that there is also a required System module, because we need to run it with UWSM
 
-{ pkgs, hyprland, config, inputs, ...}:
+{ pkgs, hyprland, config, inputs, ... }:
 
 {
 
@@ -11,21 +10,8 @@
     ./../Kitty/home.nix
   ];
 
-      shellIntegration.enableFishIntegration = true;
-programs.kitty = {
-  enable = true;
-  
-  # Enable native Fish integration (adds completions and keybindings)
-  shellIntegration.enableFishIntegration = true;
-  
-  # Explicitly set the shell Kitty should launch
-  settings = {
-    shell = "${pkgs.fish}/bin/fish";
-  };
-};
 
   home.packages = with pkgs; [
-    kitty
     xdg-desktop-portal-gtk
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
