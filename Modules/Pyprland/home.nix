@@ -1,24 +1,12 @@
-# Enables hyprland and everything that I use with hyprland (like noctalia)
-# This is the Home-manager module, note that there is also a required System module, because we need to run it with UWSM
+# Enables the scratchpads that I like to use through pyprland
 
 { pkgs, hyprland, config, inputs, ... }:
 
 {
 
-  imports = [
-    ./../Noctalia/home.nix
-    ./../Kitty/home.nix
-    ./../Pyprland/home.nix
-  ];
-
 
   home.packages = with pkgs; [
-    xdg-desktop-portal-gtk
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
-    noto-fonts
-    nerd-fonts.noto
-    hyprcursor
+    pyprland
   ];
 
 
