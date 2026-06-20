@@ -8,6 +8,7 @@
   imports = [
     ./../Noctalia/home.nix
     ./../Kitty/home.nix
+    ./../Pyprland/home.nix
   ];
 
 
@@ -18,7 +19,6 @@
     noto-fonts
     nerd-fonts.noto
     hyprcursor
-    pyprland
   ];
 
   # Things that we need for Kitty (required by hyprland)
