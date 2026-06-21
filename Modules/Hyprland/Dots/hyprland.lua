@@ -57,6 +57,7 @@ hl.monitor({
 -- Automatically startign stuff
 hl.on("hyprland.start", function () 
   hl.exec_cmd("noctalia-shell")
+  hl.exec_cmd(ipc.. " lockScreen lock")
   hl.exec_cmd("pypr") -- TODO move to fish autostart
   -- hl.exec_cmd(terminal) -- Set aside for a fish autostart function
 end)
@@ -200,7 +201,7 @@ hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO 
 
 -- Meta actions
 hl.bind(mainMod.. " + SHIFT + l", hl.dsp.exec_cmd("fish -c wlogout_uniqe")) -- TODO change to match noctalia
-hl.bind(mainMod.. " + L", hl.dsp.exec_cmd("hyprlock")) -- TODO change to match noctalia
+hl.bind(mainMod.. " + L", hl.dsp.exec_cmd(ipc.. " lockScreen lock"))
 hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
 hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
 -- hl.bind("${mainMod} + SHIFT + F", hl.dsp.togglefloating(""))
@@ -211,7 +212,7 @@ hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind("ALT + SPACE", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
 hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("uwsm app -- brave")) -- ("uwsm app -- brave"))
 hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
-hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("code"))
+hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("uwsm app -- code"))
 hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 -- hl.bind("${mainMod} + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))

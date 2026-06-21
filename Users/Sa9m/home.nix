@@ -27,6 +27,7 @@
   home.packages = with pkgs; [
     brave
     vscode
+    discord
     kdePackages.dolphin
     nixpkgs-fmt
     nom
