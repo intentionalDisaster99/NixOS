@@ -31,6 +31,7 @@
     kdePackages.dolphin
     nixpkgs-fmt
     nom
+    slurp
     nh
   ];
 

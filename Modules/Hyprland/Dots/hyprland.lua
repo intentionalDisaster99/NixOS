@@ -225,7 +225,10 @@ hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 --
 -- -- Special workspaces
--- hl.bind("${mainMod} + D", hl.dsp.togglespecialworkspace("discord"))
+-- hl.dsp.workspace()
+-- hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
+-- hl.windowrulev2("workspace special:discord, class:^(discord)$")
+-- hl.bind(mainMod.. " + D", hl.dsp.togglespecialworkspace("discord"))
 -- hl.bind("${mainMod} + M", hl.dsp.togglespecialworkspace("messages"))
 -- hl.bind("${mainMod} + S", hl.dsp.togglespecialworkspace("spotify"))
 --
