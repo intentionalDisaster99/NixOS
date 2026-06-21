@@ -218,7 +218,7 @@ hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 -- hl.bind("${mainMod} + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 --
 -- -- Utilities
--- hl.bind("${mainMod} + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind(mainMod.. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 -- hl.bind("${mainMod} + SHIFT + T", hl.dsp.exec_cmd('grim -g "$(slurp)" - | tesseract - - | wl-copy'))
 -- hl.bind("${mainMod} + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 -- hl.bind("${mainMod} + SHIFT + V", hl.dsp.exec_cmd("uwsm app -- emote"))

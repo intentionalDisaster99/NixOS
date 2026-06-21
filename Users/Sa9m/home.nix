@@ -32,6 +32,7 @@
     nixpkgs-fmt
     nom
     slurp
+    wl-copy
     nh
   ];
 
