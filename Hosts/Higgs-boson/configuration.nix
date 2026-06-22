@@ -65,6 +65,9 @@
   };
   services.displayManager.defaultSession = "hyprland-uwsm";
 
+  # TODO move to module
+  programs.steam.enable = true;
+
   hardware.enableAllFirmware = true;
   # Might add a wifi module, but this is here for now instead
   networking.networkmanager.enable = true;

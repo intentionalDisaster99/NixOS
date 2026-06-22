@@ -38,9 +38,6 @@
     nh
   ];
 
-  # TODO move to module
-  programs.steam.enable = true;
-
   # My basic git configuration which I will always want on my system
   programs.git = {
     enable = true;
