@@ -32,7 +32,7 @@
     nixpkgs-fmt
     nom
     slurp
-    wl-copy
+    wl-clipboard
     steam
     nh
   ];
