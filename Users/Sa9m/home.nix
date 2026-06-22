@@ -33,6 +33,7 @@
     nom
     slurp
     wl-copy
+    steam
     nh
   ];
 

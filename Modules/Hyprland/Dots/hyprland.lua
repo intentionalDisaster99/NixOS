@@ -128,6 +128,10 @@ hl.gesture({
     action = "workspace"
 })
 
+hl.curve( "fast", { type = "bezier", points = { {1, 0}, {0, 1} } })
+hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast"})
+
+
 
 -- hl.layerrule("blur, logout_dialog")
 --
@@ -204,18 +208,18 @@ hl.bind(mainMod.. " + SHIFT + l", hl.dsp.exec_cmd("fish -c wlogout_uniqe")) -- T
 hl.bind(mainMod.. " + L", hl.dsp.exec_cmd(ipc.. " lockScreen lock"))
 hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
 hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
--- hl.bind("${mainMod} + SHIFT + F", hl.dsp.togglefloating(""))
--- hl.bind("${mainMod} + CTRL + F", hl.dsp.fullscreen("0"))
--- hl.bind("${mainMod} + Z", hl.dsp.exec_cmd("pypr zoom"))
+hl.bind(mainMod.. " + CTRL + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod.. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod.. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 --
 -- -- Opening Apps (Wrapped in uwsm)
 hl.bind("ALT + SPACE", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
-hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("uwsm app -- brave")) -- ("uwsm app -- brave"))
+hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
 hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
 hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("uwsm app -- code"))
 hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
--- hl.bind("${mainMod} + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
+hl.bind(mainMod.. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 --
 -- -- Utilities
 hl.bind(mainMod.. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
@@ -223,19 +227,28 @@ hl.bind(mainMod.. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-cop
 -- hl.bind("${mainMod} + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 -- hl.bind("${mainMod} + SHIFT + V", hl.dsp.exec_cmd("uwsm app -- emote"))
 -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
+
+-- Noctalia things
+hl.bind(mainMod.. " + W", hl.dsp.exec_cmd(ipc.. "panel-toggle wallpaper"))
+
+
 --
 -- -- Special workspaces
--- hl.dsp.workspace()
--- hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
--- hl.windowrulev2("workspace special:discord, class:^(discord)$")
--- hl.bind(mainMod.. " + D", hl.dsp.togglespecialworkspace("discord"))
--- hl.bind("${mainMod} + M", hl.dsp.togglespecialworkspace("messages"))
--- hl.bind("${mainMod} + S", hl.dsp.togglespecialworkspace("spotify"))
+hl.workspace_rule({ workspace = "special:discord", on_created_empty = "uwsm app -- discord" })
+hl.bind(mainMod.. " + D", hl.dsp.workspace.toggle_special("discord"))
+hl.workspace_rule({ workspace = "special:spotify", on_created_empty = "uwsm app -- spotify" })
+hl.bind(mainMod.. " + S", hl.dsp.workspace.toggle_special("spotify"))
+hl.workspace_rule({ workspace = "special:messages", on_created_empty = "uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations" })
+hl.bind(mainMod.. " + M", hl.dsp.workspace.toggle_special("messages"))
+hl.workspace_rule({ workspace = "special:magic"})
+hl.bind(mainMod.. " + J", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod.. " + SHIFT + J", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.workspace_rule({ workspace = "special:calc", on_created_empty = "uwsm app -- qalculate-gtk" })
+hl.bind(mainMod.. " + K", hl.dsp.workspace.toggle_special("calc"))
+
 --
 -- -- Updated the fallback launch here to use uwsm
 -- hl.bind("${mainMod} + K", hl.dsp.exec_cmd("pgrep qalculate-gtk && hyprctl dispatch togglespecialworkspace calculator || uwsm app -- qalculate-gtk &"))
--- hl.bind("${mainMod} + SHIFT + J", hl.dsp.movetoworkspace("special:magic"))
--- hl.bind("${mainMod} + J", hl.dsp.togglespecialworkspace("magic"))
 
 -- Media Controls
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc.. "volume increase"))
@@ -259,10 +272,11 @@ hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Mouse Resizing
--- hl.bind(mainMod.. " + mouse:272", hl.dsp.togglefloating(""), { release = true })
--- hl.bind(mainMod.. " + mouse:273", hl.dsp.pin(""), { release = true })
--- hl.bindm(mainMod.." + mouse:272", hl.dsp.movewindow())
--- hl.bindm(mainMod.. " + mouse:273", hl.dsp.resizewindow())
+hl.bind(mainMod.. " + mouse:272", hl.dsp.window.float({ action = "toggle" }), {release = true })
+hl.bind(mainMod.. " + mouse:273", hl.dsp.window.pin(), { release = true })
+hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag())
+hl.bind(mainMod.. " + mouse:273", hl.dsp.window.resize())
+hl.bind(mainMod.. " + ALT + mouse:272", hl.dsp.window.resize())
 
 
 -- Colors from noctalia
