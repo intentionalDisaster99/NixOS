@@ -33,6 +33,7 @@
     nom
     slurp
     wl-clipboard
+    kicad
     steam
     nh
   ];
