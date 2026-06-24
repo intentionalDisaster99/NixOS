@@ -93,6 +93,13 @@
     "/share/applications"
   ];
 
+  # I use the noctalia lockscreen, so I can skip the sddm
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "sa9m";
+  };
+  services.displayManager.defaultSession = "hyprland-uwsm";
+
   # Will likely be moved to a module tbh
   hardware.bluetooth = {
     enable = true;
