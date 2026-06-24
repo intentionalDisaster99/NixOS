@@ -8,8 +8,6 @@ local mainMod = "SUPER"
 local ipc = "noctalia-shell ipc call"
 
 
-
-
 -- -----------------------------------------------------
 -- Monitors
 -- -----------------------------------------------------
@@ -34,7 +32,7 @@ hl.monitor({
 hl.monitor({
     output   = "DP-3",
     mode     = "preferred",
-    position = "auto",
+    position = "auto-left",
     scale    = "1",
 })
 hl.monitor({
