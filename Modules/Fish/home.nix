@@ -13,6 +13,7 @@
     eza
     bat
     fireplace
+    os-prober # TODO move (this was put here in a hurry)
   ];
 
   # Symlinking to my dots

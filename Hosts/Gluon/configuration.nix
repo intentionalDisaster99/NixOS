@@ -142,6 +142,8 @@
   boot.loader.grub = {
     enable = true;
     default = "saved";
+    useOSProber = true;
+
 
     efiSupport = true;
     device = "nodev";
