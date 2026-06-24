@@ -5,9 +5,16 @@
 
 {
 
-  # programs.starship = {
-  #   enable = true;
-  # };
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = { };
+  };
+
+  home.packages = with pkgs; [
+    starship
+  ];
+
 
   # Symlinking to my dots
   home.file.".config/starship.toml" = {
