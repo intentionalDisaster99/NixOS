@@ -5,11 +5,11 @@
 
 {
 
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = { };
-  };
+  # programs.starship = {
+  #   enable = true;
+  #   enableFishIntegration = true;
+  #   settings = { };
+  # };
 
   home.packages = with pkgs; [
     starship
