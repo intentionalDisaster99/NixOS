@@ -139,6 +139,15 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
 
+  # TODO move to a boot module (include minegrub?)
+  boot.loader.grub = {
+    enable = true;
+    default = "saved";
+
+    efiSupport = true;
+    device = "nodev";
+  };
+
   programs.hyprland.enable = true;
 
 }
