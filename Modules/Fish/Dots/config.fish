@@ -19,5 +19,5 @@ alias ssh="kitty +kitten ssh"
 
 
 
-starship init fish | source
 zoxide init fish | source
+starship init fish | source
