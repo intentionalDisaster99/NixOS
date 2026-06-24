@@ -88,7 +88,6 @@
   #   "usbhid.quirks=0x04f3:0c00:0x0040"
   # ];
   # boot.resumeDevice = "/dev/disk/by-uuid/606544fb-61ec-4f34-99fe-b9dde180c05e";
-  boot.loader.grub.device = "nodev";
   environment.pathsToLink = [
     "/share/xdg-desktop-portal"
     "/share/applications"
