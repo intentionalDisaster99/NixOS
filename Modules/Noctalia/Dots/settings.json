@@ -747,10 +747,6 @@
             },
             {
                 "enabled": true,
-                "id": "starship"
-            },
-            {
-                "enabled": true,
                 "id": "code"
             }
         ],
