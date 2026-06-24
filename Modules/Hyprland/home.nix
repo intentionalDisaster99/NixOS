@@ -38,8 +38,6 @@
 
   # Symlinking to my dots
   home.file.".config/hypr" = {
-    # Notice we are building a string using your home directory, 
-    # not a relative Nix path.
     source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots";
   };
 
