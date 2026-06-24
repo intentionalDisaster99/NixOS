@@ -4,6 +4,7 @@
 
   imports = [
     ./../Atuin/home.nix
+    ./../Starship/home.nix
   ];
 
   programs.fish = {
@@ -17,13 +18,15 @@
 
   };
 
-
-
   # Including some nice things that I like for my shells, like eza and z
   home.packages = with pkgs; [
     zoxide
     eza
   ];
 
-  # *theoretically, later this will link my dotfiles for fish like my functions and my shortcuts*
+  # Symlinking to my dots
+  home.file.".config/fish" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Fish/Dots";
+  };
+
 }

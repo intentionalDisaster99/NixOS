@@ -270,8 +270,8 @@ hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Mouse Resizing
-hl.bind(mainMod.. " + mouse:272", hl.dsp.window.float({ action = "toggle" }), {release = true })
-hl.bind(mainMod.. " + mouse:273", hl.dsp.window.pin(), { release = true })
+-- hl.bind(mainMod.. " + mouse:272", hl.dsp.window.float({ action = "toggle" }), {release = true }) # Commented until fixed
+-- hl.bind(mainMod.. " + mouse:273", hl.dsp.window.pin(), { release = true }) # Commented until fixed
 hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod.. " + mouse:273", hl.dsp.window.resize())
 hl.bind(mainMod.. " + ALT + mouse:272", hl.dsp.window.resize())
