@@ -5,9 +5,9 @@
 
 {
 
-  programs.starship = {
-    enable = true;
-  };
+  # programs.starship = {
+  #   enable = true;
+  # };
 
   # Symlinking to my dots
   home.file.".config/starship.toml" = {
