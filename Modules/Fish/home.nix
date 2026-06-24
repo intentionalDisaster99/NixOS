@@ -7,16 +7,16 @@
     ./../Starship/home.nix
   ];
 
-  programs.fish = {
-    enable = true;
+  # programs.fish = {
+  #   enable = true;
 
-    # shellAliases = {
-    #   # cd = "z";
-    #   # ls = "eza";
-    #   nrs = "/etc/nixos/Scripts/nrs.sh";
-    # };
+  #   # shellAliases = {
+  #   #   # cd = "z";
+  #   #   # ls = "eza";
+  #   #   nrs = "/etc/nixos/Scripts/nrs.sh";
+  #   # };
 
-  };
+  # };
 
   # Including some nice things that I like for my shells, like eza and z
   home.packages = with pkgs; [
