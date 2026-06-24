@@ -10,11 +10,11 @@
   programs.fish = {
     enable = true;
 
-    shellAliases = {
-      # cd = "z";
-      # ls = "eza";
-      nrs = "/etc/nixos/Scripts/nrs.sh";
-    };
+    # shellAliases = {
+    #   # cd = "z";
+    #   # ls = "eza";
+    #   nrs = "/etc/nixos/Scripts/nrs.sh";
+    # };
 
   };
 
