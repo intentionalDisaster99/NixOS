@@ -7,10 +7,5 @@
     enable = true;
   };
 
-  # Symlinking to my dots
-  home.file.".config/noctalia" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Noctalia/Dots";
-  };
-
 
 }
