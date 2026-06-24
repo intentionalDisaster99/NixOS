@@ -56,7 +56,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../Modules/Hyprland/system.nix
-    # ../../Modules/Noctala/system.nix
   ];
 
   # Me :D
