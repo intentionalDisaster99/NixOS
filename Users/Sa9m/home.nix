@@ -32,11 +32,14 @@
     nixpkgs-fmt
     nom
     slurp
+    grim
     wl-clipboard
     kicad
     steam
     nh
   ];
+
+
 
   # My basic git configuration which I will always want on my system
   programs.git = {
