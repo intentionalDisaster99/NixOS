@@ -6,20 +6,18 @@
 {
 
   programs.starship = {
-    # enable = true;
+    #   enable = true;
     enableFishIntegration = true;
-    settings = { };
   };
-  sfcdfs
 
-    home.packages = with pkgs; [
+  home.packages = with pkgs; [
     starship
   ];
 
 
   # Symlinking to my dots
   home.file.".config/starship.toml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots/starship.toml";
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Dots/starship.toml";
   };
 
 }
