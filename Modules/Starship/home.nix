@@ -1,12 +1,10 @@
-# Enables hyprland and everything that I use with hyprland (like noctalia)
-# This is the Home-manager module, note that there is also a required System module, because we need to run it with UWSM
+# Enables starship and everything that I use with hyprland (like noctalia)
 
 { pkgs, hyprland, config, inputs, ... }:
 
 {
 
   programs.starship = {
-    #   enable = true;
     enableFishIntegration = true;
   };
 
@@ -17,7 +15,7 @@
 
   # Symlinking to my dots
   home.file.".config/starship.toml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Dots/starship.toml";
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Starship/Dots/starship.toml";
   };
 
 }

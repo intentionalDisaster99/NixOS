@@ -20,5 +20,4 @@ alias ssh="kitty +kitten ssh"
 
 
 zoxide init fish | source
-# starship init fish | source
-source (/etc/profiles/per-user/sa9m/bin/starship init fish --print-full-init | psub)⏎   
+starship init fish | source
