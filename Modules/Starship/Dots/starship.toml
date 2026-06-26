@@ -2,5 +2,5 @@
 # I've always been interested in having a the prompt above the input
 format = '''
 [┌───────────────────>](bold green)
-[│](bold green)$directory$rust$package
+[│](bold green)$all
 [└─>](bold green) '''
