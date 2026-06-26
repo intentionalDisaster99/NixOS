@@ -1,46 +1,13 @@
 add_newline = false
 
-# The structure now uses custom modules for the left border
 format = """
-${custom.top_success}${custom.top_error} $os$directory$git_branch$git_status
-${custom.mid_success}${custom.mid_error} $all
-${custom.bot_success}${custom.bot_error}$username$hostname$character"""
+[┌─](bold green) $os$directory$git_branch$git_status
+[│](bold green) 
+[└─> ](bold green)$username$hostname$character"""
 
 [fill]
 symbol = "─"
 style = "bold green"
-
-
-[custom.top_success]
-when = 'test "$STARSHIP_CMD_STATUS" = "0" || test -z "$STARSHIP_CMD_STATUS"'
-command = 'echo "┌─"'
-format = '[$output](bold green)'
-
-[custom.top_error]
-when = 'test "$STARSHIP_CMD_STATUS" != "0" && test -n "$STARSHIP_CMD_STATUS"'
-command = 'echo "┌─"'
-format = '[$output](bold red)'
-
-[custom.mid_success]
-when = 'test "$STARSHIP_CMD_STATUS" = "0" || test -z "$STARSHIP_CMD_STATUS"'
-command = 'echo "│"'
-format = '[$output](bold green)'
-
-[custom.mid_error]
-when = 'test "$STARSHIP_CMD_STATUS" != "0" && test -n "$STARSHIP_CMD_STATUS"'
-command = 'echo "│"'
-format = '[$output](bold red)'
-
-[custom.bot_success]
-when = 'test "$STARSHIP_CMD_STATUS" = "0" || test -z "$STARSHIP_CMD_STATUS"'
-command = 'echo "└─>"'
-format = '[$output ](bold green)'
-
-[custom.bot_error]
-when = 'test "$STARSHIP_CMD_STATUS" != "0" && test -n "$STARSHIP_CMD_STATUS"'
-command = 'echo "└─>"'
-format = '[$output ](bold red)'
-
 
 [os]
 disabled = false
@@ -61,9 +28,9 @@ format = "[@$hostname]($style)"
 style = "bold purple"
 
 [character]
-success_symbol = "[ ❯](bold green)"
-error_symbol = "[ ❯](bold red)"
-vimcmd_symbol = "[ ❮](bold yellow)"
+success_symbol = "[ ➜](bold green)"
+error_symbol = "[ ➜](bold red)"
+vimcmd_symbol = "[ ➜](bold yellow)"
 
 
 [directory]
