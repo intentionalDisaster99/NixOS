@@ -2,16 +2,14 @@ add_newline = true
 
 # The structure of the prompt
 format = """
-[┌─](bold green) $os$directory$git_branch$git_status$fill
+[┌─](bold green) $os$directory$git_branch$git_status
 [│](bold green) $all
 [└─> ](bold green)$username$hostname$character"""
 
-# The top bar stretcher
 [fill]
 symbol = "─"
 style = "bold green"
 
-# 1. The NixOS Snowflake
 [os]
 disabled = false
 format = "[$symbol ]($style)"
@@ -20,25 +18,21 @@ style = "bold blue"
 [os.symbols]
 NixOS = ""
 
-# 2. Always show the username
 [username]
 show_always = true
 format = "[$user]($style)"
 style_user = "bold cyan"
 
-# 3. Always show the hostname
 [hostname]
 ssh_only = false
 format = "[@$hostname]($style)"
 style = "bold purple"
 
-# 4. The typing arrow (changes to red if a command fails)
 [character]
 success_symbol = "[ ❯](bold green)"
 error_symbol = "[ ❯](bold red)"
 vimcmd_symbol = "[ ❮](bold yellow)"
 
-# --- Core Modules Polish ---
 
 [directory]
 style = "bold cyan"
