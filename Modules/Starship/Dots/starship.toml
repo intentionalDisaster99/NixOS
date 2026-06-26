@@ -4,3 +4,6 @@ format = '''
 [┌───────────────────>](bold green)
 [│](bold green)$all
 [└─>](bold green) '''
+
+
+add_newline = false
