@@ -6,6 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../Modules/Hyprland/system.nix
+    ../../Modules/Steam/system.nix
   ];
 
   # Me :D
@@ -64,9 +65,6 @@
     user = "sa9m";
   };
   services.displayManager.defaultSession = "hyprland-uwsm";
-
-  # TODO move to module
-  programs.steam.enable = true;
 
   hardware.enableAllFirmware = true;
   # Might add a wifi module, but this is here for now instead

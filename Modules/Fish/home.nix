@@ -13,7 +13,7 @@
     eza
     bat
     fireplace
-    os-prober # TODO move (this was put here in a hurry)
+    os-prober # TODO move (this was put here in a hurry) (to a boot module perchance)
   ];
 
   # Symlinking to my dots
