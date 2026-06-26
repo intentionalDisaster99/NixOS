@@ -10,8 +10,9 @@
     enableFishIntegration = true;
     settings = { };
   };
+  sfcdfs
 
-  home.packages = with pkgs; [
+    home.packages = with pkgs; [
     starship
   ];
 
