@@ -1,9 +1,29 @@
+# Add a blank line between prompts for breathing room
+add_newline = true
 
-# I've always been interested in having a the prompt above the input
-format = '''
+# Define the exact structure of the prompt
+format = """
 [┌───────────────────>](bold green)
-[│](bold green)$all
-[└─>](bold green) '''
+[│](bold green) $all
+$character"""
 
+# Configure the bottom line to change color on errors
+[character]
+success_symbol = "[└─>](bold green)"
+error_symbol = "[└─>](bold red)"
+vimcmd_symbol = "[└─>](bold yellow)"
 
-add_newline = false
+# --- Optional: Polish up the default modules to match the cool vibe ---
+
+[directory]
+style = "bold cyan"
+read_only = " 󰌾"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
