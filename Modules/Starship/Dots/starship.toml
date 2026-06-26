@@ -1,25 +1,48 @@
-# Add a blank line between prompts for breathing room
 add_newline = true
 
-# Define the exact structure of the prompt
+# The structure of the prompt
 format = """
-[┌───────────────────>](bold green)
+[┌─](bold green) $os$directory$git_branch$git_status$fill
 [│](bold green) $all
-$character"""
+[└─> ](bold green)$username$hostname$character"""
 
-# Configure the bottom line to change color on errors
+# The top bar stretcher
+[fill]
+symbol = "─"
+style = "bold green"
+
+# 1. The NixOS Snowflake
+[os]
+disabled = false
+format = "[$symbol ]($style)"
+style = "bold blue"
+
+[os.symbols]
+NixOS = ""
+
+# 2. Always show the username
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bold cyan"
+
+# 3. Always show the hostname
+[hostname]
+ssh_only = false
+format = "[@$hostname]($style)"
+style = "bold purple"
+
+# 4. The typing arrow (changes to red if a command fails)
 [character]
-success_symbol = "[└─>](bold green)"
-error_symbol = "[└─>](bold red)"
-vimcmd_symbol = "[└─>](bold yellow)"
+success_symbol = "[ ❯](bold green)"
+error_symbol = "[ ❯](bold red)"
+vimcmd_symbol = "[ ❮](bold yellow)"
 
-# --- Optional: Polish up the default modules to match the cool vibe ---
+# --- Core Modules Polish ---
 
 [directory]
 style = "bold cyan"
 read_only = " 󰌾"
-truncation_length = 3
-truncation_symbol = "…/"
 
 [git_branch]
 symbol = " "
