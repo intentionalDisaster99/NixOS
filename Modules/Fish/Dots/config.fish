@@ -20,6 +20,5 @@ alias vim="nvim"
 alias ssh="kitty +kitten ssh"
 
 
-
 zoxide init fish | source
 starship init fish | source
