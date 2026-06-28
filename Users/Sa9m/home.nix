@@ -38,7 +38,7 @@
     kicad
     nh
     hyfetch
-    # neofetch
+    fastfetch
   ];
 
   # My basic git configuration which I will always want on my system
