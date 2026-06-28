@@ -199,7 +199,7 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast"})
 
 -- Magic workspaces
 hl.bind(mainMod.. " + O", hl.dsp.exec_cmd("pypr toggle term"))
-hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
+-- hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
 
 -- Meta actions
 hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
@@ -231,8 +231,8 @@ hl.bind(mainMod.. " + ALT + S", hl.dsp.exec_cmd(ipc.. " plugin openPanel screen-
 hl.bind(mainMod.. " + C", hl.dsp.exec_cmd(ipc.. " plugin:screen-toolkit colorPicker"))
 
 -- hl.bind("${mainMod} + SHIFT + T", hl.dsp.exec_cmd('grim -g "$(slurp)" - | tesseract - - | wl-copy'))
--- hl.bind("${mainMod} + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
-hl.bind(mainMod.. " + ALT + V", hl.dsp.exec_cmd(ipc.. "launcher emoji"))
+hl.bind(mainMod.. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind(mainMod.. " + SHIFT + V", hl.dsp.exec_cmd(ipc.. "launcher emoji"))
 -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Noctalia things
