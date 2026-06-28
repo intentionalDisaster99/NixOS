@@ -32,6 +32,8 @@
     jq
     wl-screenrec
     python3
+    hyprpicker
+    translate-shell
   ];
 
   # Things that we need for Kitty (required by hyprland)
