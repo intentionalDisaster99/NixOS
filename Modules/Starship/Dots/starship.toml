@@ -2,9 +2,8 @@ palette = "noctalia"
 add_newline = false
 
 format = """
-[┌─](bold green) $os$directory$git_branch$git_status
-[│](bold green) 
-[└─> ](bold green)$username$hostname$character"""
+[┌](bold green) $os$username$hostname ── $directory$git_branch$git_status
+[└───> ](bold green)"""
 
 [fill]
 symbol = "─"
