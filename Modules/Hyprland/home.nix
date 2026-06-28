@@ -20,6 +20,9 @@
     nerd-fonts.noto
     hyprcursor
 
+    # TODO Move to a better spot
+    obsidian
+
     # Noctalia plugins TODO MOVE
     swappy
     grim
