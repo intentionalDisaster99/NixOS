@@ -37,6 +37,8 @@
     wl-clipboard
     kicad
     nh
+    hyfetch
+    neofetch
   ];
 
   # My basic git configuration which I will always want on my system
