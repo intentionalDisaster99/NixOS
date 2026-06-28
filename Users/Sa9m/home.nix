@@ -15,8 +15,9 @@
     # All of the program home manageing
     ./../../Modules/Fish/home.nix
     ./../../Modules/Hyprland/home.nix
+    ./../../Modules/Hypridle/home.nix
     ./../../Modules/Spotify/home.nix
-    ./../../Modules/nvim.nix # Removed till updating
+    ./../../Modules/nvim.nix # TODO update to use the actual dots
 
     # Resource movement
     ./../../Resources/Profile/profile.nix
