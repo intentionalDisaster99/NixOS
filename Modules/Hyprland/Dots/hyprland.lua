@@ -5,7 +5,7 @@ local menu        = "hyprlauncher"
 
 -- My main modifier
 local mainMod = "SUPER"
-local ipc = "noctalia-shell ipc call"
+local ipc = "noctalia-shell ipc call "
 
 
 -- -----------------------------------------------------
@@ -202,8 +202,6 @@ hl.bind(mainMod.. " + O", hl.dsp.exec_cmd("pypr toggle term"))
 hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
 
 -- Meta actions
-hl.bind(mainMod.. " + SHIFT + l", hl.dsp.exec_cmd("fish -c wlogout_uniqe")) -- TODO change to match noctalia
-hl.bind(mainMod.. " + L", hl.dsp.exec_cmd(ipc.. " lockScreen lock"))
 hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
 hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod.. " + CTRL + F", hl.dsp.window.fullscreen({ action = "toggle" }))
@@ -211,19 +209,30 @@ hl.bind(mainMod.. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod.. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 --
 -- -- Opening Apps (Wrapped in uwsm)
-hl.bind("ALT + SPACE", hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
+hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc.. "launcher toggle"))
 hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
 hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
 hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("uwsm app -- code"))
 hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 hl.bind(mainMod.. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
---
+
 -- -- Utilities
 hl.bind(mainMod.. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind(mainMod.. " + ALT + W", hl.dsp.exec_cmd(ipc.. "wallpaper toggle"))
+hl.bind(mainMod.. " + ALT + C", hl.dsp.exec_cmd(ipc.. "controlCenter toggle"))
+hl.bind(mainMod.. " + ALT + I", hl.dsp.exec_cmd(ipc.. "settings toggle"))
+hl.bind(mainMod.. " + ALT + H", hl.dsp.exec_cmd(ipc.. "bar toggle"))
+hl.bind(mainMod.. " + ALT + B", hl.dsp.exec_cmd(ipc.. ""))
+hl.bind(mainMod.. " + SHIFT + L", hl.dsp.exec_cmd(ipc.. " sessionMenu toggle"))
+hl.bind(mainMod.. " + L", hl.dsp.exec_cmd(ipc.. " lockScreen lock"))
+hl.bind(mainMod.. " + V", hl.dsp.exec_cmd(ipc.. " launcher clipboard"))
+hl.bind(mainMod.. " + ALT + S", hl.dsp.exec_cmd(ipc.. " plugin openPanel screen-toolkit"))
+hl.bind(mainMod.. " + C", hl.dsp.exec_cmd(ipc.. " plugin:screen-toolkit colorPicker"))
+
 -- hl.bind("${mainMod} + SHIFT + T", hl.dsp.exec_cmd('grim -g "$(slurp)" - | tesseract - - | wl-copy'))
 -- hl.bind("${mainMod} + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
--- hl.bind("${mainMod} + SHIFT + V", hl.dsp.exec_cmd("uwsm app -- emote"))
+hl.bind(mainMod.. " + ALT + V", hl.dsp.exec_cmd(ipc.. "launcher emoji"))
 -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Noctalia things
@@ -252,7 +261,6 @@ hl.bind(mainMod.. " + K", hl.dsp.workspace.toggle_special("calc"))
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc.. "volume increase"))
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc.. "volume decrease"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc.. "volume muteOutput"))
--- hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("volumectl -m toggle-mute")) -- removed because my keyboard doesn't have this key
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc.. "brightness increase"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc.. "brightness decrease"))
 
