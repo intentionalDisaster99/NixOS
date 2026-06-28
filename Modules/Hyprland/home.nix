@@ -31,6 +31,7 @@
     ffmpeg
     jq
     wl-screenrec
+    wf-recorder
     python3
     hyprpicker
     translate-shell
