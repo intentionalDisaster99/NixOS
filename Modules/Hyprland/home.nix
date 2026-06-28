@@ -19,7 +19,19 @@
     noto-fonts
     nerd-fonts.noto
     hyprcursor
+
+    # Noctalia plugins TODO MOVE
     swappy
+    grim
+    wl-clipboard
+    tesseract
+    imagemagick
+    zbar
+    curl
+    ffmpeg
+    jq
+    wl-screenrec
+    python3
   ];
 
   # Things that we need for Kitty (required by hyprland)
