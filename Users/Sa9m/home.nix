@@ -39,6 +39,7 @@
     nh
     hyfetch
     fastfetch
+    zoom-us
   ];
 
   # My basic git configuration which I will always want on my system
