@@ -35,6 +35,7 @@
     python3
     hyprpicker
     translate-shell
+    xdg-desktop-portal-hyprland
   ];
 
   # Things that we need for Kitty (required by hyprland)
