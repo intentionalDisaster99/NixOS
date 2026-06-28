@@ -225,16 +225,6 @@
                 },
                 {
                     "defaultSettings": {
-                        "colorPerformance": null,
-                        "colorPowerSaver": null,
-                        "colorizeByProfile": true,
-                        "showBalancedIcon": false,
-                        "showProfile": true
-                    },
-                    "id": "plugin:battery-and-power-management"
-                },
-                {
-                    "defaultSettings": {
                     },
                     "id": "plugin:mirror-mirror"
                 },
@@ -248,6 +238,15 @@
                         "swayCommand": "swaymsg"
                     },
                     "id": "plugin:monitor-layout"
+                },
+                {
+                    "deviceNativePath": "__default__",
+                    "displayMode": "icon-hover",
+                    "hideIfIdle": true,
+                    "hideIfNotDetected": false,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
                 },
                 {
                     "defaultSettings": {

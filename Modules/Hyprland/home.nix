@@ -37,6 +37,7 @@
     python3
     hyprpicker
     translate-shell
+    upower
   ];
 
   # Things that we need for Kitty (required by hyprland)
