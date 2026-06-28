@@ -57,6 +57,7 @@
     ./hardware-configuration.nix
     ../../Modules/Hyprland/system.nix
     ../../Modules/Steam/system.nix
+    ../../Modules/Tailscale/system.nix
   ];
 
   # Me :D

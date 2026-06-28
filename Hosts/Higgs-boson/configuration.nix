@@ -8,6 +8,8 @@
     ../../Modules/Hyprland/system.nix
     ../../Modules/Steam/system.nix
     ../../Modules/TLP/system.nix
+    ../../Modules/Tailscale/system.nix
+
   ];
 
   # Me :D
