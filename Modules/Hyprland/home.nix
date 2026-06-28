@@ -37,8 +37,8 @@
   };
 
   # Symlinking to my dots
-  home.file.".config/hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots";
+  home.file.".config/hypr/hyprland.lua" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots/hyprland.lua";
   };
 
   home.pointerCursor = {
