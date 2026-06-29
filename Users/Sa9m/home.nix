@@ -44,6 +44,9 @@
     # DEBUG TODO REMOVE
     libnotify
     droidcam
+    adb-sync
+    v4l-utils
+    android-tools
   ];
 
   # My basic git configuration which I will always want on my system
