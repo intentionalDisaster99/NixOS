@@ -289,7 +289,7 @@ end
 -- end
 
 for i = 1, 9 do
-    hl.bind(mainMod.. " + " .. i, hl.dsp.exec_cmd("fish -ic 'workspace_router focus " .. i .. "'"))
+    hl.bind(mainMod.. " + " .. i, hl.dsp.exec_cmd("fish -c 'workspace_router focus " .. i .. "'"))
     hl.bind(mainMod.. " + SHIFT + " .. i, hl.dsp.exec_cmd("workspace_router move " .. i))
 end
 
