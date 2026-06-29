@@ -43,6 +43,7 @@
 
     # TODO move
     kicad
+    github-desktop
 
     # DEBUG TODO REMOVE
     libnotify
