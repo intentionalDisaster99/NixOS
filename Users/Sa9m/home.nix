@@ -41,6 +41,9 @@
     fastfetch
     zoom-us
 
+    # TODO move
+    kicad
+
     # DEBUG TODO REMOVE
     libnotify
     droidcam
