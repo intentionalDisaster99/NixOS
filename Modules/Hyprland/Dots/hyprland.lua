@@ -284,14 +284,14 @@ end
 for i = 1, 9 do
     -- hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
     -- hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
-    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'hypr_ws focus " .. i .. "'"))
-    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'hypr_ws move " .. i .. "'"))
+    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'workspace_router focus " .. i .. "'"))
+    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'workspace_router move " .. i .. "'"))
 end
 
 -- hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = 10 }))
 -- hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
-hl.bind(mainMod.. " + 0", hl.dsp.exec_cmd("fish -c 'hypr_ws focus 10'"))
-hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.exec_cmd("fish -c 'hypr_ws move 10'"))
+hl.bind(mainMod.. " + 0", hl.dsp.exec_cmd("fish -c 'workspace_router focus 10'"))
+hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.exec_cmd("fish -c 'workspace_router move 10'"))
 
 -- To move between workspaces
 -- hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
