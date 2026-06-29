@@ -1,4 +1,6 @@
+#!/usr/bin/env fish
 function workspace_router
+    notify-send "the thing started"
     set action $argv[1]
     set num $argv[2]
 

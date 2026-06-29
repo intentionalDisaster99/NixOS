@@ -40,6 +40,9 @@
     hyfetch
     fastfetch
     zoom-us
+
+    # DEBUG TODO REMOVE
+    notify-send
   ];
 
   # My basic git configuration which I will always want on my system

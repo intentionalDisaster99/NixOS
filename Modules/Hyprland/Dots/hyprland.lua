@@ -281,11 +281,16 @@ for _, mon in ipairs(monitorOffsets) do
 end
 
 
+-- for i = 1, 9 do
+--     -- hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
+--     -- hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
+--     hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.exec_cmd("fish -ic 'workspace_router focus " .. i .. "'"))
+--     hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'workspace_router move " .. i .. "'"))
+-- end
+
 for i = 1, 9 do
-    -- hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
-    -- hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
-    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'workspace_router focus " .. i .. "'"))
-    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'workspace_router move " .. i .. "'"))
+    hl.bind(mainMod.. " + " .. i, hl.dsp.exec_cmd("fish -ic 'workspace_router focus " .. i .. "'"))
+    hl.bind(mainMod.. " + SHIFT + " .. i, hl.dsp.exec_cmd("workspace_router move " .. i))
 end
 
 -- hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = 10 }))
