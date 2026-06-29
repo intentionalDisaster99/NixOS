@@ -42,7 +42,7 @@
     zoom-us
 
     # DEBUG TODO REMOVE
-    notify-send
+    libnotify
   ];
 
   # My basic git configuration which I will always want on my system
