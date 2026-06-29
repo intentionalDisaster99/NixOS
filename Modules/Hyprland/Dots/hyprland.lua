@@ -275,34 +275,21 @@ for _, mon in ipairs(monitorOffsets) do
     local name = mon[1]
     local offset = mon[2]
     for i = 1, 10 do
-        hl.workspace_rule({ workspace = tostring(offset + i), monitor = name })
+        hl.workspace_rule({ workspace = tostring(offset + i), monitor = name, persistent = true })
     end
 
 end
 
-
--- for i = 1, 9 do
---     -- hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
---     -- hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
---     hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.exec_cmd("fish -ic 'workspace_router focus " .. i .. "'"))
---     hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'workspace_router move " .. i .. "'"))
--- end
-
 for i = 1, 9 do
-    hl.bind(mainMod.. " + " .. i, hl.dsp.exec_cmd("fish -c 'workspace_router focus " .. i .. "'"))
-    hl.bind(mainMod.. " + SHIFT + " .. i, hl.dsp.exec_cmd("workspace_router move " .. i))
+    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = "m~" .. tostring(i) }))
+    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = "m~" .. tostring(i) }))
 end
 
--- hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = 10 }))
--- hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
-hl.bind(mainMod.. " + 0", hl.dsp.exec_cmd("fish -c 'workspace_router focus 10'"))
-hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.exec_cmd("fish -c 'workspace_router move 10'"))
+hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = "m~10" }))
+hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = "m~10" }))
 
--- To move between workspaces
--- hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
--- hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "m-1" }))
 
 -- Mouse Resizing TODO finish implementing these
 -- hl.bind(mainMod.. " + mouse:272", hl.dsp.window.float({ action = "toggle" }), {release = true }) # Commented until fixed
