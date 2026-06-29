@@ -4,8 +4,8 @@
   "catColor": "default",
   "catSize": 1,
   "catOffsetY": 0,
-  "raveMode": false,
-  "tappyMode": true,
+  "raveMode": true,
+  "tappyMode": false,
   "useMprisFilter": false,
   "inputDevices": [
     "/dev/input/event0",

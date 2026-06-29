@@ -263,19 +263,43 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc.. "brightness increase"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc.. "brightness decrease"))
 
 -- Workspaces 
-for i = 1, 9 do
-    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
+local monitorOffsets = {
+    {"eDP-1", 0},
+    {"DP-1", 10},
+    {"HDMI-A-1", 20},
+    {"DP-3", 30},
+    {"HEADLESS-1", 40}
+}
+
+for _, mon in ipairs(monitorOffsets) do 
+    local name = mon[1]
+    local offset = mon[2]
+    for i = 1, 10 do
+        hl.workspace_rule({ workspace = tostring(offset + i), monitor = name })
+    end
+
 end
 
-hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = 10 }))
-hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
+
+for i = 1, 9 do
+    -- hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
+    -- hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'hypr_ws focus " .. i .. "'"))
+    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.exec_cmd("fish -c 'hypr_ws move " .. i .. "'"))
+end
+
+-- hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = 10 }))
+-- hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
+hl.bind(mainMod.. " + 0", hl.dsp.exec_cmd("fish -c 'hypr_ws focus 10'"))
+hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.exec_cmd("fish -c 'hypr_ws move 10'"))
 
 -- To move between workspaces
+-- hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
+-- hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "e-1" }))
 
--- Mouse Resizing
+-- Mouse Resizing TODO finish implementing these
 -- hl.bind(mainMod.. " + mouse:272", hl.dsp.window.float({ action = "toggle" }), {release = true }) # Commented until fixed
 -- hl.bind(mainMod.. " + mouse:273", hl.dsp.window.pin(), { release = true }) # Commented until fixed
 hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag())
@@ -286,4 +310,3 @@ hl.bind(mainMod.. " + ALT + mouse:272", hl.dsp.window.resize())
 -- Colors from noctalia
 local decor = require("noctalia-colors")
 hl.config(decor)
--- require("noctalia-colors")
