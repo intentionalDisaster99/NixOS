@@ -24,10 +24,8 @@ function workspace_router
     set target (math $offset + $num)
 
 if test "$action" = "focus"
-        # hyprctl dispatch "\"workspace\", \"$target\""
         hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = "'$target'" }))'
     else if test "$action" = "move"
-        # hyprctl dispatch "\"movetoworkspace\", \"$target\""
-        hyprctl eval 'hl.dispatch(hl.dsp.window.move({ workspace = "'$target'" }))'
-    endp
+        hyprctl eval 'hl.dispatch(hl.dsp.window.move({ workspace = '$target' }))'
+    end
 end
