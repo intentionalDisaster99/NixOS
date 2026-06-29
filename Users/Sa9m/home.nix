@@ -43,6 +43,7 @@
 
     # DEBUG TODO REMOVE
     libnotify
+    droidcam
   ];
 
   # My basic git configuration which I will always want on my system

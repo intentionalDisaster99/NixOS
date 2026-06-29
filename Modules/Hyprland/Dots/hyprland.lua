@@ -55,9 +55,9 @@ hl.monitor({
 -- Automatically startign stuff
 hl.on("hyprland.start", function () 
   hl.exec_cmd("noctalia-shell")
-  hl.exec_cmd(ipc.. " lockScreen lock")
-  hl.exec_cmd("pypr") -- TODO move to fish autostart
-  -- hl.exec_cmd(terminal) -- Set aside for a fish autostart function
+--   hl.exec_cmd(ipc.. " lockScreen locIk")
+--   hl.exec_cmd("pypr") -- TODO move to fish autostart
+  hl.exec_cmd("fish -c 'autostart'") -- Set aside for a fish autostart function
 end)
 
 
@@ -227,6 +227,7 @@ hl.bind(mainMod.. " + SHIFT + L", hl.dsp.exec_cmd(ipc.. " sessionMenu toggle"))
 hl.bind(mainMod.. " + L", hl.dsp.exec_cmd(ipc.. " lockScreen lock"))
 hl.bind(mainMod.. " + V", hl.dsp.exec_cmd(ipc.. " launcher clipboard"))
 hl.bind(mainMod.. " + ALT + S", hl.dsp.exec_cmd(ipc.. " plugin openPanel screen-toolkit"))
+hl.bind(mainMod.. " + ALT + Q", hl.dsp.exec_cmd(ipc.. " calendar toggle"))
 hl.bind(mainMod.. " + C", hl.dsp.exec_cmd(ipc.. " plugin:screen-toolkit colorPicker"))
 
 hl.bind(mainMod.. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
