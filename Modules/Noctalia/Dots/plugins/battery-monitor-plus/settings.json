@@ -3,7 +3,7 @@
   "deviceNativePath": "__default__",
   "showPowerProfiles": true,
   "showNoctaliaPerformance": true,
-  "hideIfNotDetected": false,
+  "hideIfNotDetected": true,
   "hideIfIdle": false,
   "refreshIntervalSeconds": 5,
   "showPowerInBar": false,
