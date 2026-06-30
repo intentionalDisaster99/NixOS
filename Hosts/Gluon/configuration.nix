@@ -159,4 +159,10 @@
   '';
   programs.droidcam.enable = true;
 
+  # TODO move to SSH-host module
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
+
 }
