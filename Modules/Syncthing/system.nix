@@ -1,4 +1,4 @@
-# Syncthing in general to be used (you'll still have to set it up yourself, go to localhost:8080)
+# Syncthing in general to be used (you'll still have to set it up yourself, go to localhost:8384)
 # Make sure to update sa9m to your username if you use it
 { config, pkgs, lib, ... }:
 

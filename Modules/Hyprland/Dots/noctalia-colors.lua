@@ -29,8 +29,8 @@ return {
         },
         shadow = {
             enabled = true,
-            range = 5,
-            render_power = 1,
+            range = 10,
+            render_power = 4,
             color = "rgb(e6bdbc)",
             color_inactive = "0x00000000",
         },
