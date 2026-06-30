@@ -240,15 +240,6 @@
                     "id": "plugin:monitor-layout"
                 },
                 {
-                    "deviceNativePath": "__default__",
-                    "displayMode": "icon-hover",
-                    "hideIfIdle": false,
-                    "hideIfNotDetected": false,
-                    "id": "Battery",
-                    "showNoctaliaPerformance": true,
-                    "showPowerProfiles": true
-                },
-                {
                     "defaultSettings": {
                         "compactMode": false,
                         "defaultPeerAction": "copy-ip",
@@ -316,6 +307,9 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "id": "plugin:battery-monitor-plus"
                 }
             ]
         }
