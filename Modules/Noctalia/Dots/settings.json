@@ -309,7 +309,21 @@
                     "useDistroLogo": false
                 },
                 {
+                    "defaultSettings": {
+                        "deviceNativePath": "__default__",
+                        "displayMode": "graphic-clean",
+                        "hideIfIdle": false,
+                        "hideIfNotDetected": true,
+                        "refreshIntervalSeconds": 5,
+                        "showNoctaliaPerformance": false,
+                        "showPowerInBar": true,
+                        "showPowerProfiles": false,
+                        "showTimeInBar": true
+                    },
                     "id": "plugin:battery-monitor-plus"
+                },
+                {
+                    "id": "plugin:battery-and-power-management"
                 }
             ]
         }
