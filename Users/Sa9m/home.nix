@@ -17,6 +17,7 @@
     ./../../Modules/Hyprland/home.nix
     ./../../Modules/Hypridle/home.nix
     ./../../Modules/Spotify/home.nix
+    ./../../Modules/Syncthing/home.nix
     ./../../Modules/nvim.nix # TODO update to use the actual dots
 
     # Resource movement
