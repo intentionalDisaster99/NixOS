@@ -198,7 +198,7 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast"})
 -- Keybinds start here
 
 -- TEST 
-hl.bind(mainMod.. " + P", hl.dsp.exec_cmd("fish -c \"autostart\""))
+-- hl.bind(mainMod.. " + P", hl.dsp.exec_cmd("fish -c \"autostart\""))
 
 -- Magic workspaces
 hl.bind(mainMod.. " + O", hl.dsp.exec_cmd("pypr toggle term"))
