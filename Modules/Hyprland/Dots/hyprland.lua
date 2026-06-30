@@ -57,7 +57,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("noctalia-shell")
 --   hl.exec_cmd(ipc.. " lockScreen locIk")
 --   hl.exec_cmd("pypr") -- TODO move to fish autostart
-  hl.dsp.exec_cmd("fish -c autostart")
+  hl.dsp.exec_cmd(("fish -c \"autostart\""))
 end)
 
 
