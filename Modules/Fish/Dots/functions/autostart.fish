@@ -2,12 +2,13 @@
 function autostart
 
     # Making my bluetooth stuff work
-    mpris-proxy &
+    mpris-proxy & disown
 
     # Starting my scratchpads
-    pypr &
+    pypr & disown
 
     # Locking the device
+    sleep 1
     noctalia-shell ipc call lockScreen lock
 
 end
