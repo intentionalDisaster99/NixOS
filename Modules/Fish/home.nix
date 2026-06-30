@@ -12,6 +12,7 @@
     zoxide
     eza
     bat
+    fish
     fireplace
     os-prober # TODO move (this was put here in a hurry) (to a boot module perchance)
   ];

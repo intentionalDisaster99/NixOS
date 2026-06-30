@@ -57,7 +57,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("noctalia-shell")
 --   hl.exec_cmd(ipc.. " lockScreen locIk")
 --   hl.exec_cmd("pypr") -- TODO move to fish autostart
-  hl.exec_cmd("autostart") -- Set aside for a fish autostart function
+  hl.dsp.exec_cmd("fish -c autostart")
 end)
 
 
@@ -196,6 +196,9 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast"})
 
 
 -- Keybinds start here
+
+-- TEST 
+hl.bind(mainMod.. " + P", hl.dsp.exec_cmd("fish -c \"autostart\""))
 
 -- Magic workspaces
 hl.bind(mainMod.. " + O", hl.dsp.exec_cmd("pypr toggle term"))

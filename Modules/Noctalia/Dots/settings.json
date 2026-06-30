@@ -299,16 +299,6 @@
                     "id": "plugin:kde-connect"
                 },
                 {
-                    "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
-                    "useDistroLogo": false
-                },
-                {
                     "defaultSettings": {
                         "deviceNativePath": "__default__",
                         "displayMode": "graphic-clean",
@@ -323,7 +313,14 @@
                     "id": "plugin:battery-monitor-plus"
                 },
                 {
-                    "id": "plugin:battery-and-power-management"
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
+                    "customIconPath": "",
+                    "enableColorization": false,
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": false
                 }
             ]
         }
