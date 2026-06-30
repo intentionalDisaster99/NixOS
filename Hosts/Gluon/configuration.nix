@@ -58,6 +58,7 @@
     ../../Modules/Hyprland/system.nix
     ../../Modules/Steam/system.nix
     ../../Modules/Tailscale/system.nix
+    ../../Modules/Syncthing/system.nix
   ];
 
   # Me :D

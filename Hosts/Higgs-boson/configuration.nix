@@ -9,7 +9,7 @@
     ../../Modules/Steam/system.nix
     ../../Modules/TLP/system.nix
     ../../Modules/Tailscale/system.nix
-
+    ../../Modules/Syncthing/system.nix
   ];
 
   # Me :D
