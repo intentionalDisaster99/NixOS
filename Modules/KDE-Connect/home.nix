@@ -2,7 +2,7 @@
 { users, config, pkgs, inputs, ... }:
 {
 
-  home-manager.users.sa9m.services.kdeconnect.enable = true;
+  home-manager.users.username.services.kdeconnect.enable = true;
 
   # networking.firewall = rec {
   #   allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
