@@ -216,14 +216,6 @@
                     "textColor": "none"
                 },
                 {
-                    "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
-                    "iconColor": "none",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "primary"
-                },
-                {
                     "defaultSettings": {
                     },
                     "id": "plugin:mirror-mirror"
@@ -294,6 +286,14 @@
                     "id": "plugin:screen-toolkit"
                 },
                 {
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
+                },
+                {
                     "defaultSettings": {
                     },
                     "id": "plugin:kde-connect"
@@ -321,6 +321,9 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "id": "plugin:keep-awake-plus"
                 }
             ]
         }
@@ -411,7 +414,21 @@
                     "id": "PowerProfile"
                 },
                 {
-                    "id": "KeepAwake"
+                    "defaultSettings": {
+                        "activateOnLeftClick": false,
+                        "defaultScope": "partial",
+                        "durations": [
+                            30,
+                            60,
+                            120,
+                            240,
+                            480
+                        ],
+                        "includeUnlimited": true,
+                        "quickExtendMinutes": 30,
+                        "showRemainingText": true
+                    },
+                    "id": "plugin:keep-awake-plus"
                 },
                 {
                     "id": "NightLight"

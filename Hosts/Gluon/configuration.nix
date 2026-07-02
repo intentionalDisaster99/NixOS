@@ -59,6 +59,7 @@
     ../../Modules/Steam/system.nix
     ../../Modules/Tailscale/system.nix
     ../../Modules/Syncthing/system.nix
+    ../../Modules/KDE-Connect/system.nix
   ];
 
   # Me :D
