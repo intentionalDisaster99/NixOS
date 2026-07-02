@@ -1,8 +1,7 @@
 # Installs and enables KDE connect so that I can connect with ma phone
 { users, config, pkgs, inputs, ... }:
 {
-
-  home-manager.users.sa9m.services.kdeconnect.enable = true;
+  services.kdeconnect.enable = true;
 
   networking.firewall = rec {
     allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
