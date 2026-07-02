@@ -1,10 +1,12 @@
-# Installs and enables KDE connect so that I can connect with my phone
+# Installs and enables KDE connect so that I can connect with ma phone
 { users, config, pkgs, inputs, ... }:
 {
 
-  # To connect to ma phone
-  programs.kdeconnect = {
-    enable = true;
+  home-manager.users.username.services.kdeconnect.enable = true;
+
+  networking.firewall = rec {
+    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
 }
