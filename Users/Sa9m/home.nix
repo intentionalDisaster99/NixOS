@@ -18,6 +18,7 @@
     ./../../Modules/Hypridle/home.nix
     ./../../Modules/Spotify/home.nix
     ./../../Modules/Obsidian/home.nix
+    ./../../Modules/KDE-Connect/home.nix
     ./../../Modules/nvim.nix # TODO update to use the actual dots
 
     # Resource movement
