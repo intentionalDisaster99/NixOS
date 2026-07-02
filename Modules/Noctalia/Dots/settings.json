@@ -323,6 +323,20 @@
                     "useDistroLogo": false
                 },
                 {
+                    "defaultSettings": {
+                        "activateOnLeftClick": false,
+                        "defaultScope": "partial",
+                        "durations": [
+                            30,
+                            60,
+                            120,
+                            240,
+                            480
+                        ],
+                        "includeUnlimited": true,
+                        "quickExtendMinutes": 30,
+                        "showRemainingText": true
+                    },
                     "id": "plugin:keep-awake-plus"
                 }
             ]
@@ -597,7 +611,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
