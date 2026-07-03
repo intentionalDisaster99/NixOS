@@ -20,7 +20,7 @@
     nerd-fonts.noto
     hyprcursor
     qalculate-gtk
-    kclock
+    kdePackages.kclock
 
     # TODO Move to a better spot
     obsidian
