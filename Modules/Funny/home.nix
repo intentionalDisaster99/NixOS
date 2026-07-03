@@ -7,7 +7,6 @@
 
 
   home.packages = with pkgs; [
-
     activate-linux
     kittysay
     neo-cowsay
