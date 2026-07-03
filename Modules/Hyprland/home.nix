@@ -19,6 +19,7 @@
     noto-fonts
     nerd-fonts.noto
     hyprcursor
+    galculate-gtk
 
     # TODO Move to a better spot
     obsidian
