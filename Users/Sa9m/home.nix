@@ -19,6 +19,7 @@
     ./../../Modules/Spotify/home.nix
     ./../../Modules/Obsidian/home.nix
     ./../../Modules/KDE-Connect/home.nix
+    ./../../Modules/Funny/home.nix
     ./../../Modules/nvim.nix # TODO update to use the actual dots
 
     # Resource movement
