@@ -3,7 +3,7 @@
 
 {
   programs.neovim = {
-    enable = true;
+    # enable = true;
     defaultEditor = true;
     extraPackages = with pkgs; [
       ripgrep
