@@ -1,23 +1,23 @@
 return {
     general = {
         col = {
-            active_border = "rgb(98cbff)",
-            inactive_border = "rgb(121416)",
+            active_border = "rgb(a8c8ff)",
+            inactive_border = "rgb(121316)",
         },
     },
     group = {
         col = {
-            border_active = "rgb(b9c8da)",
-            border_inactive = "rgb(121416)",
+            border_active = "rgb(bdc7dc)",
+            border_inactive = "rgb(121316)",
             border_locked_active = "rgb(ffb4ab)",
-            border_locked_inactive = "rgb(121416)",
+            border_locked_inactive = "rgb(121316)",
         },
         groupbar = {
             col = {
-                active = "rgb(b9c8da)",
-                inactive = "rgb(121416)",
+                active = "rgb(bdc7dc)",
+                inactive = "rgb(121316)",
                 locked_active = "rgb(ffb4ab)",
-                locked_inactive = "rgb(121416)",
+                locked_inactive = "rgb(121316)",
             },
         },
     },
@@ -31,7 +31,7 @@ return {
             enabled = true,
             range = 10,
             render_power = 4,
-            color = "rgb(b9c8da)",
+            color = "rgb(bdc7dc)",
             color_inactive = "0x00000000",
         },
     },
