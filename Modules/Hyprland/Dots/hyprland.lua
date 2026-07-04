@@ -84,7 +84,9 @@ hl.config({
             natural_scroll = true,
             tap_and_drag = true
         },
-        numlock_by_default = true
+        numlock_by_default = true,
+        kb_options = "caps:swapescape"
+
     },
 
     -- decoration = {
