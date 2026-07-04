@@ -20,7 +20,7 @@
     ./../../Modules/Obsidian/home.nix
     ./../../Modules/KDE-Connect/home.nix
     ./../../Modules/Funny/home.nix
-    ./../../Modules/nvim.nix # TODO update to use the actual dots
+    ./../../Modules/NVim/home.nix
 
     # Resource movement
     ./../../Resources/Profile/profile.nix
