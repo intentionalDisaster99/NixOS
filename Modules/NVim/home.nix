@@ -17,8 +17,8 @@
   };
 
   # Symlinking to my dots
-  home.file.".config/nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/NVim/Dots";
-  };
+  # home.file.".config/nvim" = {
+  #   source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/NVim/Dots";
+  # };
 
 }
