@@ -22,6 +22,10 @@
     qalculate-gtk
     kdePackages.kclock
 
+    # TODO move, these should likely be in a higher-up level (or wherevever dolphin is installed)
+    zip
+    libzip
+
     # TODO Move to a better spot
     obsidian
 
