@@ -85,7 +85,7 @@ end, { desc = 'Print the git blame for the current line' })
 -- See `:h :packadd`, `:h vim.pack`
 
 -- Add the "nohlsearch" package to automatically disable search highlighting after
--- 'updatetime' and when going to insert mode.sfdsfs
+-- 'updatetime' and when going to insert mode.
 vim.cmd('packadd! nohlsearch')
 
 -- Install third-party plugins via "vim.pack.add()".
