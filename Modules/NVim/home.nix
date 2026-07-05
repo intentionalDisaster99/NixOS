@@ -15,6 +15,7 @@
     wl-clipboard
     nodejs
     tree-sitter
+    statix
   ];
 
 
