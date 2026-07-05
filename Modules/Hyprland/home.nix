@@ -62,9 +62,10 @@
   };
 
   # Symlinking to my dots
-  home.file.".config/hypr/hyprland.lua" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots/hyprland.lua";
-  };
+  xdg.configFile."hypr/hyprland.lua".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots/hyprland.lua";
+  # home.file.".config/hypr/hyprland.lua" = {
+  #   source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Hyprland/Dots/hyprland.lua";
+  # };
 
   home.pointerCursor = {
     name = "breeze_cursors";
