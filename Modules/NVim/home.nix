@@ -16,6 +16,7 @@
     nodejs
     tree-sitter
     statix
+    nil
   ];
 
 
