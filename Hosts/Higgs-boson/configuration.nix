@@ -65,6 +65,9 @@
     };
   };
 
+  # To allow things to run stuff by downloading from the internet
+  programs.nix-ld.enable = true;
+
   services.displayManager.autoLogin = {
     enable = true;
     user = "sa9m";
