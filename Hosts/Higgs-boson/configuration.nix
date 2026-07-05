@@ -49,10 +49,6 @@
     "/share/applications"
   ];
 
-  # Reuqired to allow nvim to watch stuff (apparently)
-  boot.kernel.sysctl = {
-    "fs.inotify.max_user_watches" = 524288;
-  };
 
   # Will likely be moved to a module tbh
   hardware.bluetooth = {
@@ -98,10 +94,6 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
 
-  # This is for vscode (and likely not needed when archives is removed)
-  boot.kernel.sysctl = {
-    "fs.inotify.max_user_watches" = 524288;
-  };
 
   programs.hyprland.enable = true;
 
