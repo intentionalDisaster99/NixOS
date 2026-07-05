@@ -71,8 +71,8 @@
   services.displayManager.autoLogin = {
     enable = true;
     user = "sa9m";
+    defaultSession = "hyprland-uwsm";
   };
-  services.displayManager.defaultSession = "hyprland-uwsm";
 
   hardware.enableAllFirmware = true;
   # Might add a wifi module, but this is here for now instead
