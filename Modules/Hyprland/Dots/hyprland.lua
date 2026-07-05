@@ -85,7 +85,7 @@ hl.config({
             tap_and_drag = true
         },
         numlock_by_default = true,
-        kb_options = "caps:swapescape"
+        -- kb_options = "caps:swapescape"
 
     },
 
@@ -300,6 +300,7 @@ hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "m-1" }))
 -- Mouse Resizing TODO finish implementing these
 hl.bind(mainMod.. " + SHIFT + mouse:272", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod.. " + SHIFT + mouse:273", hl.dsp.window.pin())
+hl.bind(mainMod.. " + SHIFT + ALT + mouse:272", hl.dsp.window.pin())
 hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod.. " + mouse:273", hl.dsp.window.resize())
 hl.bind(mainMod.. " + ALT + mouse:272", hl.dsp.window.resize())
