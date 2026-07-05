@@ -49,6 +49,11 @@
     "/share/applications"
   ];
 
+  # Reuqired to allow nvim to watch stuff (apparently)
+  boot.kernel.sysctl = {
+    "fs.inotify.max_user_watches" = 524288;
+  };
+
   # Will likely be moved to a module tbh
   hardware.bluetooth = {
     enable = true;
