@@ -307,5 +307,5 @@ hl.bind(mainMod.. " + ALT + mouse:272", hl.dsp.window.resize())
 
 
 -- Colors from noctalia
--- local decor = require("noctalia-colors")
--- hl.config(decor)
+local decor = require("noctalia-colors")
+hl.config(decor)
