@@ -1,7 +1,7 @@
 return {
-  bg = "#181211",
-  fg = "#ede0dd",
-  accent = "#ffb4a7",
+  bg = "#151316",
+  fg = "#e7e1e5",
+  accent = "#dcb8ff",
   error = "#ffb4ab",
-  warning = "#ddc48c",
+  warning = "#f3b7bf",
 }
