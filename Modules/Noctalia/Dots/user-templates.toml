@@ -18,5 +18,5 @@ post_hook = "sh -c 'hyprctl reload'"
 
 [templates.neovim]
 input_path = "~/.config/noctalia/templates/neovim-custom.lua"
-output_path = "~/.config/nvim/lua/colors/noctalia.lua"
+output_path = "~/.config/nvim/colors/noctalia.lua"
 # post_hook = "sh -c 'hyprctl reload'"
