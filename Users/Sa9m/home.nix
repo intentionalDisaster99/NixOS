@@ -1,14 +1,16 @@
 #
-# This is my home-manager entrypoint, so where I define my sa9m user. 
+# This is my home-manager entrypoint, so where I define my sa9m user.
 # If you are wanting to use my config, you can change your settings here (or copy this to have more users)
 #
 
-
-{ config, pkgs, inputs, ... }:
+{ config
+, pkgs
+, inputs
+, ...
+}:
 {
   home.username = "sa9m";
   home.homeDirectory = "/home/sa9m";
-
 
   imports = [
 
@@ -43,6 +45,7 @@
     hyfetch
     fastfetch
     zoom-us
+    ubase
 
     # TODO move
     kicad
@@ -65,6 +68,4 @@
 
   home.stateVersion = "26.05";
 
-
 }
-
