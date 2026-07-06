@@ -46,7 +46,7 @@
     fastfetch
     zoom-us
     ubase
-    ark
+    kdePackages.ark
     unzip
 
     # TODO move
