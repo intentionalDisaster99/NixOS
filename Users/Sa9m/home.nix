@@ -46,6 +46,8 @@
     fastfetch
     zoom-us
     ubase
+    ark
+    unzip
 
     # TODO move
     kicad
