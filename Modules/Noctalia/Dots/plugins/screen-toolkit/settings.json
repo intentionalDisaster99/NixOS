@@ -156,7 +156,7 @@
   "resultHsl": "hsl(200, 2%, 31%)",
   "colorCapturePath": "/tmp/screen-toolkit-colorpicker.png",
   "colorCacheBust": 1782624282703,
-  "ocrResult": "\"galculate-gtk\"",
+  "ocrResult": "Error\n\nError loading library table 'KiCad\"\n\nNested table 'nix/store/20wacqvxdkn8qiai1 r619g8p8xzblp31-kicad-\nbase-10.0.1/share/kicad/template/sym-lib-table’ not found.",
   "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
   "qrResult": "",
   "qrCapturePath": "",
