@@ -48,6 +48,7 @@
     ubase
     kdePackages.ark
     unzip
+    libreoffice
 
     # TODO move
     kicad
