@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ config
+, pkgs
+, inputs
+, ...
+}:
 
 # Note to self: to edit secrets, run `sops secrets/secrets.yaml`
 
@@ -17,7 +21,16 @@
   users.users = {
     sa9m = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "dialout" "plugdev" "docker" "input" "uinput" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "audio"
+        "dialout"
+        "plugdev"
+        "docker"
+        "input"
+        "uinput"
+      ];
     };
   };
 
@@ -28,7 +41,10 @@
   time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   networking.hostName = "higgs-boson";
   boot.kernelPackages = pkgs.linuxPackages_testing;
   swapDevices = [
@@ -47,7 +63,6 @@
     default = "saved";
     useOSProber = true;
 
-
     efiSupport = true;
     device = "nodev";
   };
@@ -56,7 +71,7 @@
     "/share/xdg-desktop-portal"
     "/share/applications"
   ];
-
+  fonts.fontconfig.antialias = true;
 
   # Will likely be moved to a module tbh
   hardware.bluetooth = {
@@ -93,18 +108,17 @@
   system.stateVersion = "23.11";
 
   # TODO move to a module
-  # Udev rules for the pico 
+  # Udev rules for the pico
   services.udev.extraRules = ''
     # Raspberry Pi Pico (Bootloader Mode)
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
-    
+
     # Raspberry Pi Debug Probe (CMSIS-DAP)
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
-    
+
     # Generic CMSIS-DAP probes (if you use a different debugger)
     SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
-
 
   programs.hyprland.enable = true;
 
