@@ -153,6 +153,7 @@
     device = "nodev";
   };
 
+  fonts.fontconfig.antialias = true;
   programs.hyprland.enable = true;
 
   boot.extraModprobeConfig = ''
