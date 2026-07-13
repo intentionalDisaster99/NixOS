@@ -49,6 +49,7 @@
     kdePackages.ark
     unzip
     libreoffice
+    stm32cubemx
 
     # TODO move
     kicad
