@@ -50,6 +50,7 @@
     unzip
     libreoffice
     stm32cubemx
+    openrgb
 
     # TODO move
     kicad
