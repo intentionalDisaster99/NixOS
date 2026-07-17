@@ -128,4 +128,6 @@
     openFirewall = true;
   };
 
+  # Testing stuff, this may or may not stay
+  services.flatpak.enable = true;
 }

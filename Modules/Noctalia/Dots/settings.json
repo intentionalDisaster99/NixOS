@@ -516,7 +516,7 @@
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
         "enableBlurBehind": true,
-        "enableLockScreenCountdown": true,
+        "enableLockScreenCountdown": false,
         "enableLockScreenMediaControls": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
@@ -549,7 +549,7 @@
         "lockOnSuspend": true,
         "lockScreenAnimations": true,
         "lockScreenBlur": 0,
-        "lockScreenCountdownDuration": 10000,
+        "lockScreenCountdownDuration": 1000,
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
@@ -623,7 +623,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -685,7 +685,7 @@
     },
     "sessionMenu": {
         "countdownDuration": 2000,
-        "enableCountdown": true,
+        "enableCountdown": false,
         "largeButtonsLayout": "grid",
         "largeButtonsStyle": true,
         "position": "center",
