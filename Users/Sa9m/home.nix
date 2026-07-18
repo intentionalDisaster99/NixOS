@@ -51,6 +51,7 @@
     libreoffice
     stm32cubemx
     openrgb
+    rustdesk-flutter
 
     # TODO move
     kicad
