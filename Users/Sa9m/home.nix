@@ -52,6 +52,7 @@
     stm32cubemx
     openrgb
     rustdesk-flutter
+    jellyfin-desktop
 
     # TODO move
     kicad
