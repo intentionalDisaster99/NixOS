@@ -634,7 +634,7 @@
         "disableWallpaper": true
     },
     "notifications": {
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.36,
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
         "density": "default",
@@ -862,7 +862,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "space",
+        "wallhavenQuery": "Glass",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
