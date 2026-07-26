@@ -53,7 +53,7 @@
     openrgb
     rustdesk-flutter
     jellyfin-desktop
-    fetch
+    # fetch
 
     # TODO move
     kicad
