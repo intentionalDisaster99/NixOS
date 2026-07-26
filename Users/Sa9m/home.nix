@@ -54,7 +54,7 @@
     rustdesk-flutter
     jellyfin-desktop
     # fetch
-    pavcontrol
+    pavucontrol
 
     # TODO move
     kicad
