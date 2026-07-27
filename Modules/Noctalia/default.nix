@@ -1,13 +1,19 @@
-{ users, config, pkgs, inputs, username, ... }:
+{ users, config, pkgs, inputs, username, ... }: {
 
-{
-
-  programs.noctalia-shell = {
-    enable = true;
-  };
 
 
   home-manager.users.${username} = {
+
+    # Import the home manager module
+    imports = [
+      inputs.noctalia.homeModules.default
+    ];
+
+    # Turning it on
+    programs.noctalia-shell = {
+      enable = true;
+    };
+
 
     home.packages = with pkgs; [
       noctalia-shell

@@ -2,7 +2,6 @@
 { pkgs, hyprland, config, inputs, username, ... }: {
 
   home-manager.users.${username} = {
-
     home.file.".face" = {
       source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Resources/Profile/profile.jpg";
     };
