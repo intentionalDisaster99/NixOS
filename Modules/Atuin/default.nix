@@ -5,7 +5,7 @@
 {
 
   # Defining with home-manager
-  home-manager.users.${user} = {
+  home-manager.users.${username} = {
 
     # Install atuin package to system and add to path.
     home.packages = with pkgs; [ atuin ];
