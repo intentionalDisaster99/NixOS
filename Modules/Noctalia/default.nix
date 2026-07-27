@@ -2,7 +2,7 @@
 
 
 
-  home-manager.users.${username} = {
+  home-manager.users.${username} = { config, ... }: {
 
     # Import the home manager module
     imports = [
