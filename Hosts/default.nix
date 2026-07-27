@@ -20,7 +20,7 @@
     ../Modules/KDE-Connect/default.nix
     ../Modules/Funny/default.nix
     ../Modules/NVim/default.nix
-    ../Modules/Hyprland/defualt.nix
+    # ../Modules/Hyprland/default.nix
     ../Modules/Steam/deault.nix
     ../Modules/Tailscale/default.nix
     ../Modules/Syncthing/default.nix
