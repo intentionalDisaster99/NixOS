@@ -35,4 +35,8 @@ return {
             color_inactive = "0x00000000",
         },
     },
-}   
+  windowrulev2 = {
+        -- For making my dropdown terminal use the theme color border
+        "bordercolor rgb({{colors.primary.default.hex_stripped}}), class:^(pypr-term)$"
+    },
+}
