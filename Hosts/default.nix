@@ -46,7 +46,7 @@
   # I use the noctalia lockscreen, so I can skip the sddm
   services.displayManager.autoLogin = {
     enable = true;
-    user = ${username};
+    user = username;
   };
   services.displayManager.defaultSession = "hyprland-uwsm";
 
