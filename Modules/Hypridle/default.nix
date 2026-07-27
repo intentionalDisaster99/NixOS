@@ -1,5 +1,5 @@
 # Installs and enables hypridle so that my laptop actually turns off lol
-{ users, config, pkgs, inputs, ... }:
+{ users, config, pkgs, inputs, username, ... }:
 {
 
   home-manager-users.${username} = {
