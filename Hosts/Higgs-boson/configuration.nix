@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     ../default.nix
+    ../../Modules/TLP/system.nix
   ];
 
   # Change the hostname here if you so desire
