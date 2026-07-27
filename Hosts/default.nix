@@ -15,7 +15,7 @@
     ../Modules/Fish/default.nix
     ../Modules/Hyprland/default.nix
     ../Modules/Hypridle/default.nix
-    ./Modules/Spotify/default.nix
+    ../Modules/Spotify/default.nix
     ../Modules/Obsidian/default.nix
     ../Modules/KDE-Connect/default.nix
     ../Modules/Funny/default.nix
