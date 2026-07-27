@@ -2,7 +2,7 @@
 # This is in ~/.face
 { pkgs, hyprland, config, inputs, username, ... }: {
 
-  home-manager.users.${username} = {
+  home-manager.users.${username} = { config, ... }: {
     home.file.".config/wallpapers" = {
       source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Resources/Wallpaper/Wallpapers";
     };
