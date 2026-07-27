@@ -1,7 +1,5 @@
 # It's neovim
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, username, ... }: {
 
 
   home-manager-users.${username} = {
