@@ -78,7 +78,6 @@
   # Things that I either haven't put into a module yet or make sense to always be imported
   home-manager.users.${username} = { config, ... }: {
     home.packages = with pkgs; [
-      git
       brave
       vscode
       discord
@@ -115,6 +114,14 @@
       v4l-utils
       android-tools
     ];
+
+    # My basic git configuration which I will always want on my system
+    programs.git = {
+      enable = true;
+      settings.user.name = "Sa9m";
+      settings.user.email = "abyssalflerken@gmail.com";
+    };
+
     home.stateVersion = "26.05";
 
   };
