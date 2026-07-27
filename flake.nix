@@ -38,7 +38,7 @@
       # Laptop
       nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
+          inherit inputs username;
         };
         system = "x86_64-linux";
         modules = [
