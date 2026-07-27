@@ -21,7 +21,7 @@
     ../Modules/Funny/default.nix
     ../Modules/NVim/default.nix
     # ../Modules/Hyprland/default.nix
-    ../Modules/Steam/deault.nix
+    ../Modules/Steam/default.nix
     ../Modules/Tailscale/default.nix
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
