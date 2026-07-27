@@ -2,7 +2,7 @@
 { users, config, pkgs, inputs, username, ... }:
 {
 
-  home-manager.users.${username} = {
+  home-manager.users.${username} = { config, ... }: {
     services.hypridle.enable = true;
 
     home.packages = with pkgs; [
