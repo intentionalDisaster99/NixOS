@@ -1,7 +1,7 @@
 # Enables the scratchpads that I like to use through pyprland
 { pkgs, hyprland, config, inputs, username, ... }: {
 
-  home-manager.users.${username} = {
+  home-manager.users.${username} = { config, ... }: {
 
     home.packages = with pkgs; [
       pyprland
