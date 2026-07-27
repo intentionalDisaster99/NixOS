@@ -4,11 +4,11 @@
   # My modules
   imports = [
     # Todo change these to the updated format
-    ../Modules/Hyprland/system.nix
-    ../Modules/Steam/system.nix
-    ../Modules/Tailscale/system.nix
-    ../Modules/Syncthing/system.nix
-    ../Modules/KDE-Connect/system.nix
+    # ../Modules/Hyprland/system.nix
+    # ../Modules/Steam/system.nix
+    # ../Modules/Tailscale/system.nix
+    # ../Modules/Syncthing/system.nix
+    # ../Modules/KDE-Connect/system.nix
 
     # Programs to download/use
     ../Modules/OpenRGB/default.nix
