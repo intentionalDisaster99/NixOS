@@ -74,6 +74,5 @@
     settings.user.email = "abyssalflerken@gmail.com";
   };
 
-  home.stateVersion = "26.05";
 
 }
