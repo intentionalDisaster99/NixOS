@@ -1,5 +1,5 @@
 # System level edits to the firewall to allow KDE connect
-{ users, config, pkgs, inputs, ... }:
+{ users, config, pkgs, inputs, username, ... }:
 
 {
 
@@ -8,4 +8,8 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
+
+  home-manager-users.${username} = {
+    services.kdeconnect.enable = true;
+  };
 }

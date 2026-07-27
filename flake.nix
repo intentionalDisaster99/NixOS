@@ -29,6 +29,13 @@
 
   outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, ... }@inputs: {
 
+    let
+
+    # This is where all of my global variables go 
+    username = "sa9m";
+
+    in {
+
     # Laptop
     nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -42,7 +49,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+          # TODO remove this; it is now not needed as I declare home manager stuff in each file
+          # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
           home-manager.extraSpecialArgs = {
             inherit inputs;
           };
@@ -63,16 +71,17 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+          # TODO remove this; it is now not needed as I declare home manager stuff in each file
+          # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs username;
           };
         }
       ];
     };
-
-
   };
+
+};
 
 
 

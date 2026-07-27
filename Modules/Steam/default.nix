@@ -1,4 +1,4 @@
-# Allows steam to be used for gaming (must be a system module because of the graphics stuff)
+# Allows steam to be used for gaming 
 { config, pkgs, ... }:
 {
 

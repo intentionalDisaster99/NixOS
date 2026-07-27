@@ -55,7 +55,6 @@
     jellyfin-desktop
     # fetch
     pavucontrol
-
     # TODO move
     kicad
     github-desktop

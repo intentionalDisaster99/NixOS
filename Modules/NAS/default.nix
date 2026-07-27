@@ -1,3 +1,5 @@
+# TODO get this working
+# I think technically I have sops set up now, but I haven't worked on this since then
 { users, config, pkgs, inputs, ... }:
 
 {
