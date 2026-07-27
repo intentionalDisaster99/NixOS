@@ -6,7 +6,7 @@
     ./../Starship/default.nix
   ];
 
-  home-manager-users.${username} = {
+  home-manager.users.${username} = {
 
     # Including some nice things that I like for my shells, like eza and z
     home.packages = with pkgs; [

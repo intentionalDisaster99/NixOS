@@ -9,7 +9,7 @@
   };
 
 
-  home-manager-users.${username} = {
+  home-manager.users.${username} = {
     services.kdeconnect.enable = true;
   };
 }

@@ -4,7 +4,7 @@
 
 {
 
-  home-manager-users.${username} = {
+  home-manager.users.${username} = {
     programs.starship = {
       enableFishIntegration = true;
     };

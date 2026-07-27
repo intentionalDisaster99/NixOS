@@ -17,7 +17,7 @@
     ./../Pyprland/default.nix
   ];
 
-  home-manager-users.${username} = {
+  home-manager.users.${username} = {
 
 
     home.packages = with pkgs; [

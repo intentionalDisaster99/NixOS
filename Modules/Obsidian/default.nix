@@ -4,7 +4,7 @@
 { pkgs, hyprland, config, inputs, username, ... }: {
 
 
-  home-manager-users.${username} = {
+  home-manager.users.${username} = {
 
     home.packages = with pkgs; [
       obsidian
