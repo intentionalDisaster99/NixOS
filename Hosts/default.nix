@@ -22,8 +22,8 @@
     ../Modules/NVim/default.nix
 
     # Resource movement
-    ./../../Resources/Profile/profile.nix
-    ./../../Resources/Wallpaper/wallpaper.nix
+    ./../Resources/Profile/profile.nix
+    ./../Resources/Wallpaper/wallpaper.nix
   ];
 
   # Me :D
