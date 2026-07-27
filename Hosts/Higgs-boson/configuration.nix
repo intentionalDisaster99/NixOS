@@ -10,12 +10,11 @@
   imports = [
     ./hardware-configuration.nix
     ../default.nix
-    ../../Modules/TLP/system.nix
+    ../../Modules/TLP/default.nix
   ];
 
   # Change the hostname here if you so desire
   networking.hostName = "higgs-boson";
-
 
   # Hibernation and swap
   swapDevices = [
