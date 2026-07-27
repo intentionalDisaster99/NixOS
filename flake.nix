@@ -51,7 +51,7 @@
             # TODO remove this; it is now not needed as I declare home manager stuff in each file
             # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
             home-manager.extraSpecialArgs = {
-              inherit inputs;
+              inherit inputs username;
             };
           }
         ];
