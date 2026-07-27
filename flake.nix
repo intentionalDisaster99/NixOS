@@ -27,59 +27,58 @@
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, ... }@inputs:
 
     let
+      # This is where all of my global variables go 
+      username = "sa9m";
+    in
+    {
 
-    # This is where all of my global variables go 
-    username = "sa9m";
-
-    in {
-
-    # Laptop
-    nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs;
+      # Laptop
+      nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./Hosts/Higgs-boson/configuration.nix
+          ./Modules/cachix.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # TODO remove this; it is now not needed as I declare home manager stuff in each file
+            # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
+          }
+        ];
       };
-      system = "x86_64-linux";
-      modules = [
-        ./Hosts/Higgs-boson/configuration.nix
-        ./Modules/cachix.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          # TODO remove this; it is now not needed as I declare home manager stuff in each file
-          # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-          };
-        }
-      ];
-    };
 
-    # Desktop
-    nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs;
+      # Desktop
+      nixosConfigurations.gluon = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./Hosts/Gluon/configuration.nix
+          ./Modules/cachix.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # TODO remove this; it is now not needed as I declare home manager stuff in each file
+            # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs username;
+            };
+          }
+        ];
       };
-      system = "x86_64-linux";
-      modules = [
-        ./Hosts/Gluon/configuration.nix
-        ./Modules/cachix.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          # TODO remove this; it is now not needed as I declare home manager stuff in each file
-          # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
-          home-manager.extraSpecialArgs = {
-            inherit inputs username;
-          };
-        }
-      ];
     };
-  };
 
 };
 
