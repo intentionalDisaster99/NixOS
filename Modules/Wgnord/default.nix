@@ -24,4 +24,5 @@
   systemd.tmpfiles.rules = [
     "d /run/nordvpn 0755 root root -"
   ];
+  networking.firewall.trustedInterfaces = [ "nordlynx" ];
 }
