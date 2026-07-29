@@ -23,11 +23,11 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-
+    nordvpn-nix.url = "github:cmoscofian/nordvpn-nix";
   };
 
 
-  outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, nordvpn-nix, ... }@inputs:
 
     let
       # This is where all of my global variables go 
