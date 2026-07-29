@@ -26,6 +26,7 @@
     ../Modules/Droidcam/default.nix
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
+    ../Modules/Streamio/default.nix
 
     # Resource movement
     ./../Resources/Profile/profile.nix
