@@ -1,6 +1,5 @@
-# Enables TLP to length battery life
-{ config, pkgs, ... }:
-{
+# Enables TLP to lengthen battery life
+{ config, pkgs, ... }: {
   services.tlp = {
     enable = true;
     settings = {
