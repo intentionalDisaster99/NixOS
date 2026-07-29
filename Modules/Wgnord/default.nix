@@ -11,9 +11,8 @@
     enable = true;
   };
   users.users.sa9m.extraGroups = [ "nordvpn" ];
-  # environment.systemPackages = with pkgs; [
-  #   wgnord
-  #   openresolv
-  #   wireguard-tools
-  # ];
+  environment.systemPackages = with pkgs; [
+    openresolv
+    wireguard-tools
+  ];
 }
