@@ -1,6 +1,7 @@
 { config
 , lib
 , pkgs
+, username
 , ...
 }:
 let
@@ -165,4 +166,8 @@ with lib;
       };
     };
   };
+
+  # Actually installing it
+  custom.services.nordvpn.enable = true;
+  users.groups.nordvpn.members = [ "${username}" ];
 }
