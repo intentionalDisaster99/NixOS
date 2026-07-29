@@ -1,11 +1,3 @@
-# { config, pkgs, ... }:
-# {
-#   environment.systemPackages = with pkgs; [
-#     wgnord
-#     openresolv
-#     wireguard-tools
-#   ];
-# }
 { config
 , lib
 , pkgs
@@ -25,13 +17,10 @@ let
       , iproute2
       , procps
       , cacert
+      , sqlite
       , libnl
-      , # Needed for 3.9.x +
-        libcap_ng
-      , # Needed for 3.9.x +
-        sqlite
-      , # Needed for 4.1.x +
-        libxml2
+      , libcap_ng
+      , libxml2
       , libidn2
       , zlib
       , wireguard-tools
@@ -39,22 +28,23 @@ let
       }:
       let
         pname = "nordvpn";
-        version = "4.3.1";
+        version = "4.4.0";
 
         nordVPNBase = stdenv.mkDerivation {
           inherit pname version;
 
           src = fetchurl {
-            url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn_${version}_amd64.deb";
-            hash = "sha256-oFf4uxZsucAh2yW++SQRxFx8+JdL8ZsNzWqzjJ2JqUs=";
+            url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${version}_amd64.deb";
+            #        hash = "sha256-oFf4uxZsucAh2yW++SQRxFx8+JdL8ZsNzWqzjJ2JqUs=";
+            hash = "sha256-rePBEVe6o49If5dYvIUW361E7nFqngzd+XkiOeehY7w=";
           };
 
           buildInputs = [
             libxml2
             libidn2
             libnl
-            sqlite
             libcap_ng
+            sqlite
           ];
           nativeBuildInputs = [
             dpkg
@@ -87,16 +77,16 @@ let
 
           # hardcoded path to /sbin/ip
           targetPkgs = pkgs: [
-            sqlite # Needed for 4.1.x +
+            sqlite
             nordVPNBase
             sysctl
             iptables
             iproute2
             procps
             cacert
-            libnl # Needed for 3.9.x +
-            libcap_ng # Needed for 3.9.x +
             libxml2
+            libnl
+            libcap_ng
             libidn2
             zlib
             wireguard-tools
@@ -133,7 +123,7 @@ let
 in
 with lib;
 {
-  options.myypo.services.custom.nordvpn.enable = mkOption {
+  options.custom.services.nordvpn.enable = mkOption {
     type = types.bool;
     default = false;
     description = ''
@@ -144,13 +134,12 @@ with lib;
     '';
   };
 
-  config = mkIf config.myypo.services.custom.nordvpn.enable {
+  config = mkIf config.custom.services.nordvpn.enable {
     networking.firewall.checkReversePath = false;
 
     environment.systemPackages = [ nordVpnPkg ];
 
     users.groups.nordvpn = { };
-    users.groups.nordvpn.members = [ "myypo" ];
     systemd = {
       services.nordvpn = {
         description = "NordVPN daemon.";
