@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{ config
+, pkgs
+, inputs
+, ...
+}:
 {
   imports = [
     inputs.nordvpn-nix.nixosModules.default
