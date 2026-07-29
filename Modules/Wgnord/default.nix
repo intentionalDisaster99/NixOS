@@ -25,4 +25,5 @@
     "d /run/nordvpn 0755 root root -"
   ];
   networking.firewall.trustedInterfaces = [ "nordlynx" ];
+  services.resolved.enable = true;
 }
