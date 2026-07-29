@@ -21,5 +21,7 @@
     iptables
     iproute2
   ];
-
+  systemd.tmpfiles.rules = [
+    "d /run/nordvpn 0755 root root -"
+  ];
 }
