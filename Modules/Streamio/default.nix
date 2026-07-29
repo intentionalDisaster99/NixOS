@@ -1,7 +1,7 @@
 # Should be a thing to stream shows and moveis, but idk, it hasn't worked for me before
 { config, pkgs, ... }:
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     stremio-linux-shell
   ];
 
