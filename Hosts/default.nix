@@ -20,6 +20,7 @@
     ../Modules/KDE-Connect/default.nix
     ../Modules/Funny/default.nix
     ../Modules/NVim/default.nix
+    ../Modules/Wgnord/default.nix
     # ../Modules/Hyprland/default.nix
     ../Modules/Steam/default.nix
     ../Modules/Tailscale/default.nix
