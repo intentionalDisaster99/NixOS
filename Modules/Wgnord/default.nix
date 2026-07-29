@@ -13,7 +13,7 @@
   users.users.sa9m.extraGroups = [ "nordvpn" ];
   environment.systemPackages = with pkgs; [
     openresolv
+    nftables
     wireguard-tools
   ];
-  networking.firewall.checkReversePath = "loose";
 }
