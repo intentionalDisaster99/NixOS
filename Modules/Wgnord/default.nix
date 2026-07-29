@@ -16,4 +16,10 @@
     nftables
     wireguard-tools
   ];
+  systemd.services.nordvpn.path = with pkgs; [
+    nftables
+    iptables
+    iproute2
+  ];
+
 }
