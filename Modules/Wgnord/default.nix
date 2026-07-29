@@ -15,4 +15,5 @@
     openresolv
     wireguard-tools
   ];
+  networking.firewall.checkReversePath = "loose";
 }
