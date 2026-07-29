@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    inputs.nordvpn-nix.nixosModules.default
+  ];
   custom.services.nordvpn = {
     enable = true;
   };
