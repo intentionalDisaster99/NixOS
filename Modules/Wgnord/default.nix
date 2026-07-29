@@ -168,6 +168,6 @@ with lib;
   };
 
   # Actually installing it
-  custom.services.nordvpn.enable = true;
+  .services.nordvpn.enable = true;
   users.groups.nordvpn.members = [ "${username}" ];
 }
