@@ -26,8 +26,7 @@
     ../Modules/Droidcam/default.nix
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
-    ../Modules/Streamio/default.nix
-
+    # ../Modules/Streamio/default.nix # currently installed through flatpak
     # Resource movement
     ./../Resources/Profile/profile.nix
     ./../Resources/Wallpaper/wallpaper.nix
