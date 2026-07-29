@@ -23,6 +23,7 @@
     # ../Modules/Hyprland/default.nix
     ../Modules/Steam/default.nix
     ../Modules/Tailscale/default.nix
+    ../Modules/Droidcam/default.nix
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
 
