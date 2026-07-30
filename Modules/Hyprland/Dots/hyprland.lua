@@ -1,45 +1,44 @@
 -- Variables for launching stuff
-local terminal    = "kitty"
+local terminal = "kitty"
 local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu = "hyprlauncher"
 
 -- My main modifier
 local mainMod = "SUPER"
 local ipc = "noctalia-shell ipc call "
 
-
 -- -----------------------------------------------------
 -- Monitors
 -- -----------------------------------------------------
 hl.monitor({
-    output   = "eDP-1",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "1",
+	output = "eDP-1",
+	mode = "preferred",
+	position = "auto",
+	scale = "1",
 })
 hl.monitor({
-    output   = "DP-1",
-    mode     = "preferred",
-    position = "0x0",
-    scale    = "1",
+	output = "DP-1",
+	mode = "preferred",
+	position = "0x0",
+	scale = "1",
 })
 hl.monitor({
-    output   = "HDMI-A-1",
-    mode     = "preferred",
-    position = "auto-right",
-    scale    = "1",
+	output = "HDMI-A-1",
+	mode = "preferred",
+	position = "auto-right",
+	scale = "1",
 })
 hl.monitor({
-    output   = "DP-3",
-    mode     = "preferred",
-    position = "auto-left",
-    scale    = "1",
+	output = "DP-3",
+	mode = "preferred",
+	position = "auto-left",
+	scale = "1",
 })
 hl.monitor({
-    output   = "HEADLESS-1",
-    mode     = "preferred",
-    position = "1920x1080@60",
-    scale    = "1",
+	output = "HEADLESS-1",
+	mode = "preferred",
+	position = "1920x1080@60",
+	scale = "1",
 })
 
 -- TODO Setup hyprsplit
@@ -51,15 +50,13 @@ hl.monitor({
 --     }
 -- })
 
-
 -- Automatically startign stuff
-hl.on("hyprland.start", function () 
-  hl.exec_cmd("noctalia-shell")
---   hl.exec_cmd(ipc.. " lockScreen locIk")
---   hl.exec_cmd("pypr") -- TODO move to fish autostart
-  hl.exec_cmd(("fish -c \"autostart\""))
+hl.on("hyprland.start", function()
+	hl.exec_cmd("noctalia-shell")
+	--   hl.exec_cmd(ipc.. " lockScreen locIk")
+	--   hl.exec_cmd("pypr") -- TODO move to fish autostart
+	hl.exec_cmd('fish -c "autostart"')
 end)
-
 
 -- Random env variables
 hl.env("HYPRCURSOR_THEME", "breeze_cursors")
@@ -67,71 +64,66 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "breeze_cursors")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_TYPE", "wayland")
-
-
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 hl.config({
-    general = {
-        gaps_in = 5,
-        gaps_out = 10,
-        border_size = 2
-    },
+	general = {
+		gaps_in = 5,
+		gaps_out = 10,
+		border_size = 2,
+	},
 
-    input = {
-        kb_layout = "us",
-        follow_mouse = 1,
-        touchpad = {
-            natural_scroll = true,
-            tap_and_drag = true
-        },
-        numlock_by_default = true,
-        -- kb_options = "caps:swapescape"
+	input = {
+		kb_layout = "us",
+		follow_mouse = 1,
+		touchpad = {
+			natural_scroll = true,
+			tap_and_drag = true,
+		},
+		numlock_by_default = true,
+		-- kb_options = "caps:swapescape"
+	},
 
-    },
+	-- decoration = {
+	--     rounding = 10,
+	--     blur = {
+	--         size = 8,
+	--         passes = 2
+	--     },
+	-- shadow = {
+	--     enabled = true,
+	--     range = 15,
+	--     render_power = 30,
+	--     offset = "0, 0",
+	-- },
+	-- glow = {
+	--     enabled = true,
+	--     range = 20,
+	-- }
+	-- },
 
-    -- decoration = {
-    --     rounding = 10,
-    --     blur = {
-    --         size = 8,
-    --         passes = 2
-    --     },
-        -- shadow = {
-        --     enabled = true,
-        --     range = 15,
-        --     render_power = 30,
-        --     offset = "0, 0",
-        -- },
-        -- glow = {
-        --     enabled = true,
-        --     range = 20,
-        -- }
-    -- },
+	misc = {
+		disable_hyprland_logo = true, -- Sorry hyprland devs :(
+		disable_splash_rendering = true,
+		background_color = "0x24273a",
+	},
 
-    misc = {
-        disable_hyprland_logo = true,   -- Sorry hyprland devs :(
-        disable_splash_rendering = true,
-        background_color = "0x24273a"
-    },
-
-    -- binds = {
-    --     workspace_back_and_forth = true,
-    --     allow_pin_fullscreen = true,
-    --     drag_threshold = 10
-    -- },
-
+	-- binds = {
+	--     workspace_back_and_forth = true,
+	--     allow_pin_fullscreen = true,
+	--     drag_threshold = 10
+	-- },
 })
 
 -- Movements between workspaces (animations and gestures)
 hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
+	fingers = 3,
+	direction = "horizontal",
+	action = "workspace",
 })
 
-hl.curve( "fast", { type = "bezier", points = { {1, 0}, {0, 1} } })
-hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast"})
-
-
+hl.curve("fast", { type = "bezier", points = { { 1, 0 }, { 0, 1 } } })
+hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast" })
 
 -- hl.layerrule("blur, logout_dialog")
 --
@@ -196,115 +188,114 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast"})
 -- hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
 -- hl.workspace("special:messages, on-created-empty:uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations")
 
-
 -- Keybinds start here
 
--- TEST 
+-- TEST
 -- hl.bind(mainMod.. " + P", hl.dsp.exec_cmd("fish -c \"autostart\""))
 
 -- Magic workspaces
-hl.bind(mainMod.. " + O", hl.dsp.exec_cmd("pypr toggle term"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("pypr toggle term"))
 -- hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
 
 -- Meta actions
-hl.bind(mainMod.. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
-hl.bind(mainMod.. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(mainMod.. " + CTRL + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mainMod.. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod.. " + Z", hl.dsp.exec_cmd("pypr zoom"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 --
 -- -- Opening Apps (Wrapped in uwsm)
-hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc.. "launcher toggle"))
-hl.bind(mainMod.. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
-hl.bind(mainMod.. " + T", hl.dsp.exec_cmd("uwsm app -- kitty")) 
-hl.bind(mainMod.. " + I", hl.dsp.exec_cmd("uwsm app -- code"))
-hl.bind(mainMod.. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
-hl.bind(mainMod.. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
-hl.bind(mainMod.. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
+hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("uwsm app -- kitty"))
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- code"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 
 -- -- Utilities
-hl.bind(mainMod.. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
-hl.bind(mainMod.. " + ALT + W", hl.dsp.exec_cmd(ipc.. "wallpaper toggle"))
-hl.bind(mainMod.. " + ALT + C", hl.dsp.exec_cmd(ipc.. "controlCenter toggle"))
-hl.bind(mainMod.. " + ALT + I", hl.dsp.exec_cmd(ipc.. "settings toggle"))
-hl.bind(mainMod.. " + ALT + H", hl.dsp.exec_cmd(ipc.. "bar toggle"))
-hl.bind(mainMod.. " + SHIFT + L", hl.dsp.exec_cmd(ipc.. " sessionMenu toggle"))
-hl.bind(mainMod.. " + L", hl.dsp.exec_cmd(ipc.. " lockScreen lock"))
-hl.bind(mainMod.. " + V", hl.dsp.exec_cmd(ipc.. " launcher clipboard"))
-hl.bind(mainMod.. " + ALT + S", hl.dsp.exec_cmd(ipc.. " plugin openPanel screen-toolkit"))
-hl.bind(mainMod.. " + ALT + Q", hl.dsp.exec_cmd(ipc.. " calendar toggle"))
-hl.bind(mainMod.. " + C", hl.dsp.exec_cmd(ipc.. " plugin:screen-toolkit colorPicker"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle"))
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
+hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle"))
+hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd(ipc .. "bar toggle"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
+hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd(ipc .. " plugin openPanel screen-toolkit"))
+hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. " calendar toggle"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " plugin:screen-toolkit colorPicker"))
 
-hl.bind(mainMod.. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
-hl.bind(mainMod.. " + SHIFT + V", hl.dsp.exec_cmd(ipc.. "launcher emoji"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
 -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 -- Noctalia things
-hl.bind(mainMod.. " + W", hl.dsp.exec_cmd(ipc.. "panel-toggle wallpaper"))
-
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"))
 
 --
 -- -- Special workspaces
 hl.workspace_rule({ workspace = "special:discord", on_created_empty = "uwsm app -- discord" })
-hl.bind(mainMod.. " + D", hl.dsp.workspace.toggle_special("discord"))
+hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))
 hl.workspace_rule({ workspace = "special:spotify", on_created_empty = "uwsm app -- spotify" })
-hl.bind(mainMod.. " + S", hl.dsp.workspace.toggle_special("spotify"))
-hl.workspace_rule({ workspace = "special:messages", on_created_empty = "uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations" })
-hl.bind(mainMod.. " + M", hl.dsp.workspace.toggle_special("messages"))
-hl.workspace_rule({ workspace = "special:magic"})
-hl.bind(mainMod.. " + J", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod.. " + SHIFT + J", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
+hl.workspace_rule({
+	workspace = "special:messages",
+	on_created_empty = "uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations",
+})
+hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("messages"))
+hl.workspace_rule({ workspace = "special:magic" })
+hl.bind(mainMod .. " + J", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ workspace = "special:magic" }))
 hl.workspace_rule({ workspace = "special:calc", on_created_empty = "uwsm app -- qalculate-gtk" })
-hl.bind(mainMod.. " + K", hl.dsp.workspace.toggle_special("calc"))
+hl.bind(mainMod .. " + K", hl.dsp.workspace.toggle_special("calc"))
 
 --
 -- -- Updated the fallback launch here to use uwsm
 -- hl.bind("${mainMod} + K", hl.dsp.exec_cmd("pgrep qalculate-gtk && hyprctl dispatch togglespecialworkspace calculator || uwsm app -- qalculate-gtk &"))
 
 -- Media Controls
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc.. "volume increase"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc.. "volume decrease"))
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc.. "volume muteOutput"))
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc.. "brightness increase"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc.. "brightness decrease"))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"))
 
--- Workspaces 
+-- Workspaces
 local monitorOffsets = {
-    {"eDP-1", 0},
-    {"DP-1", 10},
-    {"HDMI-A-1", 20},
-    {"DP-3", 30},
-    {"HEADLESS-1", 40}
+	{ "eDP-1", 0 },
+	{ "DP-1", 10 },
+	{ "HDMI-A-1", 20 },
+	{ "DP-3", 30 },
+	{ "HEADLESS-1", 40 },
 }
 
-for _, mon in ipairs(monitorOffsets) do 
-    local name = mon[1]
-    local offset = mon[2]
-    for i = 1, 10 do
-        hl.workspace_rule({ workspace = tostring(offset + i), monitor = name, persistent = true })
-    end
-
+for _, mon in ipairs(monitorOffsets) do
+	local name = mon[1]
+	local offset = mon[2]
+	for i = 1, 10 do
+		hl.workspace_rule({ workspace = tostring(offset + i), monitor = name, persistent = true })
+	end
 end
 
 for i = 1, 9 do
-    hl.bind(mainMod.. " + " .. tostring(i), hl.dsp.focus({ workspace = "m~" .. tostring(i) }))
-    hl.bind(mainMod.. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = "m~" .. tostring(i) }))
+	hl.bind(mainMod .. " + " .. tostring(i), hl.dsp.focus({ workspace = "m~" .. tostring(i) }))
+	hl.bind(mainMod .. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = "m~" .. tostring(i) }))
 end
 
-hl.bind(mainMod.. " + 0", hl.dsp.focus({ workspace = "m~10" }))
-hl.bind(mainMod.. " + SHIFT + 0", hl.dsp.window.move({ workspace = "m~10" }))
+hl.bind(mainMod .. " + 0", hl.dsp.focus({ workspace = "m~10" }))
+hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = "m~10" }))
 
-hl.bind(mainMod.. " + code:60", hl.dsp.focus({ workspace = "m+1" }))
-hl.bind(mainMod.. " + code:59", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(mainMod .. " + code:60", hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(mainMod .. " + code:59", hl.dsp.focus({ workspace = "m-1" }))
 
 -- Mouse Resizing TODO finish implementing these
-hl.bind(mainMod.. " + SHIFT + mouse:272", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod.. " + SHIFT + mouse:273", hl.dsp.window.pin())
-hl.bind(mainMod.. " + SHIFT + ALT + mouse:272", hl.dsp.window.pin())
-hl.bind(mainMod.." + mouse:272", hl.dsp.window.drag())
-hl.bind(mainMod.. " + mouse:273", hl.dsp.window.resize())
-hl.bind(mainMod.. " + ALT + mouse:272", hl.dsp.window.resize())
-
+hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + mouse:273", hl.dsp.window.pin())
+hl.bind(mainMod .. " + SHIFT + ALT + mouse:272", hl.dsp.window.pin())
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
+hl.bind(mainMod .. " + ALT + mouse:272", hl.dsp.window.resize())
 
 -- Colors from noctalia
 local decor = require("noctalia-colors")
