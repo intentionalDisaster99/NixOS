@@ -7,14 +7,14 @@
 }:
 {
 
+  # Import the module
+  imports = [
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+  ];
+
   home-manager.users.${username} =
     { config, ... }:
     {
-
-      # Import the home manager module
-      imports = [
-        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-      ];
 
       # Turning it on
       programs.noctalia-shell = {
