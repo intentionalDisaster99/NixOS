@@ -1,29 +1,34 @@
-{ users, config, pkgs, inputs, username, ... }: {
+{ users
+, config
+, pkgs
+, inputs
+, username
+, ...
+}:
+{
 
+  home-manager.users.${username} =
+    { config, ... }:
+    {
 
+      # Import the home manager module
+      imports = [
+        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      ];
 
-  home-manager.users.${username} = { config, ... }: {
+      # Turning it on
+      programs.noctalia-shell = {
+        enable = true;
+      };
 
-    # Import the home manager module
-    imports = [
-      # inputs.noctalia.homeModules.default
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    ];
+      home.packages = with pkgs; [
+        evtest
+      ];
 
-    # Turning it on
-    programs.noctalia-shell = {
-      enable = true;
+      # Symlinking to my dots
+      home.file.".config/noctalia" = {
+        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Noctalia/Dots";
+      };
+
     };
-
-
-    home.packages = with pkgs; [
-      evtest
-    ];
-
-    # Symlinking to my dots
-    home.file.".config/noctalia" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Noctalia/Dots";
-    };
-
-  };
 }
