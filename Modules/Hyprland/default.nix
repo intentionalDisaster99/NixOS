@@ -20,8 +20,7 @@
   # For styling of QT apps
   qt = {
     enable = true;
-    platformTheme.name = "qtct"; # Or "kvantum" if you bypass qtct
-    style.name = "kvantum";
+    platformTheme = "qt5ct";
   };
 
   imports = [
