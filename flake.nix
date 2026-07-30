@@ -2,7 +2,6 @@
 
   description = "My rewritten NixOS config entrypoint :D";
 
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-latest.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -15,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
+      url = "github:noctalia-dev/noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
@@ -26,11 +25,18 @@
     nordvpn-nix.url = "github:cmoscofian/nordvpn-nix";
   };
 
-
-  outputs = { self, nixpkgs, nixpkgs-latest, nur, home-manager, nordvpn-nix, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-latest
+    , nur
+    , home-manager
+    , nordvpn-nix
+    , ...
+    }@inputs:
 
     let
-      # This is where all of my global variables go 
+      # This is where all of my global variables go
       username = "sa9m";
     in
     {
@@ -81,8 +87,3 @@
     };
 
 }
-
-
-
-
-

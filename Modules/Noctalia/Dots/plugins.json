@@ -4,6 +4,11 @@
             "enabled": true,
             "name": "Noctalia Plugins",
             "url": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        {
+            "enabled": true,
+            "name": "Official",
+            "url": "https://github.com/noctalia-dev/official-plugins"
         }
     ],
     "states": {
