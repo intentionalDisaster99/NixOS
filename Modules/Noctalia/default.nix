@@ -6,11 +6,12 @@
 
     # Import the home manager module
     imports = [
-      inputs.noctalia.homeModules.default
+      # inputs.noctalia.homeModules.default
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     # Turning it on
-    programs.noctalia = {
+    programs.noctalia-shell = {
       enable = true;
     };
 
