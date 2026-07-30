@@ -6,29 +6,35 @@
 , ...
 }:
 {
-
-  # Import the module
-  imports = [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
-
   home-manager.users.${username} =
     { config, ... }:
     {
 
-      # Turning it on
-      programs.noctalia-shell = {
-        enable = true;
-      };
-
-      home.packages = with pkgs; [
-        evtest
+      imports = [
+        inputs.noctalia.homeModules.default
       ];
 
-      # Symlinking to my dots
-      home.file.".config/noctalia" = {
-        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Noctalia/Dots";
-      };
+      programs.noctalia = {
+        enable = true;
 
+        settings = {
+          # This may also be a string or path to a .toml file.
+          theme = {
+            mode = "dark";
+            source = "builtin";
+            builtin = "Catppuccin";
+          };
+
+          wallpaper = {
+            enabled = true;
+            default.path = "/path/to/wallpapers/wallpaper.png";
+          };
+        };
+        # Symlinking to my dots
+        home.file.".config/noctalia" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Noctalia/Dots";
+        };
+
+      };
     };
 }
