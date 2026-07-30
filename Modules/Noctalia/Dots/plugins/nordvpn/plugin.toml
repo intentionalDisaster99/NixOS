@@ -1,0 +1,38 @@
+# Definitely just copied this from the docs, let's see if this works
+
+id = "intentionalDisaster99/nordvpn"
+name = "Nordvpn"
+version = "0.0.1"
+plugin_api = 1
+author = "intentionalDisaster99"
+license = "MIT"
+dependencies = []
+tags = ["nordvpn"]
+icon = "puzzle"
+description = "A status plugin for the nordvpn cli client"
+
+[[widget]]
+id = "nond-status"
+entry = "hello.luau"
+
+  [[widget.setting]]
+  key = "label"
+  type = "string"
+  label_key = "settings.label.label"
+  description_key = "settings.label.description"
+  default = ""
+
+
+  # [[widget.setting]]
+  # key = "glyph"
+  # type = "glyph"
+  # label_key = "settings.glyph.label"
+  # description_key = "settings.glyph.description"
+  # default = "puzzle"
+  #
+  # [[widget.setting]]
+  # key = "show_glyph"
+  # type = "bool"
+  # label_key = "settings.show_glyph.label"
+  # default = true
+
