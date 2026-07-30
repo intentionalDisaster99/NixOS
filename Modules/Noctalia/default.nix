@@ -23,6 +23,13 @@
 
       programs.noctalia = {
         enable = true;
+
+        # For some reason, this was failing, so I had to add in libsndfile manually
+        package =
+          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs
+            (oldAttrs: {
+              buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ pkgs.libsndfile ];
+            });
       };
 
       # Symlinking to my dots
