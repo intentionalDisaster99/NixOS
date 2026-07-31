@@ -42,6 +42,7 @@
         hyprcursor
         qalculate-gtk
         kdePackages.kclock
+        wtype
 
         # TODO move, these should likely be in a higher-up level (or wherevever dolphin is installed)
         zip
