@@ -55,7 +55,7 @@
 
       # Import the home manager module
       imports = [
-        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+        inputs.noctalia.homeModules.default
       ];
 
       # Turning it on
@@ -71,6 +71,6 @@
       home.file.".config/noctalia" = {
         source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Noctalia/Dots";
       };
-    };
 
+    };
 }
