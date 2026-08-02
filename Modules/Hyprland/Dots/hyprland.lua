@@ -214,17 +214,18 @@ hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 
 -- -- Utilities
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
-hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle"))
-hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
-hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle"))
-hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd(ipc .. "bar toggle"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy')) -- Takes a screenshot
+hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle")) -- Toggles the noctalia wallpaper switcher
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle")) -- Opens the noctalia control center
+hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle")) -- Opens the noctalia settings panel
+hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd(ipc .. "bar toggle")) -- Hides or unhides the bar at the top
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
 hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd(ipc .. " plugin openPanel screen-toolkit"))
 hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. " calendar toggle"))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("fish -c nord-toggle"))
+hl.bind(mainMod .. " + ALT + slash", hl.dsp.exec_cmd(ipc .. " plugin:keybind-cheatsheet toggle"))
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " plugin:screen-toolkit colorPicker"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))

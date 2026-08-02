@@ -125,8 +125,9 @@
         rustdesk-flutter
         jellyfin-desktop
         # fetch
+        packet
 
-        pavucontrol # This will likely get moved to hyprland so that I can have it automatically pop up in a special workspace when I want it  
+        pavucontrol # This will likely get moved to hyprland so that I can have it automatically pop up in a special workspace when I want it
         overskride # Same thing with things like bluetooth, which I believe is like Overskride
 
         # TODO move
