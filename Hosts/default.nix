@@ -122,7 +122,7 @@
         libreoffice
         stm32cubemx
         openrgb
-        # rustdesk-flutter
+        rustdesk-flutter
         jellyfin-desktop
         fetch
         packet
