@@ -11,11 +11,12 @@
   services.flatpak.enable = true;
 
   services.flatpak.update.auto.enable = false;
-  services.flatpak.uninstallUnmanaged = false;
 
   home-manager.users.${username} =
     { config, ... }:
     {
+
+      services.flatpak.uninstallUnmanaged = false;
       # add here the flatpaks you want to install
       services.flatpak.packages = [
         "com.stremio.stremio"
@@ -23,4 +24,3 @@
 
     };
 }
-
