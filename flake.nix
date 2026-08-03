@@ -34,6 +34,7 @@
     , nur
     , home-manager
     , nordvpn-nix
+    , nix-flatpak
     , ...
     }@inputs:
 
