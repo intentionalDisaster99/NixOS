@@ -4,6 +4,7 @@
 , pkgs
 , inputs
 , username
+, nix-flatpak
 , ...
 }:
 {
