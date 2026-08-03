@@ -13,11 +13,13 @@
   services.flatpak.update.auto.enable = false;
   services.flatpak.uninstallUnmanaged = false;
 
-  # Add here the flatpaks you want to install
-  services.flatpak.packages = [
-    "com.stremio.Stremio"
-  ];
   home-manager.users.${username} =
     { config, ... }:
-    { };
-}
+    {
+      # add here the flatpaks you want to install
+      services.flatpak.packages = [
+        "com.stremio.stremio"
+      ];
+    }
+    };
+
