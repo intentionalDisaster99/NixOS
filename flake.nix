@@ -53,6 +53,7 @@
         modules = [
           ./Hosts/Higgs-boson/configuration.nix
           ./Modules/cachix.nix
+          flatpaks.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -75,6 +76,7 @@
         modules = [
           ./Hosts/Gluon/configuration.nix
           ./Modules/cachix.nix
+          flatpaks.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
