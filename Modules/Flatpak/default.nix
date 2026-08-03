@@ -17,7 +17,7 @@
   services.flatpak.uninstallUnmanaged = false;
   # add here the flatpaks you want to install
   services.flatpak.packages = [
-    "com.stremio.stremio"
+    "com.stremio.Stremio"
   ];
   home-manager.users.${username} =
     { config, ... }:
