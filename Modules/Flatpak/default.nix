@@ -20,6 +20,7 @@
       services.flatpak.packages = [
         "com.stremio.stremio"
       ];
+
     }
     };
 
