@@ -24,6 +24,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     nordvpn-nix.url = "github:cmoscofian/nordvpn-nix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
