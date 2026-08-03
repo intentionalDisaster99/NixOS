@@ -19,6 +19,7 @@
   services.flatpak.packages = [
     "com.stremio.Stremio"
     "io.github.nozwock.Packet"
+    "net.code_industry.MasterPDFEditor"
   ];
   home-manager.users.${username} =
     { config, ... }:
