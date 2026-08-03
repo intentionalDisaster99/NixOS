@@ -18,6 +18,7 @@
   # add here the flatpaks you want to install
   services.flatpak.packages = [
     "com.stremio.Stremio"
+    "io.github.nozwock.Packet"
   ];
   home-manager.users.${username} =
     { config, ... }:
