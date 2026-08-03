@@ -11,7 +11,6 @@
 
   services.flatpak.enable = true;
 
-
   services.flatpak.update.auto.enable = false;
 
   services.flatpak.uninstallUnmanaged = false;
@@ -21,7 +20,4 @@
     "io.github.nozwock.Packet"
     "net.code_industry.MasterPDFEditor"
   ];
-  home-manager.users.${username} =
-    { config, ... }:
-    { };
 }
