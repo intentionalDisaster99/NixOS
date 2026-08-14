@@ -382,15 +382,15 @@
   services.flatpak.enable = true;
 
 
-  services.udev.packages = [
-    pkgs.platformio-core
-    pkgs.openocd
-    pkgs.platformio-core.udev
-    pkgs.teensy-loader-cli
-    pkgs.platformio
-    pkgs.teensy-udev-rules
-    pkgs.platformio-core
-  ];
+  # services.udev.packages = [
+  #   pkgs.platformio-core
+  #   pkgs.openocd
+  #   pkgs.platformio-core.udev
+  #   pkgs.teensy-loader-cli
+  #   pkgs.platformio
+  #   pkgs.teensy-udev-rules
+  #   pkgs.platformio-core
+  # ];
   programs.nix-ld.enable = true;
 
 }
