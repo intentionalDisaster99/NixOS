@@ -27,6 +27,7 @@
     ../Modules/Droidcam/default.nix
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
+    ../Modules/PlatformIO/default.nix
     ../Modules/Flatpak/default.nix
     # ../Modules/Streamio/default.nix # currently installed through flatpak
     # Resource movement
