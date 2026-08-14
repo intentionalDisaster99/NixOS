@@ -391,6 +391,6 @@
   #   pkgs.teensy-udev-rules
   #   pkgs.platformio-core
   # ];
-  programs.nix-ld.enable = true;
+  # programs.nix-ld.enable = true;
 
 }
