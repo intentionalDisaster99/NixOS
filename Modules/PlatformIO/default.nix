@@ -10,6 +10,8 @@
     pkgs.openocd
     pkgs.platformio-core.udev
     pkgs.teensy-loader-cli
+    pkgs.platformio
+    pkgs.teensy-udev-rules
   ];
   programs.nix-ld.enable = true;
 }
