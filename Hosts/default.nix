@@ -116,6 +116,7 @@
         nh
         hyfetch
         fastfetch
+        direnv
 
         zoom-us
         ubase
