@@ -116,6 +116,8 @@
         nh
         hyfetch
         fastfetch
+        platformio-core
+
 
         zoom-us
         ubase
