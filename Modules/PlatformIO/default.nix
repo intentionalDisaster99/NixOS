@@ -12,6 +12,7 @@
     pkgs.teensy-loader-cli
     pkgs.platformio
     pkgs.teensy-udev-rules
+    pkgs.platformio-core
   ];
   programs.nix-ld.enable = true;
 }
