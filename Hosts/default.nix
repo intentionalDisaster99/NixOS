@@ -159,17 +159,21 @@
   system.stateVersion = "23.11";
 
   # TODO move to a module
-  # Udev rules for the pico
+  # Udev rules for the pico 
   services.udev.extraRules = ''
-    # Raspberry Pi Pico (Bootloader Mode)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+      # Raspberry Pi Pico (Bootloader Mode)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+    
+      # Raspberry Pi Debug Probe (CMSIS-DAP)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
+    
+      # Generic CMSIS-DAP probes (if you use a different debugger)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
 
-    # Raspberry Pi Debug Probe (CMSIS-DAP)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
-
-    # Generic CMSIS-DAP probes (if you use a different debugger)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
+      # Force ELAN2513 touchscreen to bind elants_i2c driver
+    SUBSYSTEM=="i2c", ATTRS{name}=="ELAN2513:00", RUN+="/bin/sh -c 'echo elants_i2c > /sys/bus/i2c/devices/i2c-ELAN2513:00/driver_override && echo i2c-ELAN2513:00 > /sys/bus/i2c/drivers/elants_i2c/bind'"
   '';
+
 
   # TODO move to a boot module (include minegrub?)
   boot.loader.grub = {
