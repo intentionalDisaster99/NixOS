@@ -142,6 +142,8 @@
         adb-sync
         v4l-utils
         android-tools
+        teensy-udev-rules
+        platformio-core
       ];
 
       # My basic git configuration which I will always want on my system
