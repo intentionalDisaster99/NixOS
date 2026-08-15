@@ -142,7 +142,7 @@
         adb-sync
         v4l-utils
         android-tools
-        teensy-udev-rules
+        # teensy-udev-rules
         platformio-core
         openocd
       ];
