@@ -332,7 +332,8 @@
     ATTRS{idVendor}=="303a", ATTRS{idProduct}=="4001", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
 
     # Zephyr framework USB CDC-ACM
-    ATTRS{idVendor}=="2fe3", ATTRS{idProduct}=="0100", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"  '';
+    ATTRS{idVendor}=="2fe3", ATTRS{idProduct}=="0100", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"  
+  '';
 
   # TODO move to a boot module (include minegrub?)
   boot.loader.grub = {
