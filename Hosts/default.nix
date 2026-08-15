@@ -115,6 +115,7 @@
         nh
         hyfetch
         fastfetch
+        wl-mirror
 
         zoom-us
         ubase
