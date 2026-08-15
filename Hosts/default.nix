@@ -144,6 +144,7 @@
         android-tools
         teensy-udev-rules
         platformio-core
+        openocd
       ];
 
       # My basic git configuration which I will always want on my system
