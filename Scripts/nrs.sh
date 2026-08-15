@@ -32,6 +32,8 @@ echo "Formatting Nix files..."
 nixpkgs-fmt .
 echo "Formatting complete."
 
+sleep 1
+
 # Stage all changes in the configuration directory.
 echo "Staging changes..."
 git add .
