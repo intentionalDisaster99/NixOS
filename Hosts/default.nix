@@ -163,15 +163,14 @@
   # TODO move to a module
   # Udev rules for the pico
   services.udev.extraRules = ''
-        # Raspberry Pi Pico (Bootloader Mode)
-        SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+            # Raspberry Pi Pico (Bootloader Mode)
+            SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
 
-        # Raspberry Pi Debug Probe (CMSIS-DAP)
-        SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
+            # Raspberry Pi Debug Probe (CMSIS-DAP)
+            SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
 
-        # Generic CMSIS-DAP probes (if you use a different debugger)
-        SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
-
+            # Generic CMSIS-DAP probes (if you use a different debugger)
+            SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
 
     # CP210X USB UART
     ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea[67][013]", MODE:="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
@@ -333,8 +332,7 @@
     ATTRS{idVendor}=="303a", ATTRS{idProduct}=="4001", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
 
     # Zephyr framework USB CDC-ACM
-    ATTRS{idVendor}=="2fe3", ATTRS{idProduct}=="0100", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
-  '';
+    ATTRS{idVendor}=="2fe3", ATTRS{idProduct}=="0100", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"  '';
 
   # TODO move to a boot module (include minegrub?)
   boot.loader.grub = {
