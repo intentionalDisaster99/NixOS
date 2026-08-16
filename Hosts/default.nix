@@ -117,6 +117,9 @@
         fastfetch
         wl-mirror
 
+        # will be moved to be part of module
+        nix-direnv
+
         zoom-us
         ubase
         kdePackages.ark
