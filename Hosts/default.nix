@@ -119,6 +119,7 @@
 
         # will be moved to be part of module
         nix-direnv
+        direnv
 
         zoom-us
         ubase
