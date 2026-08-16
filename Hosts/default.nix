@@ -117,10 +117,6 @@
         fastfetch
         wl-mirror
 
-        # will be moved to be part of module
-        nix-direnv
-        direnv
-
         zoom-us
         ubase
         kdePackages.ark
@@ -157,9 +153,6 @@
         settings.user.name = "Sa9m";
         settings.user.email = "abyssalflerken@gmail.com";
       };
-
-      # Could be moved to a module, but is so simple I haven't yet TODO
-      programs.direnv.nix-direnv.enable = true;
 
       home.stateVersion = "26.05";
 

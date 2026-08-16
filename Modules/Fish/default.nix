@@ -4,6 +4,7 @@
   imports = [
     ./../Atuin/default.nix
     ./../Starship/default.nix
+    ./../Direnv/default.nix
   ];
 
   home-manager.users.${username} = { config, ... }: {
