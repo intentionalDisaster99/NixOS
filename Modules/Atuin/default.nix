@@ -16,8 +16,7 @@
       settings = {
         auto_sync = true;
         sync_frequency = "5m";
-        i
-          sync_address = "https://api.atuin.sh";
+        sync_address = "https://api.atuin.sh";
         search_mode = "fuzzy";
       };
     };
