@@ -116,6 +116,7 @@
         hyfetch
         fastfetch
         wl-mirror
+        direnv
 
         zoom-us
         ubase
