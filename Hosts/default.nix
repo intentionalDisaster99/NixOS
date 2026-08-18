@@ -149,9 +149,6 @@
         # teensy-udev-rules
         platformio-core
         openocd
-
-        # TODO remove
-        ollama
       ];
 
       # My basic git configuration which I will always want on my system
