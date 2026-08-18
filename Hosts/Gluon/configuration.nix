@@ -31,8 +31,9 @@
   # TODO remove
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
+    package = pkgs.ollama-rocm;
 
+    # You can keep your override here, this option was NOT removed
     rocmOverrideGfx = "11.0.0";
   };
 
