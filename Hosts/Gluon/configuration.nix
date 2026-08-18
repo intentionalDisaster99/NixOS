@@ -28,21 +28,4 @@
     "/share/applications"
   ];
 
-  # TODO remove
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-rocm;
-
-    # You can keep your override here, this option was NOT removed
-    rocmOverrideGfx = "11.0.0";
-
-    environmentVariables = {
-      # Point the cache to Ollama's writable state directory in NixOS
-      XDG_CACHE_HOME = "/var/lib/ollama/.cache";
-
-      # Keep the model loaded in VRAM for 24 hours (prevents cold starts)
-      OLLAMA_KEEP_ALIVE = "24h";
-    };
-  };
-
 }
