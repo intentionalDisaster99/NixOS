@@ -65,6 +65,10 @@
     adb-sync
     v4l-utils
     android-tools
+
+
+    # TODO remove
+    ollama
   ];
 
   # My basic git configuration which I will always want on my system
