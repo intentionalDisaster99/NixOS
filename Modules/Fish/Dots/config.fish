@@ -23,3 +23,4 @@ alias ssh="kitty +kitten ssh"
 zoxide init fish | source
 starship init fish | source
 direnv hook fish | source
+atuin init fish | source
