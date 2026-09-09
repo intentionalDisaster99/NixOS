@@ -27,6 +27,7 @@
     ./../Noctalia/default.nix
     ./../Kitty/default.nix
     ./../Pyprland/default.nix
+    ./../Hypridle/default.nix
   ];
 
   home-manager.users.${username} =
