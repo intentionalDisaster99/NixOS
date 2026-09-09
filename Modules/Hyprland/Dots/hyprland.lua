@@ -305,6 +305,12 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
 hl.bind(mainMod .. " + ALT + mouse:272", hl.dsp.window.resize())
 
+-- For making the screen dim before locking
+-- bind = , code:232, exec, brightnessctl set 5%-
+-- bind = , code:233, exec, brightnessctl set +5%
+hl.bind("code:232", hl.dsp.exec_cmd('brightnessctl set 5%-'))
+hl.bind("code:233", hl.dsp.exec_cmd('brightnessctl set +5%'))
+
 -- Colors from noctalia
 local decor = require("noctalia-colors")
 hl.config(decor)

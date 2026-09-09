@@ -6,6 +6,6 @@
   "hideIfNotDetected": true,
   "hideIfIdle": false,
   "refreshIntervalSeconds": 5,
-  "showPowerInBar": false,
+  "showPowerInBar": true,
   "showTimeInBar": true
 }
