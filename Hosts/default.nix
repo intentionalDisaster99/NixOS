@@ -72,6 +72,8 @@
 
   # Automatically mounts thumb drives and other detatchable storage
   services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   # For wireless stuff
   hardware.bluetooth = {
