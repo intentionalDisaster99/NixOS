@@ -187,7 +187,14 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast" })
 --
 -- hl.windowrulev2("float, class:^jetbrains-(?!toolbox), title:^win\\d+$")
 -- hl.windowrulev2("noinitialfocus, class:^jetbrains-(?!toolbox), title:^win\\d+$")
---
+
+-- Fixing the screenshot stuff
+hl.window_rule({ match = { class = "grim" }, no_anim = 1 })
+hl.window_rule({ match = { class = "selector" }, no_anim = 1 })
+
+
+
+
 
 -- Some of the workspaces
 -- hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
@@ -220,7 +227,7 @@ hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 
 -- -- Utilities
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy')) -- Takes a screenshot
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 0)" - | wl-copy')) -- Takes a screenshot
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle")) -- Toggles the noctalia wallpaper switcher
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle")) -- Opens the noctalia control center
 hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle")) -- Opens the noctalia settings panel
