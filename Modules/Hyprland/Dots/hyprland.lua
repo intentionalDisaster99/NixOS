@@ -31,7 +31,7 @@ hl.monitor({
 hl.monitor({
 	output = "HDMI-A-1",
 	mode = "preferred",
-	position = "auto-right",
+	position = "auto-left",
 	scale = "1",
 })
 hl.monitor({
