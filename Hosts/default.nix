@@ -149,7 +149,8 @@
         # TODO move
         kicad
         github-desktop
-        # quartus-prime-lite
+        quartus-prime-lite
+        better-adb-sync
 
         # DEBUG TODO REMOVE
         libnotify
