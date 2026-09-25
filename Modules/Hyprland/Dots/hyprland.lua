@@ -31,6 +31,7 @@ hl.monitor({
 hl.monitor({
 	output = "HDMI-A-1",
 	mode = "preferred",
+	-- position = "auto-up",
 	position = "auto-left",
 	scale = "1",
 })
@@ -227,7 +228,7 @@ hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 
 -- -- Utilities
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 0)" - | wl-copy')) -- Takes a screenshot
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | wl-copy')) -- Takes a screenshot
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle")) -- Toggles the noctalia wallpaper switcher
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle")) -- Opens the noctalia control center
 hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle")) -- Opens the noctalia settings panel
@@ -241,7 +242,7 @@ hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("fish -c nord-toggle"))
 hl.bind(mainMod .. " + ALT + slash", hl.dsp.exec_cmd(ipc .. " plugin:keybind-cheatsheet toggle"))
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " plugin:screen-toolkit colorPicker"))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | swappy -f -'))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
 -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
