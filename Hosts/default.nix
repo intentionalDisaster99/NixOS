@@ -113,6 +113,8 @@
         discord
         kdePackages.dolphin
         kdePackages.kio-gdrive
+        kdePackages.kaccounts-integration
+        kdePackages.kaccounts-providers
         nixpkgs-fmt
         nom
         slurp
