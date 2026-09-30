@@ -115,6 +115,7 @@
         kdePackages.kio-gdrive
         kdePackages.kaccounts-integration
         kdePackages.kaccounts-providers
+        kdePackages.systemsettings
         nixpkgs-fmt
         nom
         slurp
