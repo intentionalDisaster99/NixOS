@@ -115,6 +115,8 @@
         kdePackages.kio-gdrive
         kdePackages.kaccounts-integration
         kdePackages.kaccounts-providers
+        kdePackages.signond
+        kdePackages.signon-kwallet-extension
         kdePackages.systemsettings
         nixpkgs-fmt
         nom
