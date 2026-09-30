@@ -112,6 +112,7 @@
         vscode
         discord
         kdePackages.dolphin
+        kdePackages.kio-gdrive
         nixpkgs-fmt
         nom
         slurp
