@@ -8,11 +8,16 @@
 }:
 
 {
+  imports = [
+    # Replace 'minegrub-theme' with the exact name you used in your flake.nix inputs
+    inputs.minegrub-theme.nixosModules.default
+  ];
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
+
 
   # Teehee silly sddm
   # services.displayManager.sddm = {
