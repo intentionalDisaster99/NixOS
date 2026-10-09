@@ -9,8 +9,7 @@
 
 {
   imports = [
-    # Replace 'minegrub-theme' with the exact name you used in your flake.nix inputs
-    inputs.minegrub-theme.nixosModules.default
+    inputs.minegrub-world-sel-theme.nixosModules.default
   ];
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
