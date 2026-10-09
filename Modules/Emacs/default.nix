@@ -32,7 +32,7 @@
       };
 
       # Symlinking to my dots
-      home.file.".config/emacs" = {
+      home.file.".config/doom" = {
         source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
       };
 
