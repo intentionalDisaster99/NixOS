@@ -15,11 +15,11 @@
   boot.loader.grub.device = "nodev";
 
   # Teehee silly sddm
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "minesddm";
-    wayland.enable = true;
-  };
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   theme = "minesddm";
+  #   wayland.enable = true;
+  # };
   environment.systemPackages = with pkgs; [
     # Add the theme package itself
     inputs.minesddm.packages.${pkgs.stdenv.hostPlatform.system}.default
