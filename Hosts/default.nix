@@ -27,6 +27,7 @@
     ../Modules/Tailscale/default.nix
     ../Modules/Droidcam/default.nix
     ../Modules/Syncthing/default.nix
+    ../Modules/Boot/default.nix
     ../Modules/KDE-Connect/default.nix
     ../Modules/Flatpak/default.nix
     # ../Modules/Streamio/default.nix # currently installed through flatpak -> currently being nxi-flatpakked
