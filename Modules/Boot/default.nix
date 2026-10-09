@@ -25,9 +25,6 @@
   #   wayland.enable = true;
   # };
   environment.systemPackages = with pkgs; [
-    # Add the theme package itself
-    inputs.minesddm.packages.${pkgs.stdenv.hostPlatform.system}.default
-
     # Add the required Qt dependencies
     qt5.qtbase
     qt5.qtquickcontrols2
