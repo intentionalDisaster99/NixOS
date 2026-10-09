@@ -10,7 +10,7 @@
 {
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
+  # boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
 
@@ -30,4 +30,28 @@
     qt5.qtgraphicaleffects
   ];
 
+  # Actually turning the bad boi on
+  boot.loader.grub = {
+    enable = true;
+    useOSProber = lib.mkForce false;
+
+    extraEntries = lib.mkIf (activeUuid != null) windowsMenuEntry;
+
+    minegrub-world-sel = {
+      enable = true;
+      customIcons = [
+        {
+          name = "nixos";
+          lineTop = "NixOS ${config.system.nixos.distroName}";
+          lineBottom = "Survival Mode, No Cheats";
+          imgName = "nixos";
+        }
+      ] ++ (if (activeUuid != null) then [{
+        name = "windows";
+        lineTop = "Windows 11";
+        lineBottom = "Hardcore Mode, All Cheats Enabled";
+        imgName = "windows";
+      }] else [ ]);
+    };
+  };
 }
