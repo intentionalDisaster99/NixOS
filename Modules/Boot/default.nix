@@ -60,7 +60,7 @@
   # };
   # Actually turning the bad boi on
 
-  minegrub-world-sel = {
+  minegrub-world-sel-theme = {
     enable = true;
     customIcons = [
       {
