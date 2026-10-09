@@ -160,17 +160,28 @@
   system.stateVersion = "23.11";
 
   # TODO move to a module
-  # Udev rules for the pico
+  # # Udev rules for the pico
+  # services.udev.extraRules = ''
+  #   # Raspberry Pi Pico (Bootloader Mode)
+  #   SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+
+  #   # Raspberry Pi Debug Probe (CMSIS-DAP)
+  #   SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
+
+  #   # Generic CMSIS-DAP probes (if you use a different debugger)
+  #   SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
+
+  # '';
+
+
+  # Udev rules or the pico probe. You should definitely move this to a module
   services.udev.extraRules = ''
-    # Raspberry Pi Pico (Bootloader Mode)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
-
-    # Raspberry Pi Debug Probe (CMSIS-DAP)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
-
-    # Generic CMSIS-DAP probes (if you use a different debugger)
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
+    # Raspberry Pi Picoprobe / CMSIS-DAP
+    ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0004", MODE="0666", TAG+="uaccess"
+    # Raspberry Pi Pico
+    ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", TAG+="uaccess"
   '';
+  services.udev.packages = [ pkgs.openocd ];
 
   # TODO move to a boot module (include minegrub?)
   boot.loader.grub = {
