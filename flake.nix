@@ -25,6 +25,10 @@
     };
     nordvpn-nix.url = "github:cmoscofian/nordvpn-nix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    minesddm = {
+      url = "github:Davi-S/sddm-theme-minesddm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
