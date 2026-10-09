@@ -1,22 +1,13 @@
+# Controls the bootloader that I use (Grub)
+
 { config
 , pkgs
 , lib
+, inputs
 , ...
 }:
 
-let
-  windowsMenuEntry = ''
-    menuentry "Windows 11" --class windows {
-      insmod part_gpt
-      insmod fat
-      insmod search_fs_uuid
-      search --fs-uuid --set=root ${activeUuid}
-      chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-    }
-  '';
-in
 {
-
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
@@ -39,35 +30,4 @@ in
     qt5.qtgraphicaleffects
   ];
 
-  boot.loader.grub = {
-    enable = true;
-    useOSProber = lib.mkForce false;
-
-    extraEntries = lib.mkIf (activeUuid != null) windowsMenuEntry;
-
-    minegrub-world-sel = {
-      enable = true;
-      customIcons = [
-        {
-          name = "nixos";
-          lineTop = "NixOS ${config.system.nixos.distroName}";
-          lineBottom = "The right choice";
-          imgName = "nixos";
-        }
-      ]
-      ++ (
-        if (activeUuid != null) then
-          [
-            {
-              name = "windows";
-              lineTop = "Windows 11";
-              lineBottom = "Why. Just why.";
-              imgName = "windows";
-            }
-          ]
-        else
-          [ ]
-      );
-    };
-  };
 }
