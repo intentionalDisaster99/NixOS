@@ -34,41 +34,21 @@
     qt5.qtgraphicaleffects
   ];
 
-  # boot.loader.grub = {
-  #   enable = true;
-  #   # useOSProber = lib.mkForce false;
-  #   useOSProber = true;
-
-  #   # extraEntries = lib.mkIf (activeUuid != null) windowsMenuEntry;
-
-  #   # minegrub-world-sel = {
-  #   #   enable = true;
-  #   # customIcons = [
-  #   #   {
-  #   #     name = "nixos";
-  #   #     lineTop = "NixOS ${config.system.nixos.distroName}";
-  #   #     lineBottom = "Survival Mode, No Cheats";
-  #   #     imgName = "nixos";
-  #   #   }
-  #   # ] ++ (if (activeUuid != null) then [{
-  #   #   name = "windows";
-  #   #   lineTop = "Windows 11";
-  #   #   lineBottom = "Hardcore Mode, All Cheats Enabled";
-  #   #   imgName = "windows";
-  #   # }] else [ ]);
-  #   # };
-  # };
   # Actually turning the bad boi on
-
-  minegrub-world-sel-theme = {
+  boot.loader.grub = {
     enable = true;
-    customIcons = [
-      {
-        name = "nixos";
-        lineTop = "NixOS ${config.system.nixos.distroName}";
-        lineBottom = "The right choice";
-        imgName = "nixos";
-      }
-    ];
+    useOSProber = true;
+
+    minegrub-world-sel = {
+      enable = true;
+      customIcons = [
+        {
+          name = "nixos";
+          lineTop = "NixOS ${config.system.nixos.distroName}";
+          lineBottom = "The right choice";
+          imgName = "nixos";
+        }
+      ];
+    };
   };
 }
