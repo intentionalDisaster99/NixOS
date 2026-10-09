@@ -23,7 +23,8 @@
         # optional dependencies
         coreutils # basic GNU utilities
         fd
-        clang
+        #
+        # clang
       ];
 
       services.emacs = {
