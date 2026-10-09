@@ -20,17 +20,17 @@
     ../Modules/KDE-Connect/default.nix
     ../Modules/Funny/default.nix
     ../Modules/NVim/default.nix
-    ../Modules/Emacs/default.nix
     ../Modules/Wgnord/default.nix
     # ../Modules/Hyprland/default.nix
     ../Modules/Steam/default.nix
     ../Modules/Tailscale/default.nix
     ../Modules/Droidcam/default.nix
-    ../Modules/Syncthing/default.nix
+    ../Modules/Emacs/default.nix
     ../Modules/Boot/default.nix
+    ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
     ../Modules/Flatpak/default.nix
-    # ../Modules/Streamio/default.nix # currently installed through flatpak -> currently being nxi-flatpakked
+    # ../Modules/Streamio/default.nix # currently installed through flatpak -> currently being nxi-flatpakked 
     # Resource movement
     ./../Resources/Profile/profile.nix
     ./../Resources/Wallpaper/wallpaper.nix
@@ -140,7 +140,7 @@
         # DEBUG TODO REMOVE
         libnotify
         droidcam
-        better-adb-sync
+        adb-sync
         v4l-utils
         android-tools
       ];
@@ -160,27 +160,17 @@
   system.stateVersion = "23.11";
 
   # TODO move to a module
-  # # Udev rules for the pico
-  # services.udev.extraRules = ''
-  #   # Raspberry Pi Pico (Bootloader Mode)
-  #   SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
-
-  #   # Raspberry Pi Debug Probe (CMSIS-DAP)
-  #   SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
-
-  #   # Generic CMSIS-DAP probes (if you use a different debugger)
-  #   SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
-
-  # '';
-
-  # Udev rules or the pico probe. You should definitely move this to a module
+  # Udev rules for the pico
   services.udev.extraRules = ''
-    # Raspberry Pi Picoprobe / CMSIS-DAP
-    ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0004", MODE="0666", TAG+="uaccess"
-    # Raspberry Pi Pico
-    ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", TAG+="uaccess"
+    # Raspberry Pi Pico (Bootloader Mode)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+
+    # Raspberry Pi Debug Probe (CMSIS-DAP)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
+
+    # Generic CMSIS-DAP probes (if you use a different debugger)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
-  services.udev.packages = [ pkgs.openocd ];
 
   # TODO move to a boot module (include minegrub?)
   boot.loader.grub = {
