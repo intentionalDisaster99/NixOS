@@ -184,14 +184,14 @@
   services.udev.packages = [ pkgs.openocd ];
 
   # TODO move to a boot module (include minegrub?)
-  boot.loader.grub = {
-    enable = true;
-    default = "saved";
-    useOSProber = true;
+  # boot.loader.grub = {
+  #   enable = true;
+  #   default = "saved";
+  #   useOSProber = true;
 
-    efiSupport = true;
-    device = "nodev";
-  };
+  #   efiSupport = true;
+  #   device = "nodev";
+  # };
 
   # TODO move to a module for DroidCam
   boot.extraModprobeConfig = ''
