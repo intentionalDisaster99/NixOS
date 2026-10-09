@@ -140,7 +140,7 @@
         # DEBUG TODO REMOVE
         libnotify
         droidcam
-        adb-sync
+        better-adb-sync
         v4l-utils
         android-tools
       ];
