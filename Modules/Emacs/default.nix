@@ -33,9 +33,11 @@
       };
 
       # Symlinking to my dots
-      home.file.".config/doom" = {
-        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
-      };
+      # home.file.".config/doom" = {
+      xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
+      # home.file.".doom.d" = {
+      #   source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
+      # };
 
     };
 
