@@ -2,6 +2,10 @@ function fish_greeting
     # random choice "Hello!" "Hi" "G'day" "Howdy"
 end
 
+
+# I alliwng it to automatically find my doom commands
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 alias cd="z"
 alias ngc="sudo nix-collect-garbage -d"
 alias ngc7="sudo nix-collect-garbage --delete-older-than 7d"
