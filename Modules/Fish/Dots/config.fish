@@ -4,7 +4,7 @@ end
 
 
 # I alliwng it to automatically find my doom commands
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/doom-emacs/bin:$PATH"
 
 alias cd="z"
 alias ngc="sudo nix-collect-garbage -d"
