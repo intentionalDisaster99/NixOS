@@ -25,6 +25,7 @@
         fd
         #
         # clang
+        ispell
       ];
 
       services.emacs = {

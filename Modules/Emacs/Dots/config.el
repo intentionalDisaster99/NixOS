@@ -80,3 +80,27 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Dynamically locate fish in PATH
+(when-let ((fish-path (executable-find "fish")))
+  (setq explicit-shell-file-name fish-path)
+  (setq shell-file-name fish-path))
+
+;; Set shell specifically for vterm / Doom popup terminal
+(after! vterm
+  (when-let ((fish-path (executable-find "fish")))
+    (setq vterm-shell fish-path)))
+
+;; Set shell for Ghostel
+(after! ghostel
+  (when-let ((fish-path (executable-find "fish")))
+    (setq ghostel-shell fish-path)))
+
+
+;; Rebind 'SPC e' to toggle Treemacs
+(map! :leader
+      :desc "Project sidebar" "e" #'treemacs)
+
+;; Force Treemacs to open on the right side
+(after! treemacs
+  (setq treemacs-position 'right))
