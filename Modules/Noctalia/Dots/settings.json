@@ -817,6 +817,10 @@
             {
                 "enabled": true,
                 "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "emacs"
             }
         ],
         "enableUserTheming": true
