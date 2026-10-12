@@ -26,8 +26,9 @@
         #
         # clang
         ispell
+
         (texlive.combine {
-          inherit (texlive) scheme-small dvisvgm preview dvipng;
+          inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
         })
 
       ];

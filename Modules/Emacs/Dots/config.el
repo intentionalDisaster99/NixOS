@@ -107,6 +107,26 @@
 
 
 ;; For automatic math rendering
+;; (use-package! xenops
+;;   :hook ((org-mode . xenops-mode)
+;;          (markdown-mode . xenops-mode)))
+
 (use-package! xenops
-  :hook ((org-mode . xenops-mode)
-         (markdown-mode . xenops-mode)))
+  :hook ((markdown-mode . xenops-mode)
+         (gfm-mode . xenops-mode)
+         (org-mode . xenops-mode))
+  :config
+  ;; Ensures xenops uses dvisvgm or dvipng depending on availability
+  (setq xenops-math-image-scale-factor 1.5))
+
+(after! org
+  ;; Ensure default compiler and process are set to explicit strings
+  (setq org-preview-latex-default-process 'dvisvgm)
+
+  ;; Make sure background and foreground colors are valid strings or 'default
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :scale 1.5))
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :foreground 'default))
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :background 'default)))
