@@ -26,6 +26,10 @@
         #
         # clang
         ispell
+        (texlive.combine {
+          inherit (texlive) scheme-small dvisvgm preview dvipng;
+        })
+
       ];
 
       services.emacs = {

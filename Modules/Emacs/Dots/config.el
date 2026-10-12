@@ -104,3 +104,9 @@
 ;; Force Treemacs to open on the right side
 (after! treemacs
   (setq treemacs-position 'right))
+
+
+;; For automatic math rendering
+(use-package! xenops
+  :hook ((org-mode . xenops-mode)
+         (markdown-mode . xenops-mode)))
