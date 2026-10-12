@@ -130,3 +130,22 @@
         (plist-put org-format-latex-options :foreground 'default))
   (setq org-format-latex-options
         (plist-put org-format-latex-options :background 'default)))
+
+
+(after! markdown-mode
+  ;; Enable math rendering in markdown
+  (setq markdown-enable-math t)
+
+  ;; Force explicit string paths for latex and dvisvgm binaries on NixOS
+  (setq markdown-latex-compiler "/etc/profiles/per-user/sa9m/bin/latex"
+        markdown-latex-image-converter "/etc/profiles/per-user/sa9m/bin/dvisvgm"))
+
+(after! org
+  (setq org-preview-latex-default-process 'dvisvgm)
+  (setq org-startup-with-latex-preview t)
+  (plist-put org-format-latex-options :scale 1))
+
+
+;; Auto-save visited files after a second of idle time
+(setq auto-save-visited-interval 1)
+(auto-save-visited-mode +1)

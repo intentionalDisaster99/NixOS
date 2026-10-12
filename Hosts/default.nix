@@ -180,6 +180,15 @@
     ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0004", MODE="0666", TAG+="uaccess"
     # Raspberry Pi Pico
     ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", TAG+="uaccess"
+
+    # Raspberry Pi Pico (Bootloader Mode)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666"
+
+    # Raspberry Pi Debug Probe (CMSIS-DAP)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
+
+    # Generic CMSIS-DAP probes (if you use a different debugger)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
   '';
   services.udev.packages = [ pkgs.openocd ];
 
