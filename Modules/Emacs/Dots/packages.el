@@ -55,3 +55,10 @@
                                         ;
 ;; For math
 (package! xenops)
+
+;; So that we can open a dir directly
+(package! consult-dir)
+
+;; Flash like from lazyvim <- I never actually got this to work, but whatever
+;; (package! flash :recipe (:host github :repo "Prgebish/flash"))
+;; (package! evil-snipe :disable t)
