@@ -202,3 +202,30 @@
 ;;   :config
 ;;   (require 'flash-evil)
 ;;   (flash-evil-setup t))
+
+;; Enable relative line numbers globally
+(setq display-line-numbers-type 'relative)
+
+(after! org
+  (defun my/org-justify-fragment-overlay (beg end image &optional imagetype)
+    "Center standalone LaTeX fragment preview overlays using a before-string prefix."
+    (save-excursion
+      (goto-char beg)
+      (let ((line-beg (line-beginning-position))
+            (line-end (save-excursion (goto-char end) (line-end-position))))
+        ;; Only apply to equations on their own line
+        (when (and (string-blank-p (buffer-substring-no-properties line-beg beg))
+                   (string-blank-p (buffer-substring-no-properties end line-end)))
+          (dolist (ov (overlays-at beg))
+            (let ((disp (overlay-get ov 'display)))
+              ;; Add spacer to before-string instead of overwriting display property
+              (when (and disp (eq (car-safe disp) 'image))
+                (overlay-put ov 'before-string
+                             (propertize " " 'display `(space :align-to (- center (0.5 . ,disp))))))))))))
+
+  (advice-add 'org--make-preview-overlay :after #'my/org-justify-fragment-overlay)
+  (advice-add 'org--format-latex-make-overlay :after #'my/org-justify-fragment-overlay))
+
+;; Automatic math rendering
+(use-package! org-fragtog
+  :hook (org-mode . org-fragtog-mode))

@@ -62,3 +62,7 @@
 ;; Flash like from lazyvim <- I never actually got this to work, but whatever
 ;; (package! flash :recipe (:host github :repo "Prgebish/flash"))
 ;; (package! evil-snipe :disable t)
+
+
+;; For automatic math rendering
+(package! org-fragtog)

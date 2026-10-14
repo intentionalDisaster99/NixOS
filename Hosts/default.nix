@@ -30,7 +30,7 @@
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
     ../Modules/Flatpak/default.nix
-    # ../Modules/Streamio/default.nix # currently installed through flatpak -> currently being nxi-flatpakked 
+    # ../Modules/Streamio/default.nix # currently installed through flatpak -> currently being nxi-flatpakked
     # Resource movement
     ./../Resources/Profile/profile.nix
     ./../Resources/Wallpaper/wallpaper.nix
@@ -117,6 +117,7 @@
         nh
         hyfetch
         fastfetch
+        killall
 
         zoom-us
         ubase
@@ -173,7 +174,6 @@
   #   SUBSYSTEM=="usb", ATTRS{idVendor}=="c251", ATTRS{idProduct}=="f000", MODE="0666"
 
   # '';
-
 
   # Udev rules or the pico probe. You should definitely move this to a module
   services.udev.extraRules = ''
