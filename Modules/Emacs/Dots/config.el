@@ -114,6 +114,11 @@
 ;; (use-package! xenops
 ;;   :hook ((org-mode . xenops-mode)
 ;;          (markdown-mode . xenops-mode)))
+;;
+
+
+;; For latex snippet (duh)
+(load! "latex-snippets.el")
 
 (use-package! xenops
   :hook ((markdown-mode . xenops-mode)

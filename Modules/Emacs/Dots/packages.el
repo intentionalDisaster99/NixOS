@@ -66,3 +66,6 @@
 
 ;; For automatic math rendering
 (package! org-fragtog)
+
+;; For automatic smipping comi=pletion
+(package! aas)
