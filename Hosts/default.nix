@@ -359,6 +359,12 @@
 
   '';
   services.udev.packages = [ pkgs.openocd ];
+  # More for the pico stuff
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    zlib
+  ];
 
   # TODO move to a boot module (include minegrub?)
   # boot.loader.grub = {
