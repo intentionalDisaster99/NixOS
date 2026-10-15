@@ -234,3 +234,6 @@
 ;; Automatic math rendering
 (use-package! org-fragtog
   :hook (org-mode . org-fragtog-mode))
+
+;; Enable LSP automatically in assembly buffers (.s, .S, .asm)
+(add-hook 'asm-mode-hook #'lsp-deferred)

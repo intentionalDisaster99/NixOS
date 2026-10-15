@@ -122,6 +122,7 @@
         zoom-us
         ubase
         kdePackages.ark
+        kdePackages.okular
         unzip
         libreoffice
         stm32cubemx
