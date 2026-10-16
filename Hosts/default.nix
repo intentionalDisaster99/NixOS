@@ -152,6 +152,9 @@
         stdenv.cc.cc.lib
         zlib
         libusb1
+        zstd
+        expat
+        ncurses
       ];
 
       # My basic git configuration which I will always want on my system
