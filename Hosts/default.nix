@@ -147,6 +147,11 @@
         better-adb-sync
         v4l-utils
         android-tools
+
+        # For Pico extension, delete later
+        stdenv.cc.cc.lib
+        zlib
+        libusb1
       ];
 
       # My basic git configuration which I will always want on my system
