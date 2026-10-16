@@ -154,6 +154,7 @@
         libusb1
         zstd
         expat
+        picotool
         # ncurses
       ];
 
