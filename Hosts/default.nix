@@ -155,8 +155,8 @@
         zstd
         expat
         picotool
-        # libftdi1 # Fixes the libftdi1.so.2 error
-        libftdi
+        libftdi1 # Fixes the libftdi1.so.2 error
+        # libftdi
         hidapi
         # ncurses
       ];
