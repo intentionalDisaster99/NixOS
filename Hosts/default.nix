@@ -105,7 +105,8 @@
     {
       home.packages = with pkgs; [
         brave
-        vscode
+        # vscode
+        vscode-fhs
         discord
         kdePackages.dolphin
         nixpkgs-fmt
