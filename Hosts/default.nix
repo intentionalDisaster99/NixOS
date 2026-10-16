@@ -154,7 +154,7 @@
         libusb1
         zstd
         expat
-        ncurses
+        # ncurses
       ];
 
       # My basic git configuration which I will always want on my system
