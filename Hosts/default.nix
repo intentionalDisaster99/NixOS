@@ -64,11 +64,10 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_testing;
   fonts.fontconfig.antialias = true;
-  home.pointerCursor.enable
+  home.pointerCursor.enable = true;
 
-
-    # I use the noctalia lockscreen, so I can skip the sddm
-    services.displayManager.autoLogin = {
+  # I use the noctalia lockscreen, so I can skip the sddm
+  services.displayManager.autoLogin = {
     enable = true;
     user = username;
   };
