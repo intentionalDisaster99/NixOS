@@ -1,0 +1,57 @@
+;;; early-init.el --- Spacemacs Early Init File -*- no-byte-compile: t; lexical-binding: nil; -*-
+;;
+;; Copyright (c) 2020-2025 Sylvain Benner & Contributors
+;;
+;; Author: Miciah Dashiel Butler Masters <miciah.masters@gmail.com>
+;; URL: https://github.com/syl20bnr/spacemacs
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+;; Before Emacs 27, the init file was responsible for initializing the package
+;; manager by calling `package-initialize'. Emacs 27 changed the default
+;; behavior: It now calls `package-initialize' before loading the init file.
+;; This behavior would prevent Spacemacs's own package initialization from
+;; running. However, Emacs 27 also loads the "early init" file (this file)
+;; before it initializes the package manager, and Spacemacs can use this early
+;; init file to prevent Emacs from initializing the package manager. (See
+;; <http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=24acb31c04b4048b85311d794e600ecd7ce60d3b>.)
+;;
+;; Earlier Emacs versions do not load the early init file and do not initialize
+;; the package manager before loading the init file, so this file is neither
+;; needed nor loaded on those versions.
+(setq package-enable-at-startup nil)
+
+;;; Define some essential constants that are needed early.
+
+(defconst dotspacemacs-directory
+  (file-name-as-directory
+   (or (getenv "SPACEMACSDIR")
+       (if-let* ((xdg-conf (getenv "XDG_CONFIG_HOME"))
+                 (xdg-conf-spacemacs (concat (file-name-as-directory xdg-conf) "spacemacs/"))
+                 ((file-directory-p xdg-conf-spacemacs)))
+           xdg-conf-spacemacs
+         "~/.spacemacs.d/")))
+  "Directory containing Spacemacs customizations.
+- If environment variable SPACEMACSDIR is set and that directory exists,
+  use that value.
+- If environment variable XDG_CONFIG_HOME is set and its subdirectory
+  \"spacemacs\" exists, use that value.
+- Otherwise use \"~/.spacemacs.d/\".")
+
+;; Spacemacs usually replaces `user-emacs-directory', so it doesn't make sense
+;; for users to put custom Lisp there.
+(setq user-lisp-directory (concat dotspacemacs-directory "user-lisp/"))

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+## Upd_built_in updater script for Spacemacs' built-in files
+##
+## Copyright (c) 2014-2021 Sylvain Benner & Contributors
+##
+## Author: Eugene Yaremenko
+## URL: https://github.com/syl20bnr/spacemacs
+##
+## This file is not part of GNU Emacs.
+##
+## License: GPLv3
+
+echo_headline "Downloading and replacing files"
+built_in_manifest=".ci/built_in_manifest"
+while read -r line; do
+  url=$(cut -f1 -d " " <<<"$line")
+  target=$(cut -f2 -d " " <<<"$line")
+  if ! curl "${url}" --output "${target}"; then
+    echo "Failed to update built in file: ${target} from url: ${url}"
+    echo "Please update manifest file: ~/.emacs.d/.ci/built_in_manifest"
+    exit 2
+  fi
+done <"${built_in_manifest}"
