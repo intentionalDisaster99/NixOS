@@ -64,7 +64,6 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_testing;
   fonts.fontconfig.antialias = true;
-  home.pointerCursor.enable = true;
 
   # I use the noctalia lockscreen, so I can skip the sddm
   services.displayManager.autoLogin = {
@@ -168,6 +167,9 @@
         settings.user.name = "Sa9m";
         settings.user.email = "abyssalflerken@gmail.com";
       };
+
+      # Getting rid of that annoying warning
+      home.pointerCursor.enable = true;
 
       home.stateVersion = "26.05";
 
