@@ -28,7 +28,14 @@
         ispell
         asm-lsp
         (texlive.combine {
-          inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
+          inherit (texlive)
+            scheme-small
+            dvisvgm
+            preview
+            dvipng
+            cm-super
+            type1cm
+            ;
         })
 
         # ARM stuff
@@ -37,7 +44,6 @@
         # aarch64.gdb # aarch64-unknown-linux-gnu-gdb
         pkgs.qemu # qemu-aarch64 for running binaries
         pkgs.gnumake
-
 
       ];
 
@@ -48,11 +54,10 @@
 
       # Symlinking to my dots
       # home.file.".config/doom" = {
-      xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
-      # home.file.".doom.d" = {
-      #   source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
-      # };
-
+      # xdg.configFile.".emacs.d".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
+      home.file.".emacs.d" = {
+        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
+      };
     };
 
 }
