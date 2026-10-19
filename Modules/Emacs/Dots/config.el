@@ -235,14 +235,3 @@
 (use-package! org-fragtog
   :hook (org-mode . org-fragtog-mode))
 
-;; Enable LSP automatically in assembly buffers (.s, .S, .asm)
-(defun my/asm-arm-setup ()
-  (modify-syntax-entry ?/ ". 124b" asm-mode-syntax-table)
-  (modify-syntax-entry ?* ". 23"   asm-mode-syntax-table)
-  (modify-syntax-entry ?\n "> b"   asm-mode-syntax-table)
-  (setq-local comment-start "// ")
-  (setq-local comment-end "")
-  (setq-local indent-tabs-mode nil)
-  (setq-local tab-width 8))
-
-(add-hook 'asm-mode-hook #'my/asm-arm-setup)add-hook 'asm-mode-hook #'lsp-deferred)
