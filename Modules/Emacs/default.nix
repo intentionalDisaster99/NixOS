@@ -33,8 +33,8 @@
 
         # ARM stuff
         pkgs.asm-lsp # language server
-        aarch64.gcc # aarch64-unknown-linux-gnu-{as,gcc,ld,objdump,...}
-        aarch64.gdb # aarch64-unknown-linux-gnu-gdb
+        # aarch64.gcc # aarch64-unknown-linux-gnu-{as,gcc,ld,objdump,...}
+        # aarch64.gdb # aarch64-unknown-linux-gnu-gdb
         pkgs.qemu # qemu-aarch64 for running binaries
         pkgs.gnumake
 
