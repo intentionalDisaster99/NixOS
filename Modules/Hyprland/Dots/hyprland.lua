@@ -25,7 +25,7 @@ hl.monitor({
 hl.monitor({
 	output = "DP-2",
 	mode = "preferred",
-	position = "auto-left",
+	position = "auto-right",
 	scale = "1",
 })
 hl.monitor({
@@ -193,10 +193,6 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast" })
 hl.window_rule({ match = { class = "grim" }, no_anim = 1 })
 hl.window_rule({ match = { class = "selector" }, no_anim = 1 })
 
-
-
-
-
 -- Some of the workspaces
 -- hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
 -- hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
@@ -316,8 +312,8 @@ hl.bind(mainMod .. " + ALT + mouse:272", hl.dsp.window.resize())
 -- For making the screen dim before locking
 -- bind = , code:232, exec, brightnessctl set 5%-
 -- bind = , code:233, exec, brightnessctl set +5%
-hl.bind("code:232", hl.dsp.exec_cmd('brightnessctl set 5%-'))
-hl.bind("code:233", hl.dsp.exec_cmd('brightnessctl set +5%'))
+hl.bind("code:232", hl.dsp.exec_cmd("brightnessctl set 5%-"))
+hl.bind("code:233", hl.dsp.exec_cmd("brightnessctl set +5%"))
 
 -- Colors from noctalia
 local decor = require("noctalia-colors")
