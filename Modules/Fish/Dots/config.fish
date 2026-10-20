@@ -2,6 +2,17 @@ function fish_greeting
     # random choice "Hello!" "Hi" "G'day" "Howdy"
 end
 
+# So vterm doesn't reply nicely, so it needs to not send a request for features
+if [ "$INSIDE_EMACS" = "vterm" ]
+    set -gx fish_features no-query-term
+end
+
+# This should allow the vterm window to have a nice title
+function fish_title
+    hostname
+    echo ":"
+    prompt_pwd
+end
 
 # I alliwng it to automatically find my doom commands
 export PATH="$HOME/.config/emacs/bin:$PATH"
