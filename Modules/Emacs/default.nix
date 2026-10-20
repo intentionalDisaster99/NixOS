@@ -48,6 +48,7 @@
         # The font for spacemacs
         source-code-pro
         cmake
+        libtool
 
       ];
 
