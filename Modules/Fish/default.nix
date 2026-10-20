@@ -8,6 +8,7 @@
   ];
 
   users.users.${username}.shell = pkgs.fish;
+  programs.fish.enable = true;
 
   home-manager.users.${username} = { config, ... }: {
 
