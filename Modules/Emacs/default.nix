@@ -45,6 +45,9 @@
         pkgs.qemu # qemu-aarch64 for running binaries
         pkgs.gnumake
 
+        # The font for spacemacs
+        source-code-pro
+
       ];
 
       services.emacs = {
