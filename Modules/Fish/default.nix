@@ -7,6 +7,8 @@
     ./../Direnv/default.nix
   ];
 
+  users.users.${username}.shell = pkgs.fish;
+
   home-manager.users.${username} = { config, ... }: {
 
     # Including some nice things that I like for my shells, like eza and z
