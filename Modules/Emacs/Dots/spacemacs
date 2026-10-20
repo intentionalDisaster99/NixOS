@@ -588,21 +588,22 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
+  ;; I think this is where you put it. this should save whenever emacs loses focus
+  (add-hook 'focus-out-hook 'save-buffer)
+  (add-hook 'focus-out-hook (lambda () (save-some-buffers t))) ;; This just does it for all buffers
+  (auto-save-visited-mode 1) ;; This makes it write the auto-saved file before I manually tell it to
+
+  ;; General updates to vterm to make it nicer
+  (add-hook 'vterm-mode-hook
+            (lambda ()
+              (setq buffer-save-disabled t)
+              (set (make-local-variable 'buffer-face-mode-face)
+                   '(:family "DejaVu Sans Mono"))
+              (buffer-face-mode t)))
+  (setq vterm-shell '("/nix/store/<hash>-fish-3.x/bin/fish" "--features" "no-query-term"))
+  ;; Still not perfect, but a lot better
 
   )
-;; I think this is where you put it. this should save whenever emacs loses focus
-(add-hook 'focus-out-hook 'save-buffer)
-(add-hook 'focus-out-hook (lambda () (save-some-buffers t))) ;; This just does it for all buffers
-(auto-save-visited-mode 1) ;; This makes it write the auto-saved file before I manually tell it to
-
-;; General updates to vterm to make it nicer
-(add-hook 'vterm-mode-hook
-          (lambda ()
-            (setq buffer-save-disabled t)
-            (set (make-local-variable 'buffer-face-mode-face)
-                 '(:family "DejaVu Sans Mono"))
-            (buffer-face-mode t)))
-(setq vterm-shell '("/nix/store/<hash>-fish-3.x/bin/fish" "--features" "no-query-term"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

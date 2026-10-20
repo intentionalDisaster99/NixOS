@@ -65,6 +65,11 @@
   boot.kernelPackages = pkgs.linuxPackages_testing;
   fonts.fontconfig.antialias = true;
 
+  # Automatically mounts thumb drives and other detatchable storage
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # I use the noctalia lockscreen, so I can skip the sddm
   services.displayManager.autoLogin = {
     enable = true;
