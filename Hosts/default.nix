@@ -70,14 +70,7 @@
   time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "
-      nix-command
-      "
-    "
-      flakes
-      "
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   boot.kernelPackages = pkgs.linuxPackages_testing;
   fonts.fontconfig.antialias = true;
 
@@ -91,9 +84,7 @@
     enable = true;
     user = username;
   };
-  services.displayManager.defaultSession = "
-      hyprland-uwsm
-      ";
+  services.displayManager.defaultSession = "hyprland-uwsm";
 
   # For wireless stuff
   hardware.bluetooth = {
