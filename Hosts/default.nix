@@ -40,27 +40,49 @@
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
-      "wheel"
-      "networkmanager"
-      "audio"
-      "dialout"
-      "plugdev"
-      "docker"
-      "input"
-      "uinput"
+      "wheel1
+      "
+      networkmanager
+      "
+      "
+      audio
+      "
+      "
+      dialout
+      "
+      "
+      plugdev
+      "
+      "
+      docker
+      "
+      "
+      input
+      "
+      "
+      uinput
+      "
     ];
   };
 
   # Random stuff that generally needs to be here
   i18n.supportedLocales = [
-    "en_US.UTF-8/UTF-8"
+    "
+      en_US.UTF-8/UTF-8
+      "
   ];
-  time.timeZone = "America/Chicago";
-  services.xserver.enable = true;
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
+  time.timeZone = "
+      America/Chicago
+      ";
+        services.xserver.enable = true;
+        nixpkgs.config.allowUnfree = true;
+        nix.settings.experimental-features = [
+          "
+      nix-command
+      "
+    "
+      flakes
+      "
   ];
   boot.kernelPackages = pkgs.linuxPackages_testing;
   fonts.fontconfig.antialias = true;
@@ -75,7 +97,9 @@
     enable = true;
     user = username;
   };
-  services.displayManager.defaultSession = "hyprland-uwsm";
+  services.displayManager.defaultSession = "
+      hyprland-uwsm
+      ";
 
   # For wireless stuff
   hardware.bluetooth = {
@@ -97,8 +121,16 @@
     pkgs.networkmanagerapplet
   ];
   networking.nameservers = [
-    "1.1.1.1"
-    "8.8.8.8"
+    "
+      1.1
+      .1
+      .1
+      "
+    "
+      8.8
+      .8
+      .8
+      "
   ];
 
   # To allow things to run stuff by downloading from the internet
@@ -169,8 +201,11 @@
       # My basic git configuration which I will always want on my system
       programs.git = {
         enable = true;
-        settings.user.name = "Sa9m";
-        settings.user.email = "abyssalflerken@gmail.com";
+        settings.user.name = "
+      Sa9m
+      ";
+        settings.user.email = "
+      abyssalflerken@gmail.com";
       };
 
       # Getting rid of that annoying warning
@@ -413,3 +448,4 @@
   services.flatpak.enable = true;
 
 }
+

@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(shell-scripts
+   '(lua
+     shell-scripts
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -364,7 +365,8 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar t
+   dotspacemacs-loading-progress-bar nil
+
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
@@ -377,7 +379,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default t) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
@@ -579,6 +581,11 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  ;; Trying to make it faster
+  (defvar my-default-file-name-handler-alist file-name-handler-alist)
+  (setq file-name-handler-alist nil)
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -589,8 +596,8 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;; I think this is where you put it. this should save whenever emacs loses focus
-  (add-hook 'focus-out-hook 'save-buffer)
-  (add-hook 'focus-out-hook (lambda () (save-some-buffers t))) ;; This just does it for all buffers
+  ;; (add-hook 'focus-out-hook 'save-buffer)
+  ;; (add-hook 'focus-out-hook (lambda () (save-some-buffers t))) ;; This just does it for all buffers
   (auto-save-visited-mode 1) ;; This makes it write the auto-saved file before I manually tell it to
 
   ;; General updates to vterm to make it nicer
@@ -603,7 +610,11 @@ before packages are loaded."
   (setq vterm-shell '("/nix/store/<hash>-fish-3.x/bin/fish" "--features" "no-query-term"))
   ;; Still not perfect, but a lot better
 
+  ;; Trying to make it faster when finding files
+  (setq file-name-handler-alist my-default-file-name-handler-alist)
+
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
