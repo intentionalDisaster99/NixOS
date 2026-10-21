@@ -66,14 +66,8 @@
   };
 
   # Random stuff that generally needs to be here
-  i18n.supportedLocales = [
-    "
-      en_US.UTF-8/UTF-8
-      "
-  ];
-  time.timeZone = "
-      America/Chicago
-      ";
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
+  time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
