@@ -40,7 +40,7 @@
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
-      "wheel1
+      "wheel1"
       "
       networkmanager
       "
@@ -74,10 +74,10 @@
   time.timeZone = "
       America/Chicago
       ";
-        services.xserver.enable = true;
-        nixpkgs.config.allowUnfree = true;
-        nix.settings.experimental-features = [
-          "
+  services.xserver.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [
+    "
       nix-command
       "
     "
@@ -196,16 +196,14 @@
         # libftdi
         hidapi
         # ncurses
+        arduino
       ];
 
       # My basic git configuration which I will always want on my system
       programs.git = {
         enable = true;
-        settings.user.name = "
-      Sa9m
-      ";
-        settings.user.email = "
-      abyssalflerken@gmail.com";
+        settings.user.name = "Sa9m";
+        settings.user.email = "abyssalflerken@gmail.com";
       };
 
       # Getting rid of that annoying warning
