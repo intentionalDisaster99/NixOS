@@ -171,6 +171,7 @@
         android-tools
 
         # For Pico extension, delete later
+        systemd # Actually for aruino
         stdenv.cc.cc.lib
         zlib
         libusb1
