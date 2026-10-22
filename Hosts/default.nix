@@ -184,7 +184,7 @@
         # ncurses
         arduino
         platformio
-        teensy-loader-cliz
+        teensy-loader-cli
       ];
 
       # My basic git configuration which I will always want on my system
