@@ -62,6 +62,7 @@
       "
       uinput
       "
+      "sudoers"
     ];
   };
 
@@ -169,6 +170,9 @@
         better-adb-sync
         v4l-utils
         android-tools
+
+        # For pdf stuff, probably should be kept
+        pandoc
 
         # For Pico extension, delete later
         systemd # Actually for aruino
