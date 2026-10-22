@@ -183,6 +183,8 @@
         hidapi
         # ncurses
         arduino
+        platformio
+        teensy-loader-cliz
       ];
 
       # My basic git configuration which I will always want on my system
