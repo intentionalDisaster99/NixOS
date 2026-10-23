@@ -40,28 +40,14 @@
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
-      "wheel1"
-      "
-      networkmanager
-      "
-      "
-      audio
-      "
-      "
-      dialout
-      "
-      "
-      plugdev
-      "
-      "
-      docker
-      "
-      "
-      input
-      "
-      "
-      uinput
-      "
+      "wheel"
+      "networkmanager"
+      "audio"
+      "dialout"
+      "plugdev"
+      "docker"
+      "input"
+      "uinput"
       "sudoers"
     ];
   };
@@ -186,7 +172,7 @@
         # libftdi
         hidapi
         # ncurses
-        arduino
+        arduino-ide
         platformio
         teensy-loader-cli
       ];
