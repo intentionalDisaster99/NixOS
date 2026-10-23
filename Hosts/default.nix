@@ -49,6 +49,7 @@
       "input"
       "uinput"
       "sudoers"
+      "tty"
     ];
   };
 
