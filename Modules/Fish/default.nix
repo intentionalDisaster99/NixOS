@@ -19,6 +19,7 @@
       bat
       fish
       fireplace
+      grub2
       os-prober # TODO move (this was put here in a hurry) (to a boot module perchance)
     ];
 
