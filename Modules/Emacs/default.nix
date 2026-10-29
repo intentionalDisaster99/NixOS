@@ -72,7 +72,6 @@
           echo "Automated Setup: Cloning Doom Emacs into $DOOM..."
           ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs "$DOOM"
         fi
-        doom sync
       '';
 
 
