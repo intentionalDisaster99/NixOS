@@ -68,6 +68,7 @@
       # Automatically clone Doom Emacs if ~/.emacs.d is missing
       home.activation.installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         DOOM="$HOME/.emacs.d"
+        echo "$DOOM is the doom directory"
         if [ ! -d "$DOOM" ]; then
           echo "Automated Setup: Cloning Doom Emacs into $DOOM..."
           ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs "$DOOM"
