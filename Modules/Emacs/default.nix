@@ -12,7 +12,7 @@
   # ];
 
   home-manager.users.${username} =
-    { config, ... }:
+    { config, lib, ... }:
     {
 
       # Installing the bits I need
