@@ -1,1 +1,0 @@
-("/etc/nixos/" "~/Dev/SHC/TwoMonth/Cassiopeia/SHC-Cassiopeia/" "~/Dev/School/" "/etc/nixos/Modules/Emacs/Dots/" "~/Brain/" "~/Dev/SHC/TwoMonth/DROP/")

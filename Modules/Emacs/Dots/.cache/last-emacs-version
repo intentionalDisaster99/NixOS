@@ -1,2 +1,0 @@
-;;; -*- lexical-binding: nil; -*-
-(setq spacemacs--last-emacs-version "31.1")
