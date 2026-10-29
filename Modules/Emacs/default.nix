@@ -59,15 +59,15 @@
       };
 
       # Symlinking to my dots
-      home.file.".config/doom" = {
-        # xdg.configFile.".emacs.d".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
-        # home.file.".emacs.d" = {
-        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
-      };
+      # home.file.".config/doom" = {
+      #   # xdg.configFile.".emacs.d".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
+      #   # home.file.".emacs.d" = {
+      #   source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots";
+      # };
 
       # Automatically clone Doom Emacs if ~/.emacs.d is missing
       home.activation.installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        DOOM="$HOME/.config/doom"
+        DOOM="$HOME/.config/emacs"
         if [ ! -d "$DOOM" ]; then
           echo "Automated Setup: Cloning Doom Emacs into $DOOM..."
           ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs "$DOOM"
