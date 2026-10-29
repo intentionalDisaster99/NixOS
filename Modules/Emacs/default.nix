@@ -65,9 +65,9 @@
       };
 
 
-      home.file.".spacemacs" = {
-        source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots/spacemacs";
-      };
+      # home.file.".spacemacs" = {
+      #   source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Dots/spacemacs";
+      # };
     };
 
 }

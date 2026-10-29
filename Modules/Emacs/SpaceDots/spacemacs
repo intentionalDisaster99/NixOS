@@ -62,8 +62,9 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     version-control
-     treemacs)
+     (treemacs :variables treemacs-position 'right)
+     version-control)
+
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -613,7 +614,32 @@ before packages are loaded."
   ;; Trying to make it faster when finding files
   (setq file-name-handler-alist my-default-file-name-handler-alist)
 
+
+  ;; Standard tab display width & Evil mode shift width (for >> and <<)
+  (setq-default tab-width 4)
+  (setq-default evil-shift-width 4)
+
+  ;; Turning off trailing whitespace thingy that is annoying
+  (setq-default show-trailing-whitespace nil)
+  (setq-default spacemacs-show-trailing-whitespace nil)
+
+  ;; Fix C/C++ indentation and tab size
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (setq c-basic-offset 4)
+              (setq tab-width 4)))
+
+  ;; Force-disable trailing whitespace in all code buffers
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (setq show-trailing-whitespace nil)))
+
+
+  ;; Automatically indent (I hope)
+  (electric-indent-mode 1)
+
   )
+
 
 
 ;; Do not write anything past this comment. This is where Emacs will

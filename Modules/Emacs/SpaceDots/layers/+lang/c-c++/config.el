@@ -110,3 +110,4 @@ Otherwise indent the line with built-in functions.")
 
 (defconst c-c++-mode-hooks '(c-mode-hook c++-mode-hook)
   "Primary hooks of the `c-c++' layer.")
+(defconst c-c++-formatter-indent-line '(lsp-format-region))
