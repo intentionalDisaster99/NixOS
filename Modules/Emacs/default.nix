@@ -12,11 +12,13 @@
         set -eu
         EMACSDIR="$HOME/.config/emacs"
 
-        # No network yet? Exit non-zero so systemd retries later.
         git ls-remote -q https://github.com/doomemacs/doomemacs HEAD >/dev/null 2>&1 || exit 1
 
         [ -d "$EMACSDIR" ] || git clone --depth 1 https://github.com/doomemacs/doomemacs "$EMACSDIR"
         "$EMACSDIR/bin/doom" install --force
+
+        mkdir -p "$HOME/.local/state"
+        touch "$HOME/.local/state/doom-bootstrap.done"
       '';
     in
     {
@@ -46,7 +48,7 @@
       systemd.user.services.doom-bootstrap = {
         Unit = {
           Description = "Install Doom Emacs if it's missing";
-          ConditionPathExists = "!%h/.config/emacs/.local";
+          ConditionPathExists = "!%h/.local/state/doom-bootstrap.done";
           StartLimitIntervalSec = 0;
         };
         Service = {
