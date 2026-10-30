@@ -93,5 +93,9 @@
 (setq! desktop-load-locked-desktop t)
 
 
+;; Funny
+  (setq fancy-splash-image
+        (concat doom-private-dir "splash/I-am-doom.png"))
+
 ;; Treemacs
-(!load "treemacs.el")
+;; (load! "treemacs-config.el")
