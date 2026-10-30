@@ -94,8 +94,8 @@
 
 
 ;; Funny
-  (setq fancy-splash-image
-        (concat doom-private-dir "splash/I-am-doom.png"))
+(setq fancy-splash-image
+      (concat doom-private-dir "splash/I-am-doom-small.png"))
 
 ;; Treemacs
-;; (load! "treemacs-config.el")
+(load! "treemacs-config.el")
