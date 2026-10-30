@@ -40,6 +40,14 @@
         })
       ];
 
+      services.emacs = {
+        enable = true;
+        package = pkgs.emacs-pgtk;
+        defaultEditor = true;
+        socketActivation.enable = true;
+        client.enable = true;
+      };
+
       # Linking to dots
       xdg.configFile."doom".source =
         config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Doom";
