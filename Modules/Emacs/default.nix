@@ -16,7 +16,7 @@
         git ls-remote -q https://github.com/doomemacs/doomemacs HEAD >/dev/null 2>&1 || exit 1
 
         [ -d "$EMACSDIR" ] || git clone --depth 1 https://github.com/doomemacs/doomemacs "$EMACSDIR"
-        "$EMACSDIR/bin/doom" install --force --no-fonts
+        "$EMACSDIR/bin/doom" install --force
       '';
     in
     {
