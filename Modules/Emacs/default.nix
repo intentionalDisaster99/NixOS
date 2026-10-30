@@ -44,7 +44,8 @@
         enable = true;
         package = pkgs.emacs-pgtk;
         defaultEditor = true;
-        socketActivation.enable = true;
+        socketActivation.enable = false;
+        startWithUserSession = true;
         client.enable = true;
       };
 

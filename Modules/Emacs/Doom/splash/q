@@ -1,0 +1,661 @@
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f8190) [0x5f68d1a82190]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1fafa2) [0x5f68d1a84fa2]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f7dfe) [0x5f68d1a81dfe]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f8190) [0x5f68d1a82190]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f7dfe) [0x5f68d1a81dfe]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1fa6d9) [0x5f68d1a846d9]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f7dfe) [0x5f68d1a81dfe]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f8190) [0x5f68d1a82190]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1fafa2) [0x5f68d1a84fa2]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f7dfe) [0x5f68d1a81dfe]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f8190) [0x5f68d1a82190]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f7dfe) [0x5f68d1a81dfe]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f7dfe) [0x5f68d1a81dfe]
+Oct 30 15:06:07 higgs-boson bash[316588]: /nix/store/drhjxg9rgxlvrks3y66z72icw0srl4l8-emacs-pgtk-31.1/bin/emacs(+0x1f8190) [0x5f68d1a82190]
+Oct 30 15:06:07 higgs-boson bash[316588]: ...
+Oct 30 15:06:08 higgs-boson systemd-coredump[320975]: ]8;;man:core(5)\[🡕]]8;;\ [0;1;31m[0;1;39m[0;1;31mProcess 316588 (.emacs-31.1-wra) of user 1000 dumped core.[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mModule unicode-fonts-776c9172-17d3c00c.eln without build-id.[0m
+                                                      [0;1;31mModule project-0561371a-0ce83d80.eln without build-id.[0m
+                                                      [0;1;31mModule fileloop-f8cb1238-3a029b5b.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-grep-d76a3083-bfd7be43.eln without build-id.[0m
+                                                      [0;1;31mModule grep-c9b5c28d-f7474bf1.eln without build-id.[0m
+                                                      [0;1;31mModule ibuf-ext-5624402a-7d2ac81f.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-ibuffer-665d0ee6-4fd7ca7a.eln without build-id.[0m
+                                                      [0;1;31mModule ibuffer-c2dc0626-0e1676df.eln without build-id.[0m
+                                                      [0;1;31mModule projectile-95f71097-b32a654e.eln without build-id.[0m
+                                                      [0;1;31mModule libdconfsettings.so without build-id.[0m
+                                                      [0;1;31mModule evil-collection-which-key-1b66e113-0e23407e.eln without build-id.[0m
+                                                      [0;1;31mModule which-key-2ad4ddc2-d255aa8d.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-compile-cdc3aae8-a998542b.eln without build-id.[0m
+                                                      [0;1;31mModule compile-91e1c2a0-e7b999f2.eln without build-id.[0m
+                                                      [0;1;31mModule face-remap-9d6c47ed-dcd35755.eln without build-id.[0m
+                                                      [0;1;31mModule color-9d7980a5-2ce2013c.eln without build-id.[0m
+                                                      [0;1;31mModule pulse-d7a63724-ce2f0f9b.eln without build-id.[0m
+                                                      [0;1;31mModule nav-flash-5fd00b4c-5b50e800.eln without build-id.[0m
+                                                      [0;1;31mModule ligature-06956154-5c7bcde7.eln without build-id.[0m
+                                                      [0;1;31mModule persp-mode-b2bf2917-a10d1fff.eln without build-id.[0m
+                                                      [0;1;31mModule org-capture-f877c39d-5a0ab108.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-org-agenda-d314b1a2-76532d67.eln without build-id.[0m
+                                                      [0;1;31mModule org-agenda-ad25f551-7b3fbd12.eln without build-id.[0m
+                                                      [0;1;31mModule org-refile-2b2093ba-3fa4a5dd.eln without build-id.[0m
+                                                      [0;1;31mModule org-id-a46afb30-012fc1e0.eln without build-id.[0m
+                                                      [0;1;31mModule org-persist-dbbe9df2-4a8b2c96.eln without build-id.[0m
+                                                      [0;1;31mModule generator-184aa77f-0587c89b.eln without build-id.[0m
+                                                      [0;1;31mModule avl-tree-508a9d96-f8d5c9c0.eln without build-id.[0m
+                                                      [0;1;31mModule org-element-383dc2f7-80c8db6d.eln without build-id.[0m
+                                                      [0;1;31mModule the-org-mode-expansions-ec75a80e-0816c2fd.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-org-1661342c-23e556b0.eln without build-id.[0m
+                                                      [0;1;31mModule time-date-40951a48-cd3faa9d.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-outline-396e3b94-62435259.eln without build-id.[0m
+                                                      [0;1;31mModule outline-afc41f82-f6632d52.eln without build-id.[0m
+                                                      [0;1;31mModule ob-emacs-lisp-af242e15-cae729bd.eln without build-id.[0m
+                                                      [0;1;31mModule org-table-5bd74869-355e7d43.eln without build-id.[0m
+                                                      [0;1;31mModule org-136c2dfa-cdc2e970.eln without build-id.[0m
+                                                      [0;1;31mModule ol-1671543d-d47d5642.eln without build-id.[0m
+                                                      [0;1;31mModule ob-tangle-d28aaeec-5e1b4332.eln without build-id.[0m
+                                                      [0;1;31mModule ob-ref-0abecaa5-10e7e3cc.eln without build-id.[0m
+                                                      [0;1;31mModule ob-lob-9993fc1f-43794580.eln without build-id.[0m
+                                                      [0;1;31mModule ob-table-0ba8f68e-dc2247b1.eln without build-id.[0m
+                                                      [0;1;31mModule ob-exp-8ab6d8d9-defa55f4.eln without build-id.[0m
+                                                      [0;1;31mModule org-macro-e232253e-104464ca.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-sh-script-ccd18d25-b85bb5b2.eln without build-id.[0m
+                                                      [0;1;31mModule smartparens-text-02deb5f9-bb7a46ce.eln without build-id.[0m
+                                                      [0;1;31mModule smartparens-config-44497d93-a107a3a1.eln without build-id.[0m
+                                                      [0;1;31mModule advice-791b3e89-9a79abcc.eln without build-id.[0m
+                                                      [0;1;31mModule loadhist-e9175ed1-97dcf9ee.eln without build-id.[0m
+                                                      [0;1;31mModule smartparens-20c445e7-8fbe25c0.eln without build-id.[0m
+                                                      [0;1;31mModule smie-45b5c06f-5690de63.eln without build-id.[0m
+                                                      [0;1;31mModule treesit-37439c61-69806c0c.eln without build-id.[0m
+                                                      [0;1;31mModule executable-21d46f43-a1c08420.eln without build-id.[0m
+                                                      [0;1;31mModule sh-script-c65f7507-10c973b9.eln without build-id.[0m
+                                                      [0;1;31mModule oc-2771cd83-8f9330f5.eln without build-id.[0m
+                                                      [0;1;31mModule org-keys-7a6721f3-5b58cda5.eln without build-id.[0m
+                                                      [0;1;31mModule org-element-ast-1fef7e02-c34f443a.eln without build-id.[0m
+                                                      [0;1;31mModule org-cycle-b2e803a0-021e8980.eln without build-id.[0m
+                                                      [0;1;31mModule org-fold-c8486e54-7787f5e6.eln without build-id.[0m
+                                                      [0;1;31mModule ob-eval-63e70d88-94b292a5.eln without build-id.[0m
+                                                      [0;1;31mModule ob-core-5808f66b-059bf6bf.eln without build-id.[0m
+                                                      [0;1;31mModule ob-comint-ab91a8f2-27335d13.eln without build-id.[0m
+                                                      [0;1;31mModule org-src-6dc0c03f-670a9055.eln without build-id.[0m
+                                                      [0;1;31mModule org-pcomplete-5fc06e48-d26e8fd6.eln without build-id.[0m
+                                                      [0;1;31mModule org-footnote-5ed5c1df-86895802.eln without build-id.[0m
+                                                      [0;1;31mModule org-fold-core-964f3e52-24d378ec.eln without build-id.[0m
+                                                      [0;1;31mModule org-list-e9f651df-47262c7b.eln without build-id.[0m
+                                                      [0;1;31mModule org-entities-477108b1-b01a1a31.eln without build-id.[0m
+                                                      [0;1;31mModule org-version-0c50451b-e6fe8b1c.eln without build-id.[0m
+                                                      [0;1;31mModule org-faces-f90c931d-6e1f5bdc.eln without build-id.[0m
+                                                      [0;1;31mModule org-compat-e1aced99-38135399.eln without build-id.[0m
+                                                      [0;1;31mModule org-macs-15111be5-20fe61f2.eln without build-id.[0m
+                                                      [0;1;31mModule find-func-64af57a4-6260fca8.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-calendar-5d6eb373-36f8a74f.eln without build-id.[0m
+                                                      [0;1;31mModule cal-menu-9380b697-234e3fd0.eln without build-id.[0m
+                                                      [0;1;31mModule calendar-d19e5c14-d7716d68.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-magit-c0f7caca-81068960.eln without build-id.[0m
+                                                      [0;1;31mModule magit-submodule-ce6f2e20-5427d63a.eln without build-id.[0m
+                                                      [0;1;31mModule magit-blame-65abfe3a-026c6216.eln without build-id.[0m
+                                                      [0;1;31mModule magit-reflog-017a9bfd-c404aeec.eln without build-id.[0m
+                                                      [0;1;31mModule magit-stash-6852ea15-844b0ca5.eln without build-id.[0m
+                                                      [0;1;31mModule magit-bisect-69feaa88-a33cd3fc.eln without build-id.[0m
+                                                      [0;1;31mModule magit-push-7b4fb1bb-47763dcd.eln without build-id.[0m
+                                                      [0;1;31mModule magit-pull-34465c02-beb7ca15.eln without build-id.[0m
+                                                      [0;1;31mModule magit-fetch-3e358a51-d2b21337.eln without build-id.[0m
+                                                      [0;1;31mModule magit-clone-d388a650-28c4cc12.eln without build-id.[0m
+                                                      [0;1;31mModule magit-remote-503b272d-1aa2e414.eln without build-id.[0m
+                                                      [0;1;31mModule magit-commit-5b4028ff-f169e7b7.eln without build-id.[0m
+                                                      [0;1;31mModule magit-sequence-1cfa66d7-526a7110.eln without build-id.[0m
+                                                      [0;1;31mModule magit-notes-c1c87509-c69adcdb.eln without build-id.[0m
+                                                      [0;1;31mModule magit-worktree-0adef4d1-8e1f6e20.eln without build-id.[0m
+                                                      [0;1;31mModule magit-tag-a507a828-4c9f79a1.eln without build-id.[0m
+                                                      [0;1;31mModule magit-merge-b9588d20-afe732ae.eln without build-id.[0m
+                                                      [0;1;31mModule magit-branch-9a9660ec-d40969fc.eln without build-id.[0m
+                                                      [0;1;31mModule magit-reset-a8f67ed9-8a9f3629.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-bookmark-fb44f45d-ff30157a.eln without build-id.[0m
+                                                      [0;1;31mModule text-property-search-db1383f6-5b330230.eln without build-id.[0m
+                                                      [0;1;31mModule bookmark-8667481e-5bd30c73.eln without build-id.[0m
+                                                      [0;1;31mModule magit-files-8748ca1b-88dfa405.eln without build-id.[0m
+                                                      [0;1;31mModule magit-refs-8dd6976c-6a481c89.eln without build-id.[0m
+                                                      [0;1;31mModule magit-status-67d2fbe6-e6069930.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-epa-c9bff758-75d3974d.eln without build-id.[0m
+                                                      [0;1;31mModule rfc6068-5e4d60aa-975b5979.eln without build-id.[0m
+                                                      [0;1;31mModule epg-config-78240760-bc3f9df0.eln without build-id.[0m
+                                                      [0;1;31mModule epg-de089247-2d45a2ae.eln without build-id.[0m
+                                                      [0;1;31mModule epa-bdd8ea1c-6f9a053a.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-magit-repos-370893e0-b9228a0e.eln without build-id.[0m
+                                                      [0;1;31mModule magit-repos-03c3a079-04b020e6.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-dired-78cb3393-9ae6b9c1.eln without build-id.[0m
+                                                      [0;1;31mModule dired-6a3ae2bc-63bce1a9.eln without build-id.[0m
+                                                      [0;1;31mModule magit-apply-cbf1a068-99eea8a4.eln without build-id.[0m
+                                                      [0;1;31mModule magit-wip-a58ee2b8-ffbb337f.eln without build-id.[0m
+                                                      [0;1;31mModule magit-log-4d3f95b2-2d1d1402.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-imenu-53e7ecde-82df3dd4.eln without build-id.[0m
+                                                      [0;1;31mModule imenu-a6693d03-e5f31a41.eln without build-id.[0m
+                                                      [0;1;31mModule which-func-fb53504e-bebcfc6b.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-smerge-mode-b1f72f2e-bc0e3d82.eln without build-id.[0m
+                                                      [0;1;31mModule diff-b728f3ea-f9ce1de0.eln without build-id.[0m
+                                                      [0;1;31mModule smerge-mode-3977987a-59c90b18.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-diff-mode-4d9bd6e7-d5d4610c.eln without build-id.[0m
+                                                      [0;1;31mModule track-changes-9da6ab8e-9fc94672.eln without build-id.[0m
+                                                      [0;1;31mModule diff-mode-ac82991e-114adc83.eln without build-id.[0m
+                                                      [0;1;31mModule magit-diff-52e60c17-7e5eecc5.eln without build-id.[0m
+                                                      [0;1;31mModule filenotify-65939d6e-0ffc752d.eln without build-id.[0m
+                                                      [0;1;31mModule autorevert-841d6890-e5e85ba9.eln without build-id.[0m
+                                                      [0;1;31mModule magit-autorevert-d149ce15-25584948.eln without build-id.[0m
+                                                      [0;1;31mModule magit-transient-23942b62-5d0bb1af.eln without build-id.[0m
+                                                      [0;1;31mModule magit-margin-039bfd6a-83608d97.eln without build-id.[0m
+                                                      [0;1;31mModule magit-673da686-dae494b5.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-log-edit-08003fc4-e20ae15b.eln without build-id.[0m
+                                                      [0;1;31mModule pcvs-util-35d8f453-fffc240a.eln without build-id.[0m
+                                                      [0;1;31mModule add-log-cb3c2979-e92deb91.eln without build-id.[0m
+                                                      [0;1;31mModule log-edit-bc58b2d4-8c8b2760.eln without build-id.[0m
+                                                      [0;1;31mModule magit-process-c9a6b472-50728d38.eln without build-id.[0m
+                                                      [0;1;31mModule xdg-9947111f-ae5de0bc.eln without build-id.[0m
+                                                      [0;1;31mModule url-proxy-fc0751f0-4e50f874.eln without build-id.[0m
+                                                      [0;1;31mModule url-privacy-7df6b777-46599fd0.eln without build-id.[0m
+                                                      [0;1;31mModule url-methods-08bf763a-53155477.eln without build-id.[0m
+                                                      [0;1;31mModule url-expand-cf7ffc4e-41e7c93b.eln without build-id.[0m
+                                                      [0;1;31mModule url-history-a9b2f6e8-c2809bd2.eln without build-id.[0m
+                                                      [0;1;31mModule generate-lisp-file-20e31f41-42ab4a74.eln without build-id.[0m
+                                                      [0;1;31mModule url-domsuf-beabcbfe-a28b5f22.eln without build-id.[0m
+                                                      [0;1;31mModule password-cache-187e4eec-d2564e7b.eln without build-id.[0m
+                                                      [0;1;31mModule map-5d7b616a-bd07faf7.eln without build-id.[0m
+                                                      [0;1;31mModule json-a90a1eab-88d22a6f.eln without build-id.[0m
+                                                      [0;1;31mModule auth-source-49df7eef-79f49b5a.eln without build-id.[0m
+                                                      [0;1;31mModule url-parse-ee297c9b-46efdd7a.eln without build-id.[0m
+                                                      [0;1;31mModule url-util-28122a93-70df42e0.eln without build-id.[0m
+                                                      [0;1;31mModule url-cookie-02b28750-a74bb4b6.eln without build-id.[0m
+                                                      [0;1;31mModule url-vars-04b97511-d8267d91.eln without build-id.[0m
+                                                      [0;1;31mModule mailcap-a1205653-d48f56c3.eln without build-id.[0m
+                                                      [0;1;31mModule url-38944b26-2f18b80d.eln without build-id.[0m
+                                                      [0;1;31mModule browse-url-87f72988-3d8aec24.eln without build-id.[0m
+                                                      [0;1;31mModule benchmark-0e5ff0c6-b45151e2.eln without build-id.[0m
+                                                      [0;1;31mModule magit-mode-438c35c7-53cbfb40.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-magit-section-749c165f-2031c37a.eln without build-id.[0m
+                                                      [0;1;31mModule cursor-sensor-54079dab-f973c570.eln without build-id.[0m
+                                                      [0;1;31mModule magit-section-ab99253f-14d14484.eln without build-id.[0m
+                                                      [0;1;31mModule crm-f08665f2-ed8ca432.eln without build-id.[0m
+                                                      [0;1;31mModule magit-base-3eaebab4-5f972ce9.eln without build-id.[0m
+                                                      [0;1;31mModule magit-git-663953d3-3ba07f34.eln without build-id.[0m
+                                                      [0;1;31mModule git-commit-c92d6bed-03d4f136.eln without build-id.[0m
+                                                      [0;1;31mModule byte-opt-9c5f25f5-f7a818d0.eln without build-id.[0m
+                                                      [0;1;31mModule format-spec-644c0068-2ff8d507.eln without build-id.[0m
+                                                      [0;1;31mModule transient-370e8d30-e87ee6c9.eln without build-id.[0m
+                                                      [0;1;31mModule eieio-core-63c05904-1ebe6695.eln without build-id.[0m
+                                                      [0;1;31mModule eieio-0db8d1d4-12cc1ad5.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-with-editor-2144f444-7b3e8b9f.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-6d616b652d70726f63657373_make_process_0.eln without build-id.[0m
+                                                      [0;1;31mModule server-0cc44189-d3ef10fc.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-616c6c2d636f6d706c6574696f6e73_all_completions_0.eln without build-id.[0m
+                                                      [0;1;31mModule llama-8974c746-de18011f.eln without build-id.[0m
+                                                      [0;1;31mModule cond-let-c8bd1505-d776bd8e.eln without build-id.[0m
+                                                      [0;1;31mModule doom-snippets-lib-dc822adc-4473d159.eln without build-id.[0m
+                                                      [0;1;31mModule doom-snippets-bec2571a-6c277cf6.eln without build-id.[0m
+                                                      [0;1;31mModule yasnippet-b0c8f4b9-85db024b.eln without build-id.[0m
+                                                      [0;1;31mModule recentf-3c64dc62-a097a9e9.eln without build-id.[0m
+                                                      [0;1;31mModule tree-widget-8dccf6ba-6cab1cd7.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-72656e616d652d627566666572_rename_buffer_0.eln without build-id.[0m
+                                                      [0;1;31mModule doom-modeline-env-6b3ef1d0-ee4ab6e7.eln without build-id.[0m
+                                                      [0;1;31mModule doom-modeline-segments-3b51178e-b34a7bee.eln without build-id.[0m
+                                                      [0;1;31mModule f-004ae294-085bfe29.eln without build-id.[0m
+                                                      [0;1;31mModule s-6089a0f9-61be6d57.eln without build-id.[0m
+                                                      [0;1;31mModule dash-4dcb6eae-55fbc65f.eln without build-id.[0m
+                                                      [0;1;31mModule shrink-path-7e8d1a91-7aa5218d.eln without build-id.[0m
+                                                      [0;1;31mModule nerd-icons-e307dccc-2dd28449.eln without build-id.[0m
+                                                      [0;1;31mModule doom-modeline-core-541cf7a9-0559e62a.eln without build-id.[0m
+                                                      [0;1;31mModule doom-modeline-6b069db9-426004ec.eln without build-id.[0m
+                                                      [0;1;31mModule text-mode-expansions-fbedb0c8-6ca2f7da.eln without build-id.[0m
+                                                      [0;1;31mModule er-basic-expansions-248533cf-2a5f967f.eln without build-id.[0m
+                                                      [0;1;31mModule expand-region-custom-1693292b-0697ffb4.eln without build-id.[0m
+                                                      [0;1;31mModule expand-region-core-19579909-0e04b49c.eln without build-id.[0m
+                                                      [0;1;31mModule expand-region-69d68ba1-745b796f.eln without build-id.[0m
+                                                      [0;1;31mModule embrace-ede888ef-61518560.eln without build-id.[0m
+                                                      [0;1;31mModule eros-5110a275-4a101ed7.eln without build-id.[0m
+                                                      [0;1;31mModule highlight-quoted-ce7c4d7a-3a551889.eln without build-id.[0m
+                                                      [0;1;31mModule let-completion-b15d7d55-ad946531.eln without build-id.[0m
+                                                      [0;1;31mModule display-line-numbers-1d060f2e-18a4d43d.eln without build-id.[0m
+                                                      [0;1;31mModule vi-tilde-fringe-cc879671-9f332764.eln without build-id.[0m
+                                                      [0;1;31mModule dtrt-indent-1592e813-3cd3894e.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-custom-0f492175-619b3fc5.eln without build-id.[0m
+                                                      [0;1;31mModule pp-5d47c1cc-c795e995.eln without build-id.[0m
+                                                      [0;1;31mModule wid-edit-5b92861a-3554bb55.eln without build-id.[0m
+                                                      [0;1;31mModule cus-edit-3cd01345-e3bc526c.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-7365742d77696e646f772d627566666572_set_window_buffer_0.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-tabulated-list-ecf4b703-dff61954.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-tab-bar-ec5d0af6-cb2fef76.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-simple-573eee3c-2264c413.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-replace-09e195c0-a8e5b891.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-process-menu-a77a7aa5-a7b14086.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-kmacro-0dd9f6fc-b2fc21a6.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-indent-8025cbfb-21bb75cb.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-help-7caf057f-8313b013.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-eldoc-19b69f54-143eedb5.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-comint-3cb9f27a-d04d5c8f.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-buff-menu-30ecf5aa-b8aad5ef.eln without build-id.[0m
+                                                      [0;1;31mModule evil-collection-7cb192e2-bbbe7c07.eln without build-id.[0m
+                                                      [0;1;31mModule pcomplete-81dbd8b0-358a7537.eln without build-id.[0m
+                                                      [0;1;31mModule shell-57930f41-c393c68e.eln without build-id.[0m
+                                                      [0;1;31mModule ansi-osc-b447f6a8-6fc78e8d.eln without build-id.[0m
+                                                      [0;1;31mModule ansi-color-75eac800-1c659de5.eln without build-id.[0m
+                                                      [0;1;31mModule comint-faef15ad-9bb21b1f.eln without build-id.[0m
+                                                      [0;1;31mModule bash-completion-7bb8a4ac-99d11798.eln without build-id.[0m
+                                                      [0;1;31mModule let-alist-c9c0fd50-3537f001.eln without build-id.[0m
+                                                      [0;1;31mModule evil-integration-b8db630d-f2b4b6d0.eln without build-id.[0m
+                                                      [0;1;31mModule evil-maps-4c602fa8-de99e2e5.eln without build-id.[0m
+                                                      [0;1;31mModule reveal-65b32910-3ba7b231.eln without build-id.[0m
+                                                      [0;1;31mModule evil-jumps-c3baefd7-9d8dba39.eln without build-id.[0m
+                                                      [0;1;31mModule evil-command-window-59d11058-fbf17beb.eln without build-id.[0m
+                                                      [0;1;31mModule evil-commands-6bceed06-8845c349.eln without build-id.[0m
+                                                      [0;1;31mModule evil-types-54e577b0-f5d539bb.eln without build-id.[0m
+                                                      [0;1;31mModule evil-ex-3b4278c8-d2bda056.eln without build-id.[0m
+                                                      [0;1;31mModule evil-search-3f8548e8-a0b68c03.eln without build-id.[0m
+                                                      [0;1;31mModule evil-macros-e0fa95ba-4f3f68ac.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-726561642d6b65792d73657175656e63652d766563746f72_read_key_sequence_vector_0.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-726561642d6b65792d73657175656e6365_read_key_sequence_0.eln without build-id.[0m
+                                                      [0;1;31mModule evil-repeat-3fa3e0b7-772a99a3.eln without build-id.[0m
+                                                      [0;1;31mModule evil-states-dc5ae4cf-7c61d17a.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-7573652d6c6f63616c2d6d6170_use_local_map_0.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-7573652d676c6f62616c2d6d6170_use_global_map_0.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-73656c6563742d77696e646f77_select_window_0.eln without build-id.[0m
+                                                      [0;1;31mModule evil-core-5f975ff4-5c425f89.eln without build-id.[0m
+                                                      [0;1;31mModule thingatpt-6fc8a4ab-03228d89.eln without build-id.[0m
+                                                      [0;1;31mModule rect-cd288962-7dec3536.eln without build-id.[0m
+                                                      [0;1;31mModule evil-common-ec15320e-b4b969f2.eln without build-id.[0m
+                                                      [0;1;31mModule ring-bff0b981-2b55b9cc.eln without build-id.[0m
+                                                      [0;1;31mModule kmacro-048feaec-2b311b40.eln without build-id.[0m
+                                                      [0;1;31mModule edmacro-74bf45a3-475ec107.eln without build-id.[0m
+                                                      [0;1;31mModule evil-vars-9e0f65c7-24fae2fa.eln without build-id.[0m
+                                                      [0;1;31mModule derived-381801a7-4dd4c860.eln without build-id.[0m
+                                                      [0;1;31mModule subr--trampoline-646566696e652d6b6579_define_key_0.eln without build-id.[0m
+                                                      [0;1;31mModule comp-cstr-ef162ef7-075a72c3.eln without build-id.[0m
+                                                      [0;1;31mModule icons-eafe82eb-d5de9f65.eln without build-id.[0m
+                                                      [0;1;31mModule warnings-28e75f4d-f329699a.eln without build-id.[0m
+                                                      [0;1;31mModule comp-7672a6ed-fd735262.eln without build-id.[0m
+                                                      [0;1;31mModule rx-627d8c83-3f060225.eln without build-id.[0m
+                                                      [0;1;31mModule comp-common-6e17f702-cc8fe47f.eln without build-id.[0m
+                                                      [0;1;31mModule comp-run-a15747ee-9341619c.eln without build-id.[0m
+                                                      [0;1;31mModule help-mode-d4dbae3d-ad26b721.eln without build-id.[0m
+                                                      [0;1;31mModule cl-extra-d7051cba-9127183a.eln without build-id.[0m
+                                                      [0;1;31mModule bytecomp-12882072-c79e3358.eln without build-id.[0m
+                                                      [0;1;31mModule use-package-core-b234260b-5274bee8.eln without build-id.[0m
+                                                      [0;1;31mModule general-ee14c112-2453a6b8.eln without build-id.[0m
+                                                      [0;1;31mModule hl-line-8fa29c14-0bfc2ac6.eln without build-id.[0m
+                                                      [0;1;31mModule demap-d752e8d8-c298f9f7.eln without build-id.[0m
+                                                      [0;1;31mModule demap-tools-6167e96a-da8c644b.eln without build-id.[0m
+                                                      [0;1;31mModule demap-minimap-3e1df83e-9b49cedd.eln without build-id.[0m
+                                                      [0;1;31mModule demap-modes-48dc92d5-1a6d05c7.eln without build-id.[0m
+                                                      [0;1;31mModule easy-mmode-5bf0223e-dcdd0524.eln without build-id.[0m
+                                                      [0;1;31mModule cl-seq-f464c4e2-2e568bb4.eln without build-id.[0m
+                                                      [0;1;31mModule inline-2e43e5bb-e50165fd.eln without build-id.[0m
+                                                      [0;1;31mModule cl-macs-7ae82f81-03fcdf23.eln without build-id.[0m
+                                                      [0;1;31mModule cl-lib-8b938900-549ca2f2.eln without build-id.[0m
+                                                      [0;1;31mModule pcase-394c5744-68c38e17.eln without build-id.[0m
+                                                      [0;1;31mModule gv-e0cf7478-7a3cbc20.eln without build-id.[0m
+                                                      [0;1;31mModule mule-util-5c349a87-c07ee03d.eln without build-id.[0m
+                                                      [0;1;31mModule subr-x-02dfef32-9cce80d6.eln without build-id.[0m
+                                                      [0;1;31mModule site-start-64414da4-77e47a63.eln without build-id.[0m
+                                                      [0;1;31mModule indian-0c4ce628-8cd6d8ba.eln without build-id.[0m
+                                                      [0;1;31mModule hebrew-b9ed6a0d-22ce6882.eln without build-id.[0m
+                                                      [0;1;31mModule dynamic-setting-55f80457-094f2fdc.eln without build-id.[0m
+                                                      [0;1;31mModule iso-transl-466860a2-49fcfef8.eln without build-id.[0m
+                                                      [0;1;31mModule backquote-d5b20f7c-396260c6.eln without build-id.[0m
+                                                      [0;1;31mModule cconv-3b1f1f98-4acbdec6.eln without build-id.[0m
+                                                      [0;1;31mModule misc-lang-7cb33d20-ad14070c.eln without build-id.[0m
+                                                      [0;1;31mModule european-369de593-ff1f2ac0.eln without build-id.[0m
+                                                      [0;1;31mModule obarray-318a5d56-1cc4562b.eln without build-id.[0m
+                                                      [0;1;31mModule fringe-d5d49a60-dd68c7b3.eln without build-id.[0m
+                                                      [0;1;31mModule shorthands-1dc1e95e-c90f164f.eln without build-id.[0m
+                                                      [0;1;31mModule seq-c314b42f-5b433981.eln without build-id.[0m
+                                                      [0;1;31mModule page-ee7241cc-9ffb4be5.eln without build-id.[0m
+                                                      [0;1;31mModule debug-early-d734b212-2a59d7d9.eln without build-id.[0m
+                                                      [0;1;31mModule tty-colors-b7804baf-aec9ee2a.eln without build-id.[0m
+                                                      [0;1;31mModule widget-5b69ebb0-26d5ce01.eln without build-id.[0m
+                                                      [0;1;31mModule characters-45232aae-e31d5b81.eln without build-id.[0m
+                                                      [0;1;31mModule dnd-12d90309-7e8b3715.eln without build-id.[0m
+                                                      [0;1;31mModule text-mode-7f741068-4a486d0f.eln without build-id.[0m
+                                                      [0;1;31mModule scroll-bar-20650688-724fbf58.eln without build-id.[0m
+                                                      [0;1;31mModule tabulated-list-552ba1e5-bb33b601.eln without build-id.[0m
+                                                      [0;1;31mModule buff-menu-da4b0b04-3e6a0b87.eln without build-id.[0m
+                                                      [0;1;31mModule register-80045398-4e009567.eln without build-id.[0m
+                                                      [0;1;31mModule replace-fc551dbc-50d08eae.eln without build-id.[0m
+                                                      [0;1;31mModule case-table-3a8e2808-72bc4e19.eln without build-id.[0m
+                                                      [0;1;31mModule fontset-da863153-c0d26ca9.eln without build-id.[0m
+                                                      [0;1;31mModule pgtk-win-9e6b24f1-70ecfe1f.eln without build-id.[0m
+                                                      [0;1;31mModule startup-bbc6ea72-71ce3cd6.eln without build-id.[0m
+                                                      [0;1;31mModule select-784d9bb7-4a964ba4.eln without build-id.[0m
+                                                      [0;1;31mModule regexp-opt-d2355c94-888c174e.eln without build-id.[0m
+                                                      [0;1;31mModule format-c5b23b0d-23dc3d21.eln without build-id.[0m
+                                                      [0;1;31mModule cus-face-74f1689e-f5b9d5f5.eln without build-id.[0m
+                                                      [0;1;31mModule cus-start-26315480-9df9a5f1.eln without build-id.[0m
+                                                      [0;1;31mModule map-ynp-990591b5-fc89fae6.eln without build-id.[0m
+                                                      [0;1;31mModule rfn-eshadow-25788e78-9a1ce59e.eln without build-id.[0m
+                                                      [0;1;31mModule vc-hooks-cfa0878e-98a2482f.eln without build-id.[0m
+                                                      [0;1;31mModule epa-hook-99ab3afb-55975582.eln without build-id.[0m
+                                                      [0;1;31mModule mwheel-168e9ec3-301870cd.eln without build-id.[0m
+                                                      [0;1;31mModule jka-cmpr-hook-ff630d3e-c72ce138.eln without build-id.[0m
+                                                      [0;1;31mModule newcomment-678006bb-af87bb46.eln without build-id.[0m
+                                                      [0;1;31mModule jit-lock-8a988e43-f7a5cadd.eln without build-id.[0m
+                                                      [0;1;31mModule font-lock-895216f6-8a5fe33c.eln without build-id.[0m
+                                                      [0;1;31mModule prog-mode-642b2411-26c4b027.eln without build-id.[0m
+                                                      [0;1;31mModule mouse-15f283fa-ff7d24fc.eln without build-id.[0m
+                                                      [0;1;31mModule oclosure-b279097d-0f1ac913.eln without build-id.[0m
+                                                      [0;1;31mModule tooltip-29462ede-32c5fe10.eln without build-id.[0m
+                                                      [0;1;31mModule eldoc-d20a5fe9-8038deea.eln without build-id.[0m
+                                                      [0;1;31mModule tool-bar-ae0b5bc0-6561c2f6.eln without build-id.[0m
+                                                      [0;1;31mModule isearch-693bdd75-042348fd.eln without build-id.[0m
+                                                      [0;1;31mModule uniquify-0fb233ac-8b3ffaa0.eln without build-id.[0m
+                                                      [0;1;31mModule menu-bar-4f46ea94-b56e3ac0.eln without build-id.[0m
+                                                      [0;1;31mModule touch-screen-80a26276-ca956b0b.eln without build-id.[0m
+                                                      [0;1;31mModule tab-bar-f81d329c-34e3fc09.eln without build-id.[0m
+                                                      [0;1;31mModule composite-beea1fd5-2c77fda4.eln without build-id.[0m
+                                                      [0;1;31mModule elisp-mode-90dbfe40-ce6e7deb.eln without build-id.[0m
+                                                      [0;1;31mModule easymenu-1fb41c0e-1a561d79.eln without build-id.[0m
+                                                      [0;1;31mModule keymap-b4249274-c75b8ff2.eln without build-id.[0m
+                                                      [0;1;31mModule font-core-c3bff1fd-60834eb3.eln without build-id.[0m
+                                                      [0;1;31mModule env-72406999-7a6da550.eln without build-id.[0m
+                                                      [0;1;31mModule rmc-9c382b5d-692ac31b.eln without build-id.[0m
+                                                      [0;1;31mModule files-1e8937b2-cc528a94.eln without build-id.[0m
+                                                      [0;1;31mModule mule-3352613d-e1c908fa.eln without build-id.[0m
+                                                      [0;1;31mModule mule-cmds-c8553014-4778f81c.eln without build-id.[0m
+                                                      [0;1;31mModule paragraphs-faf2e9b4-b96c581a.eln without build-id.[0m
+                                                      [0;1;31mModule fill-19d89c43-17324f62.eln without build-id.[0m
+                                                      [0;1;31mModule indent-396b3792-7d0edafd.eln without build-id.[0m
+                                                      [0;1;31mModule electric-a9ca6cdd-71ba62c3.eln without build-id.[0m
+                                                      [0;1;31mModule version-025f5cb3-10edac43.eln without build-id.[0m
+                                                      [0;1;31mModule syntax-bf4e4bc4-eb28c023.eln without build-id.[0m
+                                                      [0;1;31mModule pgtk-dnd-6859c677-4b3ef4ee.eln without build-id.[0m
+                                                      [0;1;31mModule paren-0f414553-b1f814e5.eln without build-id.[0m
+                                                      [0;1;31mModule help-59d8049f-f8cfca12.eln without build-id.[0m
+                                                      [0;1;31mModule nadvice-64630aaa-cfad2a78.eln without build-id.[0m
+                                                      [0;1;31mModule abbrev-2af30c9a-befcd13b.eln without build-id.[0m
+                                                      [0;1;31mModule button-747c9d6e-da52831d.eln without build-id.[0m
+                                                      [0;1;31mModule simple-fab5b0cf-eb6715e5.eln without build-id.[0m
+                                                      [0;1;31mModule custom-c166a157-d20d1130.eln without build-id.[0m
+                                                      [0;1;31mModule minibuffer-1b0f548b-9c073abb.eln without build-id.[0m
+                                                      [0;1;31mModule lisp-1e88867d-20c5898b.eln without build-id.[0m
+                                                      [0;1;31mModule cl-generic-be68ad15-114302ce.eln without build-id.[0m
+                                                      [0;1;31mModule cl-preloaded-6e6a1f4e-807b256e.eln without build-id.[0m
+                                                      [0;1;31mModule common-win-4b869e38-73d0e8b9.eln without build-id.[0m
+                                                      [0;1;31mModule faces-b9447c93-210c8d74.eln without build-id.[0m
+                                                      [0;1;31mModule window-0d1b8b93-8e53e5aa.eln without build-id.[0m
+                                                      [0;1;31mModule image-f221b419-7e021331.eln without build-id.[0m
+                                                      [0;1;31mModule timer-3ee7cfd9-d4d09428.eln without build-id.[0m
+                                                      [0;1;31mModule frame-b40fc590-78558992.eln without build-id.[0m
+                                                      [0;1;31mModule subr-13adf6a6-09c534f6.eln without build-id.[0m
+                                                      [0;1;31mModule macroexp-2c3e1495-9f98c0f6.eln without build-id.[0m
+                                                      [0;1;31mModule lisp-mode-410874a4-29f77973.eln without build-id.[0m
+                                                      [0;1;31mModule byte-run-79ff048e-ce7e3d95.eln without build-id.[0m
+                                                      [0;1;31mModule bindings-d30713c5-ddc7d2ce.eln without build-id.[0m
+                                                      [0;1;31mModule libmp3lame.so.0 without build-id.[0m
+                                                      [0;1;31mModule libmpg123.so.0 without build-id.[0m
+                                                      [0;1;31mModule libogg.so.0 without build-id.[0m
+                                                      [0;1;31mModule libopus.so.0 without build-id.[0m
+                                                      [0;1;31mModule libvorbisenc.so.2 without build-id.[0m
+                                                      [0;1;31mModule libvorbis.so.0 without build-id.[0m
+                                                      [0;1;31mModule libFLAC.so.14 without build-id.[0m
+                                                      [0;1;31mModule libsndfile.so.1 without build-id.[0m
+                                                      [0;1;31mModule libvmaf.so.3 without build-id.[0m
+                                                      [0;1;31mModule libpulsecommon-17.0.so without build-id.[0m
+                                                      [0;1;31mModule libGLdispatch.so.0 without build-id.[0m
+                                                      [0;1;31mModule libaspell.so.15 without build-id.[0m
+                                                      [0;1;31mModule libgudev-1.0.so.0 without build-id.[0m
+                                                      [0;1;31mModule libevdev.so.2 without build-id.[0m
+                                                      [0;1;31mModule libhidapi-hidraw.so.0 without build-id.[0m
+                                                      [0;1;31mModule libaom.so.3 without build-id.[0m
+                                                      [0;1;31mModule libyuv.so without build-id.[0m
+                                                      [0;1;31mModule libbrotlienc.so.1 without build-id.[0m
+                                                      [0;1;31mModule libbrotlicommon.so.1 without build-id.[0m
+                                                      [0;1;31mModule libhwy.so.1 without build-id.[0m
+                                                      [0;1;31mModule libjxl_cms.so.0.12 without build-id.[0m
+                                                      [0;1;31mModule libpulse.so.0 without build-id.[0m
+                                                      [0;1;31mModule libpulse-simple.so.0 without build-id.[0m
+                                                      [0;1;31mModule libX11-xcb.so.1 without build-id.[0m
+                                                      [0;1;31mModule libGLX.so.0 without build-id.[0m
+                                                      [0;1;31mModule libEGL.so.1 without build-id.[0m
+                                                      [0;1;31mModule liborc-0.4.so.0 without build-id.[0m
+                                                      [0;1;31mModule libunwind.so.8 without build-id.[0m
+                                                      [0;1;31mModule libXdmcp.so.6 without build-id.[0m
+                                                      [0;1;31mModule libXau.so.6 without build-id.[0m
+                                                      [0;1;31mModule libdatrie.so.1 without build-id.[0m
+                                                      [0;1;31mModule libjson-glib-1.0.so.0 without build-id.[0m
+                                                      [0;1;31mModule libmpfr.so.6 without build-id.[0m
+                                                      [0;1;31mModule libmpc.so.3 without build-id.[0m
+                                                      [0;1;31mModule libisl.so.19 without build-id.[0m
+                                                      [0;1;31mModule libnettle.so.8 without build-id.[0m
+                                                      [0;1;31mModule libhogweed.so.6 without build-id.[0m
+                                                      [0;1;31mModule libunistring.so.5 without build-id.[0m
+                                                      [0;1;31mModule libidn2.so.0 without build-id.[0m
+                                                      [0;1;31mModule libp11-kit.so.0 without build-id.[0m
+                                                      [0;1;31mModule libbz2.so.1 without build-id.[0m
+                                                      [0;1;31mModule libnghttp2.so.14 without build-id.[0m
+                                                      [0;1;31mModule libbrotlidec.so.1 without build-id.[0m
+                                                      [0;1;31mModule libpsl.so.5 without build-id.[0m
+                                                      [0;1;31mModule libstdc++.so.6 without build-id.[0m
+                                                      [0;1;31mModule libhyphen.so.0 without build-id.[0m
+                                                      [0;1;31mModule libtasn1.so.6 without build-id.[0m
+                                                      [0;1;31mModule libdrm.so.2 without build-id.[0m
+                                                      [0;1;31mModule libgbm.so.1 without build-id.[0m
+                                                      [0;1;31mModule libenchant-2.so.2 without build-id.[0m
+                                                      [0;1;31mModule libseccomp.so.2 without build-id.[0m
+                                                      [0;1;31mModule libmanette-0.2.so.0 without build-id.[0m
+                                                      [0;1;31mModule libharfbuzz-icu.so.0 without build-id.[0m
+                                                      [0;1;31mModule libavif.so.16 without build-id.[0m
+                                                      [0;1;31mModule libjxl.so.0.12 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_us_slt.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_us_rms.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_us_kal.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_us_kal16.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_us_awb.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_time_awb.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmulex.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_indic_lex.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_indic_lang.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_grapheme_lex.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_cmu_grapheme_lang.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite_usenglish.so.1 without build-id.[0m
+                                                      [0;1;31mModule libflite.so.1 without build-id.[0m
+                                                      [0;1;31mModule libgpg-error.so.0 without build-id.[0m
+                                                      [0;1;31mModule libgcrypt.so.20 without build-id.[0m
+                                                      [0;1;31mModule liblcms2.so.2 without build-id.[0m
+                                                      [0;1;31mModule libxslt.so.1 without build-id.[0m
+                                                      [0;1;31mModule libicuuc.so.78 without build-id.[0m
+                                                      [0;1;31mModule libbacktrace.so.0 without build-id.[0m
+                                                      [0;1;31mModule libicui18n.so.78 without build-id.[0m
+                                                      [0;1;31mModule libicudata.so.78 without build-id.[0m
+                                                      [0;1;31mModule libexpat.so.1 without build-id.[0m
+                                                      [0;1;31mModule libwebpmux.so.3 without build-id.[0m
+                                                      [0;1;31mModule libatomic.so.1 without build-id.[0m
+                                                      [0;1;31mModule libdav1d.so.7 without build-id.[0m
+                                                      [0;1;31mModule libgcc_s.so.1 without build-id.[0m
+                                                      [0;1;31mModule libsharpyuv.so.0 without build-id.[0m
+                                                      [0;1;31mModule libzstd.so.1 without build-id.[0m
+                                                      [0;1;31mModule liblzma.so.5 without build-id.[0m
+                                                      [0;1;31mModule libLerc.so.4 without build-id.[0m
+                                                      [0;1;31mModule libdeflate.so.0 without build-id.[0m
+                                                      [0;1;31mModule libz.so.1 without build-id.[0m
+                                                      [0;1;31mModule libpcre2-8.so.0 without build-id.[0m
+                                                      [0;1;31mModule libffi.so.8 without build-id.[0m
+                                                      [0;1;31mModule libxcb-shm.so.0 without build-id.[0m
+                                                      [0;1;31mModule libxcb-render.so.0 without build-id.[0m
+                                                      [0;1;31mModule libxcb.so.1 without build-id.[0m
+                                                      [0;1;31mModule libXrender.so.1 without build-id.[0m
+                                                      [0;1;31mModule libgraphite2.so.3 without build-id.[0m
+                                                      [0;1;31mModule libthai.so.0 without build-id.[0m
+                                                      [0;1;31mModule libXinerama.so.1 without build-id.[0m
+                                                      [0;1;31mModule libXrandr.so.2 without build-id.[0m
+                                                      [0;1;31mModule libXcomposite.so.1 without build-id.[0m
+                                                      [0;1;31mModule libXdamage.so.1 without build-id.[0m
+                                                      [0;1;31mModule libXcursor.so.1 without build-id.[0m
+                                                      [0;1;31mModule libXext.so.6 without build-id.[0m
+                                                      [0;1;31mModule libxkbcommon.so.0 without build-id.[0m
+                                                      [0;1;31mModule libXfixes.so.3 without build-id.[0m
+                                                      [0;1;31mModule libtinysparql-3.0.so.0 without build-id.[0m
+                                                      [0;1;31mModule libX11.so.6 without build-id.[0m
+                                                      [0;1;31mModule libXi.so.6 without build-id.[0m
+                                                      [0;1;31mModule libepoxy.so.0 without build-id.[0m
+                                                      [0;1;31mModule libfribidi.so.0 without build-id.[0m
+                                                      [0;1;31mModule libpangoft2-1.0.so.0 without build-id.[0m
+                                                      [0;1;31mModule libtree-sitter.so.0.26 without build-id.[0m
+                                                      [0;1;31mModule libgccjit.so.0 without build-id.[0m
+                                                      [0;1;31mModule libgmp.so.10 without build-id.[0m
+                                                      [0;1;31mModule libgnutls.so.30 without build-id.[0m
+                                                      [0;1;31mModule libfontconfig.so.1 without build-id.[0m
+                                                      [0;1;31mModule libfreetype.so.6 without build-id.[0m
+                                                      [0;1;31mModule libselinux.so.1 without build-id.[0m
+                                                      [0;1;31mModule libncursesw.so.6 without build-id.[0m
+                                                      [0;1;31mModule libgpm.so.2 without build-id.[0m
+                                                      [0;1;31mModule libxml2.so.16 without build-id.[0m
+                                                      [0;1;31mModule librsvg-2.so.2 without build-id.[0m
+                                                      [0;1;31mModule libwebp.so.7 without build-id.[0m
+                                                      [0;1;31mModule libwebpdemux.so.2 without build-id.[0m
+                                                      [0;1;31mModule libgif.so.7 without build-id.[0m
+                                                      [0;1;31mModule libpng16.so.16 without build-id.[0m
+                                                      [0;1;31mModule libjpeg.so.62 without build-id.[0m
+                                                      [0;1;31mModule libtiff.so.6 without build-id.[0m
+                                                      [0;1;31mModule libharfbuzz.so.0 without build-id.[0m
+                                                      [0;1;31mModule libpango-1.0.so.0 without build-id.[0m
+                                                      [0;1;31mModule libpangocairo-1.0.so.0 without build-id.[0m
+                                                      [0;1;31mModule .emacs-31.1-wrapped without build-id.[0m
+                                                      [0;1;31mStack trace of thread 316588:[0m
+                                                      [0;1;31m#0  0x0000716c5ea9eeec __pthread_kill_implementation (libc.so.6 + 0x9eeec)[0m
+                                                      [0;1;31m#1  0x0000716c5ea4206e raise (libc.so.6 + 0x4206e)[0m
+                                                      [0;1;31m#2  0x00005f68d18d9506 terminate_due_to_signal (.emacs-31.1-wrapped + 0x4f506)[0m
+                                                      [0;1;31m#3  0x00005f68d18d9a7d handle_fatal_signal (.emacs-31.1-wrapped + 0x4fa7d)[0m
+                                                      [0;1;31m#4  0x00005f68d18d9a84 deliver_thread_signal.constprop.0.cold (.emacs-31.1-wrapped + 0x4fa84)[0m
+                                                      [0;1;31m#5  0x00005f68d1a066d1 handle_sigsegv (.emacs-31.1-wrapped + 0x17c6d1)[0m
+                                                      [0;1;31m#6  0x0000716c5ea421a0 __restore_rt (libc.so.6 + 0x421a0)[0m
+                                                      [0;1;31m#7  0x00005f68d1b33a88 Ffontset_info (.emacs-31.1-wrapped + 0x2a9a88)[0m
+                                                      [0;1;31m#8  0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#9  0x0000716c411df1e2 F616e6f6e796d6f75732d6c616d626461_anonymous_lambda_17 (unicode-fonts-776c9172-17d3c00c.eln + 0xe1e2)[0m
+                                                      [0;1;31m#10 0x00005f68d1a8253e funcall_lambda (.emacs-31.1-wrapped + 0x1f853e)[0m
+                                                      [0;1;31m#11 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#12 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#13 0x0000716c4ab0b4de F636c2d72656d6f7665_cl_remove_0 (cl-seq-f464c4e2-2e568bb4.eln + 0x64de)[0m
+                                                      [0;1;31m#14 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#15 0x00005f68d1a82fa7 Fapply (.emacs-31.1-wrapped + 0x1f8fa7)[0m
+                                                      [0;1;31m#16 0x0000716c4ab0bf3f F636c2d72656d6f76652d69662d6e6f74_cl_remove_if_not_0 (cl-seq-f464c4e2-2e568bb4.eln + 0x6f3f)[0m
+                                                      [0;1;31m#17 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#18 0x0000716c411df2a0 F756e69636f64652d666f6e74732d7365747570_unicode_fonts_setup_0 (unicode-fonts-776c9172-17d3c00c.eln + 0xe2a0)[0m
+                                                      [0;1;31m#19 0x00005f68d1a8253e funcall_lambda (.emacs-31.1-wrapped + 0x1f853e)[0m
+                                                      [0;1;31m#20 0x00005f68d1a845ab apply_lambda (.emacs-31.1-wrapped + 0x1fa5ab)[0m
+                                                      [0;1;31m#21 0x00005f68d1a81850 eval_sub (.emacs-31.1-wrapped + 0x1f7850)[0m
+                                                      [0;1;31m#22 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#23 0x00005f68d1a84fa2 Flet (.emacs-31.1-wrapped + 0x1fafa2)[0m
+                                                      [0;1;31m#24 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#25 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#26 0x00005f68d1a84fa2 Flet (.emacs-31.1-wrapped + 0x1fafa2)[0m
+                                                      [0;1;31m#27 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#28 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#29 0x00005f68d1a84fa2 Flet (.emacs-31.1-wrapped + 0x1fafa2)[0m
+                                                      [0;1;31m#30 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#31 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#32 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#33 0x00005f68d1a846d9 Funwind_protect (.emacs-31.1-wrapped + 0x1fa6d9)[0m
+                                                      [0;1;31m#34 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#35 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#36 0x00005f68d1a84fa2 Flet (.emacs-31.1-wrapped + 0x1fafa2)[0m
+                                                      [0;1;31m#37 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#38 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#39 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#40 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#41 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#42 0x00005f68d1a82595 funcall_lambda (.emacs-31.1-wrapped + 0x1f8595)[0m
+                                                      [0;1;31m#43 0x00005f68d1a845ab apply_lambda (.emacs-31.1-wrapped + 0x1fa5ab)[0m
+                                                      [0;1;31m#44 0x00005f68d1a81850 eval_sub (.emacs-31.1-wrapped + 0x1f7850)[0m
+                                                      [0;1;31m#45 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#46 0x00005f68d1a82595 funcall_lambda (.emacs-31.1-wrapped + 0x1f8595)[0m
+                                                      [0;1;31m#47 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#48 0x00005f68d1a830c9 funcall_nil (.emacs-31.1-wrapped + 0x1f90c9)[0m
+                                                      [0;1;31m#49 0x00005f68d1a7e78c run_hook_with_args (.emacs-31.1-wrapped + 0x1f478c)[0m
+                                                      [0;1;31m#50 0x00005f68d1a7e93a run_hook (.emacs-31.1-wrapped + 0x1f493a)[0m
+                                                      [0;1;31m#51 0x00005f68d1a7e97e Frun_hooks (.emacs-31.1-wrapped + 0x1f497e)[0m
+                                                      [0;1;31m#52 0x00005f68d1a82003 eval_sub (.emacs-31.1-wrapped + 0x1f8003)[0m
+                                                      [0;1;31m#53 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#54 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#55 0x00005f68d1a81dfe eval_sub (.emacs-31.1-wrapped + 0x1f7dfe)[0m
+                                                      [0;1;31m#56 0x00005f68d1a82190 Fprogn (.emacs-31.1-wrapped + 0x1f8190)[0m
+                                                      [0;1;31m#57 0x00005f68d1a82595 funcall_lambda (.emacs-31.1-wrapped + 0x1f8595)[0m
+                                                      [0;1;31m#58 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m#59 0x00005f68d1a830c9 funcall_nil (.emacs-31.1-wrapped + 0x1f90c9)[0m
+                                                      [0;1;31m#60 0x00005f68d1a7e78c run_hook_with_args (.emacs-31.1-wrapped + 0x1f478c)[0m
+                                                      [0;1;31m#61 0x00005f68d1a7e93a run_hook (.emacs-31.1-wrapped + 0x1f493a)[0m
+                                                      [0;1;31m#62 0x00005f68d1a7e97e Frun_hooks (.emacs-31.1-wrapped + 0x1f497e)[0m
+                                                      [0;1;31m#63 0x00005f68d1a82a19 Ffuncall (.emacs-31.1-wrapped + 0x1f8a19)[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mStack trace of thread 320970:[0m
+                                                      [0;1;31m#0  0x0000716c5eaa5a22 __syscall_cancel_arch (libc.so.6 + 0xa5a22)[0m
+                                                      [0;1;31m#1  0x0000716c5ea9912c __internal_syscall_cancel (libc.so.6 + 0x9912c)[0m
+                                                      [0;1;31m#2  0x0000716c5ea991a4 __syscall_cancel (libc.so.6 + 0x991a4)[0m
+                                                      [0;1;31m#3  0x0000716c5eb169b6 ppoll (libc.so.6 + 0x1169b6)[0m
+                                                      [0;1;31m#4  0x0000716c6ad042c8 g_main_context_iterate_unlocked.isra.0 (libglib-2.0.so.0 + 0x662c8)[0m
+                                                      [0;1;31m#5  0x0000716c6ad04a9f g_main_context_iteration (libglib-2.0.so.0 + 0x66a9f)[0m
+                                                      [0;1;31m#6  0x0000716c6ad04af1 glib_worker_main (libglib-2.0.so.0 + 0x66af1)[0m
+                                                      [0;1;31m#7  0x0000716c6ad38bae g_thread_proxy (libglib-2.0.so.0 + 0x9abae)[0m
+                                                      [0;1;31m#8  0x0000716c5ea9ce73 start_thread (libc.so.6 + 0x9ce73)[0m
+                                                      [0;1;31m#9  0x0000716c5eb242bc __clone3 (libc.so.6 + 0x1242bc)[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mStack trace of thread 320973:[0m
+                                                      [0;1;31m#0  0x0000716c5eaa5a22 __syscall_cancel_arch (libc.so.6 + 0xa5a22)[0m
+                                                      [0;1;31m#1  0x0000716c5ea9912c __internal_syscall_cancel (libc.so.6 + 0x9912c)[0m
+                                                      [0;1;31m#2  0x0000716c5ea991a4 __syscall_cancel (libc.so.6 + 0x991a4)[0m
+                                                      [0;1;31m#3  0x0000716c5eb169b6 ppoll (libc.so.6 + 0x1169b6)[0m
+                                                      [0;1;31m#4  0x0000716c6ad042c8 g_main_context_iterate_unlocked.isra.0 (libglib-2.0.so.0 + 0x662c8)[0m
+                                                      [0;1;31m#5  0x0000716c6ad04a9f g_main_context_iteration (libglib-2.0.so.0 + 0x66a9f)[0m
+                                                      [0;1;31m#6  0x0000716c4851586d dconf_gdbus_worker_thread (libdconfsettings.so + 0xd86d)[0m
+                                                      [0;1;31m#7  0x0000716c6ad38bae g_thread_proxy (libglib-2.0.so.0 + 0x9abae)[0m
+                                                      [0;1;31m#8  0x0000716c5ea9ce73 start_thread (libc.so.6 + 0x9ce73)[0m
+                                                      [0;1;31m#9  0x0000716c5eb242bc __clone3 (libc.so.6 + 0x1242bc)[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mStack trace of thread 320971:[0m
+                                                      [0;1;31m#0  0x0000716c5eb21e8d syscall (libc.so.6 + 0x121e8d)[0m
+                                                      [0;1;31m#1  0x0000716c6ad388fb g_cond_wait_until (libglib-2.0.so.0 + 0x9a8fb)[0m
+                                                      [0;1;31m#2  0x0000716c6acc802d g_async_queue_pop_intern_unlocked (libglib-2.0.so.0 + 0x2a02d)[0m
+                                                      [0;1;31m#3  0x0000716c6ad393d2 g_thread_pool_thread_proxy (libglib-2.0.so.0 + 0x9b3d2)[0m
+                                                      [0;1;31m#4  0x0000716c6ad38bae g_thread_proxy (libglib-2.0.so.0 + 0x9abae)[0m
+                                                      [0;1;31m#5  0x0000716c5ea9ce73 start_thread (libc.so.6 + 0x9ce73)[0m
+                                                      [0;1;31m#6  0x0000716c5eb242bc __clone3 (libc.so.6 + 0x1242bc)[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mStack trace of thread 320969:[0m
+                                                      [0;1;31m#0  0x0000716c5eb21e8d syscall (libc.so.6 + 0x121e8d)[0m
+                                                      [0;1;31m#1  0x0000716c6ad383d7 g_cond_wait (libglib-2.0.so.0 + 0x9a3d7)[0m
+                                                      [0;1;31m#2  0x0000716c6acc806c g_async_queue_pop_intern_unlocked (libglib-2.0.so.0 + 0x2a06c)[0m
+                                                      [0;1;31m#3  0x0000716c6ad38e64 g_thread_pool_spawn_thread (libglib-2.0.so.0 + 0x9ae64)[0m
+                                                      [0;1;31m#4  0x0000716c6ad38bae g_thread_proxy (libglib-2.0.so.0 + 0x9abae)[0m
+                                                      [0;1;31m#5  0x0000716c5ea9ce73 start_thread (libc.so.6 + 0x9ce73)[0m
+                                                      [0;1;31m#6  0x0000716c5eb242bc __clone3 (libc.so.6 + 0x1242bc)[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mStack trace of thread 320972:[0m
+                                                      [0;1;31m#0  0x0000716c5eaa5a22 __syscall_cancel_arch (libc.so.6 + 0xa5a22)[0m
+                                                      [0;1;31m#1  0x0000716c5ea9912c __internal_syscall_cancel (libc.so.6 + 0x9912c)[0m
+                                                      [0;1;31m#2  0x0000716c5ea991a4 __syscall_cancel (libc.so.6 + 0x991a4)[0m
+                                                      [0;1;31m#3  0x0000716c5eb169b6 ppoll (libc.so.6 + 0x1169b6)[0m
+                                                      [0;1;31m#4  0x0000716c6ad042c8 g_main_context_iterate_unlocked.isra.0 (libglib-2.0.so.0 + 0x662c8)[0m
+                                                      [0;1;31m#5  0x0000716c6ad04cf7 g_main_loop_run (libglib-2.0.so.0 + 0x66cf7)[0m
+                                                      [0;1;31m#6  0x0000716c6af42d0e gdbus_shared_thread_func (libgio-2.0.so.0 + 0x142d0e)[0m
+                                                      [0;1;31m#7  0x0000716c6ad38bae g_thread_proxy (libglib-2.0.so.0 + 0x9abae)[0m
+                                                      [0;1;31m#8  0x0000716c5ea9ce73 start_thread (libc.so.6 + 0x9ce73)[0m
+                                                      [0;1;31m#9  0x0000716c5eb242bc __clone3 (libc.so.6 + 0x1242bc)[0m
+                                                      [0;1;31m[0m
+                                                      [0;1;31mStack trace of thread 320968:[0m
+                                                      [0;1;31m#0  0x0000716c5eb21e8d syscall (libc.so.6 + 0x121e8d)[0m
+                                                      [0;1;31m#1  0x0000716c6ad383d7 g_cond_wait (libglib-2.0.so.0 + 0x9a3d7)[0m
+                                                      [0;1;31m#2  0x0000716c6acc806c g_async_queue_pop_intern_unlocked (libglib-2.0.so.0 + 0x2a06c)[0m
+                                                      [0;1;31m#3  0x0000716c6acc8568 g_async_queue_pop (libglib-2.0.so.0 + 0x2a568)[0m
+                                                      [0;1;31m#4  0x0000716c642aa9c5 fc_thread_func (libpangoft2-1.0.so.0 + 0xe9c5)[0m
+                                                      [0;1;31m#5  0x0000716c6ad38bae g_thread_proxy (libglib-2.0.so.0 + 0x9abae)[0m
+                                                      [0;1;31m#6  0x0000716c5ea9ce73 start_thread (libc.so.6 + 0x9ce73)[0m
+                                                      [0;1;31m#7  0x0000716c5eb242bc __clone3 (libc.so.6 + 0x1242bc)[0m
+                                                      [0;1;31mELF object binary architecture: AMD x86-64[0m
+Oct 30 15:06:08 higgs-boson systemd[1851]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185memacs.service: Main process exited, code=dumped, status=11/SEGV[0m
+Oct 30 15:06:08 higgs-boson systemd[1851]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185memacs.service: Failed with result 'core-dump'.[0m
+Oct 30 15:06:08 higgs-boson systemd[1851]: emacs.service: Consumed 1.658s CPU time over 49.691s wall clock time, 138.4M memory peak.
+Oct 30 15:06:08 higgs-boson systemd[1851]: emacs.service: Scheduled restart job, restart counter is at 3.
+Oct 30 15:06:08 higgs-boson systemd[1851]: Starting Emacs text editor...
+Oct 30 15:06:08 higgs-boson bash[321068]: Due to a limitation in GTK 3, Emacs built with PGTK will simply exit when a
+Oct 30 15:06:08 higgs-boson bash[321068]: display connection is closed.  The problem is especially difficult to fix,
+Oct 30 15:06:08 higgs-boson bash[321068]: such that Emacs on Wayland with multiple displays is unlikely ever to be able
+Oct 30 15:06:08 higgs-boson bash[321068]: to survive disconnects.
+Oct 30 15:06:08 higgs-boson bash[321068]: .config/doom/treemacs-config.el: Warning: ‘setq!’ is an obsolete alias (as of 2.1.0); use ‘setopt’ instead.
+Oct 30 15:06:09 higgs-boson bash[321068]: Starting Emacs daemon.
+Oct 30 15:06:09 higgs-boson bash[321068]: [yas] Prepared just-in-time loading of snippets with some errors.  Check *Messages*.
+Oct 30 15:06:09 higgs-boson bash[321068]: Doom loaded 177 packages across 51 modules in 0.207s
+Oct 30 15:06:09 higgs-boson systemd[1851]: Started Emacs text editor.
