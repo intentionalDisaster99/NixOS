@@ -54,7 +54,7 @@
       ];
 
       services.emacs = {
-        enable = true;
+        # enable = true; # Does it try its own stuff instead
         defaultEditor = true;
       };
 
