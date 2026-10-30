@@ -87,10 +87,9 @@
       user-mail-address "abyssalflerken@gmail.com")
 
 ;; General config
-(setq auto-save-default t
-      make-backup-files t)
-(desktop-save-mode 1)
 (setq! desktop-load-locked-desktop t)
+(setq auto-save-visited-interval 1)    ; saves after 1 idle second
+(auto-save-visited-mode 1)
 
 
 ;; Funny
