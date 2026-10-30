@@ -80,3 +80,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
+;; My Name
+(setq user-full-name "Sam Whitlock"
+      user-mail-address "abyssalflerken@gmail.com")
+
+;; General config
+(setq auto-save-default t
+      make-backup-files t)
+(desktop-save-mode 1)
+(setq! desktop-load-locked-desktop t)
+
+
+;; Treemacs
+(!load "treemacs.el")
