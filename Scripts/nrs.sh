@@ -5,6 +5,7 @@ set -e
 
 # Check to see if they want to use remote
 REMOTE=0
+
 if [[ "$1" == "-r" || "$1" == "--remote" ]]; then
   REMOTE=1
   shift # Remove the remote flag so the rest of the script reads the commit message correctly
