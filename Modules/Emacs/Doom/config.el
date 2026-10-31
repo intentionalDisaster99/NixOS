@@ -90,7 +90,7 @@
 (setq! desktop-load-locked-desktop t)
 (setq auto-save-visited-interval 1)    ; saves after 1 idle second
 (auto-save-visited-mode 1)
-
+(setq display-line-numbers-type 'relative)
 
 ;; Funny
 (setq fancy-splash-image
