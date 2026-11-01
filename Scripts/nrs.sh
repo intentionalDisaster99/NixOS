@@ -5,7 +5,6 @@ set -e
 
 # Check to see if they want to use remote
 REMOTE=0
-
 if [[ "$1" == "-r" || "$1" == "--remote" ]]; then
   REMOTE=1
   shift # Remove the remote flag so the rest of the script reads the commit message correctly
@@ -39,12 +38,6 @@ sleep 1
 echo "Staging changes..."
 git add .
 
-# TODO Fix this to check to see if it builds before the push
-# # Checking to see if it actually can build before it pushes
-# if sudo nixos-rebuild build $status -ne 0
-#   echo "Build unsuccessful, configuration not pushing nor switching.\nExiting..."
-#   return 1
-# end
 
 # Check if there are any actual changes to commit.
 if git diff --staged --quiet; then
