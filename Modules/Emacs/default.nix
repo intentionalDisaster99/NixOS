@@ -30,6 +30,8 @@
         mkdir -p "$HOME/.local/state"
         touch "$HOME/.local/state/doom-bootstrap.done"
       '';
+
+      # This might not work, which is really annoying
       math-preview-js = pkgs.buildNpmPackage rec {
         pname = "math-preview";
         version = "5.1.1";
@@ -43,6 +45,10 @@
           rev = "v${version}";
           hash = "sha256-P3TZ/D6D2PvwPV6alSrDEQujzgI8DhK4VOuCC0BCIFo=";
         };
+        postPatch = ''
+          substituteInPlace math-preview.js \
+            --replace-fail 'require = require("esm")(module);' ""
+        '';
 
         npmDepsHash = "sha256-GAPhG3haM9UNdj6tCz8I4j7v6rvNbatdu7NjCeENj3s=";
         dontNpmBuild = true;
