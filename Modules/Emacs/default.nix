@@ -41,7 +41,7 @@
           hash = "sha256-P3TZ/D6D2PvwPV6alSrDEQujzgI8DhK4VOuCC0BCIFo=";
         };
 
-        npmDepsHash = pkgs.lib.fakeHash;
+        npmDepsHash = "sha256-P3TZ/D6D2PvwPV6alSrDEQujzgI8DhK4VOuCC0BCIFo=";
         dontNpmBuild = true;
       };
     in
