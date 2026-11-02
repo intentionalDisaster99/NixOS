@@ -35,6 +35,7 @@
         libtool
         asm-lsp
         qemu
+        pdf-tools
         (texlive.combine {
           inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
         })
