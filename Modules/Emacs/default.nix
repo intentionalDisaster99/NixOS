@@ -34,7 +34,7 @@
         pname = "math-preview";
         version = "5.1.1";
 
-        nodejs = pkgs.nodejs_18;
+        nodejs = pkgs.nodejs_20;
 
         src = pkgs.fetchFromGitLab {
           owner = "matsievskiysv";
