@@ -68,6 +68,9 @@
         libtool
         asm-lsp
         qemu
+        zig
+        nixfmt
+        clang-format
         (texlive.combine {
           inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
         })
