@@ -30,6 +30,20 @@
         mkdir -p "$HOME/.local/state"
         touch "$HOME/.local/state/doom-bootstrap.done"
       '';
+      math-preview-js = pkgs.buildNpmPackage rec {
+        pname = "math-preview";
+        version = "5.1.1"; # check the repo's tags/releases for the real latest
+
+        src = pkgs.fetchFromGitHub {
+          owner = "matsievskiysv";
+          repo = "math-preview";
+          rev = version; # or "v${version}", depending on how they tag
+          hash = pkgs.lib.fakeHash;
+        };
+
+        npmDepsHash = pkgs.lib.fakeHash;
+        dontNpmBuild = true; # nothing to compile, it's plain JS
+      };
     in
     {
       home.packages = with pkgs; [
@@ -48,6 +62,7 @@
         (texlive.combine {
           inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
         })
+        math-preview-js
       ];
 
       services.emacs = {

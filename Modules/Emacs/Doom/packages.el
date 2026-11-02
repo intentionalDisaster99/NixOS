@@ -53,3 +53,7 @@
 ;; (unpin! t)
 
 (unpin! treemacs)
+
+;; Theoretically for markdown math?
+;; (package! texfrag)
+(package! math-preview)

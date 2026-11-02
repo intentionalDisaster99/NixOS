@@ -108,3 +108,12 @@
 (use-package pdf-tools
   :init
   (pdf-tools-install))
+
+;; Math?
+;; (use-package! texfrag
+;;   :hook (markdown-mode . texfrag-mode))
+(use-package! math-preview
+  :commands (math-preview-all math-preview-clear-all
+                              math-preview-at-point math-preview-region)
+  :config
+  (setq math-preview-scale 1.2))
