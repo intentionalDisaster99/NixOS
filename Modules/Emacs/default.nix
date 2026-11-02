@@ -100,6 +100,13 @@
       # Linking to dots
       xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Doom";
 
+      # Linking to my wakapi instance (don't try, it's behind a VPN)
+      home.file.".wakatime.cfg".text = ''
+        [settings]
+        api_url = http://graviton:3000/api
+        api_key = a62ccc4f-fe69-4025-8e4d-c3eb5358f1cc
+      '';
+
       # Install Doom if it isn't already
       systemd.user.services.doom-bootstrap = {
         Unit = {
