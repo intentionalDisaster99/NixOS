@@ -57,3 +57,6 @@
 ;; Theoretically for markdown math?
 ;; (package! texfrag)
 (package! math-preview)
+
+;; For wakatime
+(package! wakatime-mode)
