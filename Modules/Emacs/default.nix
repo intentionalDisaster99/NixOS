@@ -32,29 +32,6 @@
         mkdir -p "$HOME/.local/state"
         touch "$HOME/.local/state/doom-bootstrap.done"
       '';
-
-      # This might not work, which is really annoying
-      # math-preview-js = pkgs.buildNpmPackage rec {
-      #   pname = "math-preview";
-      #   version = "5.1.1";
-
-      #   # No old enough node version unfort
-      #   # nodejs = pkgs.nodejs_20;
-
-      #   src = pkgs.fetchFromGitLab {
-      #     owner = "matsievskiysv";
-      #     repo = "math-preview";
-      #     rev = "v${version}";
-      #     hash = "sha256-P3TZ/D6D2PvwPV6alSrDEQujzgI8DhK4VOuCC0BCIFo=";
-      #   };
-      #   postPatch = ''
-      #     substituteInPlace math-preview.js \
-      #       --replace-fail 'require = require("esm")(module);' ""
-      #   '';
-
-      #   npmDepsHash = "sha256-GAPhG3haM9UNdj6tCz8I4j7v6rvNbatdu7NjCeENj3s=";
-      #   dontNpmBuild = true;
-      # };
     in
     {
       home.packages = with pkgs; [
@@ -74,18 +51,19 @@
         nixfmt
         wakatime-cli
         clang-tools
-        (texlive.combine {
-          inherit (texlive)
-            scheme-small
-            dvisvgm
-            preview
-            dvipng
-            cm-super
-            type1cm
-            ;
-        })
+
+        # These things gave me a weird error, so I'm removing them for now
+        # (texlive.combine {
+        #   inherit (texlive)
+        #     scheme-small
+        #     dvisvgm
+        #     preview
+        #     dvipng
+        #     cm-super
+        #     type1cm
+        #     ;
+        # })
         math-preview
-        # math-preview-js
       ];
 
       services.emacs = {
