@@ -118,9 +118,14 @@
   :config
   (setq math-preview-scale 1.2))
 
+;; (use-package! wakatime-mode
+;;   :hook (doom-first-buffer . global-wakatime-mode)
+;;   :config
+;;   ;; Optionally specify custom path to wakatime-cli if not in PATH or default location:
+;;   ;; (setq wakatime-cli-path "/usr/local/bin/wakatime-cli")
+;;   )
 (use-package! wakatime-mode
   :hook (doom-first-buffer . global-wakatime-mode)
   :config
-  ;; Optionally specify custom path to wakatime-cli if not in PATH or default location:
-  ;; (setq wakatime-cli-path "/usr/local/bin/wakatime-cli")
-  )
+  (setq wakatime-cli-path "wakatime-cli")
+  (setq wakatime-api-key "a62ccc4f-fe69-4025-8e4d-c3eb5358f1cc1"))
