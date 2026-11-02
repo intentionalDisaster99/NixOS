@@ -34,7 +34,7 @@
         pname = "math-preview";
         version = "5.1.1";
 
-        src = pkgs.fetchFromGitHub {
+        src = pkgs.fetchFromGitLab {
           owner = "matsievskiysv";
           repo = "math-preview";
           rev = "v${version}";
@@ -42,7 +42,7 @@
         };
 
         npmDepsHash = pkgs.lib.fakeHash;
-        dontNpmBuild = true; # nothing to compile, it's plain JS
+        dontNpmBuild = true;
       };
     in
     {
