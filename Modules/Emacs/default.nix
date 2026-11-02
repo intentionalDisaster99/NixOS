@@ -32,12 +32,12 @@
       '';
       math-preview-js = pkgs.buildNpmPackage rec {
         pname = "math-preview";
-        version = "5.1.1"; # check the repo's tags/releases for the real latest
+        version = "5.1.1";
 
         src = pkgs.fetchFromGitHub {
           owner = "matsievskiysv";
           repo = "math-preview";
-          rev = version; # or "v${version}", depending on how they tag
+          rev = "v${version}";
           hash = pkgs.lib.fakeHash;
         };
 
