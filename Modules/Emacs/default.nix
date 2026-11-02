@@ -5,6 +5,16 @@
     nerd-fonts.symbols-only
   ];
 
+
+  nixpkgs.overlays = [
+    (self: super: {
+      emacsWithConfig =
+        (super.emacsPackagesFor super.emacs-pgtk).emacsWithPackages (epkgs: [
+          epkgs.pdf-tools
+        ]);
+    })
+  ];
+
   home-manager.users.${username} =
     { config, lib, pkgs, ... }:
     let
@@ -35,7 +45,6 @@
         libtool
         asm-lsp
         qemu
-        epdfinfo
         (texlive.combine {
           inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
         })

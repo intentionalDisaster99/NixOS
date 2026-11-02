@@ -102,3 +102,9 @@
 
 ;; Treemacs
 (load! "treemacs-config.el")
+
+
+;; Unfortunately, pdf-tools is really annoying on nixos
+(use-package pdf-tools
+  :init
+  (pdf-tools-install))
