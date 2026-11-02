@@ -117,3 +117,10 @@
                               math-preview-at-point math-preview-region)
   :config
   (setq math-preview-scale 1.2))
+
+(use-package! wakatime-mode
+  :hook (doom-first-buffer . global-wakatime-mode)
+  :config
+  ;; Optionally specify custom path to wakatime-cli if not in PATH or default location:
+  ;; (setq wakatime-cli-path "/usr/local/bin/wakatime-cli")
+  )

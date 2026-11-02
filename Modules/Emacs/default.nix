@@ -5,18 +5,20 @@
     nerd-fonts.symbols-only
   ];
 
-
   nixpkgs.overlays = [
     (self: super: {
-      emacsWithConfig =
-        (super.emacsPackagesFor super.emacs-pgtk).emacsWithPackages (epkgs: [
-          epkgs.pdf-tools
-        ]);
+      emacsWithConfig = (super.emacsPackagesFor super.emacs-pgtk).emacsWithPackages (epkgs: [
+        epkgs.pdf-tools
+      ]);
     })
   ];
 
   home-manager.users.${username} =
-    { config, lib, pkgs, ... }:
+    { config
+    , lib
+    , pkgs
+    , ...
+    }:
     let
       doomBootstrap = pkgs.writeShellScript "doom-bootstrap" ''
         set -eu
@@ -70,9 +72,17 @@
         qemu
         zig
         nixfmt
+        wakatime-cli
         clang-tools
         (texlive.combine {
-          inherit (texlive) scheme-small dvisvgm preview dvipng cm-super type1cm;
+          inherit (texlive)
+            scheme-small
+            dvisvgm
+            preview
+            dvipng
+            cm-super
+            type1cm
+            ;
         })
         math-preview
         # math-preview-js
@@ -88,8 +98,7 @@
       };
 
       # Linking to dots
-      xdg.configFile."doom".source =
-        config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Doom";
+      xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/Modules/Emacs/Doom";
 
       # Install Doom if it isn't already
       systemd.user.services.doom-bootstrap = {
@@ -101,10 +110,27 @@
         Service = {
           Type = "oneshot";
           Environment = [
-            "PATH=${lib.makeBinPath (with pkgs; [
-              git emacs-pgtk ripgrep fd coreutils bash
-              gnumake gcc cmake libtool gnused gnugrep findutils gawk
-            ])}"
+            "PATH=${
+              lib.makeBinPath (
+                with pkgs;
+                [
+                  git
+                  emacs-pgtk
+                  ripgrep
+                  fd
+                  coreutils
+                  bash
+                  gnumake
+                  gcc
+                  cmake
+                  libtool
+                  gnused
+                  gnugrep
+                  findutils
+                  gawk
+                ]
+              )
+            }"
           ];
           ExecStart = "${doomBootstrap}";
           Restart = "on-failure";
