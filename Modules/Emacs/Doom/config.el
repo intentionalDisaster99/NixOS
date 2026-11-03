@@ -124,3 +124,62 @@
   (setq wakatime-cli-path (executable-find "wakatime-cli"))
   (setq wakatime-api-key
         (string-trim (shell-command-to-string "wakatime-cli --config-read api_key"))))
+
+;; Moving to brain instead of org
+(after! org
+  (setq org-directory "~/Brain")
+  (setq org-agenda-files (directory-files-recursively "~/Brain" "\\.org$")))
+
+;; Gantt charg my beloved
+(map! :leader
+      :desc "Elgantt timeline" "o a g" #'elgantt-open)
+
+(use-package! elgantt
+  :after org
+  :config
+  (require 'elgantt)
+
+  (setq elgantt-agenda-files org-agenda-files
+        elgantt-header-type 'outline
+        elgantt-insert-header-even-if-no-timestamp nil
+        elgantt-startup-folded nil
+        elgantt-draw-overarching-headers t
+        elgantt-header-column-offset 35)
+
+  (setq elgantt-user-set-color-priority-counter 0)
+  (elgantt-create-display-rule draw-scheduled-to-deadline
+    :parser ((elgantt-color . ((when-let ((colors (org-entry-get (point) "ELGANTT-COLOR")))
+                                 (s-split " " colors)))))
+    :args (elgantt-scheduled elgantt-color elgantt-org-id)
+    :body ((when elgantt-scheduled
+             (let ((point1 (point))
+                   (point2 (save-excursion
+                             (elgantt--goto-date elgantt-scheduled)
+                             (point)))
+                   (color1 (or (car elgantt-color) "black"))
+                   (color2 (or (cadr elgantt-color) "red")))
+               (when (/= point1 point2)
+                 (elgantt--draw-gradient
+                  color1
+                  color2
+                  (if (< point1 point2) point1 point2)
+                  (if (< point1 point2) point2 point1)
+                  nil
+                  `(priority ,(setq elgantt-user-set-color-priority-counter
+                                    (1- elgantt-user-set-color-priority-counter))
+                    :elgantt-user-overlay ,elgantt-org-id)))))))
+
+  (after! evil
+    (evil-set-initial-state 'elgantt-mode 'normal))
+
+  (map! :map elgantt-mode-map
+        :n "j"   #'evil-next-line
+        :n "k"   #'evil-previous-line
+        :n "h"   #'evil-backward-char
+        :n "l"   #'evil-forward-char
+        :n "J"   (cmd! (call-interactively (lookup-key elgantt-mode-map "F")))  ; Scroll month forward
+        :n "K"   (cmd! (call-interactively (lookup-key elgantt-mode-map "B")))  ; Scroll month backward
+        :n "g t" (cmd! (call-interactively (lookup-key elgantt-mode-map "c")))  ; Jump to today
+        :n "g r" (cmd! (call-interactively (lookup-key elgantt-mode-map "g")))  ; Refresh chart
+        :n "o"   (cmd! (call-interactively (lookup-key elgantt-mode-map " ")))  ; Jump to Org headline
+        :n "RET" (cmd! (call-interactively (lookup-key elgantt-mode-map "\r"))))) ; Open Org Agenda at point

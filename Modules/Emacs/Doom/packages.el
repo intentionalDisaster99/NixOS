@@ -60,3 +60,7 @@
 
 ;; For wakatime
 (package! wakatime-mode)
+
+;; God I love gantt charts
+(package! elgantt
+  :recipe (:host github :repo "legalnonsense/elgantt"))
