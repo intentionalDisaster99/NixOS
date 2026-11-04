@@ -183,3 +183,29 @@
         :n "g r" (cmd! (call-interactively (lookup-key elgantt-mode-map "g")))  ; Refresh chart
         :n "o"   (cmd! (call-interactively (lookup-key elgantt-mode-map " ")))  ; Jump to Org headline
         :n "RET" (cmd! (call-interactively (lookup-key elgantt-mode-map "\r"))))) ; Open Org Agenda at point
+
+;;  Org stuff
+;; Log timestamps automatically when marking items as DONE
+(setq org-log-done 'time)
+;; Or log into a drawer with notes:
+(setq org-log-into-drawer t)
+(use-package! org-super-agenda
+  :after org-agenda
+  :config
+  (org-super-agenda-mode 1)
+  (setq org-super-agenda-groups
+        '((:name "Today"
+           :time-grid t
+           :scheduled today)
+          (:name "Important"
+           :priority "A")
+          (:name "Overdue"
+           :deadline past)
+          (:name "Due Soon"
+           :deadline future)
+          (:name "Waiting"
+           :todo "WAIT"))))
+(use-package! org-modern
+  :hook (org-mode . org-modern-mode)
+  :config
+  (setq org-modern-star '("◉" "○" "◈" "◇")))

@@ -64,3 +64,7 @@
 ;; God I love gantt charts
 (package! elgantt
   :recipe (:host github :repo "legalnonsense/elgantt"))
+
+;; More org stuff
+(package! org-super-agenda)
+(package! org-modern)

@@ -159,7 +159,13 @@
        nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        ;;odin              ; C, minus its footguns
-       org               ; organize your plain life in plain text
+       ;; org               ; organize your plain life in plain text
+       (org
+        +dragndrop       ; Drag & drop images into org files
+        +roam2           ; Enables Org-Roam v2 integration for networked note-taking
+        +journal         ; Enables org-journal for daily logs
+        +present         ; Enables presentation mode (org-tree-slide)
+        +pretty)         ; Prettify symbols (bullets, check boxes, tags)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
