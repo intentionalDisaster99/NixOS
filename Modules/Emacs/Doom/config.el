@@ -109,23 +109,14 @@
   :init
   (pdf-tools-install))
 
-;; Math
-(after! org
-  (require 'math-preview)
-
-  (add-hook 'org-mode-hook #'math-preview-all)
-
-  ;; (add-hook 'org-mode-hook
-  ;;           (lambda ()
-  ;;             (add-hook 'after-save-hook #'math-preview-all nil t)))
-
-  (map! :map org-mode-map
-        :localleader
-        :prefix ("m" . "math-preview")
-        :desc "Preview all math"       "a" #'math-preview-all
-        :desc "Clear all math"         "c" #'math-preview-clear-all
-        :desc "Toggle math at point"   "p" #'math-preview-at-point
-        :desc "Clear math at point"    "x" #'math-preview-clear-at-point))
+;; Math?
+;; (use-package! texfrag
+;;   :hook (markdown-mode . texfrag-mode))
+(use-package! math-preview
+  :commands (math-preview-all math-preview-clear-all
+                              math-preview-at-point math-preview-region)
+  :config
+  (setq math-preview-scale 1))
 
 (use-package! wakatime-mode
   :hook (doom-first-buffer . global-wakatime-mode)
@@ -137,8 +128,10 @@
 ;; Moving to brain instead of org
 (after! org
   (setq org-directory "~/Brain")
-  (setq org-agenda-files (directory-files-recursively "~/Brain" "\\.org$")))
-
+  (setq org-agenda-files
+        (seq-remove (lambda (file)
+                      (string-match-p "\\.stversions\\|sync-conflict" file))
+                    (directory-files-recursively org-directory "\\.org$"))))
 ;; Gantt charg my beloved
 (map! :leader
       :desc "Elgantt timeline" "o a g" #'elgantt-open)
