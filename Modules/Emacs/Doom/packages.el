@@ -68,3 +68,5 @@
 ;; More org stuff
 (package! org-super-agenda)
 (package! org-modern)
+(package! org-appear)
+(package! org-fancy-priorities)

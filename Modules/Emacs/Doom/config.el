@@ -109,14 +109,23 @@
   :init
   (pdf-tools-install))
 
-;; Math?
-;; (use-package! texfrag
-;;   :hook (markdown-mode . texfrag-mode))
-(use-package! math-preview
-  :commands (math-preview-all math-preview-clear-all
-                              math-preview-at-point math-preview-region)
-  :config
-  (setq math-preview-scale 1.2))
+;; Math
+(after! org
+  (require 'math-preview)
+
+  (add-hook 'org-mode-hook #'math-preview-all)
+
+  ;; (add-hook 'org-mode-hook
+  ;;           (lambda ()
+  ;;             (add-hook 'after-save-hook #'math-preview-all nil t)))
+
+  (map! :map org-mode-map
+        :localleader
+        :prefix ("m" . "math-preview")
+        :desc "Preview all math"       "a" #'math-preview-all
+        :desc "Clear all math"         "c" #'math-preview-clear-all
+        :desc "Toggle math at point"   "p" #'math-preview-at-point
+        :desc "Clear math at point"    "x" #'math-preview-clear-at-point))
 
 (use-package! wakatime-mode
   :hook (doom-first-buffer . global-wakatime-mode)
@@ -184,15 +193,20 @@
         :n "o"   (cmd! (call-interactively (lookup-key elgantt-mode-map " ")))  ; Jump to Org headline
         :n "RET" (cmd! (call-interactively (lookup-key elgantt-mode-map "\r"))))) ; Open Org Agenda at point
 
-;;  Org stuff
-;; Log timestamps automatically when marking items as DONE
+;; Org stuff
+(setq org-directory "~/Brain/org/")
+
+(setq org-agenda-files (directory-files-recursively org-directory "\\.org$"))
+
 (setq org-log-done 'time)
-;; Or log into a drawer with notes:
 (setq org-log-into-drawer t)
+
 (use-package! org-super-agenda
   :after org-agenda
   :config
   (org-super-agenda-mode 1)
+  ;; Disable header keymap to prevent Evil movement conflicts
+  (setq org-super-agenda-header-map nil)
   (setq org-super-agenda-groups
         '((:name "Today"
            :time-grid t
@@ -205,7 +219,35 @@
            :deadline future)
           (:name "Waiting"
            :todo "WAIT"))))
+
 (use-package! org-modern
   :hook (org-mode . org-modern-mode)
   :config
   (setq org-modern-star '("◉" "○" "◈" "◇")))
+
+(use-package! org-appear
+  :hook (org-mode . org-appear-mode)
+  :config
+  (setq org-appear-auto-links t
+        org-appear-auto-emphasis t))
+
+(after! org
+  (setq org-priority-highest ?A
+        org-priority-lowest  ?F
+        org-priority-default ?C)) ; Default priority assigned when omitted
+;; (use-package! org-fancy-priorities
+;;   :hook (org-mode . org-fancy-priorities-mode)
+;;   :config
+;;   (setq org-fancy-priorities-list '("❗" "⚡" "⬆" "▶" "⬇" "☕")))
+
+
+(after! org
+  (setq org-default-notes-file "~/Brain/org/inbox.org"
+        +org-default-todo-file "~/Brain/org/todo.org")
+  (setq org-capture-templates
+        '(("t" "Todo Task" entry
+           (file "~/Brain/org/inbox.org")
+           "* TODO %?\n  CREATED: %U" :empty-lines 1)
+          ("n" "Note / Idea" entry
+           (file "~/Brain/org/inbox.org")
+           "* %?\n  CREATED: %U" :empty-lines 1))))
