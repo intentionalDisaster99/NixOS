@@ -54,7 +54,7 @@
         wakatime-cli
         clang-tools
 
-        texliveSchemeFull
+        texliveFull
         # These things gave me a weird error, so I'm removing them for now
         # (texlive.combine {
         #   inherit (texlive)
