@@ -193,6 +193,12 @@ hl.animation({ leaf = "global", enabled = true, speed = 4, bezier = "fast" })
 hl.window_rule({ match = { class = "grim" }, no_anim = 1 })
 hl.window_rule({ match = { class = "selector" }, no_anim = 1 })
 
+-- Emacs everywhere needs to float
+windowrule = {
+  "float, title:^(emacs-everywhere)$",
+  "size 800 500, title:^(emacs-everywhere)$",
+  "center, title:^(emacs-everywhere)$",
+}
 -- Some of the workspaces
 -- hl.workspace("special:discord, on-created-empty:uwsm app -- discord")
 -- hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
@@ -218,11 +224,9 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
 hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("uwsm app -- kitty"))
--- hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
-hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a 'emacs'"))
-
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
+-- hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a 'emacs'"))
 hl.bind(mainMod .. "+ SHIFT + I", hl.dsp.exec_cmd("exec emacsclient --eval '(emacs-everywhere)'"))
-
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
