@@ -244,3 +244,11 @@
           ("n" "Note / Idea" entry
            (file "~/Brain/org/inbox.org")
            "* %?\n  CREATED: %U" :empty-lines 1))))
+
+
+;; Auto-toggle LaTeX math fragment previews when cursor enters/leaves
+(use-package! org-fragtog
+  :hook (org-mode . org-fragtog-mode))
+(after! org
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :scale 1.25)))

@@ -70,3 +70,4 @@
 (package! org-modern)
 (package! org-appear)
 (package! org-fancy-priorities)
+(package! org-fragtog)
