@@ -220,6 +220,9 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("uwsm app -- kitty"))
 -- hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a 'emacs'"))
+
+hl.bind(mainMod .. "+ SHIFT + I", hl.dsp.exec_cmd("exec emacsclient --eval '(emacs-everywhere)'"))
+
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))

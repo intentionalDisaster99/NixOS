@@ -46,6 +46,8 @@
         cmake
         libtool
         asm-lsp
+        wl-clipboard
+        ydotool
         qemu
         zig
         nixfmt

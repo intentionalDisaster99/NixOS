@@ -236,7 +236,7 @@
 
 (after! org
   (setq org-default-notes-file "~/Brain/org/inbox.org"
-        +org-default-todo-file "~/Brain/org/todo.org")
+        +org-default-todo-file "~/Brain/org/inbox.org")
   (setq org-capture-templates
         '(("t" "Todo Task" entry
            (file "~/Brain/org/inbox.org")
