@@ -1,12 +1,13 @@
 {
   "colorHistory": [
+    "#7F00FF",
+    "#30DD24",
+    "#E9E960",
     "#CC4125",
     "#D9D9D9",
     "#313138",
     "#202020",
-    "#1155CC",
-    "#111413",
-    "#4D4F50"
+    "#1155CC"
   ],
   "paletteColors": [
     "#121416",
@@ -156,12 +157,12 @@
   "recordSkipConfirmation": false,
   "recordCopyToClipboard": false,
   "gifMaxSeconds": 30,
-  "resultHex": "#CC4125",
-  "resultRgb": "rgb(204, 65, 37)",
-  "resultHsv": "hsv(10, 82%, 80%)",
-  "resultHsl": "hsl(10, 69%, 47%)",
+  "resultHex": "#7F00FF",
+  "resultRgb": "rgb(127, 0, 255)",
+  "resultHsv": "hsv(270, 100%, 100%)",
+  "resultHsl": "hsl(270, 100%, 50%)",
   "colorCapturePath": "/tmp/screen-toolkit-colorpicker.png",
-  "colorCacheBust": 1793856308930,
+  "colorCacheBust": 1793937900618,
   "ocrResult": "Error\n\nError loading library table 'KiCad\"\n\nNested table 'nix/store/20wacqvxdkn8qiai1 r619g8p8xzblp31-kicad-\nbase-10.0.1/share/kicad/template/sym-lib-table’ not found.",
   "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
   "qrResult": "",

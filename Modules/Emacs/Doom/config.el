@@ -251,4 +251,10 @@
   :hook (org-mode . org-fragtog-mode))
 (after! org
   (setq org-format-latex-options
-        (plist-put org-format-latex-options :scale 1.25)))
+        (plist-put org-format-latex-options :scale 1)))
+(after! org
+  (setq org-startup-with-latex-preview t))
+(after! org
+  (setq org-preview-latex-default-process 'dvisvgm))
+(use-package! texfrag
+  :hook (markdown-mode . texfrag-mode))
