@@ -258,3 +258,14 @@
   (setq org-preview-latex-default-process 'dvisvgm))
 (use-package! texfrag
   :hook (markdown-mode . texfrag-mode))
+
+;; For advent of code I wanted each to be it's own project for nice running and stuff
+(after! projectile
+  (add-to-list 'projectile-project-root-files-bottom-up "Cargo.toml"))
+(after! treemacs
+  (setq projectile-switch-project-action #'treemacs-display-current-project-exclusively))
+(after! project
+  (defun my/project-find-cargo (dir)
+    (when-let ((root (locate-dominating-file dir "Cargo.toml")))
+      (cons 'transient root)))
+  (add-hook 'project-find-functions #'my/project-find-cargo -10))
