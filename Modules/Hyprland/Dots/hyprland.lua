@@ -209,71 +209,162 @@ windowrule = {
 -- TEST
 -- hl.bind(mainMod.. " + P", hl.dsp.exec_cmd("fish -c \"autostart\""))
 
--- Magic workspaces
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("pypr toggle term"))
--- hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
+-- -- Magic workspaces
+-- hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("pypr toggle term"))
+-- -- hl.bind(mainMod.. " + V", hl.dsp.exec_cmd("fish -c clipboard_to_type")) -- TODO bring over fish command
 
--- Meta actions
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
---
--- -- Opening Apps (Wrapped in uwsm)
-hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("uwsm app -- kitty"))
-hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
--- hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a 'emacs'"))
-hl.bind(mainMod .. "+ SHIFT + I", hl.dsp.exec_cmd("exec emacsclient --eval '(emacs-everywhere)'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
-hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
+-- -- Meta actions
+-- hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd('pypr menu "Color picker"'))
+-- hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
+-- hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+-- hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+-- hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
+-- --
+-- -- -- Opening Apps (Wrapped in uwsm)
+-- hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+-- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
+-- hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("uwsm app -- kitty"))
+-- hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
+-- -- hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a 'emacs'"))
+-- hl.bind(mainMod .. "+ SHIFT + I", hl.dsp.exec_cmd("exec emacsclient --eval '(emacs-everywhere)'"))
+-- hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
+-- hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
+-- hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
 
--- -- Utilities
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | wl-copy')) -- Takes a screenshot
-hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle")) -- Toggles the noctalia wallpaper switcher
-hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle")) -- Opens the noctalia control center
-hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle")) -- Opens the noctalia settings panel
-hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd(ipc .. "bar toggle")) -- Hides or unhides the bar at the top
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
-hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd(ipc .. " plugin openPanel screen-toolkit"))
-hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. " calendar toggle"))
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("fish -c nord-toggle"))
-hl.bind(mainMod .. " + ALT + slash", hl.dsp.exec_cmd(ipc .. " plugin:keybind-cheatsheet toggle"))
+-- -- -- Utilities
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | wl-copy')) -- Takes a screenshot
+-- hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle")) -- Toggles the noctalia wallpaper switcher
+-- hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle")) -- Opens the noctalia control center
+-- hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(ipc .. "settings toggle")) -- Opens the noctalia settings panel
+-- hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd(ipc .. "bar toggle")) -- Hides or unhides the bar at the top
+-- hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
+-- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
+-- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
+-- hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd(ipc .. " plugin openPanel screen-toolkit"))
+-- hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. " calendar toggle"))
+-- hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("fish -c nord-toggle"))
 
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " plugin:screen-toolkit colorPicker"))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | swappy -f -'))
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
--- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
+-- hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " plugin:screen-toolkit colorPicker"))
+-- hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | swappy -f -'))
+-- hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
+-- -- hl.bind("${mainMod} + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
--- Noctalia things
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"))
+-- -- Noctalia things
+-- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"))
 
---
--- -- Special workspaces
-hl.workspace_rule({ workspace = "special:discord", on_created_empty = "uwsm app -- discord" })
-hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))
-hl.workspace_rule({ workspace = "special:spotify", on_created_empty = "uwsm app -- spotify" })
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
-hl.workspace_rule({
-	workspace = "special:messages",
-	on_created_empty = "uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations",
-})
-hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("messages"))
-hl.workspace_rule({ workspace = "special:magic" })
-hl.bind(mainMod .. " + J", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ workspace = "special:magic" }))
-hl.workspace_rule({ workspace = "special:calc", on_created_empty = "uwsm app -- qalculate-gtk" })
-hl.bind(mainMod .. " + K", hl.dsp.workspace.toggle_special("calc"))
+-- --
+-- -- -- Special workspaces
+-- hl.workspace_rule({ workspace = "special:discord", on_created_empty = "uwsm app -- discord" })
+-- hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))
+-- hl.workspace_rule({ workspace = "special:spotify", on_created_empty = "uwsm app -- spotify" })
+-- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
+-- hl.workspace_rule({
+-- 	workspace = "special:messages",
+-- 	on_created_empty = "uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations",
+-- })
+-- hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("messages"))
+-- hl.workspace_rule({
+-- 	workspace = "special:groupme",
+-- 	on_created_empty = "uwsm app -- brave --new-window https://web.groupme.com",
+-- })
+-- hl.bind(mainMod .. " + P", hl.dsp.workspace.toggle_special("messages"))
+-- hl.workspace_rule({ workspace = "special:magic" })
+-- hl.bind(mainMod .. " + J", hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.workspace_rule({ workspace = "special:calc", on_created_empty = "uwsm app -- qalculate-gtk" })
+-- hl.bind(mainMod .. " + K", hl.dsp.workspace.toggle_special("calc"))
 
 --
 -- -- Updated the fallback launch here to use uwsm
 -- hl.bind("${mainMod} + K", hl.dsp.exec_cmd("pgrep qalculate-gtk && hyprctl dispatch togglespecialworkspace calculator || uwsm app -- qalculate-gtk &"))
+-- Special Workspace Rules
+hl.workspace_rule({ workspace = "special:discord", on_created_empty = "uwsm app -- discord" })
+hl.workspace_rule({ workspace = "special:spotify", on_created_empty = "uwsm app -- spotify" })
+hl.workspace_rule({
+	workspace = "special:messages",
+	on_created_empty = "uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations",
+})
+hl.workspace_rule({
+	workspace = "special:groupme",
+	on_created_empty = "uwsm app -- brave --new-window https://web.groupme.com",
+})
+hl.workspace_rule({ workspace = "special:magic" })
+hl.workspace_rule({ workspace = "special:calc", on_created_empty = "uwsm app -- qalculate-gtk" })
 
+--------------------------------------------------------------------------------
+-- Normal Mode (Direct Hotkeys & Mode Triggers)
+--------------------------------------------------------------------------------
+-- Mode Triggers
+hl.bind(mainMod .. " + O", hl.dsp.submap("open"))
+hl.bind(mainMod .. " + P", hl.dsp.submap("power"))
+hl.bind(mainMod .. " + U", hl.dsp.submap("noctalia"))
+hl.bind(mainMod .. " + T", hl.dsp.submap("toggle"))
+
+-- Normal Hotkeys
+hl.bind("ALT + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " plugin:screen-toolkit colorPicker"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("pypr zoom"))
+
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("exec emacsclient --eval '(emacs-everywhere)'"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | wl-copy'))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd('grim -g "$(slurp -w 0 -b \\#00000099)" - | swappy -f -'))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
+
+--------------------------------------------------------------------------------
+-- Open Mode Submap
+--------------------------------------------------------------------------------
+hl.define_submap("open", "reset", function()
+	hl.bind("escape", hl.dsp.submap("reset"))
+	hl.bind("J", hl.dsp.workspace.toggle_special("magic"))
+	hl.bind("M", hl.dsp.workspace.toggle_special("messages"))
+	hl.bind("N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
+	hl.bind("B", hl.dsp.exec_cmd("uwsm app -- brave"))
+	hl.bind("I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
+	hl.bind("K", hl.dsp.workspace.toggle_special("calc"))
+	hl.bind("E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
+	hl.bind("G", hl.dsp.exec_cmd("uwsm app -- steam"))
+	hl.bind("O", hl.dsp.exec_cmd("pypr toggle term"))
+	hl.bind("T", hl.dsp.exec_cmd("uwsm app -- kitty"))
+	hl.bind("H", hl.dsp.workspace.toggle_special("groupme"))
+	hl.bind("D", hl.dsp.workspace.toggle_special("discord"))
+	hl.bind("S", hl.dsp.workspace.toggle_special("spotify"))
+end)
+
+--------------------------------------------------------------------------------
+-- Power Mode Submap
+--------------------------------------------------------------------------------
+hl.define_submap("power", "reset", function()
+	hl.bind("escape", hl.dsp.submap("reset"))
+	hl.bind("L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
+	hl.bind("S", hl.dsp.exec_cmd("systemctl suspend"))
+	hl.bind("H", hl.dsp.exec_cmd("systemctl hibernate"))
+	hl.bind("D", hl.dsp.exec_cmd("systemctl poweroff"))
+	hl.bind("M", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
+end)
+
+--------------------------------------------------------------------------------
+-- Noctalia Mode Submap
+--------------------------------------------------------------------------------
+hl.define_submap("noctalia", "reset", function()
+	hl.bind("escape", hl.dsp.submap("reset"))
+	hl.bind("W", hl.dsp.exec_cmd(ipc .. "wallpaper toggle"))
+	hl.bind("S", hl.dsp.exec_cmd(ipc .. " plugin openPanel screen-toolkit"))
+	hl.bind("I", hl.dsp.exec_cmd(ipc .. "settings toggle"))
+	hl.bind("C", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
+	hl.bind("Q", hl.dsp.exec_cmd(ipc .. " calendar toggle"))
+end)
+
+--------------------------------------------------------------------------------
+-- Toggle Mode Submap
+--------------------------------------------------------------------------------
+hl.define_submap("toggle", "reset", function()
+	hl.bind("escape", hl.dsp.submap("reset"))
+	hl.bind("N", hl.dsp.exec_cmd("fish -c nord-toggle"))
+end)
 -- Media Controls
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"))
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"))
@@ -285,9 +376,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"))
 local monitorOffsets = {
 	{ "eDP-1", 0 },
 	{ "DP-1", 10 },
-	{ "HDMI-A-1", 20 },
-	{ "DP-3", 30 },
-	{ "HEADLESS-1", 40 },
+	{ "DP-2", 20 },
+	{ "HDMI-A-1", 30 },
+	{ "DP-3", 40 },
+	{ "HEADLESS-1", 50 },
 }
 
 for _, mon in ipairs(monitorOffsets) do
