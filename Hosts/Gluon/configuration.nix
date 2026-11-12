@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ config
+, pkgs
+, inputs
+, ...
+}:
 
 # Note to self: to edit secrets, run `sops secrets/secrets.yaml`
 
@@ -27,5 +31,8 @@
     "/share/xdg-desktop-portal"
     "/share/applications"
   ];
+
+  # To make your splash screen show up nicely
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
 }

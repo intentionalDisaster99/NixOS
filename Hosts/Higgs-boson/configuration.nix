@@ -203,4 +203,7 @@
     ATTRS{idVendor}=="2fe3", ATTRS{idProduct}=="0100", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"  
   '';
 
+  # To make your splash screen show up nicely
+  boot.initrd.kernelModules = [ "i915" ];
+
 }
