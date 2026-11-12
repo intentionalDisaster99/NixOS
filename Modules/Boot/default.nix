@@ -72,5 +72,7 @@
     loader.timeout = 0;
 
   };
+  systemd.services.plymouth-quit.enable = false;
+  systemd.services.plymouth-quit-wait.enable = true;
 
 }
