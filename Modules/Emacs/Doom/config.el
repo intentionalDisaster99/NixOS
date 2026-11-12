@@ -6,6 +6,10 @@
 (setq user-full-name "Sam Whitlock"
       user-mail-address "abyssalflerken@gmail.com")
 
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell "/run/current-system/sw/bin/fish")
+(setq-default explicit-shell-file-name "/run/current-system/sw/bin/fish")
+
 (setq fancy-splash-image
       (concat doom-private-dir "splash/I-am-doom-small.png"))
 
@@ -45,6 +49,11 @@
     (progn
       (set-frame-parameter nil 'alpha-background 75)
       (put 'toggle-background-transparency 'state t))))
+
+(use-package! org-modern
+  :hook (org-mode . org-modern-mode)
+  :config
+  (setq org-modern-star '("◉" "○" "◈" "◇")))
 
 (use-package! org-fragtog
   :hook (org-mode . org-fragtog-mode))
@@ -112,13 +121,13 @@
   (setq org-appear-auto-links t
         org-appear-auto-emphasis t))
 
-;; Specify visual-fill centering settings
-(defun my/org-mode-visual-fill ()
-  (setq visual-fill-column-width 100
-        visual-fill-column-center-text t)
-  visual-fill-column-mode 1)
+;; ;; Specify visual-fill centering settings
+;; (defun my/org-mode-visual-fill ()
+;;   (setq visual-fill-column-width 100
+;;         visual-fill-column-center-text t)
+;;   visual-fill-column-mode 1)
 
-;; Use visual-fill-column to center org-mode buffers
-(use-package! visual-fill-column
-  :after org
-  :hook (org-mode . my/org-mode-visual-fill))
+;; ;; Use visual-fill-column to center org-mode buffers
+;; (use-package! visual-fill-column
+;;   :after org
+;;   :hook (org-mode . my/org-mode-visual-fill))

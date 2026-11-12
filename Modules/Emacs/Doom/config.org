@@ -31,6 +31,14 @@ Uh yeah. Me.
       user-mail-address "abyssalflerken@gmail.com")
 #+end_src
 
+** Using Fish
+I use fish, which is not POSIX compliant, so I have to call this
+#+begin_src emacs-lisp
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell "/run/current-system/sw/bin/fish")
+(setq-default explicit-shell-file-name "/run/current-system/sw/bin/fish")
+#+end_src
+
 ** Funny
 
 *** Splash Screen
@@ -112,6 +120,11 @@ Theoretically, I can make the background transparent by running this fuction. Wh
     (progn
       (set-frame-parameter nil 'alpha-background 75)
       (put 'toggle-background-transparency 'state t))))
+
+(use-package! org-modern
+  :hook (org-mode . org-modern-mode)
+  :config
+  (setq org-modern-star '("◉" "○" "◈" "◇")))
 #+end_src
 
 *** Math
@@ -214,14 +227,14 @@ I like to make it hide and show the stuff automatically to make it prettier, so 
 
 Apparently you can actually center everything? So here we go lol
 #+begin_src emacs-lisp
-;; Specify visual-fill centering settings
-(defun my/org-mode-visual-fill ()
-  (setq visual-fill-column-width 100
-        visual-fill-column-center-text t)
-  visual-fill-column-mode 1)
+;; ;; Specify visual-fill centering settings
+;; (defun my/org-mode-visual-fill ()
+;;   (setq visual-fill-column-width 100
+;;         visual-fill-column-center-text t)
+;;   visual-fill-column-mode 1)
 
-;; Use visual-fill-column to center org-mode buffers
-(use-package! visual-fill-column
-  :after org
-  :hook (org-mode . my/org-mode-visual-fill))
+;; ;; Use visual-fill-column to center org-mode buffers
+;; (use-package! visual-fill-column
+;;   :after org
+;;   :hook (org-mode . my/org-mode-visual-fill))
 #+end_src

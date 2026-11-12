@@ -54,6 +54,15 @@
         wakatime-cli
         clang-tools
 
+        xwininfo
+        xdotool
+        xclip
+
+        shfmt
+        rust-analyzer
+        cargo
+        rustc
+
         texliveFull
         # These things gave me a weird error, so I'm removing them for now
         # (texlive.combine {
