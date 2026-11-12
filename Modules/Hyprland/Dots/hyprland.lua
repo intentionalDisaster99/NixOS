@@ -338,6 +338,22 @@ hl.define_submap("open", "reset", function()
 	hl.bind("D", hl.dsp.workspace.toggle_special("discord"))
 	hl.bind("S", hl.dsp.workspace.toggle_special("spotify"))
 	hl.bind("P", hl.dsp.workspace.toggle_special("ptable"))
+
+-- Also including the extra super press in case you don't lift fast enoguh
+	hl.bind(mainMod .. " + J", hl.dsp.workspace.toggle_special("magic"))
+	hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("messages"))
+	hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("uwsm app -- obsidian"))
+	hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("uwsm app -- brave"))
+	hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("uwsm app -- emacsclient -c -a ''"))
+	hl.bind(mainMod .. " + K", hl.dsp.workspace.toggle_special("calc"))
+	hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- dolphin"))
+	hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("uwsm app -- steam"))
+	hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("pypr toggle term"))
+	hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("uwsm app -- kitty"))
+	hl.bind(mainMod .. " + H", hl.dsp.workspace.toggle_special("groupme"))
+	hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))
+	hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
+	hl.bind(mainMod .. " + P", hl.dsp.workspace.toggle_special("ptable"))
 end)
 
 --------------------------------------------------------------------------------
