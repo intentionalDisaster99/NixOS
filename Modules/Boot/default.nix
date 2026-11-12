@@ -68,6 +68,9 @@
       "vt.global_cursor_default=0"
     ];
 
+    # You can still access the loader but you just have to press a key
+    loader.timeout = 0;
+
   };
 
 }
