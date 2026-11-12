@@ -39,6 +39,10 @@
         }
       ];
     };
+
+    extraConfig = ''
+      set gfxpayload=text
+    '';
   };
 
   # A splash screen
