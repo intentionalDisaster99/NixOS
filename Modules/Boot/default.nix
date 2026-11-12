@@ -53,7 +53,7 @@
         })
       ];
     };
-    initrd.supportedFilesystems.ext4 = true; # (or whatever your fs is)
+    # initrd.supportedFilesystems.ext4 = true;
     initrd.systemd.enable = true;
     # Enable "Silent boot"
     consoleLogLevel = 3;
@@ -61,6 +61,7 @@
       "quiet"
       "rd.udev.log_level=3"
       "rd.systemd.show_status=auto"
+      "vt.global_cursor_default=0"
     ];
 
   };
