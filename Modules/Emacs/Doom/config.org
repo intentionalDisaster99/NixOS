@@ -1,0 +1,190 @@
+#+TITLE: My Emacs Configuration
+#+AUTHOR: Sam Whitlock
+#+EMAIL: abyssalflerken@gmail.com
+#+OPTIONS: num:nil
+
+I hope to have this be my main config so that everything is pretty and commented
+
+
+* General Config
+
+** Theme
+
+I like to use Noctalia, which generates a nice theme for me to use.
+#+begin_src emacs-lisp
+(add-to-list 'custom-theme-load-path (expand-file-name "theme" doom-user-dir))
+(setq doom-theme 'noctalia)
+#+end_src
+
+** Me
+Uh yeah. Me.
+#+begin_src emacs-lisp
+(setq user-full-name "Sam Whitlock"
+      user-mail-address "abyssalflerken@gmail.com")
+#+end_src
+
+** Funny
+
+*** Splash Screen
+I like to have a silly splash screen, so I have that setup here.
+#+begin_src emacs-lisp
+(setq fancy-splash-image
+      (concat doom-private-dir "splash/I-am-doom-small.png"))
+#+end_src
+
+** Editor
+
+*** Line Numbers
+
+I like to use relative line numbers, so I set this to =relative=. You can also set it to =t= for regular line numbers and =nil= for no line numbers
+#+begin_src emacs-lisp
+(setq display-line-numbers-type 'relative)
+#+end_src
+
+*** Autosave
+I like everything to save basically instantly, so I have this set to save a second after I finish making an edit.
+#+begin_src emacs-lisp
+
+(setq! desktop-load-locked-desktop t)
+(setq auto-save-visited-interval 1)
+(auto-save-visited-mode 1)
+#+end_src
+
+# TODO go in and update this to not autoformat on save, just on a key bind
+
+*** Treemacs
+Coming from IDEs and Neovim, I like to have a file tree come out from the side. Hence treemacs. This is in a different file so that I can tweak it as much as I like without this file getting bloated.
+#+begin_src emacs-lisp
+(load! "treemacs-config.el")
+#+end_src
+
+*** PDFs
+Apparently PDFs are really annoying on NixOS with Emacs. Anyways, I got it working. Couldn't tell you how. I try not to look into it any more than I have to.
+#+begin_src emacs-lisp
+(use-package pdf-tools
+  :init
+  (pdf-tools-install))
+#+end_src
+
+*** Wakatime
+Love recording my time coding on my NAS, and this does that.
+Unfortunately, this does seem to have an error with it, it will sometimes freeze my editor and say something along the lines of "try this in a terminal and see if it works" 🤷
+- [ ] Fix the error with it being funky
+#+begin_src emacs-lisp
+(use-package! wakatime-mode
+  :hook (doom-first-buffer . global-wakatime-mode)
+  :config
+  (setq wakatime-cli-path (executable-find "wakatime-cli"))
+  (setq wakatime-api-key
+        (string-trim (shell-command-to-string "wakatime-cli --config-read api_key"))))
+#+end_src
+
+
+** Org Mode
+My main org mode directory is in my Obsidian brain folder, which I put in my home directory in all of my machines. So I can set that here. I also sync with Syncthing, so I need to exclude any sync conflicts or anything like that.
+#+begin_src emacs-lisp
+(after! org
+  (setq org-directory "~/Brain")
+  (setq org-agenda-files
+        (seq-remove (lambda (file)
+                      (string-match-p "\\.stversions\\|sync-conflict" file))
+                    (directory-files-recursively org-directory "\\.org$"))))
+#+end_src
+
+*** Math
+I tried a lot to get this to work and eventually did. It works nicer in org mode than markdown, but markdown looks so much nicer in Obsidian. So I'm currently still working in Obsidian for my math heavy classes, but I have the option of org mode if I want it.
+
+Main TODOs before I can fully switch to org mode:
+- [ ] Center math with =$$$$= automatically
+- [ ] Make math have autocomplete like the latex-suite does in Obsidian
+- [ ] Probably more stuff that I can't remember
+
+#+begin_src emacs-lisp
+(use-package! org-fragtog
+  :hook (org-mode . org-fragtog-mode))
+(after! org
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :scale 1)))
+(after! org
+  (setq org-startup-with-latex-preview t))
+(after! org
+  (setq org-preview-latex-default-process 'dvisvgm))
+#+end_src
+
+I also have math-preview working in markdown, but unfortunately it isn't automatic and doesn't automatically open and close when you try to edit it. Org mode does, though, at least with fragtog.
+#+begin_src emacs-lisp
+(use-package! texfrag
+  :hook (markdown-mode . texfrag-mode))
+(use-package! math-preview
+  :commands (math-preview-all math-preview-clear-all
+                              math-preview-at-point math-preview-region)
+  :config
+  (setq math-preview-scale 1))
+#+end_src
+
+*** Agenda
+I love the Org agenda. There are a few things I would change tho, so I did here.
+#+begin_src emacs-lisp
+(setq org-log-done 'time)
+(setq org-log-into-drawer t)
+
+(use-package! org-super-agenda
+  :after org-agenda
+  :config
+  (org-super-agenda-mode 1)
+  ;; Disable header keymap to prevent Evil movement conflicts
+  (setq org-super-agenda-header-map nil)
+  (setq org-super-agenda-groups
+        '((:name "Today"
+           :time-grid t
+           :scheduled today)
+          (:name "Important"
+           :priority "A")
+          (:name "Overdue"
+           :deadline past)
+          (:name "Due Soon"
+           :deadline future)
+          (:name "Waiting"
+           :todo "WAIT"))))
+#+end_src
+
+
+I also like having a lot of options for priorities, so I made it go from A to F.
+#+begin_src emacs-lisp
+(after! org
+  (setq org-priority-highest ?A
+        org-priority-lowest  ?F
+        org-priority-default ?C))
+#+end_src
+
+I also have the agenda automatically put my todos and notes by default in the inbox to be sorted, so here that is.
+#+begin_src emacs-lisp
+(after! org
+  (setq org-default-notes-file "~/Brain/org/inbox.org"
+        +org-default-todo-file "~/Brain/org/inbox.org")
+  (setq org-capture-templates
+        '(("t" "Todo Task" entry
+           (file "~/Brain/org/inbox.org")
+           "* TODO %?\n  CREATED: %U" :empty-lines 1)
+          ("n" "Note / Idea" entry
+           (file "~/Brain/org/inbox.org")
+           "* %?\n  CREATED: %U" :empty-lines 1))))
+#+end_src
+I also really like making todos, so I have a faster shortcut that doesn't require the SPC X x t because that takes a sec. So now I can access it with SPC z.
+- [ ] Unproven
+#+begin_src emacs-lisp
+;; (map! "SPC z" #'windmove-down)
+(define-key global-map (kbd "SPC z")
+  (lambda () (interactive) (org-capture nil "t")))
+#+end_src
+
+
+*** Pretty
+I like to make it hide and show the stuff automatically to make it prettier, so here's Org-Appear.
+#+begin_src emacs-lisp
+(use-package! org-appear
+  :hook (org-mode . org-appear-mode)
+  :config
+  (setq org-appear-auto-links t
+        org-appear-auto-emphasis t))
+#+end_src
