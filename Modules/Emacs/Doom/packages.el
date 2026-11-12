@@ -73,3 +73,4 @@
 (package! org-fragtog)
 
 
+(package! company-mode)

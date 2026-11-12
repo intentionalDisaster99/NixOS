@@ -32,6 +32,8 @@
   (setq wakatime-api-key
         (string-trim (shell-command-to-string "wakatime-cli --config-read api_key"))))
 
+;; (add-hook 'after-init-hook 'global-company-mode)
+
 (after! org
   (setq org-directory "~/Brain")
   (setq org-agenda-files
@@ -121,13 +123,4 @@
   (setq org-appear-auto-links t
         org-appear-auto-emphasis t))
 
-;; ;; Specify visual-fill centering settings
-;; (defun my/org-mode-visual-fill ()
-;;   (setq visual-fill-column-width 100
-;;         visual-fill-column-center-text t)
-;;   visual-fill-column-mode 1)
-
-;; ;; Use visual-fill-column to center org-mode buffers
-;; (use-package! visual-fill-column
-;;   :after org
-;;   :hook (org-mode . my/org-mode-visual-fill))
+;; Nothing to see here

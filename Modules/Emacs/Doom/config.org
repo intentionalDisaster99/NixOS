@@ -95,6 +95,12 @@ Unfortunately, this does seem to have an error with it, it will sometimes freeze
         (string-trim (shell-command-to-string "wakatime-cli --config-read api_key"))))
 #+end_src
 
+*** Autocomplete
+Because I am coming from IDEs I like to use autocomplete (so I don't have to remember the names of random functions) so I use Company.
+#+begin_src emacs-lisp
+;; (add-hook 'after-init-hook 'global-company-mode)
+#+end_src
+
 
 ** Org Mode
 My main org mode directory is in my Obsidian brain folder, which I put in my home directory in all of my machines. So I can set that here. I also sync with Syncthing, so I need to exclude any sync conflicts or anything like that.
@@ -227,14 +233,5 @@ I like to make it hide and show the stuff automatically to make it prettier, so 
 
 Apparently you can actually center everything? So here we go lol
 #+begin_src emacs-lisp
-;; ;; Specify visual-fill centering settings
-;; (defun my/org-mode-visual-fill ()
-;;   (setq visual-fill-column-width 100
-;;         visual-fill-column-center-text t)
-;;   visual-fill-column-mode 1)
-
-;; ;; Use visual-fill-column to center org-mode buffers
-;; (use-package! visual-fill-column
-;;   :after org
-;;   :hook (org-mode . my/org-mode-visual-fill))
+;; Nothing to see here
 #+end_src
