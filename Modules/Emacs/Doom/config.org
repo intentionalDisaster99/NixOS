@@ -2,11 +2,32 @@
 #+AUTHOR: Sam Whitlock
 #+EMAIL: abyssalflerken@gmail.com
 #+OPTIONS: num:nil
+#+PROPERTY: header-args :tangle yes :results none
+
 
 I hope to have this be my main config so that everything is pretty and commented
 
+* Header Stuff
+This needs to be at the file headers, so it's here
+#+begin_src emacs-lisp
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+#+end_src
+And then we need to make sure emacs to knows to tangle this file so
+#+begin_src emacs-lisp
+(defun my/org-babel-tangle-config ()
+  (when (string-equal (file-name-directory (buffer-file-name))
+                      (expand-file-name "/etc/nixos/"))
+
+    ;; Dynamic scoping to the rescue
+    (let ((org-confirm-babel-evaluate nil))
+      (org-babel-tangle))))
+
+;; Add the function after saving an org-mode file
+(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'my/org-babel-tangle-config)))
+#+end_src
 
 * General Config
+
 
 ** Theme
 
@@ -91,6 +112,21 @@ My main org mode directory is in my Obsidian brain folder, which I put in my hom
                     (directory-files-recursively org-directory "\\.org$"))))
 #+end_src
 
+** Pretty
+Theoretically, I can make the background transparent by running this fuction. Which is pretty cool. Doubt I'll ever use it but it's cool.
+#+begin_src emacs-lisp
+(defun toggle-background-transparency ()
+  "Toggle background transparency, wherein text and other elements in frame are still displayed but a background isn't."
+  (interactive)
+  (if (get 'toggle-background-transparency 'state)
+      (progn
+        (set-frame-parameter nil 'alpha-background 100)
+        (put 'toggle-background-transparency 'state nil))
+    (progn
+      (set-frame-parameter nil 'alpha-background 75)
+      (put 'toggle-background-transparency 'state t))))
+#+end_src
+
 *** Math
 I tried a lot to get this to work and eventually did. It works nicer in org mode than markdown, but markdown looks so much nicer in Obsidian. So I'm currently still working in Obsidian for my math heavy classes, but I have the option of org mode if I want it.
 
@@ -142,7 +178,7 @@ I love the Org agenda. There are a few things I would change tho, so I did here.
            :priority "A")
           (:name "Overdue"
            :deadline past)
-          (:name "Due Soon"
+          (:name "Due in Future"
            :deadline future)
           (:name "Waiting"
            :todo "WAIT"))))
@@ -174,8 +210,12 @@ I also really like making todos, so I have a faster shortcut that doesn't requir
 - [ ] Unproven
 #+begin_src emacs-lisp
 ;; (map! "SPC z" #'windmove-down)
-(define-key global-map (kbd "SPC z")
-  (lambda () (interactive) (org-capture nil "t")))
+;; (define-key global-map (kbd "SPC z")
+;;   (lambda () (interactive) (org-capture nil "t")))
+
+(map! :leader
+      :desc "Capture a todo"
+      "z" (lambda () (interactive) (org-capture nil "t"))
 #+end_src
 
 
@@ -187,4 +227,18 @@ I like to make it hide and show the stuff automatically to make it prettier, so 
   :config
   (setq org-appear-auto-links t
         org-appear-auto-emphasis t))
+#+end_src
+
+Apparently you can actually center everything? So here we go lol
+#+begin_src emacs-lisp
+;; Specify visual-fill centering settings
+(defun my/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t)
+  visual-fill-column-mode 1)
+
+;; Use visual-fill-column to center org-mode buffers
+(use-package! visual-fill-column
+  :after org
+  :hook (org-mode . my/org-mode-visual-fill))
 #+end_src

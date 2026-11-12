@@ -210,3 +210,15 @@
 ;; you first open Emacs, uncomment this (and adjust the color as you like).
 (add-to-list 'initial-frame-alist '(background-color . "#000000"))
 
+
+;; Automatically making it tangle
+(defun my/org-babel-tangle-config ()
+  (when (string-equal (file-name-directory (buffer-file-name))
+                      (expand-file-name "/etc/nixos/"))
+
+    ;; Dynamic scoping to the rescue
+    (let ((org-confirm-babel-evaluate nil))
+      (org-babel-tangle))))
+
+;; Add the function after saving an org-mode file
+(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'my/org-babel-tangle-config)))
