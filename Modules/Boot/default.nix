@@ -74,5 +74,10 @@
   };
   systemd.services.plymouth-quit.enable = false;
   systemd.services.plymouth-quit-wait.enable = true;
+  systemd.services.plymouth-quit-wait = {
+    serviceConfig = {
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
+    };
+  };
 
 }
