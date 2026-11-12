@@ -1,16 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(defun my/org-babel-tangle-config ()
-  (when (string-equal (file-name-directory (buffer-file-name))
-                      (expand-file-name "/etc/nixos/"))
-
-    ;; Dynamic scoping to the rescue
-    (let ((org-confirm-babel-evaluate nil))
-      (org-babel-tangle))))
-
-;; Add the function after saving an org-mode file
-(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'my/org-babel-tangle-config)))
-
 (add-to-list 'custom-theme-load-path (expand-file-name "theme" doom-user-dir))
 (setq doom-theme 'noctalia)
 
@@ -92,7 +81,7 @@
            :priority "A")
           (:name "Overdue"
            :deadline past)
-          (:name "Due Soon"
+          (:name "Due in Future"
            :deadline future)
           (:name "Waiting"
            :todo "WAIT"))))
@@ -113,13 +102,9 @@
            (file "~/Brain/org/inbox.org")
            "* %?\n  CREATED: %U" :empty-lines 1))))
 
-;; (map! "SPC z" #'windmove-down)
-;; (define-key global-map (kbd "SPC z")
-;;   (lambda () (interactive) (org-capture nil "t")))
-
 (map! :leader
       :desc "Capture a todo"
-      "z" (lambda () (interactive) (org-capture nil "t"))
+      "z" (lambda () (interactive) (org-capture nil "t")))
 
 (use-package! org-appear
   :hook (org-mode . org-appear-mode)

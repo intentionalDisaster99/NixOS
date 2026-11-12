@@ -288,6 +288,10 @@ hl.workspace_rule({
 	workspace = "special:groupme",
 	on_created_empty = "uwsm app -- brave --new-window https://web.groupme.com",
 })
+hl.workspace_rule({
+	workspace = "special:ptable",
+	on_created_empty = "uwsm app -- nucleus",
+})
 hl.workspace_rule({ workspace = "special:magic" })
 hl.workspace_rule({ workspace = "special:calc", on_created_empty = "uwsm app -- qalculate-gtk" })
 
@@ -333,6 +337,7 @@ hl.define_submap("open", "reset", function()
 	hl.bind("H", hl.dsp.workspace.toggle_special("groupme"))
 	hl.bind("D", hl.dsp.workspace.toggle_special("discord"))
 	hl.bind("S", hl.dsp.workspace.toggle_special("spotify"))
+	hl.bind("P", hl.dsp.workspace.toggle_special("ptable"))
 end)
 
 --------------------------------------------------------------------------------

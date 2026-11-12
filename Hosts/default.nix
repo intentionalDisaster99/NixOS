@@ -58,7 +58,10 @@
   time.timeZone = "America/Chicago";
   services.xserver.enable = true;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_testing;
   fonts.fontconfig.antialias = true;
 
@@ -130,6 +133,7 @@
         fastfetch
         killall
 
+        nucleus
         zoom-us
         ubase
         kdePackages.ark
@@ -426,9 +430,3 @@
   services.flatpak.enable = true;
 
 }
-
-
-
-
-
-

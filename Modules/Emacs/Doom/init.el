@@ -203,7 +203,7 @@
        ;;(rss +org)        ; emacs as an RSS reader
 
        :config
-       ;;literate
+       literate
        (default +bindings +smartparens))
 
 ;; If you're a dark-mode user who suffers from the "flash of white Emacs" when
@@ -211,14 +211,20 @@
 (add-to-list 'initial-frame-alist '(background-color . "#000000"))
 
 
-;; Automatically making it tangle
-(defun my/org-babel-tangle-config ()
-  (when (string-equal (file-name-directory (buffer-file-name))
-                      (expand-file-name "/etc/nixos/"))
+;; (use-package org-auto-tangle
+;;   ;; :load-path "site-lisp/org-auto-tangle/"    ;; this line is necessary only if you cloned the repo in your site-lisp directory
+;;   :defer t
+;;   :hook (org-src-mode . org-auto-tangle-mode))
 
-    ;; Dynamic scoping to the rescue
-    (let ((org-confirm-babel-evaluate nil))
-      (org-babel-tangle))))
 
-;; Add the function after saving an org-mode file
-(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'my/org-babel-tangle-config)))
+;; ;; Automatically making it tangle
+;; (defun my/org-babel-tangle-config ()
+;;   (when (string-equal (file-name-directory (buffer-file-name))
+;;                       (expand-file-name "/etc/nixos/"))
+
+;;     ;; Dynamic scoping to the rescue
+;;     (let ((org-confirm-babel-evaluate nil))
+;;       (org-babel-tangle))))
+
+;; ;; Add the function after saving an org-mode file
+;; (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'my/org-babel-tangle-config)))

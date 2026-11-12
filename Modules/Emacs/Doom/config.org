@@ -12,19 +12,6 @@ This needs to be at the file headers, so it's here
 #+begin_src emacs-lisp
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 #+end_src
-And then we need to make sure emacs to knows to tangle this file so
-#+begin_src emacs-lisp
-(defun my/org-babel-tangle-config ()
-  (when (string-equal (file-name-directory (buffer-file-name))
-                      (expand-file-name "/etc/nixos/"))
-
-    ;; Dynamic scoping to the rescue
-    (let ((org-confirm-babel-evaluate nil))
-      (org-babel-tangle))))
-
-;; Add the function after saving an org-mode file
-(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'my/org-babel-tangle-config)))
-#+end_src
 
 * General Config
 
@@ -207,15 +194,11 @@ I also have the agenda automatically put my todos and notes by default in the in
            "* %?\n  CREATED: %U" :empty-lines 1))))
 #+end_src
 I also really like making todos, so I have a faster shortcut that doesn't require the SPC X x t because that takes a sec. So now I can access it with SPC z.
-- [ ] Unproven
+- [ ] Actually compiles now
 #+begin_src emacs-lisp
-;; (map! "SPC z" #'windmove-down)
-;; (define-key global-map (kbd "SPC z")
-;;   (lambda () (interactive) (org-capture nil "t")))
-
 (map! :leader
       :desc "Capture a todo"
-      "z" (lambda () (interactive) (org-capture nil "t"))
+      "z" (lambda () (interactive) (org-capture nil "t")))
 #+end_src
 
 
