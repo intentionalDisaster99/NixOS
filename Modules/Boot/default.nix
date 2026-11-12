@@ -13,16 +13,9 @@
   ];
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
 
-  # Teehee silly sddm
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   theme = "minesddm";
-  #   wayland.enable = true;
-  # };
   environment.systemPackages = with pkgs; [
     # Add the required Qt dependencies
     qt5.qtbase
@@ -60,6 +53,8 @@
         })
       ];
     };
+    initrd.supportedFilesystems.ext4 = true; # (or whatever your fs is)
+    initrd.systemd.enable = true;
     # Enable "Silent boot"
     consoleLogLevel = 3;
     kernelParams = [
@@ -68,10 +63,6 @@
       "rd.systemd.show_status=auto"
     ];
 
-    # Hide the OS choice for bootloaders.
-    # It's still possible to open the bootloader list by pressing any key
-    # It will just not appear on screen unless a key is pressed
-    # loader.timeout = 0;
   };
 
 }
