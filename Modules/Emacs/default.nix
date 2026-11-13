@@ -59,8 +59,8 @@
         xclip
 
         shfmt
-        rust-analyzer
-        # cargo
+        # rust-analyzer
+        cargo
         rustc
         rustup
 
