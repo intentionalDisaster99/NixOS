@@ -135,10 +135,7 @@
 
         nucleus
         zoom-us
-        ubase
-        kdePackages.ark
-        kdePackages.okular
-        unzip
+        ubaip
         libreoffice
         stm32cubemx
         openrgb

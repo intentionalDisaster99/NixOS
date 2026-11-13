@@ -62,6 +62,7 @@
         rust-analyzer
         cargo
         rustc
+        rustup
 
         texliveFull
         # These things gave me a weird error, so I'm removing them for now
