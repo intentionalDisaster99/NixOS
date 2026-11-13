@@ -18,8 +18,7 @@ lazy = true
 [scratchpads.volume]
 command = "pavucontrol"
 animation = "fromLeft"
-class = "volume_sidemenu"
-class = "kit-term"
+class = "org.pulseaudio.pavucontrol"
 size = "40% 70%"
 unfocus = "hide"
 excludes = "*"
