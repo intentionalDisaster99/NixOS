@@ -60,7 +60,7 @@
 
         shfmt
         # rust-analyzer
-        cargo
+        # cargo
         rustc
         rustup
 
