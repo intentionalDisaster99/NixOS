@@ -8,7 +8,13 @@ function autostart
     pypr & disown
 
     # Locking the device
-    sleep 1
+    for i in (seq 1 100)
+        if noctalia-shell ipc call lockScreen lock >/dev/null 2>&1
+      #      pkill swaybg
+            break
+        end
+        sleep 0.05
+    end
     noctalia-shell ipc call lockScreen lock
 
 end
