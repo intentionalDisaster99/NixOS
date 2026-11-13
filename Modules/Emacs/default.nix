@@ -65,17 +65,6 @@
         rustup
 
         texliveFull
-        # These things gave me a weird error, so I'm removing them for now
-        # (texlive.combine {
-        #   inherit (texlive)
-        #     scheme-small
-        #     dvisvgm
-        #     preview
-        #     dvipng
-        #     cm-super
-        #     type1cm
-        #     ;
-        # })
         math-preview
       ];
 
