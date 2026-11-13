@@ -43,6 +43,7 @@
         hyprcursor
         qalculate-gtk
         kdePackages.kclock
+        swaybg
         wtype
 
         # TODO move, these should likely be in a higher-up level (or wherevever dolphin is installed)
