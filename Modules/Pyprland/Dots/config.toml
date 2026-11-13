@@ -3,7 +3,7 @@ plugins = [
   "scratchpads",
   "magnify",
   "expose",
-  "shortcuts_menu",
+  # "shortcuts_menu",
   "toggle_special",
 ]
 
@@ -19,6 +19,7 @@ lazy = true
 command = "pavucontrol"
 animation = "fromLeft"
 class = "volume_sidemenu"
+class = "kit-term"
 size = "40% 70%"
 unfocus = "hide"
 excludes = "*"
