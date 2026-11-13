@@ -59,7 +59,6 @@ hl.monitor({
 
 -- Automatically startign stuff
 hl.on("hyprland.start", function()
-	hl.exec_cmd('sh -c \'wp=$(jq -r ".defaultWallpaper // (.wallpapers | to_entries[0].value)" ~/.cache/noctalia/wallpapers.json 2>/dev/null); [ -f "$wp" ] && swaybg -i "$wp" -m fill\'')
 	hl.exec_cmd("noctalia-shell")
 	hl.exec_cmd('fish -c "autostart"')
 end)
