@@ -124,3 +124,14 @@
         org-appear-auto-emphasis t))
 
 ;; Nothing to see here
+
+(use-package! platformio-mode
+  :hook (c++-mode . platformio-conditionally-enable)
+  :config
+  (map! :localleader
+        :map platformio-mode-map
+        "b" #'platformio-build
+        "u" #'platformio-upload
+        "m" #'platformio-device-monitor
+        "c" #'platformio-clean
+        "i" #'platformio-init-update-workspace))

@@ -74,3 +74,4 @@
 
 
 (package! company-mode)
+(package! platformio-mode)

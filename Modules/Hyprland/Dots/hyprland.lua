@@ -202,7 +202,7 @@ windowrule = {
 -- hl.workspace("special:spotify, on-created-empty:uwsm app -- spotify")
 -- hl.workspace("special:messages, on-created-empty:uwsm app -- brave --new-window https://messages.google.com/web/u/1/conversations")
 
--- Keybinds start here
+
 
 -- TEST
 -- hl.bind(mainMod.. " + P", hl.dsp.exec_cmd("fish -c \"autostart\""))
@@ -364,7 +364,7 @@ hl.define_submap("power", "reset", function()
 	hl.bind("L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
 	hl.bind("S", hl.dsp.exec_cmd("systemctl suspend"))
 	hl.bind("H", hl.dsp.exec_cmd("systemctl hibernate"))
-	hl.bind("D", hl.dsp.exec_cmd("systemctl poweroff"))
+	-- hl.bind("D", hl.dsp.exec_cmd("systemctl poweroff"))
 	hl.bind("R", hl.dsp.exec_cmd("reboot"))
 	hl.bind("M", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
 end)
