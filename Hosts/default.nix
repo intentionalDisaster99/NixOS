@@ -109,9 +109,6 @@
       "
   ];
 
-  # To allow things to run stuff by downloading from the internet
-  programs.nix-ld.enable = true;
-
   # Things that I either haven't put into a module yet or make sense to always be imported
   home-manager.users.${username} =
     { config, ... }:
