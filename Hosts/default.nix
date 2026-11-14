@@ -21,7 +21,6 @@
     ../Modules/Funny/default.nix
     ../Modules/NVim/default.nix
     ../Modules/Wgnord/default.nix
-    # ../Modules/Hyprland/default.nix
     ../Modules/Steam/default.nix
     ../Modules/Tailscale/default.nix
     ../Modules/Droidcam/default.nix
@@ -30,7 +29,6 @@
     ../Modules/Syncthing/default.nix
     ../Modules/KDE-Connect/default.nix
     ../Modules/Flatpak/default.nix
-    # ../Modules/Streamio/default.nix # currently installed through flatpak -> currently being nxi-flatpakked
     # Resource movement
     ./../Resources/Profile/profile.nix
     ./../Resources/Wallpaper/wallpaper.nix
@@ -97,16 +95,8 @@
     pkgs.networkmanagerapplet
   ];
   networking.nameservers = [
-    "
-      1.1
-      .1
-      .1
-      "
-    "
-      8.8
-      .8
-      .8
-      "
+    "1.1.1.1"
+    "8.8.8.8"
   ];
 
   # Things that I either haven't put into a module yet or make sense to always be imported
