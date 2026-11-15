@@ -131,7 +131,6 @@ fi
 
 if [[ "$MODE" == "deploy" ]]; then
 	echo "Deploying via deploy-rs from $HOSTNAME..."
-	# Note: make sure hostname in flake.nix for gluon matches how gluon reaches itself (e.g., "gluon-linux" or "localhost")
 	nix run github:serokell/deploy-rs -- $TARGET_HOST
 
 elif [[ "$MODE" == "remote-build" ]]; then
