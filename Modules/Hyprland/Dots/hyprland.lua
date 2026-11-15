@@ -387,6 +387,7 @@ end)
 hl.define_submap("toggle", "reset", function()
 	hl.bind("escape", hl.dsp.submap("reset"))
 	hl.bind("N", hl.dsp.exec_cmd("fish -c nord-toggle"))
+	hl.bind("A ", hl.dsp.exec_cmd(ipc.. " idleInhibitor toggle"))
 end)
 -- Media Controls
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"))
