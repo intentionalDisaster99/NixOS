@@ -73,5 +73,6 @@
 (package! org-fragtog)
 
 
-(package! company-mode)
+;; (package! company-mode)
 (package! platformio-mode)
+(package! beacon)

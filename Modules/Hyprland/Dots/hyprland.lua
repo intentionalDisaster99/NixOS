@@ -394,6 +394,8 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"))
+hl.bind("ALT + F3", hl.dsp.exec_cmd(ipc .. "volume increase"))
+hl.bind("ALT + F2", hl.dsp.exec_cmd(ipc .. "volume decrease"))
 
 -- Workspaces
 local monitorOffsets = {

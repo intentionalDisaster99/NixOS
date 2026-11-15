@@ -34,6 +34,9 @@
 
 ;; (add-hook 'after-init-hook 'global-company-mode)
 
+(use-package! beacon
+  :config (beacon-mode 1))
+
 (after! org
   (setq org-directory "~/Brain")
   (setq org-agenda-files
@@ -51,6 +54,10 @@
     (progn
       (set-frame-parameter nil 'alpha-background 75)
       (put 'toggle-background-transparency 'state t))))
+
+(map! :leader
+      :desc "Toggle transparency"
+      :n :i :v "t t" #'toggle-background-transparency)
 
 (use-package! org-modern
   :hook (org-mode . org-modern-mode)

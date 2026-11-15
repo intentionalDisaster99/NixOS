@@ -101,6 +101,13 @@ Because I am coming from IDEs I like to use autocomplete (so I don't have to rem
 ;; (add-hook 'after-init-hook 'global-company-mode)
 #+end_src
 
+*** Beacon
+I want to be able to see my cursor, so yeah.
+#+begin_src emacs-lisp
+(use-package! beacon
+  :config (beacon-mode 1))
+#+end_src
+
 
 ** Org Mode
 My main org mode directory is in my Obsidian brain folder, which I put in my home directory in all of my machines. So I can set that here. I also sync with Syncthing, so I need to exclude any sync conflicts or anything like that.
@@ -126,6 +133,10 @@ Theoretically, I can make the background transparent by running this fuction. Wh
     (progn
       (set-frame-parameter nil 'alpha-background 75)
       (put 'toggle-background-transparency 'state t))))
+
+(map! :leader
+      :desc "Toggle transparency"
+      :n :i :v "t t" #'toggle-background-transparency)
 
 (use-package! org-modern
   :hook (org-mode . org-modern-mode)
