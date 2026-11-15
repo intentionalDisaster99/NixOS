@@ -119,7 +119,6 @@
           hostname = "higgs-boson";
           profiles.system = {
             user = "root";
-            sshUser = username;
             path = deployPkgs.deploy-rs.lib.activate.nixos self.nixosConfigurations.higgs-boson;
           };
         };
@@ -128,7 +127,6 @@
           hostname = "gluon-linux";
           profiles.system = {
             user = "root";
-            sshUser = username;
             path = deployPkgs.deploy-rs.lib.activate.nixos self.nixosConfigurations.gluon;
           };
         };
