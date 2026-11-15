@@ -421,4 +421,22 @@
   # Flatpaks are cool, I've only used like one, I think there is a way to nixify them
   services.flatpak.enable = true;
 
+  # for deoploy-rs
+  nix.settings.trusted-users = [
+    "root"
+    "${username}"
+  ];
+
+  security.sudo.extraRules = [
+    {
+      users = [ "${username}" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
 }
