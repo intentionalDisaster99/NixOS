@@ -39,7 +39,6 @@
     , home-manager
     , nordvpn-nix
     , nix-flatpak
-    , deploy-rs
     , ...
     }@inputs:
 
