@@ -29,6 +29,10 @@
       url = "github:Lxtharia/minegrub-world-sel-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -39,15 +43,32 @@
     , home-manager
     , nordvpn-nix
     , nix-flatpak
+    , deploy-rs
     , ...
     }@inputs:
 
     let
       # This is where all of my global variables go
       username = "sa9m";
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+
+      # Deploy-rs overlay
+      deployPkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          deploy-rs.overlays.default
+          (final: prev: {
+            deploy-rs = {
+              inherit (pkgs) deploy-rs;
+              lib = prev.deploy-rs.lib;
+            };
+          })
+        ];
+      };
+
     in
     {
-
       # Laptop
       nixosConfigurations.higgs-boson = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -91,6 +112,30 @@
           }
         ];
       };
+
+      # Deploy-rs configuration
+      deploy.nodes = {
+        higgs-boson = {
+          hostname = "higgs-boson";
+          profiles.system = {
+            user = "root";
+            sshUser = username;
+            path = deployPkgs.deploy-rs.lib.activate.nixos self.nixosConfigurations.higgs-boson;
+          };
+        };
+
+        gluon = {
+          hostname = "gluon";
+          profiles.system = {
+            user = "root";
+            sshUser = username;
+            path = deployPkgs.deploy-rs.lib.activate.nixos self.nixosConfigurations.gluon;
+          };
+        };
+
+        checks = builtins.mapAttrs (sys: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
+      };
+
     };
 
 }
