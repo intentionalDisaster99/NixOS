@@ -104,9 +104,6 @@
     { config, ... }:
     {
       home.packages = with pkgs; [
-        # Testing
-        firefox
-
         brave
         # vscode
         vscode-fhs
