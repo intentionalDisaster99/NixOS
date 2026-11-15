@@ -125,7 +125,7 @@
         };
 
         gluon = {
-          hostname = "gluon";
+          hostname = "gluon-linux";
           profiles.system = {
             user = "root";
             sshUser = username;
