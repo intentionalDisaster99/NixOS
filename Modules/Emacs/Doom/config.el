@@ -142,3 +142,5 @@
         "m" #'platformio-device-monitor
         "c" #'platformio-clean
         "i" #'platformio-init-update-workspace))
+
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rustic-mode))

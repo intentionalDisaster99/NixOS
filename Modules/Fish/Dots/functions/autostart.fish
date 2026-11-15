@@ -1,11 +1,11 @@
 # This runs on startup every time that hyprland starts
 function autostart
 
-    # Making my bluetooth stuff work
-    mpris-proxy & disown
-
     # Starting my scratchpads
     pypr & disown
+
+    # Making my bluetooth stuff work
+    mpris-proxy & disown
 
     # Locking the device
     for i in (seq 1 100)

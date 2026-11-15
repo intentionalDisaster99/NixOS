@@ -250,6 +250,9 @@ Apparently you can actually center everything? So here we go lol
 * Languages
 
 I use a lot of programming languages, so here they are.
+
+** Arduino C With PlatformIO
+
 #+begin_src emacs-lisp
 (use-package! platformio-mode
   :hook (c++-mode . platformio-conditionally-enable)
@@ -261,4 +264,10 @@ I use a lot of programming languages, so here they are.
         "m" #'platformio-device-monitor
         "c" #'platformio-clean
         "i" #'platformio-init-update-workspace))
+#+end_src
+
+** Rust
+I like Rustic instead of the normal Rust-Mode, so we use this instead.
+#+begin_src emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rustic-mode))
 #+end_src
