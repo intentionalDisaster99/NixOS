@@ -29,10 +29,6 @@
       url = "github:Lxtharia/minegrub-world-sel-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -52,20 +48,6 @@
       username = "sa9m";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
-      # Deploy-rs overlay
-      deployPkgs = import nixpkgs {
-        inherit system;
-        overlays = [
-          deploy-rs.overlays.default
-          (final: prev: {
-            deploy-rs = {
-              inherit (pkgs) deploy-rs;
-              lib = prev.deploy-rs.lib;
-            };
-          })
-        ];
-      };
 
     in
     {
@@ -104,8 +86,6 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            # TODO remove this; it is now not needed as I declare home manager stuff in each file
-            # home-manager.users.sa9m = import ./Users/Sa9m/home.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs username;
             };
@@ -113,29 +93,6 @@
         ];
       };
 
-      # Deploy-rs configuration
-      deploy.nodes = {
-        higgs-boson = {
-          hostname = "higgs-boson";
-          profiles.system = {
-            user = "root";
-            sshUser = username;
-            path = deployPkgs.deploy-rs.lib.activate.nixos self.nixosConfigurations.higgs-boson;
-          };
-        };
-
-        gluon = {
-          hostname = "gluon-linux";
-          profiles.system = {
-            user = "root";
-            sshUser = username;
-            path = deployPkgs.deploy-rs.lib.activate.nixos self.nixosConfigurations.gluon;
-          };
-        };
-
-      };
-
-      checks = builtins.mapAttrs (sys: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 
 }
