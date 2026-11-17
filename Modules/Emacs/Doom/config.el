@@ -19,6 +19,14 @@
 (setq auto-save-visited-interval 1)
 (auto-save-visited-mode 1)
 
+(after! ws-butler
+  (setq ws-butler-keep-whitespace-before-point t
+        ws-butler-trim-predicate
+        (lambda (beg end)
+          (let ((current-line (line-number-at-pos)))
+            (not (and (<= (line-number-at-pos beg) current-line)
+                      (<= current-line (line-number-at-pos end))))))))
+
 (load! "treemacs-config.el")
 
 (use-package pdf-tools
@@ -43,6 +51,64 @@
         (seq-remove (lambda (file)
                       (string-match-p "\\.stversions\\|sync-conflict" file))
                     (directory-files-recursively org-directory "\\.org$"))))
+
+(after! org
+  (setq org-directory "~/Brain")
+  (setq org-agenda-files
+        (seq-remove (lambda (file)
+                      (string-match-p
+                       "\\.stversions\\|sync-conflict\\|/\\(shoppingList\\|wishList\\)\\.org$"
+                       file))
+                    (directory-files-recursively org-directory "\\.org$"))))
+
+(after! org-agenda
+  (setq org-agenda-custom-commands
+        '(("s" "Shopping List" todo ""
+           ((org-agenda-files
+             (seq-remove (lambda (file)
+                           (string-match-p "\\.stversions\\|sync-conflict" file))
+                         (directory-files-recursively org-directory "^shoppingList\\.org$")))
+            (org-agenda-overriding-header "Shopping List")
+            (org-super-agenda-groups nil)))
+          ("w" "Wish List" todo ""
+           ((org-agenda-files
+             (seq-remove (lambda (file)
+                           (string-match-p "\\.stversions\\|sync-conflict" file))
+                         (directory-files-recursively org-directory "^wishList\\.org$")))
+            (org-agenda-overriding-header "Wish List")
+            (org-super-agenda-groups nil))))))
+
+(defun my/insert-class-notes-template ()
+  "Populate empty .org files inside Class Notes folders under ~/Brain/Main/School."
+  (when (and buffer-file-name
+             (string-equal (file-name-extension buffer-file-name) "org")
+             (= (buffer-size) 0))
+    (let* ((school-dir (file-name-as-directory
+                        (file-truename (expand-file-name "~/Brain/Main/School"))))
+           (file-dir (file-name-directory
+                      (file-truename (expand-file-name buffer-file-name))))
+           (parent-name (file-name-nondirectory (directory-file-name file-dir)))
+           (class-dir (file-name-directory (directory-file-name file-dir))))
+      (when (and (string-equal parent-name "Class Notes")
+                 (string-prefix-p school-dir class-dir)
+                 (not (string-equal school-dir class-dir)))
+        (let* ((course (file-name-nondirectory (directory-file-name class-dir)))
+               (raw-title (file-name-base buffer-file-name))
+               (title (capitalize (replace-regexp-in-string "[-_]+" " " raw-title))))
+          (insert (format "#+TITLE: %s\n" title)
+                  (format "#+SUBTITLE: %s\n" course)
+                  (format "#+AUTHOR: %s\n" user-full-name)
+                  (format "#+DATE: %s\n" (format-time-string "[%Y-%m-%d %a]"))
+                  "#+OPTIONS: toc:2 num:nil\n\n"
+                  "* Action Items\n"
+                  "- \n\n"
+                  "* Main\n"
+                  "** \n\n"
+                  "* Off Topic\n")
+          (goto-char (point-min))
+          (search-forward "** " nil t))))))
+
+(add-hook 'find-file-hook #'my/insert-class-notes-template)
 
 (defun toggle-background-transparency ()
   "Toggle background transparency, wherein text and other elements in frame are still displayed but a background isn't."

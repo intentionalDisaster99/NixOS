@@ -60,13 +60,22 @@ I like to use relative line numbers, so I set this to =relative=. You can also s
 *** Autosave
 I like everything to save basically instantly, so I have this set to save a second after I finish making an edit.
 #+begin_src emacs-lisp
-
 (setq! desktop-load-locked-desktop t)
 (setq auto-save-visited-interval 1)
 (auto-save-visited-mode 1)
 #+end_src
 
-# TODO go in and update this to not autoformat on save, just on a key bind
+Emacs likes to remove all extra whitespace from any line that I've edited whenever a buffer saves, which sucks when it autosaves because your cursor can move.
+This ignores the line that the cursor is currently on.
+#+begin_src emacs-lisp
+(after! ws-butler
+  (setq ws-butler-keep-whitespace-before-point t
+        ws-butler-trim-predicate
+        (lambda (beg end)
+          (let ((current-line (line-number-at-pos)))
+            (not (and (<= (line-number-at-pos beg) current-line)
+                      (<= current-line (line-number-at-pos end))))))))
+#+end_src
 
 *** Treemacs
 Coming from IDEs and Neovim, I like to have a file tree come out from the side. Hence treemacs. This is in a different file so that I can tweak it as much as I like without this file getting bloated.
@@ -119,6 +128,74 @@ My main org mode directory is in my Obsidian brain folder, which I put in my hom
                       (string-match-p "\\.stversions\\|sync-conflict" file))
                     (directory-files-recursively org-directory "\\.org$"))))
 #+end_src
+I also have a =wishlist= and =shoppingList= that I ignore in my normal todo, which I do here:
+#+begin_src emacs-lisp
+(after! org
+  (setq org-directory "~/Brain")
+  (setq org-agenda-files
+        (seq-remove (lambda (file)
+                      (string-match-p
+                       "\\.stversions\\|sync-conflict\\|/\\(shoppingList\\|wishList\\)\\.org$"
+                       file))
+                    (directory-files-recursively org-directory "\\.org$"))))
+#+end_src
+And then I need to be able to see them so I have SPC o a s for the =shoppingList= and SPC o a w for =wishList=.
+#+begin_src emacs-lisp
+(after! org-agenda
+  (setq org-agenda-custom-commands
+        '(("s" "Shopping List" todo ""
+           ((org-agenda-files
+             (seq-remove (lambda (file)
+                           (string-match-p "\\.stversions\\|sync-conflict" file))
+                         (directory-files-recursively org-directory "^shoppingList\\.org$")))
+            (org-agenda-overriding-header "Shopping List")
+            (org-super-agenda-groups nil)))
+          ("w" "Wish List" todo ""
+           ((org-agenda-files
+             (seq-remove (lambda (file)
+                           (string-match-p "\\.stversions\\|sync-conflict" file))
+                         (directory-files-recursively org-directory "^wishList\\.org$")))
+            (org-agenda-overriding-header "Wish List")
+            (org-super-agenda-groups nil))))))
+#+end_src
+
+*** Class Notes
+I like to take notes in org mode (sometimes) so I have a template here that will automatically build a template of notes
+#+begin_src emacs-lisp
+(defun my/insert-class-notes-template ()
+  "Populate empty .org files inside Class Notes folders under ~/Brain/Main/School."
+  (when (and buffer-file-name
+             (string-equal (file-name-extension buffer-file-name) "org")
+             (= (buffer-size) 0))
+    (let* ((school-dir (file-name-as-directory
+                        (file-truename (expand-file-name "~/Brain/Main/School"))))
+           (file-dir (file-name-directory
+                      (file-truename (expand-file-name buffer-file-name))))
+           (parent-name (file-name-nondirectory (directory-file-name file-dir)))
+           (class-dir (file-name-directory (directory-file-name file-dir))))
+      (when (and (string-equal parent-name "Class Notes")
+                 (string-prefix-p school-dir class-dir)
+                 (not (string-equal school-dir class-dir)))
+        (let* ((course (file-name-nondirectory (directory-file-name class-dir)))
+               (raw-title (file-name-base buffer-file-name))
+               (title (capitalize (replace-regexp-in-string "[-_]+" " " raw-title))))
+          (insert (format "#+TITLE: %s\n" title)
+                  (format "#+SUBTITLE: %s\n" course)
+                  (format "#+AUTHOR: %s\n" user-full-name)
+                  (format "#+DATE: %s\n" (format-time-string "[%Y-%m-%d %a]"))
+                  "#+OPTIONS: toc:2 num:nil\n\n"
+                  "* Action Items\n"
+                  "- \n\n"
+                  "* Main\n"
+                  "** \n\n"
+                  "* Off Topic\n")
+          (goto-char (point-min))
+          (search-forward "** " nil t))))))
+
+(add-hook 'find-file-hook #'my/insert-class-notes-template)
+#+end_src
+
+
 
 ** Pretty
 Theoretically, I can make the background transparent by running this fuction. Which is pretty cool. Doubt I'll ever use it but it's cool.
