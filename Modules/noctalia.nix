@@ -11,7 +11,7 @@
 
   home.packages = with pkgs; [
     noctalia-shell
-    resources # For reading resources with system monitor
+    # resources # For reading resources with system monitor
   ];
 
   # I guess this isn't needed?
