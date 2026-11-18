@@ -67,6 +67,8 @@
         evtest
         coreutils
         resources
+        playerctl
+        python
       ];
 
       # Symlinking to my dots

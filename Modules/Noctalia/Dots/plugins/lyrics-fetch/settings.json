@@ -3,7 +3,7 @@
   "scrollSpeed": 70,
   "fontSize": 10,
   "scrollMode": "always",
-  "hideWhenEmpty": true,
+  "hideWhenEmpty": false,
   "adaptScrollSpeed": true,
   "verticalRotationDirection": "auto",
   "hideWhenPaused": true,
