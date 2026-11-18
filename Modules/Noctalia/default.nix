@@ -66,6 +66,7 @@
       home.packages = with pkgs; [
         evtest
         coreutils
+        resources
       ];
 
       # Symlinking to my dots
