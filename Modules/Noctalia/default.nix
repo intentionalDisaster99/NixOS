@@ -68,7 +68,7 @@
         coreutils
         resources
         playerctl
-        python
+        python3
       ];
 
       # Symlinking to my dots
