@@ -155,7 +155,7 @@
                     "showCpuTemp": true,
                     "showCpuUsage": true,
                     "showDiskAvailable": false,
-                    "showDiskUsage": true,
+                    "showDiskUsage": false,
                     "showDiskUsageAsPercent": false,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
@@ -475,30 +475,20 @@
                         "hideWhenIdle": true,
                         "id": "AudioVisualizer",
                         "roundedCorners": false,
-                        "scale": 1.1153283794419622,
+                        "scale": 3.9177080891322706,
                         "showBackground": false,
                         "visualizerType": "linear",
                         "width": 320,
-                        "x": 902,
-                        "y": 66
+                        "x": 22,
+                        "y": 748
                     },
                     {
                         "id": "Weather",
                         "roundedCorners": true,
                         "scale": 1,
                         "showBackground": true,
-                        "x": 638,
-                        "y": 66
-                    },
-                    {
-                        "diskPath": "/",
-                        "id": "SystemStat",
-                        "layout": "bottom",
-                        "roundedCorners": true,
-                        "showBackground": true,
-                        "statType": "Disk",
-                        "x": 374,
-                        "y": 66
+                        "x": 1026,
+                        "y": 52
                     }
                 ]
             }

@@ -85,6 +85,7 @@
         [settings]
         api_url = http://graviton:3000/api/v1
         api_key = a62ccc4f-fe69-4025-8e4d-c3eb5358f1cc
+        debug = true
       '';
 
       # Install Doom if it isn't already
