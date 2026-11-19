@@ -40,6 +40,25 @@
   (setq wakatime-api-key
         (string-trim (shell-command-to-string "wakatime-cli --config-read api_key"))))
 
+(require 'cl-lib)
+
+(with-eval-after-load 'wakatime-mode
+  (define-advice wakatime-call (:around (orig-fn &rest args) handle-cli-exit-1)
+    "Prevent wakatime-cli exit code 1 (offline rate-limit queue) from freezing Emacs."
+    (let ((shell-file-name "/bin/sh")
+          (orig-set-sentinel (symbol-function 'set-process-sentinel)))
+      (cl-letf (((symbol-function 'set-process-sentinel)
+                 (lambda (proc sentinel)
+                   (funcall orig-set-sentinel proc
+                            (lambda (p event)
+                              (condition-case err
+                                  (funcall sentinel p event)
+                                (error
+                                 (unless (string-match-p "WakaTime Error (1)"
+                                                         (error-message-string err))
+                                   (message "%s" (error-message-string err))))))))))
+        (apply orig-fn args)))))
+
 ;; (add-hook 'after-init-hook 'global-company-mode)
 
 (use-package! beacon
